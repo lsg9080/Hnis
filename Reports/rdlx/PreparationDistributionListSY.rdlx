@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>10cm</Height>
+    <ReportItems>
+      <Textbox Name="TextBox1">
+        <CanGrow>true</CanGrow>
+        <Height>0.8cm</Height>
+        <Value>=Parameters!hospName.Value.ToString() + "肠内配送单"</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <Width>29.501cm</Width>
+      </Textbox>
+      <Table Name="Table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="startDate">
+                          <Value>=Parameters!startDate.Value</Value>
+                        </Parameter>
+                        <Parameter Name="endDate">
+                          <Value>=Parameters!endDate.Value</Value>
+                        </Parameter>
+                        <Parameter Name="dept">
+                          <Value>=Fields!dept.Value</Value>
+                        </Parameter>
+                        <Parameter Name="zjlx">
+                          <Value>=Parameters!zjlx.Value</Value>
+                        </Parameter>
+                        <Parameter Name="zjlb">
+                          <Value>=Parameters!zjlb.Value</Value>
+                        </Parameter>
+                        <Parameter Name="sysj">
+                          <Value>=Parameters!sysj.Value</Value>
+                        </Parameter>
+                        <Parameter Name="deptname">
+                          <Value>=Fields!deptname.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>PreparationDistributionListSYDetail.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>0.75cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>29.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>0.9cm</Top>
+        <Width>29.5cm</Width>
+      </Table>
+      <Textbox Name="TextBox2">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Left>0.1cm</Left>
+        <Value>=“合计：”&amp;Sum(Fields!SYNum.Value, "DataSet2")</Value>
+        <Style>
+          <FontFamily>Arial</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Right</TextAlign>
+        </Style>
+        <Top>2.1cm</Top>
+        <Width>27.8cm</Width>
+        <ZIndex>1</ZIndex>
+      </Textbox>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>21cm</PageHeight>
+  <PageWidth>29.7cm</PageWidth>
+  <Width>30.6cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>医院名称</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="startDate">
+      <DataType>String</DataType>
+      <Prompt>开始时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>String</DataType>
+      <Prompt>收费截止时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="dept">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>科室组</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjlx">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂类型</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjlb">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂类别</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sysj">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>使用时间</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="dept">
+          <DataField>dept</DataField>
+        </Field>
+        <Field Name="deptname">
+          <DataField>deptname</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_DistributionList]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@dept">
+            <Value>=Parameters!dept.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlx">
+            <Value>=Parameters!zjlx.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlb">
+            <Value>=Parameters!zjlb.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sysj">
+            <Value>=Parameters!sysj.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@type">
+            <Value>2</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="BranchType">
+          <DataField>BranchType</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="zjlx">
+          <DataField>zjlx</DataField>
+        </Field>
+        <Field Name="ParentCode">
+          <DataField>ParentCode</DataField>
+        </Field>
+        <Field Name="PreparationCode">
+          <DataField>PreparationCode</DataField>
+        </Field>
+        <Field Name="PreparationTypeName">
+          <DataField>PreparationTypeName</DataField>
+        </Field>
+        <Field Name="TFNum">
+          <DataField>TFNum</DataField>
+        </Field>
+        <Field Name="SYNum">
+          <DataField>SYNum</DataField>
+        </Field>
+        <Field Name="UseDate">
+          <DataField>UseDate</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_DistributionList]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@dept">
+            <Value>=Parameters!dept.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlx">
+            <Value>=Parameters!zjlx.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlb">
+            <Value>=Parameters!zjlb.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sysj">
+            <Value>=Parameters!sysj.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@type">
+            <Value>3</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+    <CustomProperty>
+      <Name>report:DesignTimeBackgroundRendering</Name>
+      <Value>True</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

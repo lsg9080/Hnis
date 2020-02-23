@@ -1,0 +1,1181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>4.8cm</Height>
+		<ReportItems>
+			<Table Name="Table5">
+				<DataSetName>DataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox55</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,1,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox56</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,1,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox57</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,2,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox31">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox58</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,2,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox72">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,3,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox96">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,3,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox14">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox59</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,4,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox60</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,4,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox75</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,5,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox76</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,5,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox97</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,6,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox28">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox98</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,6,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;3,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox34">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox99</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,7,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox55">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox102</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,7,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox75">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox103</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,8,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox76">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox110</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,8,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox98">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox112</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,9,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox99">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox117</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,9,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;6,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox102">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox120</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,10,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox103">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox121</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,10,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox119">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox122</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,11,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox131">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,11,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox133">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,12,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox136">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,12,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;9,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox138">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,13,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox168">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,13,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox169">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,14,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox170">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,14,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox171">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,15,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox173">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,15,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;12,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox174">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,16,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox175">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!PosturesHeight.Value,Fields!GripLeftOrRight.Value,Fields!ThicknessSelect.Value,Fields!CalfGirthSelect.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value,16,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox176">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox177">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox178">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox179">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!CurrentHeight.Value,Fields!CurrentWeight.Value,Fields!RecentWeight.Value,Fields!Grip.Value,Fields!Waistline.Value,Fields!Hipline.Value,Fields!UpperArm.Value,Fields!Thickness.Value,Fields!CalfGirth.Value,Fields!GripLeft.Value,Fields!GripRight.Value,Fields!TricepsSkinfold.Value,Fields!UnderScapulaSkinfold.Value,Fields!AnteriorIliacSpine.Value,Fields!CalfCircumferenceLeft.Value,Fields!CalfCircumferenceRight.Value)&gt;15,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Height>4.8cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>2.840484cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.879421cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.841196cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.910508cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.814637cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.911671cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>17.18724cm</Width>
+				<ZIndex>3</ZIndex>
+			</Table>
+		</ReportItems>
+	</Body>
+	<Code>
+Function GetShowCount(ByVal i1 As Double, ByVal i2 As Double, ByVal i3 As Double, ByVal i4 As Double, ByVal i5 As Double, ByVal i6 As Double, ByVal i7 As Double, ByVal i8 As Double, ByVal i9 As Double, ByVal i10 As Double, ByVal i11 As Double, ByVal i12 As Double, ByVal i13 As Double, ByVal i14 As Double, ByVal i15 As Double, ByVal i16 As Double) As String
+	Dim cc As Integer
+	If(i1 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i2 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i3 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i4 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i5 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i6 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i7 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i8 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i9 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i10 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i11 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i12 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i13 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i14 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i15 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i16 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	Return cc
+End Function
+
+
+
+Function GetPhysicalItems(ByVal i1 As Double, ByVal i2 As Double, ByVal i3 As Double, ByVal i4 As Double, ByVal i5 As Double, ByVal i6 As Double, ByVal i7 As Double, ByVal i8 As Double, ByVal i9 As Double, ByVal i3_d As String, ByVal i4_d As String, ByVal i8_d As String, ByVal i9_d As String, ByVal i10 As Double, ByVal i11 As Double, ByVal i12 As Double, ByVal i13 As Double, ByVal i14 As Double, ByVal i15 As Double, ByVal i16 As Double, ByVal col As Integer, ByVal t As Integer) As String
+	Dim cc As Integer
+	Dim showStr As String
+	Dim showValue As String
+	If(i1 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "目前身高："
+			showValue = i1.ToString() + " cm"
+		End If
+	End If
+	If(i2 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "目前体重："	
+			showValue = i2.ToString() + " kg"
+		End If	
+	End If
+	If(i3 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "近期体重："
+			Dim des As String
+			If(i3_d &lt;&gt; "-1")Then
+				If(i3_d = "1203_1") Then
+					des = "(1个月前)"
+				Else If(i3_d = "1203_2") Then
+					des = "(3个月前)"
+				Else
+					des = "(6个月前)"
+				End If
+			End If
+			showValue = i3.ToString() + " kg " + des
+		End If
+	End If
+	If(i4 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "握力："	
+			If(i4_d = "1204_1") Then
+				showStr = "右手握力："	
+			Else
+				showStr = "左手握力："	
+			End If
+			showValue = i4.ToString() + " kg "
+		End If
+	End If
+	If(i5 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "腰围："	
+			showValue = i5.ToString() + " cm"
+		End If
+	End If
+	If(i6 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "臀围："	
+			showValue = i6.ToString() + " cm"
+		End If
+	End If
+	If(i7 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "上臂围："	
+			showValue = i7.ToString() + " cm"
+		End If
+	End If
+	If(i8 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "皮褶厚度："
+			Dim des_3 As String
+			If(i8_d &lt;&gt; "-1")Then
+				If(i8_d = "1208_1") Then
+					des_3 = "(三头肌)"
+				Else If(i8_d = "1208_2") Then
+					des_3 = "(肩胛下)"
+				Else
+					des_3 = "(髂前上棘)"
+				End If
+			End If
+			showValue = i8.ToString() + " mm" + des_3
+		End If
+	End If
+	If(i9 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "小腿围："	
+			Dim des_4 As String
+			If(i9_d &lt;&gt; "-1")Then
+				If(i9_d = "1209_1") Then
+					des_4 = "（右腿）"
+				Else
+					des_4 = "（左腿）"
+				End If
+			End If
+			showValue = i9.ToString() + " cm " + des_4
+		End If
+	End If
+	
+	If(i10 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "左手握力："
+			showValue = i10.ToString() + " kg"
+		End If
+	End If
+	If(i11 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "右手握力："
+			showValue = i11.ToString() + " kg"
+		End If
+	End If
+	If(i12 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "三头肌皮褶厚度："
+			showValue = i12.ToString() + " mm"
+		End If
+	End If
+	If(i13 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "肩胛下皮褶厚度："
+			showValue = i13.ToString() + " mm"
+		End If
+	End If
+	If(i14 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "髂前上棘皮褶厚度："
+			showValue = i14.ToString() + " mm"
+		End If
+	End If
+	If(i15 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "左小腿围："
+			showValue = i15.ToString() + " cm"
+		End If
+	End If
+	If(i16 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "右小腿围："
+			showValue = i16.ToString() + " cm"
+		End If
+	End If
+
+	If(t = 1) Then
+		Return showStr
+	Else
+		Return showValue
+	End If
+End Function</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>17.2cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>patCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isEt">
+			<DataType>Integer</DataType>
+			<Prompt>isEt</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isRF">
+			<DataType>Integer</DataType>
+			<Prompt>isRF</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isYB">
+			<DataType>Integer</DataType>
+			<Prompt>isYB</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="CAID">
+					<DataField>CAID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="Ca_Type">
+					<DataField>Ca_Type</DataField>
+				</Field>
+				<Field Name="CurrentHeight">
+					<DataField>CurrentHeight</DataField>
+				</Field>
+				<Field Name="CurrentWeight">
+					<DataField>CurrentWeight</DataField>
+				</Field>
+				<Field Name="RecentWeight">
+					<DataField>RecentWeight</DataField>
+				</Field>
+				<Field Name="BirthWeight">
+					<DataField>BirthWeight</DataField>
+				</Field>
+				<Field Name="Grip">
+					<DataField>Grip</DataField>
+				</Field>
+				<Field Name="Waistline">
+					<DataField>Waistline</DataField>
+				</Field>
+				<Field Name="Hipline">
+					<DataField>Hipline</DataField>
+				</Field>
+				<Field Name="UpperArm">
+					<DataField>UpperArm</DataField>
+				</Field>
+				<Field Name="Thickness">
+					<DataField>Thickness</DataField>
+				</Field>
+				<Field Name="CalfGirth">
+					<DataField>CalfGirth</DataField>
+				</Field>
+				<Field Name="Circumference">
+					<DataField>Circumference</DataField>
+				</Field>
+				<Field Name="PosturesHeight">
+					<DataField>PosturesHeight</DataField>
+				</Field>
+				<Field Name="GripLeftOrRight">
+					<DataField>GripLeftOrRight</DataField>
+				</Field>
+				<Field Name="ThicknessSelect">
+					<DataField>ThicknessSelect</DataField>
+				</Field>
+				<Field Name="CalfGirthSelect">
+					<DataField>CalfGirthSelect</DataField>
+				</Field>
+				<Field Name="WeightChangeRate">
+					<DataField>WeightChangeRate</DataField>
+				</Field>
+				<Field Name="IBW">
+					<DataField>IBW</DataField>
+				</Field>
+				<Field Name="LdealWeightRate">
+					<DataField>LdealWeightRate</DataField>
+				</Field>
+				<Field Name="BMI">
+					<DataField>BMI</DataField>
+				</Field>
+				<Field Name="WHRate">
+					<DataField>WHRate</DataField>
+				</Field>
+				<Field Name="UpperArmMuscle">
+					<DataField>UpperArmMuscle</DataField>
+				</Field>
+				<Field Name="HeadCircumference">
+					<DataField>HeadCircumference</DataField>
+				</Field>
+				<Field Name="MiddleArmCircumference">
+					<DataField>MiddleArmCircumference</DataField>
+				</Field>
+				<Field Name="TricepsSkinThickness">
+					<DataField>TricepsSkinThickness</DataField>
+				</Field>
+				<Field Name="ThicknessSubscapularFold">
+					<DataField>ThicknessSubscapularFold</DataField>
+				</Field>
+				<Field Name="IseDema">
+					<DataField>IseDema</DataField>
+				</Field>
+				<Field Name="EvaluationResults">
+					<DataField>EvaluationResults</DataField>
+				</Field>
+				<Field Name="PreBMI">
+					<DataField>PreBMI</DataField>
+				</Field>
+				<Field Name="PregnancyConclusion">
+					<DataField>PregnancyConclusion</DataField>
+				</Field>
+				<Field Name="FetalNumber">
+					<DataField>FetalNumber</DataField>
+				</Field>
+				<Field Name="PrepregnancyBMI">
+					<DataField>PrepregnancyBMI</DataField>
+				</Field>
+				<Field Name="PrepregnancyWeightStatus">
+					<DataField>PrepregnancyWeightStatus</DataField>
+				</Field>
+				<Field Name="PrepregnancyDynamiting">
+					<DataField>PrepregnancyDynamiting</DataField>
+				</Field>
+				<Field Name="PregnancyDynamiting">
+					<DataField>PregnancyDynamiting</DataField>
+				</Field>
+				<Field Name="RepregnancyGrowthRate">
+					<DataField>RepregnancyGrowthRate</DataField>
+				</Field>
+				<Field Name="GestationalWeek">
+					<DataField>GestationalWeek</DataField>
+				</Field>
+				<Field Name="GestationalWeek2">
+					<DataField>GestationalWeek2</DataField>
+				</Field>
+				<Field Name="GestationalWeek3">
+					<DataField>GestationalWeek3</DataField>
+				</Field>
+				<Field Name="BMIConclusion">
+					<DataField>BMIConclusion</DataField>
+				</Field>
+				<Field Name="GripLeft">
+					<DataField>GripLeft</DataField>
+				</Field>
+				<Field Name="GripRight">
+					<DataField>GripRight</DataField>
+				</Field>
+				<Field Name="TricepsSkinfold">
+					<DataField>TricepsSkinfold</DataField>
+				</Field>
+				<Field Name="UnderScapulaSkinfold">
+					<DataField>UnderScapulaSkinfold</DataField>
+				</Field>
+				<Field Name="AnteriorIliacSpine">
+					<DataField>AnteriorIliacSpine</DataField>
+				</Field>
+				<Field Name="CalfCircumferenceLeft">
+					<DataField>CalfCircumferenceLeft</DataField>
+				</Field>
+				<Field Name="CalfCircumferenceRight">
+					<DataField>CalfCircumferenceRight</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select  CAID,tc.PatientCode,tc.Ca_Type,CurrentHeight,		--当前身高
+CurrentWeight,		--目前体重
+RecentWeight,			--其它体重、孕前体重
+case when  tc.BirthWeight &gt; 0 then LTRIM(cast(tc.BirthWeight as float)) + ' kg' else '--' end as BirthWeight,		--出生体重
+Grip,									--握力
+Waistline,					--腰围
+Hipline,							--臀围
+UpperArm,						--上臂围
+Thickness,					--皮褶厚度
+CalfGirth,					--小腿围
+case when Circumference &gt; 0 then LTRIM(cast(Circumference as float)) + ' cm' else '--' end as Circumference,--胸围
+isnull(s.ItemText,'--') as PosturesHeight,--站位MonthPeriod,--一，三，六月
+GripLeftOrRight,--手位
+ThicknessSelect,--皮褶
+CalfGirthSelect,--腿位
+case when WeightChangeRate &lt;&gt; -1000 then LTRIM(cast(WeightChangeRate as float)) + ' %' else '--' end as WeightChangeRate, --体重变化
+case when CalfGirth &gt; 0 then LTRIM(cast(tc.IBW as float)) + ' kg' else '--' end as IBW ,							--BMI
+case when LdealWeightRate &gt; 0 then LTRIM(cast(LdealWeightRate as float)) + ' %' else '--' end as LdealWeightRate,	--IBW占体重
+case when tc.BMI &gt; 0 then LTRIM(cast(tc.BMI as float))  else '--' end as BMI,
+case when Waistline&gt; 0 and Hipline &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + ltrim(cast(round(Waistline/Hipline,2) as float))  + '  ' + 
+WaistHipConclusion + '&lt;/div&gt;&lt;/body&gt;'  else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as WHRate,	--腰臀比
+case when tc.UpperArmMuscle &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + ltrim(cast(tc.UpperArmMuscle as float)) + ' cm ' + 
+UpperArmMuscleConclusion + '&lt;/div&gt;&lt;/body&gt;' else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as UpperArmMuscle,	--上臂肌围
+case when  HeadCircumference &gt; 0 then LTRIM(cast(HeadCircumference as float)) + ' cm' else '--' end as HeadCircumference,	--头围
+case when  MiddleArmCircumference &gt; 0 then LTRIM(cast(MiddleArmCircumference as float)) + ' cm' else '--' end as MiddleArmCircumference,		--中上臂围
+case when  TricepsSkinThickness &gt; 0 then LTRIM(cast(TricepsSkinThickness as float)) + ' mm' else '--' end as TricepsSkinThickness,		--三头肌皮褶厚度
+case when  ThicknessSubscapularFold &gt; 0 then LTRIM(cast(ThicknessSubscapularFold as float)) + ' mm' else '--' end as ThicknessSubscapularFold,	--肩胛下皮褶厚度
+isnull(ssssss.ItemText,'--') as IseDema,	--有无水肿
+'&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + case when len(EvaluationResults)&gt;0 then EvaluationResults else '--' end + '&lt;/div&gt;&lt;/body&gt;' as EvaluationResults,  --评估结果
+case when tc.BMI &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + LTRIM(cast(tc.BMI as float)) + ' kg/m&lt;sup&gt;2&lt;/sup&gt; ' + BMIConclusion + '&lt;/div&gt;&lt;/body&gt;' else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as PreBMI,--孕妇BMI
+ '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + PregnancyConclusion + '&lt;/div&gt;&lt;/body&gt;' as PregnancyConclusion,
+  isnull(tpr.FetalNumber,'') as FetalNumber,
+  isnull(tpr.PrepregnancyBMI,'') as PrepregnancyBMI,
+  isnull(tpr.PrepregnancyWeightStatus,'') as PrepregnancyWeightStatus,
+  isnull(tpr.PrepregnancyDynamiting,'') as PrepregnancyDynamiting,
+  isnull(tpr.PregnancyDynamiting,'') as PregnancyDynamiting,
+  isnull(tpr.RepregnancyGrowthRate,'') as RepregnancyGrowthRate,
+  isnull(tpr.GestationalWeek,'') as GestationalWeek,
+  isnull(tpr.GestationalWeek2,'') as GestationalWeek2,
+  isnull(tpr.GestationalWeek3,'') as GestationalWeek3
+,
+('&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + tc.BMIConclusion + '&lt;/div&gt;&lt;/body&gt;') as BMIConclusion
+,GripLeft,GripRight,TricepsSkinfold,UnderScapulaSkinfold,AnteriorIliacSpine,CalfCircumferenceLeft,CalfCircumferenceRight 
+from dbo.T_ClinicAssessment tc
+left join dbo.S_SelectedItem s on tc.PosturesHeight  = s.ItemValue and s.ItemType = 1210
+left join dbo.S_SelectedItem ss on tc.MonthPeriod  = ss.ItemValue and ss.ItemType = 1203
+left join dbo.S_SelectedItem sss on tc.GripLeftOrRight  = sss.ItemValue and sss.ItemType = 1204
+left join dbo.S_SelectedItem ssss on tc.ThicknessSelect  = ssss.ItemValue and ssss .ItemType = 1208
+left join dbo.S_SelectedItem sssss on tc.CalfGirthSelect  = sssss.ItemValue and sssss.ItemType = 1209
+left join dbo.S_SelectedItem ssssss on tc.IseDema  = ssssss.ItemValue and ssssss.ItemType = 1211
+left join dbo.T_Patient tp on tp.PatientCode = tc.PatientCode and PatientType = 2
+left join dbo.T_PregnancyReferenceRange tpr on tpr.RangeCode = tc.PregnancyReferenceRange
+
+ 
+where tp.PatientCode = @patCode  and tc.Ca_Type = @ct</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@ct">
+						<Value>=Switch( Parameters!isET.Value &gt; 0,3, Parameters!isRF.Value &gt; 0,2, Parameters!isYB.Value &gt; 0,1)</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/HeaderShared.cshtml";
+}
+<link rel="stylesheet" href="/Content/BeginnerAdmin/plugins/layui/css/layui.css" media="all" />
+<link rel="stylesheet" href="/Content/BeginnerAdmin/css/global.css" media="all"/>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-side layui-bg-black" id="admin-side" style="" >
+        <div class="layui-side" id="admin-navbar-side" lay-filter="side"  style="margin-top: 10px;overflow: hidden; overflow-y: auto;"></div>
+    </div>
+    <div class="layui-body" style="bottom: 0; border-left: solid 2px #009688; margin-top: 10px;" id="admin-body" >
+        <div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab" id="admin-nav-side">
+            <ul class="layui-tab-title">
+                <li class="layui-this">
+                    <i class="fa fa-dashboard" aria-hidden="true"></i>
+                    <cite>控制面板</cite>
+                </li>
+            </ul>
+            <div class="layui-tab-content" style="min-height: 150px; padding: 3px 0 0 0;">
+                <div class="layui-tab-item layui-show">
+                    <iframe id="mainIframe" src="/CommonManager/Main" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    
+    </script>
+</div>
+<script>
+    var navData = @Html.Raw(ViewBag.navData);
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winSystem'], function () {
+        var index_system = layui.winSystem;
+        var tab = index_system.win_createTab("#admin-nav-side");
+        index_system.win_createNavbar('#admin-navbar-side',navData,'side',tab);
+        index_system.win_resize('.admin-nav-card .layui-tab-content', 122);
+        index_system.win_resize("#admin-navbar-side", 70);
+    });
+</script>

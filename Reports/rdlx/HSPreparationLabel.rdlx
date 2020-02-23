@@ -1,0 +1,383 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+  <Body>
+    <Height>3cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>HSPreparationLabel</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>2.9cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Container1">
+                      <Style />
+                      <ZIndex>1</ZIndex>
+                      <ReportItems>
+                        <Textbox Name="TextBox11">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.6cm</Height>
+                          <Left>0.1cm</Left>
+                          <Value>=Fields!PatientName.Value+"       "+Fields!BeInNo.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>1pt</PaddingTop>
+                          </Style>
+                          <Top>0.6cm</Top>
+                          <Width>4.2cm</Width>
+                          <ZIndex>1</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox12">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.6cm</Height>
+                          <Left>0.1cm</Left>
+                          <Value>=Fields!PrescriptionContent.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.2cm</Top>
+                          <Width>5.799791cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox17">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox16</DataElementName>
+                          <Height>0.6cm</Height>
+                          <Left>0.05cm</Left>
+                          <Value>="  "+Fields!GuiGeName.Value+"      "+Fields!DisplayNum.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.8cm</Top>
+                          <Width>5.849791cm</Width>
+                          <ZIndex>5</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox10">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.6cm</Height>
+                          <Left>0.1cm</Left>
+                          <Value>=Fields!AreaBedNo.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>0pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>0pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Width>4.2cm</Width>
+                        </Textbox>
+                        <Rectangle Name="Container2">
+                          <Height>1.3cm</Height>
+                          <Left>4.3cm</Left>
+                          <Style />
+                          <Width>1.6cm</Width>
+                          <ZIndex>6</ZIndex>
+                          <ReportItems>
+                            <CustomReportItem Name="Barcode1">
+                              <Type>Barcode</Type>
+                              <Top>0.1cm</Top>
+                              <Width>1.5998cm</Width>
+                              <Height>1.2cm</Height>
+                              <ZIndex>6</ZIndex>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                                <FontSize>8pt</FontSize>
+                                <TextDecoration>None</TextDecoration>
+                              </Style>
+                              <CustomProperties>
+                                <CustomProperty>
+                                  <Name>dd:Rotation</Name>
+                                  <Value>None</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.Model</Name>
+                                  <Value>Model2</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.Mask</Name>
+                                  <Value>Auto</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.Version</Name>
+                                  <Value>-1</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.Connection</Name>
+                                  <Value>false</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.ConnectionNumber</Name>
+                                  <Value>0</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.ErrorLevel</Name>
+                                  <Value>L</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QRCodeOptions.Encoding</Name>
+                                  <Value>65001</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:SupplementOptions.SupplementCaptionLocation</Name>
+                                  <Value>Above</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:SupplementOptions.SupplementBarHeight</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:SupplementOptions.SupplementSpacing</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:DataElementStyle</Name>
+                                  <Value>Auto</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:Value</Name>
+                                  <Value>=Fields!QECode.Value</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:Symbology</Name>
+                                  <Value>QRCode</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QuietZone.Left</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QuietZone.Right</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QuietZone.Top</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:QuietZone.Bottom</Name>
+                                  <Value>0cm</Value>
+                                </CustomProperty>
+                              </CustomProperties>
+                            </CustomReportItem>
+                          </ReportItems>
+                        </Rectangle>
+                        <Textbox Name="TextBox13">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.5cm</Height>
+                          <Value>=Fields!UseDate.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>0pt</PaddingTop>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <Top>2.4cm</Top>
+                          <Width>2.5cm</Width>
+                          <ZIndex>3</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox15">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.5cm</Height>
+                          <Left>2.4cm</Left>
+                          <Value>=Fields!EN_Use.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>0pt</PaddingTop>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <Top>2.4cm</Top>
+                          <Width>1.5cm</Width>
+                          <ZIndex>4</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox16">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.5cm</Height>
+                          <Left>3.899791cm</Left>
+                          <Value>=Fields!LiquidQuantity.Value</Value>
+                          <Style>
+                            <FontFamily>微软雅黑</FontFamily>
+                            <FontSize>10pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>0pt</PaddingTop>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <Top>2.4cm</Top>
+                          <Width>2cm</Width>
+                          <ZIndex>5</ZIndex>
+                        </Textbox>
+                      </ReportItems>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>2.9cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>5.899791cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>5.9cm</Width>
+        <ZIndex>2</ZIndex>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>3cm</PageHeight>
+  <PageWidth>6cm</PageWidth>
+  <Width>6cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="pid">
+      <DataType>Integer</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>标签ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>使用日期</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="1527733415">
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAIAAAAI7H7bAAAEf0lEQVR4nO3dQW7cQAwAwSjI/7/sPCEE0qZHs1VnAytLaMyF4DxfX1+/gP/z+6cfAG4gJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCfyZ/9DzPdz/HySbjiJNXFI41bv6crz/5MycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWA0azfx0v141SDZ8mDbaW/7tOcZCscInUgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgWzWbmJ5Q9ppA2AfviDu7q/vRIKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aXWx5kGz5ylr+yYkEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEDBr15gMtoUDch++Iu9ATiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgsDq0+uErC/37P/0I38iJBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBDIZu0+fGVhtfxx+BqX91Emv3U3JxIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4Ll729hRDhxI8/UrTiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCwOodssvL3yqbj7Q8/La5+27otHV8w99yIkFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIERnvtNmfbDty09tIRwYkD33ZlefrRiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQGO21O20i6+K9dkMHPtI/HfiKQk4kCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQIDAaWn3p/bin3TQc/tZp/9pE+NUO5ESCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCBy3IHJ5QuylY4SVzRuLwyG6zZ9zGTPsERIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgee07Wcv9dJtbBPVYNvyWr+KWTvYIyQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAqNZu4sHySY299pd7MA7ZMPxPycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWB0h+zES/fjVZNdyzeWTpw22rd8h+xEuI7PiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQyGbtJpanv146/jexeWfrS8cIl7++EwkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrA6tXuyld1ofOJBaWR5sdSJBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBMzaNS6eo6sMn2cy/+YyZriTkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aHbj9rHLazccHWr6MecJeOziLkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIZLN2Fw+JHai6snZz+jHca1ex1w7OIiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAs/Fu+ZgjRMJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCPwFzc31MmFwBAgAAAAASUVORK5CYII=</ImageData>
+      <MIMEType>image/png</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="HSPreparationLabel">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="InPatientArea">
+          <DataField>InPatientArea</DataField>
+        </Field>
+        <Field Name="BranchType">
+          <DataField>BranchType</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="Sex">
+          <DataField>Sex</DataField>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="GuiGeName">
+          <DataField>GuiGeName</DataField>
+        </Field>
+        <Field Name="DisplayNum">
+          <DataField>DisplayNum</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+        <Field Name="Price">
+          <DataField>Price</DataField>
+        </Field>
+        <Field Name="UseDate">
+          <DataField>UseDate</DataField>
+        </Field>
+        <Field Name="EN_Temperature">
+          <DataField>EN_Temperature</DataField>
+        </Field>
+        <Field Name="EN_Speed">
+          <DataField>EN_Speed</DataField>
+        </Field>
+        <Field Name="ItemText">
+          <DataField>ItemText</DataField>
+        </Field>
+        <Field Name="ItemText2">
+          <DataField>ItemText2</DataField>
+        </Field>
+        <Field Name="AreaBedNo">
+          <DataField>AreaBedNo</DataField>
+        </Field>
+        <Field Name="LiquidQuantity">
+          <DataField>LiquidQuantity</DataField>
+        </Field>
+        <Field Name="QECode">
+          <DataField>QECode</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_HSPreparationLabel]</CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@pid">
+            <Value>=Parameters!pid.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@useDate">
+            <Value>=Parameters!useDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Portrait</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

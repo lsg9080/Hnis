@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>6cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.753283cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="pids">
+                          <Value>=Fields!PID.Value</Value>
+                        </Parameter>
+                        <Parameter Name="userDate">
+                          <Value>=Parameters!useDate.Value</Value>
+                        </Parameter>
+                        <Parameter Name="type">
+                          <Value>2</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>PreparationLabelDetails_PYXYYcp.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=iif(Fields!SumIsNutriConfig.Value="0",false,true)</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.745242cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport2">
+                      <Parameters>
+                        <Parameter Name="pids">
+                          <Value>=Fields!PID.Value</Value>
+                        </Parameter>
+                        <Parameter Name="userDate">
+                          <Value>=Parameters!useDate.Value</Value>
+                        </Parameter>
+                        <Parameter Name="type">
+                          <Value>2</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>PreparationLabelDetails_PYXYYgx.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=iif(Fields!SumIsNutriConfig.Value="0",true,false)</Hidden>
+              </Visibility>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.500034cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>8cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>8cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>6cm</PageHeight>
+  <PageWidth>8cm</PageWidth>
+  <Width>8cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="pids">
+      <DataType>String</DataType>
+      <Prompt>pid</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <DataType>String</DataType>
+      <Prompt>时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>医院名称</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="Sex">
+          <DataField>Sex</DataField>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="SumIsNutriConfig">
+          <DataField>SumIsNutriConfig</DataField>
+        </Field>
+        <Field Name="GuigeYeliang">
+          <DataField>GuigeYeliang</DataField>
+        </Field>
+        <Field Name="fangshi">
+          <DataField>fangshi</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+        <Field Name="EN_Amount">
+          <DataField>EN_Amount</DataField>
+        </Field>
+        <Field Name="interventionType">
+          <DataField>interventionType</DataField>
+        </Field>
+        <Field Name="Price">
+          <DataField>Price</DataField>
+        </Field>
+        <Field Name="EN_Temperature">
+          <DataField>EN_Temperature</DataField>
+        </Field>
+        <Field Name="EN_Speed">
+          <DataField>EN_Speed</DataField>
+        </Field>
+        <Field Name="ItemText">
+          <DataField>ItemText</DataField>
+        </Field>
+        <Field Name="ItemText2">
+          <DataField>ItemText2</DataField>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+        </Field>
+        <Field Name="Energy">
+          <DataField>Energy</DataField>
+        </Field>
+        <Field Name="Protein">
+          <DataField>Protein</DataField>
+        </Field>
+        <Field Name="Fat">
+          <DataField>Fat</DataField>
+        </Field>
+        <Field Name="Carbohydr">
+          <DataField>Carbohydr</DataField>
+        </Field>
+        <Field Name="EN_Remark">
+          <DataField>EN_Remark</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="In_Date">
+          <DataField>In_Date</DataField>
+        </Field>
+        <Field Name="Qrnumber">
+          <DataField>Qrnumber</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_PreparationLabel_CZ]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@pids">
+            <Value>=Parameters!pids.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@useDate">
+            <Value>=Parameters!useDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>1.9cm</Height>
+		<ReportItems>
+			<Textbox Name="TextBox1">
+				<CanGrow>true</CanGrow>
+				<Height>1cm</Height>
+				<Value>=Parameters!hospName.Value &amp; "配送单"</Value>
+				<Style>
+					<FontFamily>黑体</FontFamily>
+					<FontSize>16pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>400</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Center</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Width>18.9cm</Width>
+			</Textbox>
+			<Table Name="Table1">
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.7cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="startDate">
+													<Value>=Parameters!startDate.Value</Value>
+												</Parameter>
+												<Parameter Name="endDate">
+													<Value>=Parameters!endDate.Value</Value>
+												</Parameter>
+												<Parameter Name="dept">
+													<Value>=Fields!BranchType.Value</Value>
+												</Parameter>
+												<Parameter Name="zjlx">
+													<Value>=Parameters!zjlx.Value</Value>
+												</Parameter>
+												<Parameter Name="zjlb">
+													<Value>=Parameters!zjlb.Value</Value>
+												</Parameter>
+												<Parameter Name="sysj">
+													<Value>=Parameters!sysj.Value</Value>
+												</Parameter>
+												<Parameter Name="userName">
+													<Value>=Parameters!userName.Value</Value>
+												</Parameter>
+												<Parameter Name="deptType">
+													<Value>=Parameters!deptType.Value</Value>
+												</Parameter>
+												<Parameter Name="deptName">
+													<Value>=Fields!DepartName.Value</Value>
+												</Parameter>
+												<Parameter Name="courtyardId">
+													<Value>=Parameters!courtyardId.Value</Value>
+												</Parameter>
+												<Parameter Name="type">
+													<Value>=Parameters!type.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>PreparationDistributionListDetailsNew.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>0.7cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>18.9cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>1cm</Top>
+				<Width>18.9cm</Width>
+				<ZIndex>1</ZIndex>
+			</Table>
+		</ReportItems>
+	</Body>
+	<BottomMargin>1.5cm</BottomMargin>
+	<LeftMargin>1cm</LeftMargin>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<RightMargin>1cm</RightMargin>
+	<TopMargin>1.5cm</TopMargin>
+	<Width>18.9cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>HospName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="startDate">
+			<DataType>String</DataType>
+			<Prompt>startDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="endDate">
+			<DataType>String</DataType>
+			<Prompt>endDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="dept">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>dept</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="zjlx">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>zjlx</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="zjlb">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>zjlb</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="sysj">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>sysj</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="type">
+			<DataType>Integer</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>type</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="userName">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>userName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="deptType">
+			<DataType>Integer</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>deptType</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="courtyardId">
+			<DataType>Integer</DataType>
+			<Prompt>courtyardId</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTSDataSource">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DepartDataSet">
+			<Fields>
+				<Field Name="PID">
+					<DataField>PID</DataField>
+				</Field>
+				<Field Name="BranchType">
+					<DataField>BranchType</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="zjlx">
+					<DataField>zjlx</DataField>
+				</Field>
+				<Field Name="ParentCode">
+					<DataField>ParentCode</DataField>
+				</Field>
+				<Field Name="PreparationCode">
+					<DataField>PreparationCode</DataField>
+				</Field>
+				<Field Name="PreparationTypeName">
+					<DataField>PreparationTypeName</DataField>
+				</Field>
+				<Field Name="TFNum">
+					<DataField>TFNum</DataField>
+				</Field>
+				<Field Name="SYNum">
+					<DataField>SYNum</DataField>
+				</Field>
+				<Field Name="UseDate">
+					<DataField>UseDate</DataField>
+				</Field>
+				<Field Name="EN_Use">
+					<DataField>EN_Use</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_DistributionListNew</CommandText>
+				<DataSourceName>HNTSDataSource</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@startDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@endDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@dept">
+						<Value>=Parameters!dept.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@zjlx">
+						<Value>=Parameters!zjlx.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@zjlb">
+						<Value>=Parameters!zjlb.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@sysj">
+						<Value>=Parameters!sysj.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@type">
+						<Value>9</Value>
+					</QueryParameter>
+					<QueryParameter Name="@deptType">
+						<Value>=Parameters!deptType.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@courtyardId">
+						<Value>=Parameters!courtyardId.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

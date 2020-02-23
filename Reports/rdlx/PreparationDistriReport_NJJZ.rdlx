@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>10.5cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>10.5cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Container1">
+                      <Style />
+                      <KeepTogether>false</KeepTogether>
+                      <PageBreakAtEnd>true</PageBreakAtEnd>
+                      <ReportItems>
+                        <Subreport Name="Subreport1">
+                          <Height>10.3cm</Height>
+                          <Parameters>
+                            <Parameter Name="branchType">
+                              <Value>=Fields!branchType.Value</Value>
+                            </Parameter>
+                            <Parameter Name="departName">
+                              <Value>=Fields!DepartName.Value</Value>
+                            </Parameter>
+                            <Parameter Name="startDate">
+                              <Value>=Parameters!startDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="endDate">
+                              <Value>=Parameters!endDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="preCode">
+                              <Value>=IIF(Parameters!preCodes.Value==""," ",Parameters!preCodes.Value)</Value>
+                            </Parameter>
+                            <Parameter Name="patCode">
+                              <Value>=IIF(Parameters!patCode.Value==""," ",Parameters!patCode.Value)</Value>
+                            </Parameter>
+                            <Parameter Name="printDate">
+                              <Value>=Parameters!printDate.Value</Value>
+                            </Parameter>
+                            <Parameter Name="printer">
+                              <Value>=Parameters!printer.Value</Value>
+                            </Parameter>
+                          </Parameters>
+                          <ReportName>PreparationDistriReportDetails_NJJZ.rdlx</ReportName>
+                          <Style />
+                          <Width>12.5942cm</Width>
+                          <ZIndex>1</ZIndex>
+                        </Subreport>
+                      </ReportItems>
+                      <dd:ConsumeWhiteSpace xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ConsumeWhiteSpace>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>10.5cm</Height>
+        <dd:PreventOrphanedFooter xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:PreventOrphanedFooter>
+        <Style>
+          <TextAlign>Center</TextAlign>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>12.4cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>12.4cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <LeftMargin>1cm</LeftMargin>
+  <dd:StartPageNumber xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">2</dd:StartPageNumber>
+  <PageHeight>21cm</PageHeight>
+  <PageWidth>14.8cm</PageWidth>
+  <RightMargin>1cm</RightMargin>
+  <Width>12.7cm</Width>
+  <ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+  <ReportParameters>
+    <ReportParameter Name="branchType">
+      <DataType>String</DataType>
+      <Prompt>科室编号</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="startDate">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="preCodes">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="patCode">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="printDate">
+      <DataType>DateTime</DataType>
+      <Prompt>参数1</Prompt>
+      <dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+    </ReportParameter>
+    <ReportParameter Name="printer">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTSDataSource">
+      <DataSourceReference>../../RDSX/hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DepartDataSet">
+      <Fields>
+        <Field Name="branchType">
+          <DataField>branchType</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select distinct  branchType,DepartName from  v_PreparationDistriList &#xD;
+where 1=1 and (LEN(@branchType)=0 or charindex(','+ltrim(branchType)+',',','+@branchType+',') &gt; 0)  and (LEN(@preCodes)=0 or charindex(','+ltrim(preparationCode)+',',','+@preCodes+',') &gt; 0) and (LEN(@patCode)=0 or (PatientName like '%'+@patCode+'%' or BeInNo like '%'+@patCode+'%'))  and CONVERT(nvarchar(16),createdon,120)&gt;=@startDate and CONVERT(nvarchar(16),createdon,120)&lt;=@endDate &#xD;
+group by branchType,DepartName </CommandText>
+        <DataSourceName>HNTSDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="branchType">
+            <Value>=Parameters!branchType.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="preCodes">
+            <Value>=Parameters!preCodes.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="patCode">
+            <Value>=Parameters!patCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Portrait</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

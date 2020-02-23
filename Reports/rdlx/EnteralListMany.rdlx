@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>1.7cm</Height>
+		<ReportItems>
+			<Rectangle Name="Container1">
+				<Height>0.9cm</Height>
+				<Left>0.1cm</Left>
+				<Top>0.1cm</Top>
+				<Width>18.6cm</Width>
+				<ZIndex>2</ZIndex>
+				<ReportItems>
+					<Table Name="Table2">
+						<DataSetName>dsCi</DataSetName>
+						<Details>
+							<TableRows>
+								<TableRow>
+									<Height>0.687919cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Subreport Name="Subreport1">
+													<KeepTogether>true</KeepTogether>
+													<Parameters>
+														<Parameter Name="hospRemark">
+															<Value>=Parameters!hospRemark.Value</Value>
+														</Parameter>
+														<Parameter Name="key">
+															<Value>=Fields!Value.Value</Value>
+														</Parameter>
+														<Parameter Name="patCode">
+															<Value>=Parameters!patCode.Value</Value>
+														</Parameter>
+														<Parameter Name="hospName">
+															<Value>=Parameters!hospName.Value</Value>
+														</Parameter>
+													</Parameters>
+													<ReportName>EnteralListChild.rdlx</ReportName>
+												</Subreport>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+							</TableRows>
+						</Details>
+						<Height>0.7cm</Height>
+						<TableColumns>
+							<TableColumn>
+								<Width>18.60021cm</Width>
+							</TableColumn>
+						</TableColumns>
+						<Top>0.1cm</Top>
+						<Width>18.6cm</Width>
+						<ZIndex>1</ZIndex>
+					</Table>
+				</ReportItems>
+			</Rectangle>
+		</ReportItems>
+	</Body>
+	<PageFooter>
+		<Height>0cm</Height>
+		<PrintOnFirstPage>true</PrintOnFirstPage>
+		<PrintOnLastPage>true</PrintOnLastPage>
+	</PageFooter>
+	<BottomMargin>1cm</BottomMargin>
+	<LeftMargin>1cm</LeftMargin>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<RightMargin>1cm</RightMargin>
+	<TopMargin>1cm</TopMargin>
+	<Width>18.8cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>医院名</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="hospRemark">
+			<DataType>String</DataType>
+			<Prompt>医院说明</Prompt>
+			<dd:Multiline xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">true</dd:Multiline>
+		</ReportParameter>
+		<ReportParameter Name="keys">
+			<DataType>String</DataType>
+			<Prompt>keys</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>patCode</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="EnteralList">
+			<Fields>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="AgeStr">
+					<DataField>AgeStr</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select
+isnull(tp.PatientName,'--') as PatientName,
+(case tp.Sex when 0 then '女' when 1 then '男' else '--' end) as Sex,
+tp.AgeStr,
+isnull(tp.BeInNo,'') as BeInNo --住院号
+from  T_Patient tp
+where tp.PatientCode = @patCode and tp.PatientType = 2 </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="dsCi">
+			<Fields>
+				<Field Name="Id">
+					<DataField>Id</DataField>
+				</Field>
+				<Field Name="Value">
+					<DataField>Value</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from dbo.Fun_Split(@key,',') </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="key">
+						<Value>=Parameters!keys.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

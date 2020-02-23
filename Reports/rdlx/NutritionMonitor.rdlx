@@ -1,0 +1,2261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>30.6cm</Height>
+		<ReportItems>
+			<Rectangle Name="Container1">
+				<Height>29.9cm</Height>
+				<Left>0.1935cm</Left>
+				<Style>
+					<BackgroundColor>Transparent</BackgroundColor>
+				</Style>
+				<Width>28.8065cm</Width>
+				<ZIndex>10</ZIndex>
+				<ReportItems>
+					<Table Name="Table1">
+						<DataSetName>PatientDbSet</DataSetName>
+						<Header>
+							<TableRows>
+								<TableRow>
+									<Height>0.764521cm</Height>
+									<TableCells>
+										<TableCell>
+											<ColSpan>12</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox2">
+													<CanGrow>true</CanGrow>
+													<DataElementName>TextBox5</DataElementName>
+													<Value>基本信息</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>11pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>0.765804cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox40">
+													<CanGrow>true</CanGrow>
+													<Value>姓　　名：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox41">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!PatientName.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox42">
+													<CanGrow>true</CanGrow>
+													<Value>姓　　别：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox43">
+													<CanGrow>true</CanGrow>
+													<Value>=IIF(Fields!Sex.Value = 0 ,"女","男")</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Left</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox44">
+													<CanGrow>true</CanGrow>
+													<Value>年　　龄：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox45">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!Age.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox47">
+													<CanGrow>true</CanGrow>
+													<Value>住院号：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox48">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!BeInNo.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox59">
+													<CanGrow>true</CanGrow>
+													<Value>床　　号：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox51">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!BedNo.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox50">
+													<CanGrow>true</CanGrow>
+													<Value>科　　室：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox4">
+													<CanGrow>true</CanGrow>
+													<DataElementName>TextBox1</DataElementName>
+													<Value>=First(Fields!DepartName.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>0.769675cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox53">
+													<CanGrow>true</CanGrow>
+													<Value>入院时间：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox54">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!InputDate.Value.ToString("yyyy-MM-dd")</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>General</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox56">
+													<CanGrow>true</CanGrow>
+													<Value>是否在院：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox57">
+													<CanGrow>true</CanGrow>
+													<Value>=IIF(Fields!IsLeave.Value,"否","是")</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox67">
+													<CanGrow>true</CanGrow>
+													<Value>主要诊断：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>3</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox68">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!IllnessCode.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox71">
+													<CanGrow>true</CanGrow>
+													<Value>饮食医嘱：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>700</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>3</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox72">
+													<CanGrow>true</CanGrow>
+													<Value>=First(Fields!HDA_Name.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>10pt</FontSize>
+														<FontStyle>Normal</FontStyle>
+														<FontWeight>400</FontWeight>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+							</TableRows>
+						</Header>
+						<Height>2.3cm</Height>
+						<TableColumns>
+							<TableColumn>
+								<Width>2.219863cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.774838cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.44186cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>1.84989cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.219863cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>1.84989cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>1.854248cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.108874cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.219863cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>1.84989cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>2.552853cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>4.65807cm</Width>
+							</TableColumn>
+						</TableColumns>
+						<Top>1.2cm</Top>
+						<Width>28.6cm</Width>
+						<ZIndex>5</ZIndex>
+					</Table>
+					<Textbox Name="TextBox1">
+						<CanGrow>true</CanGrow>
+						<DataElementName>TextBox6</DataElementName>
+						<Height>1cm</Height>
+						<Value>=Parameters!hospName.Value + "医院营养监测表"</Value>
+						<Style>
+							<FontFamily>Arial</FontFamily>
+							<FontSize>14pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>Center</TextAlign>
+							<VerticalAlign>Middle</VerticalAlign>
+						</Style>
+						<Top>0.1cm</Top>
+						<Width>28.8065cm</Width>
+						<ZIndex>6</ZIndex>
+					</Textbox>
+					<Textbox Name="TextBox5">
+						<DataElementName>TextBox12</DataElementName>
+						<Height>0.75cm</Height>
+						<Value>重要指征</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>3.6cm</Top>
+						<Width>2.8cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Tablix Name="Tablix2">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox7">
+												<CanGrow>true</CanGrow>
+												<DataElementName>TextBox9</DataElementName>
+												<Value>体格项</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox11">
+													<CanGrow>true</CanGrow>
+													<Value>=iif(Fields!BasicValue.Value&lt;&gt;"-1",Code.GetBMIRise(Code.SetBasicName(Fields!BasicName.Value),Fields!BasicValue.Value,Parameters!isChild.Value),"")</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix2_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox8">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix2_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OrderID.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox10">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.SetBasicName(Fields!BasicName.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>LaboratoryDataDataSet</DataSetName>
+						<Filters>
+							<Filter>
+								<FilterExpression>=Fields!BasicName.Value</FilterExpression>
+								<FilterValues>
+									<FilterValue>''</FilterValue>
+								</FilterValues>
+								<Operator>NotEqual</Operator>
+							</Filter>
+						</Filters>
+						<Top>4.4cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>9</ZIndex>
+					</Tablix>
+					<Textbox Name="TextBox9">
+						<DataElementName>TextBox16</DataElementName>
+						<Height>0.75cm</Height>
+						<Value>肠外应用</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>11.1cm</Top>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="2" or Parameters!Types.Value="12" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+						<Width>3.6cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Textbox Name="TextBox35">
+						<Height>0.75cm</Height>
+						<Value>膳食营养素</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>22.9cm</Top>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="3" or Parameters!Types.Value="13" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+						<Width>4cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Textbox Name="TextBox12">
+						<DataElementName>TextBox7</DataElementName>
+						<Height>0.75cm</Height>
+						<Value>合并营养素</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>13.9cm</Top>
+						<Width>4cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Tablix Name="Tablix4">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox17">
+												<CanGrow>true</CanGrow>
+												<Value>制剂名称</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox20">
+													<CanGrow>true</CanGrow>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix4_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox18">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix4_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!BasicName.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox19">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.SetPreparationName(Fields!BasicName.Value,Fields!ParentCode.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientDosageDataSet</DataSetName>
+						<Top>9.2cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>8</ZIndex>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="1" or Parameters!Types.Value="12" or Parameters!Types.Value="13" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+					</Tablix>
+					<Tablix Name="Tablix6">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox27">
+												<CanGrow>true</CanGrow>
+												<Value>营养素</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox30">
+													<CanGrow>true</CanGrow>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix6_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox28">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix6_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!BasicName.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox29">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.GetProcessingVal(Fields!BasicName.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientStatisticsDietReport</DataSetName>
+						<Top>23.7cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>6</ZIndex>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="3" or Parameters!Types.Value="13" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+					</Tablix>
+					<Tablix Name="Tablix3">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox13">
+												<CanGrow>true</CanGrow>
+												<Value>营养素</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox16">
+													<CanGrow>true</CanGrow>
+													<DataElementName>TextBox4</DataElementName>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix3_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox14">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix3_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!BasicName.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox15">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.GetProcessingVal(Fields!BasicName.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientStatisticsDataSet</DataSetName>
+						<Top>17.6cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>4</ZIndex>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="1" or Parameters!Types.Value="12" or Parameters!Types.Value="13" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+					</Tablix>
+					<Textbox Name="TextBox21">
+						<Height>0.75cm</Height>
+						<Value>肠内营养素</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>16.8cm</Top>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="1" or Parameters!Types.Value="12" or Parameters!Types.Value="13" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+						<Width>4cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Tablix Name="Tablix5">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox22">
+												<CanGrow>true</CanGrow>
+												<Value>营养素</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox25">
+													<CanGrow>true</CanGrow>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix5_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox23">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix5_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!BasicName.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox24">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.GetProcessingVal(Fields!BasicName.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientStatisticsPNReport</DataSetName>
+						<Top>20.6cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>5</ZIndex>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="2" or Parameters!Types.Value="12" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+					</Tablix>
+					<Tablix Name="Tablix8">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox36">
+												<CanGrow>true</CanGrow>
+												<Value>营养素</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox39">
+													<CanGrow>true</CanGrow>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix8_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox37">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix8_RowGroup1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!BasicName.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox38">
+												<CanGrow>true</CanGrow>
+												<Value>=Code.GetProcessingVal(Fields!BasicName.Value)</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value&gt;0 or Fields!BasicValue.Value&lt;&gt;-1,false,true)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientStatisticsAllReport</DataSetName>
+						<Top>14.7cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.196865cm</Width>
+						<ZIndex>3</ZIndex>
+					</Tablix>
+					<Textbox Name="TextBox26">
+						<Height>0.75cm</Height>
+						<Value>肠外营养素</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>19.8cm</Top>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="2" or Parameters!Types.Value="12" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+						<Width>4cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Tablix Name="Tablix7">
+						<TablixCorner>
+							<TablixCornerRows>
+								<TablixCornerRow>
+									<TablixCornerCell>
+										<CellContents>
+											<Textbox Name="TextBox31">
+												<CanGrow>true</CanGrow>
+												<Value>制剂名称</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixCornerCell>
+								</TablixCornerRow>
+							</TablixCornerRows>
+						</TablixCorner>
+						<TablixBody>
+							<TablixColumns>
+								<TablixColumn>
+									<Width>2.3cm</Width>
+								</TablixColumn>
+							</TablixColumns>
+							<TablixRows>
+								<TablixRow>
+									<Height>0.75cm</Height>
+									<TablixCells>
+										<TablixCell>
+											<CellContents>
+												<Textbox Name="TextBox34">
+													<CanGrow>true</CanGrow>
+													<Value>=Code.SetValue(Fields!BasicValue.Value)</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<Border>
+															<Style>Solid</Style>
+														</Border>
+													</Style>
+													<Visibility>
+														<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+													</Visibility>
+												</Textbox>
+											</CellContents>
+										</TablixCell>
+									</TablixCells>
+								</TablixRow>
+							</TablixRows>
+						</TablixBody>
+						<TablixColumnHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix7_OperationDate1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<SortExpressions>
+										<SortExpression>
+											<Direction>Ascending</Direction>
+											<Value>=Fields!OperationDate.Value</Value>
+										</SortExpression>
+									</SortExpressions>
+									<TablixHeader>
+										<Size>0.75cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox32">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!OperationDate.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixColumnHierarchy>
+						<TablixRowHierarchy>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix7_BasicName1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<TablixHeader>
+										<Size>3.888065cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox33">
+												<CanGrow>true</CanGrow>
+												<Value>=Fields!BasicName.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>Solid</Style>
+													</Border>
+												</Style>
+												<Visibility>
+													<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+												</Visibility>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixRowHierarchy>
+						<DataSetName>NutrientPNDosageReport</DataSetName>
+						<Top>11.9cm</Top>
+						<Height>1.5cm</Height>
+						<Width>6.188065cm</Width>
+						<ZIndex>7</ZIndex>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="2" or Parameters!Types.Value="12" or Parameters!Types.Value="23" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+					</Tablix>
+					<Textbox Name="TextBox6">
+						<DataElementName>TextBox2</DataElementName>
+						<Height>0.75cm</Height>
+						<Value>肠内应用</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>11pt</FontSize>
+							<FontStyle>Normal</FontStyle>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>General</TextAlign>
+						</Style>
+						<Top>8.4cm</Top>
+						<Visibility>
+							<Hidden>=iif(Parameters!Types.Value="1" or Parameters!Types.Value="12" or Parameters!Types.Value="13" or Parameters!Types.Value="123",false,true)</Hidden>
+						</Visibility>
+						<Width>3.6cm</Width>
+						<ZIndex>2</ZIndex>
+					</Textbox>
+					<Rectangle Name="Container2">
+						<Height>2.101cm</Height>
+						<Top>6.097569cm</Top>
+						<Width>3.1cm</Width>
+						<ZIndex>11</ZIndex>
+						<ReportItems>
+							<Table Name="Table2">
+								<DataSetName>BiochemistryDataSet</DataSetName>
+								<Details>
+									<TableRows>
+										<TableRow>
+											<Height>1.293938cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Textbox Name="TextBox52">
+															<CanGrow>true</CanGrow>
+															<Value>=Fields!PD_Name.Value &amp; "（样本来源于" &amp; Fields!SampleName.Value &amp; "）"</Value>
+															<Style>
+																<FontFamily>微软雅黑</FontFamily>
+																<FontSize>11pt</FontSize>
+																<FontStyle>Normal</FontStyle>
+																<FontWeight>700</FontWeight>
+																<PaddingBottom>2pt</PaddingBottom>
+																<PaddingLeft>2pt</PaddingLeft>
+																<PaddingRight>2pt</PaddingRight>
+																<PaddingTop>2pt</PaddingTop>
+																<TextAlign>Left</TextAlign>
+																<VerticalAlign>Middle</VerticalAlign>
+															</Style>
+														</Textbox>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+										<TableRow>
+											<Height>0.79627cm</Height>
+											<TableCells>
+												<TableCell>
+													<ReportItems>
+														<Subreport Name="Subreport1">
+															<Parameters>
+																<Parameter Name="patientCode">
+																	<Value>=Parameters!patientCode.Value</Value>
+																</Parameter>
+																<Parameter Name="startDate">
+																	<Value>=Parameters!startDate.Value</Value>
+																</Parameter>
+																<Parameter Name="endDate">
+																	<Value>=Parameters!endDate.Value</Value>
+																</Parameter>
+																<Parameter Name="pdCode">
+																	<Value>=Fields!PDCode.Value</Value>
+																</Parameter>
+															</Parameters>
+															<ReportName>ChildBiochemistryDataMonitoringList.rdlx</ReportName>
+														</Subreport>
+													</ReportItems>
+												</TableCell>
+											</TableCells>
+										</TableRow>
+									</TableRows>
+								</Details>
+								<Height>2.1cm</Height>
+								<Style>
+									<FontFamily>微软雅黑</FontFamily>
+									<TextAlign>Left</TextAlign>
+									<VerticalAlign>Middle</VerticalAlign>
+								</Style>
+								<TableColumns>
+									<TableColumn>
+										<Width>3.094998cm</Width>
+									</TableColumn>
+								</TableColumns>
+								<Width>3.1cm</Width>
+								<ZIndex>10</ZIndex>
+							</Table>
+						</ReportItems>
+					</Rectangle>
+				</ReportItems>
+			</Rectangle>
+		</ReportItems>
+	</Body>
+	<Code>Function SetValue(ByVal v As Double) As String
+	If(v = -2) Then
+		Return ""
+	Else 
+		Return v 
+	End If
+End Function
+
+Function GetProcessingVal(ByVal v As String) As String
+	Return Mid(v,3)  
+End Function
+
+
+Function SetPreparationName(ByVal v As String, ByVal p As String) As String
+	If(p = "CNW0000000001") Then
+		Return "【食】" + v
+	Else If(p = "CNW0000000002") 
+		Return "【药】" + v 
+	Else
+		Return v
+	End If
+End Function
+
+Function SetBasicName(ByVal n As String) As String
+	If(n.Length &gt; 0) Then
+		Dim t = split(n, "§")
+		If IsArray(t) Then
+			Return t(1)
+		Else
+			Return n
+		End If
+	End If
+End Function
+
+Function GetBMIRise(ByVal n As String, ByVal value As Double, ByVal ischild As Integer) As String
+	Dim content As String
+	content = value.ToString()
+	If(n = "BMI") Then
+		Dim maxValue As Double
+		maxValue = iif(ischild = 1, 17.9, 23.9)
+		Dim minValue As Double
+			minValue = iif(ischild = 1, 13.5, 18.5)
+		If(value &lt;= minValue) Then
+			content = value.ToString() + " ▼"
+		Else If(value &gt;= maxValue) Then
+			content = value.ToString() + " ▲"
+		End If
+	End If
+	Return content
+End Function 
+
+
+</Code>
+	<LeftMargin>0.5cm</LeftMargin>
+	<PageHeight>21cm</PageHeight>
+	<PageWidth>29.7cm</PageWidth>
+	<Width>29cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>医院名称</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="startDate">
+			<DataType>String</DataType>
+			<Prompt>startDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="endDate">
+			<DataType>String</DataType>
+			<Prompt>endDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="Types">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>Types</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isChild">
+			<DataType>Integer</DataType>
+			<Prompt>isChild</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="LaboratoryDataDataSet">
+			<Fields>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="OrderID">
+					<DataField>OrderID</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_LaboratoryDataReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientDosageDataSet">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="ParentCode">
+					<DataField>ParentCode</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientDosageReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientStatisticsDataSet">
+			<Fields>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientStatisticsReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientPNDosageReport">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientPNDosageReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientStatisticsDietReport">
+			<Fields>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientStatisticsDietReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientStatisticsPNReport">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientStatisticsPNReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="NutrientStatisticsAllReport">
+			<Fields>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_NutrientStatisticsAllReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="PatientDbSet">
+			<Fields>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="InputDate">
+					<DataField>InputDate</DataField>
+				</Field>
+				<Field Name="BranchType">
+					<DataField>BranchType</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="IllnessCode">
+					<DataField>IllnessCode</DataField>
+				</Field>
+				<Field Name="DietDoctorAdvice">
+					<DataField>DietDoctorAdvice</DataField>
+				</Field>
+				<Field Name="HDA_Name">
+					<DataField>HDA_Name</DataField>
+				</Field>
+				<Field Name="RiskStatus">
+					<DataField>RiskStatus</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="IsLeave">
+					<DataField>IsLeave</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="InputDateStr">
+					<DataField>InputDateStr</DataField>
+				</Field>
+				<Field Name="InputHeight">
+					<DataField>InputHeight</DataField>
+				</Field>
+				<Field Name="InputWeight">
+					<DataField>InputWeight</DataField>
+				</Field>
+				<Field Name="MaternalInfo">
+					<DataField>MaternalInfo</DataField>
+				</Field>
+				<Field Name="Marital">
+					<DataField>Marital</DataField>
+				</Field>
+				<Field Name="Nation">
+					<DataField>Nation</DataField>
+				</Field>
+				<Field Name="Profession">
+					<DataField>Profession</DataField>
+				</Field>
+				<Field Name="ChiefComplaint">
+					<DataField>ChiefComplaint</DataField>
+				</Field>
+				<Field Name="PresentHistory">
+					<DataField>PresentHistory</DataField>
+				</Field>
+				<Field Name="Pasthistory">
+					<DataField>Pasthistory</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>  select * from V_AllPatientInfoList where PatientCode=@patientCode</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="BiochemistryDataSet">
+			<Fields>
+				<Field Name="PDCode">
+					<DataField>PDCode</DataField>
+				</Field>
+				<Field Name="PD_Name">
+					<DataField>PD_Name</DataField>
+				</Field>
+				<Field Name="SampleName">
+					<DataField>SampleName</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select PDCode,PD_Name,SampleName from dbo.H_BiochemistryTest bt inner join dbo.H_ParameterChild pc on bt.P_Code=pc.P_Code 
+left join H_ParameterDirectory pd on pd.PD_Code=bt.PDCode left join H_ParameterSample ps on ps.SampleCode=bt.SampleCode  where PatientCode=@PatientCode and pc.IsAttention=1 and bt.CreatedOn&gt;=Convert(varchar(100),@StartDate,121) and bt.CreatedOn&lt;Convert(varchar(100),DATEADD(d,1,@EndDate),121) 
+GROUP BY PDCode,PD_Name,SampleName
+ORDER BY PD_Name</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

@@ -1,0 +1,661 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>4.9cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.481386cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>6</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<DataElementName>TextBox7</DataElementName>
+											<Value>=First(Fields!DepartName.Value)</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox13">
+											<Value>=First(Fields!BedNo.Value)</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<Value>=First(Fields!PatientName.Value)</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.482888cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<Value>=Fields!FullName.Value</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Footer>
+					<TableRows>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox36">
+											<Value>="能量"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox38">
+											<Value>=Fields!Energy.Value &amp; "kcal"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox40">
+											<Value>="蛋白质"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<Value>=Fields!Protein.Value &amp; "g"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<DataElementName>TextBox43</DataElementName>
+											<Value>="脂肪"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox45">
+											<Value>=Fields!Fat.Value &amp; "g"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox47">
+											<Value>="碳水化合物"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<Value>=Fields!Carbohydr.Value &amp; "g"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<DataElementName>TextBox1</DataElementName>
+											<Value>="使用时间"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>9</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox11">
+											<DataElementName>TextBox9</DataElementName>
+											<Value>="遵循医嘱服用"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<Value>="注意事项"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>9</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<Value>="静止静脉输注"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox43">
+											<DataElementName>TextBox3</DataElementName>
+											<Value>="医师备注"</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>9</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<DataElementName>TextBox5</DataElementName>
+											<Value>=Code.GetInboundAmount(Fields!EN_Remark.Value,18)</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<DataElementName>TextBox6</DataElementName>
+											<Value>=Code.GetInboundAmount(Fields!EN_Remark.Value,19)</Value>
+											<Style>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>15pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.490818cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox64">
+											<Value>="上海中医药大学附属岳阳中西医结合医院营养科"</Value>
+											<Style>
+												<Color>LightGray</Color>
+												<FontFamily>宋体</FontFamily>
+												<FontSize>8pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<dd:ShrinkToFit xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:ShrinkToFit>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Footer>
+				<Height>4.4cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.656371cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.654952cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.654952cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.658768cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.656422cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.659314cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.659347cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.659378cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.659413cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.658789cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.661147cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.661147cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>7.9cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<Code>Function GetInboundAmount(ByVal u As String, ByVal t As Double) As String
+	If(u.Length &lt;= 18 And t &lt;= 18) Then
+		Return u.Substring(0, u.Length)
+	Else
+		If(u.Length &gt; 18 And t &lt;= 18) Then
+			Return u.Substring(0, 18)
+		Else
+			Return u.Substring(t - 1, (u.Length - (t - 1)))
+		End If
+	End If
+End Function
+</Code>
+	<PageHeight>4.9cm</PageHeight>
+	<PageWidth>7.9cm</PageWidth>
+	<Width>7.9cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="pids">
+			<DataType>String</DataType>
+			<Prompt>pids</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="userDate">
+			<DataType>String</DataType>
+			<Prompt>时间</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="type">
+			<DataType>String</DataType>
+			<Prompt>2</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="Nums">
+			<DataType>Integer</DataType>
+			<Prompt>个数</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="DataSource1">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet1">
+			<Fields>
+				<Field Name="PID">
+					<DataField>PID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="EN_Amount">
+					<DataField>EN_Amount</DataField>
+				</Field>
+				<Field Name="Energy">
+					<DataField>Energy</DataField>
+				</Field>
+				<Field Name="Protein">
+					<DataField>Protein</DataField>
+				</Field>
+				<Field Name="Fat">
+					<DataField>Fat</DataField>
+				</Field>
+				<Field Name="Carbohydr">
+					<DataField>Carbohydr</DataField>
+				</Field>
+				<Field Name="In_Date">
+					<DataField>In_Date</DataField>
+				</Field>
+				<Field Name="Qrnumber">
+					<DataField>Qrnumber</DataField>
+				</Field>
+				<Field Name="EN_Use">
+					<DataField>EN_Use</DataField>
+				</Field>
+				<Field Name="price">
+					<DataField>price</DataField>
+				</Field>
+				<Field Name="EN_Way">
+					<DataField>EN_Way</DataField>
+				</Field>
+				<Field Name="EN_Remark">
+					<DataField>EN_Remark</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_PreparationLabel_Test</CommandText>
+				<DataSourceName>DataSource1</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@pids">
+						<Value>=Parameters!pids.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@useDate">
+						<Value>=Parameters!userDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@type">
+						<Value>=Parameters!type.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@rowCount">
+						<Value>2</Value>
+					</QueryParameter>
+					<QueryParameter Name="@typename">
+						<Value>0</Value>
+					</QueryParameter>
+					<QueryParameter Name="@Nums">
+						<Value>=Parameters!Nums.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

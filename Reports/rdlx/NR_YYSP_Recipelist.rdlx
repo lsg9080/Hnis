@@ -1,0 +1,472 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>2.5cm</Height>
+		<ReportItems>
+			<Tablix Name="Tablix2">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox15">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox8</DataElementName>
+										<Value>配餐日期</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox22">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox10</DataElementName>
+										<Value>餐次</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox23">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox12</DataElementName>
+										<Value>品名</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox81">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox14</DataElementName>
+										<Value>原料</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>1.608213cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>1.314922cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>0.992188cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox3</DataElementName>
+											<Value>=Fields!Num.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>None</Style>
+												</Border>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox4</DataElementName>
+											<Value>=Fields!Unit.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>None</Style>
+												</Border>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<TablixHeader>
+								<Size>0.992188cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox7">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox9</DataElementName>
+										<Value>数量</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember />
+							</TablixMembers>
+						</TablixMember>
+						<TablixMember>
+							<TablixHeader>
+								<Size>0.992188cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox25">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox11</DataElementName>
+										<Value>单位</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember />
+							</TablixMembers>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix2_DayNum1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!DayNum.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>2.932911cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox17">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!UseDate.Value.tostring("yyyy-MM-dd")</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>None</Style>
+											</Border>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix2_MealTtimes1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!MealTtimes.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<TablixHeader>
+										<Size>1.67886cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox14">
+												<CanGrow>true</CanGrow>
+												<DataElementName>TextBox6</DataElementName>
+												<Value>=Fields!MealTtimes.Value</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontSize>10pt</FontSize>
+													<FontStyle>Normal</FontStyle>
+													<FontWeight>400</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<Border>
+														<Style>None</Style>
+													</Border>
+													<BottomBorder>
+														<Style>Dashed</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember>
+											<Group Name="Tablix2_MenuName1">
+												<GroupExpressions>
+													<GroupExpression>=Fields!MenuName.Value</GroupExpression>
+												</GroupExpressions>
+											</Group>
+											<TablixHeader>
+												<Size>4.736651cm</Size>
+												<CellContents>
+													<Textbox Name="TextBox11">
+														<CanGrow>true</CanGrow>
+														<DataElementName>TextBox5</DataElementName>
+														<Value>=Fields!MenuName.Value</Value>
+														<Style>
+															<FontFamily>微软雅黑</FontFamily>
+															<FontSize>10pt</FontSize>
+															<FontStyle>Normal</FontStyle>
+															<FontWeight>400</FontWeight>
+															<PaddingBottom>2pt</PaddingBottom>
+															<PaddingLeft>2pt</PaddingLeft>
+															<PaddingRight>2pt</PaddingRight>
+															<PaddingTop>2pt</PaddingTop>
+															<TextAlign>Center</TextAlign>
+															<VerticalAlign>Middle</VerticalAlign>
+															<Border>
+																<Style>None</Style>
+															</Border>
+															<BottomBorder>
+																<Style>Dashed</Style>
+															</BottomBorder>
+														</Style>
+													</Textbox>
+												</CellContents>
+											</TablixHeader>
+											<TablixMembers>
+												<TablixMember>
+													<Group Name="Tablix2_FoodName1">
+														<GroupExpressions>
+															<GroupExpression>=Fields!FoodName.Value</GroupExpression>
+														</GroupExpressions>
+													</Group>
+													<TablixHeader>
+														<Size>5.323234cm</Size>
+														<CellContents>
+															<Textbox Name="TextBox9">
+																<CanGrow>true</CanGrow>
+																<DataElementName>TextBox7</DataElementName>
+																<Value>=Fields!FoodName.Value</Value>
+																<Style>
+																	<FontFamily>微软雅黑</FontFamily>
+																	<FontSize>10pt</FontSize>
+																	<FontStyle>Normal</FontStyle>
+																	<FontWeight>400</FontWeight>
+																	<PaddingBottom>2pt</PaddingBottom>
+																	<PaddingLeft>2pt</PaddingLeft>
+																	<PaddingRight>2pt</PaddingRight>
+																	<PaddingTop>2pt</PaddingTop>
+																	<TextAlign>Center</TextAlign>
+																	<VerticalAlign>Middle</VerticalAlign>
+																	<Border>
+																		<Style>None</Style>
+																	</Border>
+																	<BottomBorder>
+																		<Style>Dashed</Style>
+																	</BottomBorder>
+																</Style>
+															</Textbox>
+														</CellContents>
+													</TablixHeader>
+												</TablixMember>
+											</TablixMembers>
+										</TablixMember>
+									</TablixMembers>
+								</TablixMember>
+							</TablixMembers>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<RepeatRowHeaders>true</RepeatRowHeaders>
+				<DataSetName>DataSet</DataSetName>
+				<Height>1.9957cm</Height>
+				<Width>17.6cm</Width>
+				<ZIndex>2</ZIndex>
+			</Tablix>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>17.7cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="t">
+			<DataType>Integer</DataType>
+			<Prompt>3--配餐，4--24h膳调</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="createdBy">
+			<DataType>String</DataType>
+			<Prompt>createdBy</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="useDate">
+			<DataType>DateTime</DataType>
+			<Prompt>配餐日期</Prompt>
+			<dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="AccommodationID">
+					<DataField>AccommodationID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="DayNum">
+					<DataField>DayNum</DataField>
+				</Field>
+				<Field Name="MealTtimes">
+					<DataField>MealTtimes</DataField>
+				</Field>
+				<Field Name="MenuName">
+					<DataField>MenuName</DataField>
+				</Field>
+				<Field Name="FoodName">
+					<DataField>FoodName</DataField>
+				</Field>
+				<Field Name="Num">
+					<DataField>Num</DataField>
+				</Field>
+				<Field Name="Unit">
+					<DataField>Unit</DataField>
+				</Field>
+				<Field Name="UseDate">
+					<DataField>UseDate</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>SELECT sa.AccommodationID, sa.PatientCode, af.DayNum,af.MealTtimes,af.MenuName,afm.FoodName,afm.Num,case when afm.Unit='' then 'g' else afm.Unit end Unit
+,sa.UseDate FROM  
+dbo.T_AccommodationFoodMenu  afm
+INNER join  dbo.T_AccommodationFood af on af.AccommodationFoodID = afm.AccommodationFoodID
+INNER join dbo.T_Accommodation sa on sa.AccommodationID = af.AccommodationID
+WHERE PatientCode=@patientCode AND IsDelete=0 AND PatientType=1 AND AccommodationType=@t AND sa.CreateBy=@createdBy AND sa.UseDate=@useDate ORDER BY sa.UseDate,MealTtimesID</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@t">
+						<Value>=Parameters!t.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@createdBy">
+						<Value>=Parameters!createdBy.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@useDate">
+						<Value>=Parameters!useDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

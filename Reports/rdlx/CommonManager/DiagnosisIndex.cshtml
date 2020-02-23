@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/HeaderShared.cshtml";
+}
+<div class="layui-layout" id="layui-layout">
+    <div class="layui-side" id="admin-side" style="background-color: #f3f3f3; width: 200px;">
+        <div style="border: 1px solid #d2d2d2; margin: 10px; height: 102px; padding: 10px; margin-bottom: 0; padding-bottom: 0; background-color: #fff;">
+            <div class="trr">姓名：一二三</div>
+            <div class="trr">科室：老年二十三科</div>
+            <div class="trr">床号：166床</div>
+            <div class="trr">住院号：A215545</div>
+            <div class="trr" title="一二三四五六七八九十">饮食医嘱：一二三四五六</div>
+        </div>
+        <div class="trr" style="text-align: center; background-color: #000; color: #fff; padding: 10px; margin-left: 10px; margin-right: 10px;">监测中心</div>
+        <div style="border: 1px solid #d2d2d2; margin: 10px; background-color: #fff; padding: 10px; margin-bottom: 0; padding-bottom: 0;" id="leftDiv">
+            
+        </div>
+        <div class="trr" style="text-align: center; background-color: #000; color: #fff; padding: 10px; margin-left: 10px; margin-right: 10px;">返回</div>
+    </div>
+    <div class="layui-body" style="padding: 0; margin: 0; overflow: hidden;" id="admin-body">
+        <div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab" id="admin-nav-side" style="margin: 0; padding: 0; ">
+            <div class="layui-tab-content" style="min-height: 150px; padding: 0; margin: 0;">
+                <div class="layui-tab-item layui-show">
+                    <iframe id="mainIframe" src="/TreatmentCenter/ScreeningManagement/NRS2002Single/@ViewBag.patCode" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winDiagnosis'], function () {
+        var index_diagnosis = layui.winDiagnosis;
+        index_diagnosis.win_resize("#mainIframe", 70);
+        index_diagnosis.win_resize("#leftDiv",304);
+
+    });
+</script>

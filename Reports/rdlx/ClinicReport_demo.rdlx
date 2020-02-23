@@ -1,0 +1,1071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>11cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>DataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.871389cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>上海营康科技临床营养科</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>12pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>="姓名："&amp;Fields!PatientName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.871389cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>="医院地址：上海市长逸路15号"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>="出生日期："&amp;Fields!BirthDate.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.871389cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>="联系电话：021-88888888"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<Value>="门诊号："&amp;Fields!BeInNo.Value"病人ID：16062500000141"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Height>2.614166cm</Height>
+				<Left>0.2cm</Left>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<TextAlign>Center</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+					<BorderStyle>
+						<Default>Solid</Default>
+					</BorderStyle>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>8.599302cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>8.599302cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.4cm</Top>
+				<Width>17.2cm</Width>
+			</Table>
+			<Table Name="Table2">
+				<DataSetName>DataSet2</DataSetName>
+				<Header>
+					<RepeatOnNewPage>true</RepeatOnNewPage>
+					<TableRows>
+						<TableRow>
+							<Height>0.699248cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<CanGrow>true</CanGrow>
+											<Value>检查项目</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox20">
+											<CanGrow>true</CanGrow>
+											<Value>指标项</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<Value>数值</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox28">
+											<Value>结论</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox31">
+											<Value>参考范围</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox34">
+											<CanGrow>true</CanGrow>
+											<Value>单位</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.703044cm</Height>
+							<TableCells>
+								<TableCell>
+									<dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+									<dd:AutoMergeMode xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">Always</dd:AutoMergeMode>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!PD_Name.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox23">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!P_Name.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox24">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.ShowAsBtValue(Fields!AsBt_Value.Value,Fields!AsBt_TextResult.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetAsBtResult(Fields!AsBt_Result.Value,0)</Value>
+											<Style>
+												<Color>=Switch(Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=1,"red", Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=2,"green", Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=0,"black")</Color>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox26">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!AsBt_ReferenceValue.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox27">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!P_Unit.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>1.4cm</Height>
+				<Left>0.2cm</Left>
+				<Style>
+					<BorderStyle>
+						<Default>Solid</Default>
+					</BorderStyle>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>2.909471cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.900023cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.900023cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.900023cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>6.2cm</Top>
+				<Width>17.80954cm</Width>
+				<ZIndex>4</ZIndex>
+			</Table>
+			<Tablix Name="Tablix1">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox18">
+										<CanGrow>true</CanGrow>
+										<Value>检查项目</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<TopBorder>
+												<Style>Solid</Style>
+											</TopBorder>
+											<BottomBorder>
+												<Style>Solid</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>3.6cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>2cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>2.5cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>4cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>2.6cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>0.75cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!P_Name.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.ShowAsBtValue(Fields!AsBt_Value.Value,Fields!AsBt_TextResult.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetAsBtResult(Fields!AsBt_Result.Value,0)</Value>
+											<Style>
+												<Color>=Switch(Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=1,"red", Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=2,"green", Code.GetAsBtResult(Fields!AsBt_Result.Value,1)=0,"black")</Color>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!AsBt_ReferenceValue.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!P_Unit.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_ColumnGroup1">
+								<GroupExpressions>
+									<GroupExpression />
+								</GroupExpressions>
+							</Group>
+							<TablixMembers>
+								<TablixMember>
+									<TablixHeader>
+										<Size>0.9cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox12">
+												<CanGrow>true</CanGrow>
+												<Value>指标项</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontSize>10pt</FontSize>
+													<FontStyle>Normal</FontStyle>
+													<FontWeight>700</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<TopBorder>
+														<Style>Solid</Style>
+													</TopBorder>
+													<BottomBorder>
+														<Style>Solid</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember />
+									</TablixMembers>
+								</TablixMember>
+								<TablixMember>
+									<TablixHeader>
+										<Size>0.9cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox13">
+												<Value>数值</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontSize>10pt</FontSize>
+													<FontStyle>Normal</FontStyle>
+													<FontWeight>700</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<TopBorder>
+														<Style>Solid</Style>
+													</TopBorder>
+													<BottomBorder>
+														<Style>Solid</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember />
+									</TablixMembers>
+								</TablixMember>
+								<TablixMember>
+									<TablixHeader>
+										<Size>0.9cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox14">
+												<Value>结论</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontSize>10pt</FontSize>
+													<FontStyle>Normal</FontStyle>
+													<FontWeight>700</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<TopBorder>
+														<Style>Solid</Style>
+													</TopBorder>
+													<BottomBorder>
+														<Style>Solid</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember />
+									</TablixMembers>
+								</TablixMember>
+								<TablixMember>
+									<TablixHeader>
+										<Size>0.9cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox15">
+												<Value>参考范围</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontSize>10pt</FontSize>
+													<FontStyle>Normal</FontStyle>
+													<FontWeight>700</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<TopBorder>
+														<Style>Solid</Style>
+													</TopBorder>
+													<BottomBorder>
+														<Style>Solid</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember />
+									</TablixMembers>
+								</TablixMember>
+								<TablixMember>
+									<TablixHeader>
+										<Size>0.9cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox16">
+												<CanGrow>true</CanGrow>
+												<Value>单位</Value>
+												<Style>
+													<FontFamily>微软雅黑</FontFamily>
+													<FontWeight>700</FontWeight>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<TopBorder>
+														<Style>Solid</Style>
+													</TopBorder>
+													<BottomBorder>
+														<Style>Solid</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+								</TablixMember>
+							</TablixMembers>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_DepartName1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!PD_Code.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>3cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox17">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!PD_Name.Value</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember>
+									<Group Name="Tablix1_P_Name1">
+										<GroupExpressions>
+											<GroupExpression>=Fields!P_Name.Value</GroupExpression>
+										</GroupExpressions>
+									</Group>
+									<TablixMembers>
+										<TablixMember />
+									</TablixMembers>
+								</TablixMember>
+							</TablixMembers>
+							<DataElementName>Tablix1_PDName</DataElementName>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<DataSetName>DataSet2</DataSetName>
+				<Top>3.4cm</Top>
+				<Left>0.150001cm</Left>
+				<Height>1.65cm</Height>
+				<Width>17.7cm</Width>
+				<ZIndex>3</ZIndex>
+				<Style>
+					<TopBorder>
+						<Style>Solid</Style>
+					</TopBorder>
+					<LeftBorder>
+						<Style>Solid</Style>
+					</LeftBorder>
+					<RightBorder>
+						<Style>Solid</Style>
+					</RightBorder>
+					<BottomBorder>
+						<Style>Solid</Style>
+					</BottomBorder>
+				</Style>
+			</Tablix>
+		</ReportItems>
+	</Body>
+	<BottomMargin>0.5cm</BottomMargin>
+	<LeftMargin>0.5cm</LeftMargin>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<RightMargin>0.5cm</RightMargin>
+	<TopMargin>0.5cm</TopMargin>
+	<Width>18.00954cm</Width>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BirthDate">
+					<DataField>BirthDate</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select '丁亦灵（男，1月17天）' PatientName,'2019-01-09' BirthDate,'123456' BeInNo,'16062500000141' PatientCode</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+			</Query>
+		</DataSet>
+		<DataSet Name="DataSet2">
+			<Fields>
+				<Field Name="PD_Name">
+					<DataField>PD_Name</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="PD_Code">
+					<DataField>PD_Code</DataField>
+				</Field>
+				<Field Name="P_Code">
+					<DataField>P_Code</DataField>
+				</Field>
+				<Field Name="P_Name">
+					<DataField>P_Name</DataField>
+				</Field>
+				<Field Name="AsBt_Value">
+					<DataField>AsBt_Value</DataField>
+				</Field>
+				<Field Name="P_Unit">
+					<DataField>P_Unit</DataField>
+				</Field>
+				<Field Name="AsBt_Result">
+					<DataField>AsBt_Result</DataField>
+				</Field>
+				<Field Name="AsBt_ReferenceValue">
+					<DataField>AsBt_ReferenceValue</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select	'	风湿3项	' PD_Name,'	16062500000141	' PatientCode,'	风湿3项	' PD_Code,'	C8520	' P_Code,'	抗O(ASO)	' P_Name,'	26.3	' AsBt_Value,'	IU/L	' P_Unit,'	z	'AsBt_Result,'	0.0-200.0	'AsBt_ReferenceValue
+union	select	'	风湿3项	' PD_Name,'	16062500000141	' PatientCode,'	风湿3项	' PD_Code,'	C8530	' P_Code,'	类风湿因子(RF)	' P_Name,'	4.2	' AsBt_Value,'	IU/L	' P_Unit,'	z	'AsBt_Result,'	0.0-14.0	'AsBt_ReferenceValue
+union	select	'	风湿3项	' PD_Name,'	16062500000141	' PatientCode,'	风湿3项	' PD_Code,'	C8540	' P_Code,'	C-反应蛋白(CRP)	' P_Name,'	0.3	' AsBt_Value,'	mg/L	' P_Unit,'	z	'AsBt_Result,'	0.0-5.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8010	' P_Code,'	*谷丙转氨酶(ALT)	' P_Name,'	6.4	' AsBt_Value,'	U/L	' P_Unit,'	l	'AsBt_Result,'	9.0-50.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8020	' P_Code,'	*谷草转氨酶(AST)	' P_Name,'	10.6	' AsBt_Value,'	U/L	' P_Unit,'	l	'AsBt_Result,'	15.0-40.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8030	' P_Code,'	*γ谷氨酰转肽酶(GGT)	' P_Name,'	17.2	' AsBt_Value,'	U/L	' P_Unit,'	z	'AsBt_Result,'	10.0-60.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8040	' P_Code,'	总胆红素(TB)	' P_Name,'	25.4	' AsBt_Value,'	umol/L	' P_Unit,'	h	'AsBt_Result,'	2.0-23.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8050	' P_Code,'	直接胆红素(DB)	' P_Name,'	7.3	' AsBt_Value,'	umol/L	' P_Unit,'	h	'AsBt_Result,'	0.0-6.8	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8051	' P_Code,'	间接胆红素(IB)	' P_Name,'	18.1	' AsBt_Value,'	umol/L	' P_Unit,'	z	'AsBt_Result,'	1.7-20.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8060	' P_Code,'	*总蛋白(TP)	' P_Name,'	76.7	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	65.0-85.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8070	' P_Code,'	*白蛋白(ALB)	' P_Name,'	52.3	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	40.0-55.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8080	' P_Code,'	*球蛋白(GLB)	' P_Name,'	24.4	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	20.0-40.0	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8090	' P_Code,'	A/G	' P_Name,'	2.14	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	1.20-2.40	'AsBt_ReferenceValue
+union	select	'	肝功A8项	' PD_Name,'	16062500000141	' PatientCode,'	肝功A8项	' PD_Code,'	C8100	' P_Code,'	前白蛋白(PA)	' P_Name,'	6.84	' AsBt_Value,'	umol/L	' P_Unit,'	z	'AsBt_Result,'	3.64-7.28	'AsBt_ReferenceValue
+union	select	'	空腹血糖	' PD_Name,'	16062500000141	' PatientCode,'	空腹血糖	' PD_Code,'	C8340	' P_Code,'	空腹血糖	' P_Name,'	4.9	' AsBt_Value,'	mmol/L	' P_Unit,'	z	'AsBt_Result,'	3.96-6.12	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8500	' P_Code,'	颜色	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	黄色	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8501	' P_Code,'	浊度	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	清亮	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8510	' P_Code,'	比重	' P_Name,'	1.012	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	1.003-1.030	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8511	' P_Code,'	PH	' P_Name,'	6	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	5.0-8.5	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8512	' P_Code,'	白细胞脂酶	' P_Name,'	999999	' AsBt_Value,'	leu/ul	' P_Unit,'	z	'AsBt_Result,'	&lt;25/阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8513	' P_Code,'	亚硝酸盐	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8514	' P_Code,'	尿蛋白	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8515	' P_Code,'	葡萄糖	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8516	' P_Code,'	酮体	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8517	' P_Code,'	尿胆原	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8518	' P_Code,'	胆红素	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8519	' P_Code,'	隐血	' P_Name,'	999999	' AsBt_Value,'		' P_Unit,'	A	'AsBt_Result,'	阴性(-)	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8520	' P_Code,'	红细胞	' P_Name,'	41	' AsBt_Value,'	/ul	' P_Unit,'	h	'AsBt_Result,'	0-17	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8521	' P_Code,'	白细胞	' P_Name,'	1	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-28	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8522	' P_Code,'	成堆白细胞	' P_Name,'	0	' AsBt_Value,'	/HPF	' P_Unit,'	z	'AsBt_Result,'		'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8523	' P_Code,'	鳞状上皮细胞	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-28	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8524	' P_Code,'	非鳞状上皮细胞	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-6	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8525	' P_Code,'	未分类结晶	' P_Name,'	0	' AsBt_Value,'	/HPF	' P_Unit,'	z	'AsBt_Result,'		'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8526	' P_Code,'	细菌	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-11	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8527	' P_Code,'	酵母菌	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-11	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8528	' P_Code,'	粘液	' P_Name,'	0	' AsBt_Value,'	/HPF	' P_Unit,'	z	'AsBt_Result,'		'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8530	' P_Code,'	透明管型	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'	0-1	'AsBt_ReferenceValue
+union	select	'	尿干化学和沉渣定量	' PD_Name,'	16062500000141	' PatientCode,'	尿干化学和沉渣定量	' PD_Code,'	A8531	' P_Code,'	病理管型	' P_Name,'	0	' AsBt_Value,'	/ul	' P_Unit,'	z	'AsBt_Result,'		'AsBt_ReferenceValue
+union	select	'	肾功3项	' PD_Name,'	16062500000141	' PatientCode,'	肾功3项	' PD_Code,'	C8170	' P_Code,'	尿素(UREA)	' P_Name,'	8.1	' AsBt_Value,'	mmol/L	' P_Unit,'	h	'AsBt_Result,'	3.1-8.0	'AsBt_ReferenceValue
+union	select	'	肾功3项	' PD_Name,'	16062500000141	' PatientCode,'	肾功3项	' PD_Code,'	C8180	' P_Code,'	肌酐(CREA)	' P_Name,'	99	' AsBt_Value,'	umol/L	' P_Unit,'	h	'AsBt_Result,'	57-97	'AsBt_ReferenceValue
+union	select	'	肾功3项	' PD_Name,'	16062500000141	' PatientCode,'	肾功3项	' PD_Code,'	C8190	' P_Code,'	尿酸(UA)	' P_Name,'	365	' AsBt_Value,'	umol/L	' P_Unit,'	z	'AsBt_Result,'	90-420	'AsBt_ReferenceValue
+union	select	'	体液免疫5项	' PD_Name,'	16062500000141	' PatientCode,'	体液免疫5项	' PD_Code,'	C8450	' P_Code,'	免疫球蛋白A(IgA)	' P_Name,'	3.27	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	0.70-4.00	'AsBt_ReferenceValue
+union	select	'	体液免疫5项	' PD_Name,'	16062500000141	' PatientCode,'	体液免疫5项	' PD_Code,'	C8460	' P_Code,'	免疫球蛋白G(IgG)	' P_Name,'	11.16	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	7.00-16.00	'AsBt_ReferenceValue
+union	select	'	体液免疫5项	' PD_Name,'	16062500000141	' PatientCode,'	体液免疫5项	' PD_Code,'	C8470	' P_Code,'	免疫球蛋白M(IgM)	' P_Name,'	0.43	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	0.40-2.30	'AsBt_ReferenceValue
+union	select	'	体液免疫5项	' PD_Name,'	16062500000141	' PatientCode,'	体液免疫5项	' PD_Code,'	C8480	' P_Code,'	补体3(C3)	' P_Name,'	0.82	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	0.75-1.35	'AsBt_ReferenceValue
+union	select	'	体液免疫5项	' PD_Name,'	16062500000141	' PatientCode,'	体液免疫5项	' PD_Code,'	C8490	' P_Code,'	补体4(C4)	' P_Name,'	0.24	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	0.09-0.36	'AsBt_ReferenceValue
+union	select	'	心肌酶3项	' PD_Name,'	16062500000141	' PatientCode,'	心肌酶3项	' PD_Code,'	C8220	' P_Code,'	肌酸激酶(CK)	' P_Name,'	143	' AsBt_Value,'	U/L	' P_Unit,'	z	'AsBt_Result,'	50-310	'AsBt_ReferenceValue
+union	select	'	心肌酶3项	' PD_Name,'	16062500000141	' PatientCode,'	心肌酶3项	' PD_Code,'	C8230	' P_Code,'	*乳酸脱氢酶(LD)	' P_Name,'	170	' AsBt_Value,'	U/L	' P_Unit,'	z	'AsBt_Result,'	120-250	'AsBt_ReferenceValue
+union	select	'	心肌酶3项	' PD_Name,'	16062500000141	' PatientCode,'	心肌酶3项	' PD_Code,'	C8240	' P_Code,'	α羟丁酸脱氢酶(HBD)	' P_Name,'	139	' AsBt_Value,'	U/L	' P_Unit,'	z	'AsBt_Result,'	72-182	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8010	' P_Code,'	白细胞(WBC)	' P_Name,'	5.46	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	3.50-9.50	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8020	' P_Code,'	中性粒细胞#(NEUT#)	' P_Name,'	3.63	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	1.80-6.30	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8021	' P_Code,'	淋巴细胞#(LYM#)	' P_Name,'	1.44	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	1.10-3.20	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8022	' P_Code,'	单核细胞#(MONO#)	' P_Name,'	0.31	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	0.10-0.60	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8023	' P_Code,'	嗜酸性粒细胞#(EO#)	' P_Name,'	0.06	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	0.02-0.52	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8024	' P_Code,'	嗜碱性粒细胞#(BASO#)	' P_Name,'	0.02	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	0.00-0.06	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8025	' P_Code,'	幼稚粒细胞#(IG#)	' P_Name,'	0	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	0.00-0.06	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8030	' P_Code,'	中性粒细胞%(NEUT%)	' P_Name,'	66.4	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	40.0-75.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8031	' P_Code,'	淋巴细胞%(LYM%)	' P_Name,'	26.4	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	20.0-50.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8032	' P_Code,'	单核细胞%(MONO%)	' P_Name,'	5.7	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	3.0-10.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8033	' P_Code,'	嗜酸性粒细胞%(EO%)	' P_Name,'	1.1	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	0.4-8.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8034	' P_Code,'	嗜碱性粒细胞%(BASO%)	' P_Name,'	0.4	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	0.0-1.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8035	' P_Code,'	幼稚粒细胞%(IG%)	' P_Name,'	0	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	0.00 -0.60	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8040	' P_Code,'	红细胞(RBC)	' P_Name,'	4.79	' AsBt_Value,'	10~12/L	' P_Unit,'	z	'AsBt_Result,'	4.30-5.80	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8041	' P_Code,'	血红蛋白(Hb)	' P_Name,'	144	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	130-175	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8042	' P_Code,'	红细胞比积(HCT)	' P_Name,'	41.4	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	40.0-50.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8043	' P_Code,'	红细胞平均体积(MCV)	' P_Name,'	86.4	' AsBt_Value,'	fL	' P_Unit,'	z	'AsBt_Result,'	82.0-100.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8044	' P_Code,'	红细胞平均血红蛋白量(MCH)	' P_Name,'	30.1	' AsBt_Value,'	pg	' P_Unit,'	z	'AsBt_Result,'	27.0-34.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8045	' P_Code,'	红细胞平均血红蛋白浓度(MCHC)	' P_Name,'	348	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	316-354	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8046	' P_Code,'	红细胞体积分布宽度SD(RDWSD)	' P_Name,'	40.3	' AsBt_Value,'	fL	' P_Unit,'	z	'AsBt_Result,'	35.0-56.0	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8047	' P_Code,'	红细胞体积分布宽度CV(RDWCV)	' P_Name,'	12.7	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	11.5-14.5	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8050	' P_Code,'	血小板(PLT)	' P_Name,'	202	' AsBt_Value,'	10~9/L	' P_Unit,'	z	'AsBt_Result,'	125-350	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8051	' P_Code,'	血小板比积(PCT)	' P_Name,'	0.23	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	0.108-0.282	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8052	' P_Code,'	大血小板比值(P-LCR)	' P_Name,'	0.34	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	0.130-0.430	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8053	' P_Code,'	血小板平均体积(MPV)	' P_Name,'	11.3	' AsBt_Value,'	fL	' P_Unit,'	z	'AsBt_Result,'	9.4-12.5	'AsBt_ReferenceValue
+union	select	'	血常规	' PD_Name,'	16062500000141	' PatientCode,'	血常规	' PD_Code,'	A8054	' P_Code,'	血小板体积分布宽度(PDW)	' P_Name,'	13.6	' AsBt_Value,'	fL	' P_Unit,'	z	'AsBt_Result,'	9.0-17.0	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8290	' P_Code,'	全血粘度:低切10(1/s)	' P_Name,'	7.12	' AsBt_Value,'	mpa.s	' P_Unit,'	z	'AsBt_Result,'	6.80-9.58	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8300	' P_Code,'	全血粘度:中切60(1/s)	' P_Name,'	4.6	' AsBt_Value,'	mpa.s	' P_Unit,'	z	'AsBt_Result,'	4.51-5.57	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8310	' P_Code,'	全血粘度:高切150(1/s)	' P_Name,'	3.89	' AsBt_Value,'	mpa.s	' P_Unit,'	z	'AsBt_Result,'	3.73-4.60	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8320	' P_Code,'	全血还原粘度(低切)	' P_Name,'	13.24	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	11.02-19.84	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8330	' P_Code,'	全血还原粘度(中切)	' P_Name,'	7.47	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	6.25-10.51	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8340	' P_Code,'	全血还原粘度(高切)	' P_Name,'	5.84	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	4.63-8.26	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8350	' P_Code,'	毛细管血浆粘度	' P_Name,'	1.34	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	1.20-1.45	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8360	' P_Code,'	红细胞聚集指数	' P_Name,'	1.83	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	1.48-2.57	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8370	' P_Code,'	红细胞刚性指数	' P_Name,'	4.36	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	3.06-7.86	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8380	' P_Code,'	红细胞变形指数	' P_Name,'	0.79	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	0.63-1.04	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8390	' P_Code,'	红细胞电泳指数	' P_Name,'	4.19	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	3.08-5.97	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8400	' P_Code,'	血沉	' P_Name,'	3	' AsBt_Value,'	mm/h	' P_Unit,'	z	'AsBt_Result,'	0.0-15.0	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8410	' P_Code,'	血沉方程K值	' P_Name,'	11.31	' AsBt_Value,'		' P_Unit,'	z	'AsBt_Result,'	0.00 -93.00	'AsBt_ReferenceValue
+union	select	'	血流变和血沉	' PD_Name,'	16062500000141	' PatientCode,'	血流变和血沉	' PD_Code,'	A8420	' P_Code,'	红细胞压积	' P_Name,'	43.7	' AsBt_Value,'	%	' P_Unit,'	z	'AsBt_Result,'	43.0-48.0	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8250	' P_Code,'	*甘油三酯(TG)	' P_Name,'	0.66	' AsBt_Value,'	mmol/L	' P_Unit,'	z	'AsBt_Result,'	0.34-2.30	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8260	' P_Code,'	*总胆固醇(TC)	' P_Name,'	3.48	' AsBt_Value,'	mmol/L	' P_Unit,'	z	'AsBt_Result,'	2.90-6.47	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8270	' P_Code,'	*高密度脂蛋白胆固醇(HDL-C)	' P_Name,'	1.51	' AsBt_Value,'	mmol/L	' P_Unit,'	z	'AsBt_Result,'	0.90-1.55	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8280	' P_Code,'	*低密度脂蛋白胆固醇(LDL-C)	' P_Name,'	1.98	' AsBt_Value,'	mmol/L	' P_Unit,'	z	'AsBt_Result,'	1.20-3.36	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8290	' P_Code,'	载脂蛋白AI(ApoAI)	' P_Name,'	1.3	' AsBt_Value,'	g/L	' P_Unit,'	z	'AsBt_Result,'	1.00-1.60	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8300	' P_Code,'	载脂蛋白B(ApoB)	' P_Name,'	0.58	' AsBt_Value,'	g/L	' P_Unit,'	l	'AsBt_Result,'	0.60-1.10	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8310	' P_Code,'	脂蛋白(a)(Lp(a))	' P_Name,'	6	' AsBt_Value,'	mg/dl	' P_Unit,'	z	'AsBt_Result,'	0.0-30.0	'AsBt_ReferenceValue
+union	select	'	血脂8项	' PD_Name,'	16062500000141	' PatientCode,'	血脂8项	' PD_Code,'	C8320	' P_Code,'	同型半胱氨酸(HCY)	' P_Name,'	24.3	' AsBt_Value,'	umol/L	' P_Unit,'	h	'AsBt_Result,'	0.0-15.0	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C8960	' P_Code,'	*癌胚抗原(CEA)	' P_Name,'	1.2	' AsBt_Value,'	ng/ml	' P_Unit,'	z	'AsBt_Result,'	0.0-5.0	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C8970	' P_Code,'	*甲胎蛋白(AFP)	' P_Name,'	2.6	' AsBt_Value,'	ng/ml	' P_Unit,'	z	'AsBt_Result,'	0.0-13.4	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C9000	' P_Code,'	糖类抗原19-9(GIM)	' P_Name,'	999999	' AsBt_Value,'	U/ml	' P_Unit,'	z	'AsBt_Result,'	0.0-37.0	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C9010	' P_Code,'	*总前列腺特异性抗原(TPSA)	' P_Name,'	1.31	' AsBt_Value,'	ng/ml	' P_Unit,'	z	'AsBt_Result,'	0.00-4.00	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C9011	' P_Code,'	*游离前列腺特异性抗原(FPSA)	' P_Name,'	0.79	' AsBt_Value,'	ng/ml	' P_Unit,'	z	'AsBt_Result,'	0.00-2.50	'AsBt_ReferenceValue
+union	select	'	肿瘤标志物5项(男)	' PD_Name,'	16062500000141	' PatientCode,'	肿瘤标志物5项(男)	' PD_Code,'	C9012	' P_Code,'	FPSA/TPSA	' P_Name,'	0.6	' AsBt_Value,'		' P_Unit,'	h	'AsBt_Result,'	0.01-0.26	'AsBt_ReferenceValue
+</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

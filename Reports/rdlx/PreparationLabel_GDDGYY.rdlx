@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>10cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="pids">
+                          <Value>=Fields!PID.Value</Value>
+                        </Parameter>
+                        <Parameter Name="useDate">
+                          <Value>=Parameters!userName.Value</Value>
+                        </Parameter>
+                        <Parameter Name="hospName">
+                          <Value>=Parameters!hospName.Value</Value>
+                        </Parameter>
+                        <Parameter Name="userName">
+                          <Value>=Parameters!userName.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>PreparationLabel_GDDG.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>0.75cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>9.998751cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>10cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>10cm</PageHeight>
+  <PageWidth>10cm</PageWidth>
+  <Width>10cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="pids">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="Sex">
+          <DataField>Sex</DataField>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="SumIsNutriConfig">
+          <DataField>SumIsNutriConfig</DataField>
+        </Field>
+        <Field Name="GuigeYeliang">
+          <DataField>GuigeYeliang</DataField>
+        </Field>
+        <Field Name="fangshi">
+          <DataField>fangshi</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+        <Field Name="EN_Amount">
+          <DataField>EN_Amount</DataField>
+        </Field>
+        <Field Name="interventionType">
+          <DataField>interventionType</DataField>
+        </Field>
+        <Field Name="Price">
+          <DataField>Price</DataField>
+        </Field>
+        <Field Name="EN_Temperature">
+          <DataField>EN_Temperature</DataField>
+        </Field>
+        <Field Name="EN_Speed">
+          <DataField>EN_Speed</DataField>
+        </Field>
+        <Field Name="ItemText">
+          <DataField>ItemText</DataField>
+        </Field>
+        <Field Name="ItemText2">
+          <DataField>ItemText2</DataField>
+        </Field>
+        <Field Name="Phone">
+          <DataField>Phone</DataField>
+        </Field>
+        <Field Name="Energy">
+          <DataField>Energy</DataField>
+        </Field>
+        <Field Name="Protein">
+          <DataField>Protein</DataField>
+        </Field>
+        <Field Name="Fat">
+          <DataField>Fat</DataField>
+        </Field>
+        <Field Name="Carbohydr">
+          <DataField>Carbohydr</DataField>
+        </Field>
+        <Field Name="EN_Remark">
+          <DataField>EN_Remark</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="In_Date">
+          <DataField>In_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_PreparationLabel_CZ]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@pids">
+            <Value>=Parameters!pids.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@useDate">
+            <Value>=Parameters!useDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

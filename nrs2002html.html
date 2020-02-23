@@ -1,0 +1,600 @@
+
+<script type="text/javascript" src="/Content/Js/nrs2002.js"></script>
+<style type="text/css">
+    body {
+        background: #f3f7fd;
+    }
+
+    .gwc_personalInfo_title {
+        color: #167cbe;
+    }
+
+    #fxxc::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #fxxc::-webkit-scrollbar {
+        width: 4px;
+        background-color: #FFFFFF;
+    }
+
+    #fxxc::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+</style>
+<div style="background-color: #f3f7fd;">
+    <div id="basicMsg" >
+            <!-- style="display: none;" -->
+        <div style="height: 40px; padding-top: 10px;">
+            <div style="width: 500px; padding-left: 15px;">
+                <span class="layui-col-xs4">
+                    <input type="text" class="layui-input" placeholder="住院号" name="beInNo" id="beInNo" />
+                </span>
+                <span class="layui-col-xs8">
+                    &nbsp;&nbsp;<input type="button" class="layui-btn layui-btn-small" value="粘贴" id="btnPaste" onclick="common.win_paste('#beInNo');" />
+                    &nbsp;&nbsp;<input type="button" class="layui-btn layui-btn-small" value="确定" onclick="reloadContent('#beInNo');" />
+                </span>
+            </div>
+            <div style="padding: 5px; width: 80px; float: right;" id="monitorPanel">
+                    <!-- display: none; -->
+                <a href="javascript:void(0);" style="color: #297eb7; font-weight: bold;" onclick="openMonitorCenter('@pModel.PatientCode', parent.parent.dialog, null, 0);">监测中心</a>
+            </div>
+        </div>
+    </div>
+    <div class="layui-field-box" style="height: 70px; display: none; background-color: #fff; width: 98%; margin: 0 auto; " id="patientInfo">
+        <!-- 修改后 -->
+        <span style="padding: 15px;">
+            <span class="layui-col-xs2" style="">
+                <span class="layui-col-xs12" style="width: 90%; margin-left: 5%; text-align: center; border-right: 1px solid #d2d2d2; margin-top: 15px;">
+                    <span class="layui-col-xs12" style="color: #167cbe; font-size: 24px; height: 28px; line-height: 28px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="@pModel.PatientName">@pModel.PatientName</span>
+                    <span class="layui-col-xs12" style="height: 24px; line-height: 24px;">@sex,&nbsp;&nbsp;@pModel.AgeStr</span>
+                </span>
+            </span>
+            <span class="layui-col-xs10">
+                <span style="width: 100%;">
+                    <span class="layui-col-xs5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="@pModel.DeptName">
+                        <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">科室&nbsp;</span>
+                        <span style="height: 24px; line-height: 24px;">@pModel.DeptName</span>
+                    </span>
+                    <span class="layui-col-xs3">
+                        <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">床号&nbsp;</span>
+                        <span style="height: 24px; line-height: 24px;">@pModel.BedNo</span>
+                    </span>
+                    <span class="layui-col-xs3">
+                        <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">住院号&nbsp;</span>
+                        <span>
+                            <label id="copyMsg" style="height: 24px; line-height: 24px;">@pModel.BeInNo</label>&nbsp;<input type="button" id="btnCopy" class="layui-btn layui-btn-mini copyBtnSpecicalCSS" value="复制" onclick="common.win_copy('#copyMsg');" style="color: #65b569; border: 1px solid #65b569; background: none; border-radius: 3px; display: inline-block; line-height: inherit;" />
+                        </span>
+                    </span>
+                </span>
+                <span style="width: 100%;">
+                    <span class="layui-col-xs6">
+                        <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">主要诊断&nbsp;</span>
+                        <span title="@zyzd" style="height: 24px; line-height: 24px;">@mds</span>
+                    </span>
+                    <span class="layui-col-xs6">
+                        <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">饮食医嘱&nbsp;</span>
+                        <span title="@pModel.Dietaryadvice" style="height: 24px; line-height: 24px;">@pModel.Dietaryadvice</span>
+                    </span>
+                </span>
+            </span>
+        </span>
+
+    </div>
+
+    <div class="layui-field-box" id="screenPanel" style="display: none;">
+        <form method="POST" action="/TreatmentCenter/ScreeningManagement/NRS2002" class="layui-form">
+            @Html.AntiForgeryToken()
+            <div class="layui-field-box" id="fxxc" style="overflow: hidden; overflow-y: auto; border: none; padding: 5px 10px; background-color: #fff; margin: 5px 10px;">
+                <div class="layui-field-box" style="margin-top: 3px;">
+                    <table class="table">
+                        <tr style="float:left;">
+                            <td class="text-r" style="width: 10%; padding: 0;white-space:nowrap;">筛查日期：</td>
+                            <td class="text-l" style="width: 10%; padding: 0;"><input style="width:100px;" type="text" class="layui-input time" id="startDate" lay-verify="required" name="ScreenDate"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div style="height:10px;"></div>
+                <div class="layui-field-box" id="divInitialScreen">
+                    <table class="table">
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:100%;border:1px solid #d2d2d2;" colspan="2"><span style="font-weight:bold;color: #167cbe;">营养初筛</span></td>
+                        </tr>
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:40%;border:1px solid #d2d2d2;"><span>1、体脂指数（BMI）< 18.5？</span></td>
+                            <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">@Html.Raw(CreatedControl.CheckboxSwitchHtml("ChkInitialScreenA", "是|否", nmodel.InitialScreenA))</td>
+                        </tr>
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:40%;border:1px solid #d2d2d2;"><span>2、最近三个月内患者体重有丢失吗？</span></td>
+                            <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">@Html.Raw(CreatedControl.CheckboxSwitchHtml("ChkInitialScreenB", "是|否", nmodel.InitialScreenB))</td>
+                        </tr>
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:40%;border:1px solid #d2d2d2;"><span>3、最近一个星期内患者的膳食摄入有减少吗？</span></td>
+                            <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">@Html.Raw(CreatedControl.CheckboxSwitchHtml("ChkInitialScreenC", "是|否", nmodel.InitialScreenC))</td>
+                        </tr>
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:40%;border:1px solid #d2d2d2;"><span>4、患者的病情病重吗？</span></td>
+                            <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">@Html.Raw(CreatedControl.CheckboxSwitchHtml("ChkInitialScreenD", "是|否", nmodel.InitialScreenD))</td>
+                        </tr>
+                    </table>
+                    <table class="table">
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:100%;border:1px solid #d2d2d2;border-top:0px;border-bottom:0px;" colspan="3"><span style="font-weight:bold;color: #167cbe;">营养复筛</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="layui-field-box">
+                    <table class="table">
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:20%;border:1px solid #d2d2d2;">
+                                1、疾病营养需要程度 <i class="layui-icon" id="tip1" style="border: 1px solid #65B36E; color: #65B36E; cursor: pointer;">&#xe607;</i>
+                            </td>
+                            <td style="width:75%;border:1px solid #d2d2d2;text-align:left;">
+                                @Html.Raw(CreatedControl.RadioHtml(lylcd, "ScreeningItemA", nmodel.ScreeningItemA.ToString("0.##"), 2))
+                            </td>
+                            <td class="text-l msgclass" id="yyyycdTd" style="width: 5%;border:1px solid #d2d2d2;">
+                                @(nmodel.ScreeningItemI.ToString("0.##") + " 分")
+                            </td>
+                        </tr>
+                        <!---->
+                        <tr style="width:100%;">
+                            <td class="text-l" style="width:20%;border:1px solid #d2d2d2;">
+                                2、营养受损 <i class="layui-icon" id="tip2" style="border: 1px solid #65B36E; color: #65B36E; cursor: pointer;">&#xe607;</i>
+
+                                <div style="display:block;width:100%;margin-top:10px;">
+                                    <span class="text-r" style="width:60%;display:inline-block;float:left;">近期体重(kg)：</span>
+                                    <span class="text-l" style="width:49%;display:inline-block;float:left;">@Html.Raw(CreatedControl.SelectHtml(ltype, "MonthsAgo", pModel.MonthsAgo.ToString(), false, null, 0, false))</span>
+                                    <span class="text-l" style="width:49%;display:inline-block;float:right;"><input type="text" class="layui-input time" name="OldWeight" maxlength="5" onchange="clearResult(2, elems);" lay-verify="float1" value="@(pModel.OldWeight > 0 ? pModel.OldWeight.ToString("0.##") : string.Empty )"></span>
+
+                                    <span class="text-r" style="width:50%;display:inline-block;float:left;padding-top:10px;">当前体重(kg)：</span>
+                                    <span class="text-l" style="width:50%;display:inline-block;float:left;padding-top:10px;"><input type="text" class="layui-input time" name="Weight" maxlength="5" lay-verify="float1" onchange="clearResult(3, elems);" value="@(pModel.BeInWeight > 0 ? pModel.BeInWeight.ToString("0.##") : string.Empty )"></span>
+
+                                    <span class="text-r" style="width:50%;display:inline-block;float:left;padding-top:10px;">身高(cm)：</span>
+                                    <span class="text-l" style="width:50%;display:inline-block;float:left;padding-top:10px;"><input type="text" class="layui-input time" onchange="clearResult(4, elems);" maxlength="5" lay-verify="float1" name="Height" value="@(pModel.BeInHeight > 0 ? pModel.BeInHeight.ToString("0.##") : string.Empty )"></span>
+
+                                    <span class="text-r" style="width:50%;display:inline-block;float:left;padding-top:10px;">体重变化：</span>
+                                    <span class="text-l" style="width:50%;display:inline-block;float:left;padding-top:10px;"><label id="tzbhlbl">@Lossperc</label>%</span>
+                                </div>
+
+                            </td>
+                            <td style="width:75%;border:1px solid #d2d2d2;">
+                                <span style="display:block;text-align:left;margin-bottom:20px;" class="layui-col-xs12">
+                                    <span class="layui-col-xs12 text-l" style="height:30px;line-height:30px;">
+                                        (1)BMI:<label id="bmilbl">@(nmodel.BMI > 0 ? nmodel.BMI.ToString() : "--")</label>kg/m²
+                                    </span>
+                                    <span class="layui-col-xs12 text-l" id="bmiTd">
+                                        @Html.Raw(CreatedControl.RadioHtml(yyss, "ScreeningItemB", nmodel.ScreeningItemB.ToString("0.##"), 4))
+                                    </span>
+                                </span>
+                                <span style="display: none;text-align:left;margin-bottom:20px;" class="layui-col-xs12">
+                                    <span class="layui-col-xs12 text-l" style="height:30px;line-height:30px;">
+                                        注：因严重重胸、腹水、水肿等得不到准确BMI时,用白蛋白来代替(按ESPEN2006)是否小于30g/l
+                                    </span>
+                                    <span class="layui-col-xs12 text-l">
+                                        @Html.Raw(CreatedControl.CheckboxSwitchHtml("ScreeningItemC", "是|否", nmodel.ScreeningItemC))
+                                    </span>
+                                </span>
+                                <span class="layui-col-xs12" style="display:block;text-align:left;margin-bottom:20px;">
+                                    <span class="layui-col-xs6 text-l" style="height:30px;line-height:30px;">
+                                        (2)近期1-3个月体重是否下降百分五以上?
+                                    </span>
+                                    <span class="layui-col-xs6 text-l">
+                                        @Html.Raw(CreatedControl.CheckboxSwitchHtml("ScreeningItemD", "是|否", nmodel.ScreeningItemD))
+                                    </span>
+                                </span>
+                                <span class="layui-col-xs12" style='margin-bottom:20px;display: @(nmodel.ScreeningItemD ? "" : "none");' id="tzxjTr">
+                                    <span class="layui-col-xs4" style="vertical-align: top; text-align: left;height:30px;line-height:30px;">
+                                        若是体重下降：<label id="tzxjlbl">@(nmodel.DropWeight > 0 ? nmodel.DropWeight.ToString() : "--")</label>kg
+                                    </span>
+                                    <span class="layui-col-xs8 text-l" style="text-align:left;">
+                                        @Html.Raw(CreatedControl.RadioHtml(tzxj, "ScreeningItemE", nmodel.ScreeningItemE.ToString("0.##"), 12))
+                                    </span>
+                                </span>
+                                <span class="layui-col-xs12 text-l" style="margin-bottom:20px;">
+                                    <span class="layui-col-xs6 text-l" style="text-align:left;height:30px;line-height:30px;">
+                                        (3)一周内进食量是否减少25%以上?
+                                    </span>
+                                    <span class="layui-col-xs6 text-l" style="text-align:left;">
+                                        @Html.Raw(CreatedControl.CheckboxSwitchHtml("ScreeningItemF", "是|否", nmodel.ScreeningItemF))
+                                    </span>
+                                </span>
+                                <span class="layui-col-xs12" style='margin-bottom:20px;display: @(nmodel.ScreeningItemF ? "" : "none");' id="jsljsTr">
+                                    <span class="layui-col-xs6 text-l" style="text-align:left;height:30px;line-height:30px;">
+                                        若是食量减少,则减少多少?
+                                    </span>
+                                    <span class="layui-col-xs6 text-l" style="text-align:left;">
+                                        @Html.Raw(CreatedControl.RadioHtml(sljsd, "ScreeningItemG", nmodel.ScreeningItemG.ToString("0.##"), 4))
+                                    </span>
+                                </span>
+                            </td>
+                            <td class="text-l msgclass" id="yyssTd" style="width: 5%;border:1px solid #d2d2d2;">@(nmodel.ScreeningItemJ.ToString("0.##") + " 分")</td>
+                        </tr>
+                        <tr style="width:100%;">
+                            <td style="width:20%;border:1px solid #d2d2d2;text-align: left;">3、年龄是否大于等于70岁?</td>
+                            <td class="text-l" style="width:75%;border:1px solid #d2d2d2;text-align: left;">
+                                @Html.Raw(CreatedControl.CheckboxSwitchHtml("ScreeningItemH", "是|否", nmodel.ScreeningItemH))
+                            </td>
+                            <td class="text-l msgclass" id="ageTd" style="width: 5%;border:1px solid #d2d2d2;" @(nmodel.ScreeningItemK.ToString("0.##") + " 分")></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layui-field-box">
+                <table class="table-l">
+                    <tr id="optionTr">
+                        <td style="text-align: left;width:90px;" class="isDisplay">下次复筛提醒</td>
+                        <td style="width: 60px;" class="isDisplay"><input type="text" maxlength="3" class="layui-input layui-disabled" disabled="disabled" name="FollowDate" id="FollowDate" onfocus="common.win_clearInput(this)" lay-verify="int" value="@(nmodel.FollowDate > 0 ? nmodel.FollowDate.ToString() : string.Empty)" /></td>
+                        <td style="text-align: left;width:40px;" class="isDisplay">天后</td>
+                        <td style="text-align:left;">
+                            <input type="submit" class="layui-btn-small layui-disabled" disabled="disabled" value="保存" lay-filter="SaveNRS2002" lay-submit />&nbsp;&nbsp;
+                            <input type="button" class="layui-btn-small layui-disabled" disabled="disabled" value="报表打印" onclick="WindowsPrint();" id="printBtn" />
+                            <input type="button" class="layui-btn-small layui-disabled" disabled="disabled" value="HTML打印" onclick="PrintDiv();" id="printBtn" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="layui-row">评分结果：<span id="resultTd" style="color: @nmodel.Color">@nmodel.ScreeningApprise</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--隐藏元素也占高度位置-->
+            <div style="display: none;">
+                <input type="hidden" name="ScreeningID" id="ScreeningID" value="@nmodel.ScreeningID" /><br />
+                <input type="hidden" name="PatientCode" id="PatientCode" value="@pModel.PatientCode" /><br />
+                <input type="hidden" name="Con_ID" id="Con_ID" value="@nmodel.Con_ID" /><br />
+                <input type="hidden" name="ScreeningItemI" id="ScreeningItemI" value="@nmodel.ScreeningItemI" /><br />
+                <input type="hidden" name="ScreeningItemJ" id="ScreeningItemJ" value="@nmodel.ScreeningItemJ" /><br />
+                <input type="hidden" name="ScreeningItemK" id="ScreeningItemK" value="@nmodel.ScreeningItemK" /><br />
+                <input type="hidden" name="Lossperc" id="Lossperc" value="@nmodel.Lossperc" /><br />
+                <input type="hidden" name="BMI" id="BMI" value="@nmodel.BMI" /><br />
+                <input type="hidden" name="DropWeight" id="DropWeight" value="@nmodel.DropWeight" /><br />
+                <input type="hidden" name="ScreeningScore" id="ScreeningScore" value="@nmodel.ScreeningScore" /><br />
+                <input type="hidden" name="ScreeningApprise" id="ScreeningApprise" value="@nmodel.ScreeningApprise" />
+                <input type="hidden" id="result" value="false" />
+                <input type="hidden" name="ScreeningItemDD" id="ScreeningItemDD" value="@nmodel.ScreeningItemD.ToString().ToLower()" />
+                <input type="hidden" name="ScreeningItemHH" id="ScreeningItemHH" value="@nmodel.ScreeningItemH.ToString().ToLower()" />
+                <input type="hidden" id="IsRisk" name="IsRisk" value="@nmodel.IsRisk" />
+                <input type="hidden" name="InitialScreenA" id="InitialScreenA" value="@nmodel.InitialScreenA.ToString().ToLower()" />
+                <input type="hidden" name="InitialScreenB" id="InitialScreenB" value="@nmodel.InitialScreenB.ToString().ToLower()" />
+                <input type="hidden" name="InitialScreenC" id="InitialScreenC" value="@nmodel.InitialScreenC.ToString().ToLower()" />
+                <input type="hidden" name="InitialScreenD" id="InitialScreenD" value="@nmodel.InitialScreenD.ToString().ToLower()" />
+                <input type="hidden" name="NeedSecondaryScreen" id="NeedSecondaryScreen" value="@nmodel.NeedSecondaryScreen.ToString().ToLower()" />
+                <input type="hidden" name="isShow" value="@ViewBag.isShow"/>
+                <input type="hidden" name="Color" id="Color" value="@nmodel.Color" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    var headers = {};
+    var dialog, common, fm;
+    var i = 1;
+    var IsInitialScreen = "@ViewBag.IsInitialScreen";
+    var elems = {
+        col:"Color",
+        ht: "input[name=Height]", //身高
+        wt: "input[name=Weight]", //体重
+        age: '@pModel.Age', //年龄
+        physiology: '@pModel.MaternalInfo', //生理状况
+        yyyycdTd :"#yyyycdTd",        //显示营养需要程度
+        yyyycdrdo: "ScreeningItemA", //营养需要程度
+        bmilbl: "#bmilbl", //BMI显示
+        bmitxt: "#BMI", //BMI保存
+        bmitd: "#bmiTd", //BMI百分比选择框布局
+        bmirdo: "ScreeningItemB", //BMI范围
+        owt: "input[name=OldWeight]", //原体重
+        wtchk: "ScreeningItemD", //体重下降复选框
+        wttr: "#tzxjTr", //体重百分比选择框布局
+        wtlbl: "#tzbhlbl", //体重下降量显示
+        wttxt: "#tzxjlbl", //体重下降显示
+        dwtxt: "#DropWeight", //体重下降保存
+        lossperstxt: "#Lossperc", //体重下降百分比保存
+        bdb: "ScreeningItemC", //白蛋白
+        xjrado: "ScreeningItemE", //体重下降百分比
+        jschk: "ScreeningItemF", //进食量减少复选框
+        jstr: "#jsljsTr", //进食量减少百分比布局
+        jsrdo: "ScreeningItemG", //进食量减少百分比
+        yyssTd: "#yyssTd", //营养受损评分结果
+        ssssScoretxt: "#ScreeningItemJ",
+        printBtn: "#printBtn", //打印按钮
+        screeningScore1: "#ScreeningItemI", //第一项分数
+        screeningScore2: "#ScreeningItemJ", //第二项分数
+        screeningScore3: "#ScreeningItemK", //第三项分数
+        screeningScore4: "", //第三项分数
+        screeningScore5: "", //第三项分数
+        screeningScore6: "", //第三项分数
+        screeningScore7: "", //第三项分数
+        screeningScore8: "", //第三项分数
+        screeningScore9: "", //第三项分数
+        fen: 3, //大于等于三有风险
+        screeningScore: "#ScreeningScore", //总评分保存
+        result: "#ScreeningApprise", //总结果赋值保存
+        resultMsg: "#resultTd", //总结果赋值显示
+        result1Msg: " 分,住院期间每周复查营养筛查。", //无风险结果内容
+        result2Msg: " 分,患者具有营养风险,应开始制定营养治疗计划(包括治疗膳食,经口营养补充,肠内营养及肠外营养)。", //有风险结果内容
+        result3Msg: "患者目前没有营养风险，无需进行第二步筛查，请一周后复查。",
+        actionTr: "#optionTr", //保存操作区
+        submit: "#result",        //是否可是提交状态
+        ageTd: "#ageTd" ,            //显示年龄分数
+        monthAgo:"select[name=MonthsAgo]", // 几个月前的体重
+        InitialScreenA:"#InitialScreenA",//初筛1
+        InitialScreenB:"#InitialScreenB",//初筛2
+        InitialScreenC:"#InitialScreenC",//初筛3
+        InitialScreenD:"#InitialScreenD",//初筛4
+        NeedSecondaryScreen:"#NeedSecondaryScreen"//是否需要复筛
+    }; //营养受损分数
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winDialog', 'winForm', 'winCommon'], function() {
+        var $ = layui.jquery;
+        fm = layui.winForm;
+        dialog = layui.winDialog;
+        common = layui.winCommon;
+        //获取防伪标记
+        var token = $('@Html.AntiForgeryToken()').val();
+        headers["__RequestVerificationToken"] = token;
+        $(document).ready(function() {
+
+
+            if ('@pModel.PatientCode' != "--" && '@pModel.PatientCode'.length > 0) {
+                $("#screenPanel").show();
+                $("#monitorPanel").show();
+                if ("@ViewBag.isShow" != "m") $("#patientInfo").show();
+
+                if (@nmodel.ScreeningID > 0) {
+                    
+                    ConfigoptionTr(elems.actionTr, 1);
+                } else {
+                    ////初始化体重变化
+                    CalculationPerc(elems);
+                    ////初始化BMI
+                    configBMI(elems, headers, CalculationScore,@nmodel.BMI > 0 ?  0 : 99);
+                }
+
+                // 初始加载时间控件
+                var startDate;
+                var currentDate = '@currentDate';
+                var sd = new Date();
+                $.datetimepicker.setLocale('ch'); //新版
+                $("#startDate").val(currentDate);
+                $("#startDate").datetimepicker({
+                    format: 'Y-m-d',
+                    //lang:"ch",旧版
+                    onShow: function() {
+                        this.setOptions({
+                            minDate: '@pModel.InputDate',
+                            maxDate: sd //当天
+                        });
+                    },
+                    onChangeDateTime: function(dp, $input) {
+                        startDate = $("#startDate").val();
+                    },
+                    onClose: function(current_time, $input) {
+                        if (startDate != currentDate) {
+                            if ("@ViewBag.isShow" == "y") {refContent();}
+                        }
+                    },
+                    timepicker: false
+                });
+                //绑定注释
+                var tip;
+                var t = '0分：正常营养需要量：对营养需求没有过多影响<br/>' +
+                    '1分：营养需要量轻度提高：慢性疾病患者因出现并发症而住院治疗。病人虚弱但不需卧床。<br/>' +
+                    '　　 &nbsp;蛋白质需要量略增加，但可以通过口服和补充来弥补。如髋骨折、慢性疾病急性发作<br/>' +
+                    '     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;或有并发症、COPD、血液透析、肝硬化、糖尿病、一般恶性肿瘤等；<br/>'+
+                    '2分：营养需要量中度增加：患者需要卧床，如腹部大手术后。蛋白质需要量相应增加，<br/>' +
+                    '　　 &nbsp;但多数人仍可通过人工营养得到恢复。如腹部大手术、脑卒中、重度肺炎、血液恶性肿瘤等；<br/>' +
+                    '3分：营养需要量明显增加：患者在重症病房中靠机械通气支持，蛋白质需要量增加而且不能被人工营养支持所弥补，<br/>' +
+                    '　　 &nbsp;但是通过人工营养可使蛋白质分解和氮丢失明显减少。如颅脑损伤、骨髓移植、<br/>' +
+                    '　　 &nbsp;靠机械通气、APACHE-Ⅱ大于10分的ICU患者等。';
+                $("#tip1").hover(function() {
+                    tip = dialog.win_tips(this, t);
+                }, function() {
+                    dialog.win_close(tip);
+                });
+
+                var t2 = '1分：轻度受损；<br/>2分：中度受损；<br/>3分：重度受损；';
+                $("#tip2").hover(function() {
+                    tip = dialog.win_tips(this, t2, 2);
+                }, function() {
+                    dialog.win_close(tip);
+                });
+
+
+                //监控疾病营养需要程度
+                fm.win_radio('ScreeningItemA', function(data) {
+                    clearResult(1, elems);
+                });
+                //监控疾病营养需要程度
+                fm.win_radio('ScreeningItemB', function(data) {
+                    clearResult(11, elems);
+                });
+
+                //进食量减少监控，是否显示选择进食量减少百分比
+                fm.win_switch('ScreeningItemF', function() {
+                    clearResult(5, elems);
+                }, function() {
+                    clearResult(5, elems);
+                    fm.win_render("radio");
+                });
+                //白蛋白监控
+                fm.win_switch('ScreeningItemC', function() {
+                    clearResult(6, elems); //直接营养受损
+                }, function() {
+                    clearResult(6, elems); //计算BMI
+                });
+                //体重下降百分比监控
+                fm.win_radio('ScreeningItemE', function() {
+                    clearResult(7, elems);
+                });
+                //进食量减少监控
+                fm.win_radio('ScreeningItemG', function() {
+                    clearResult(8, elems);
+                });
+                //年龄为固定不能托运改变大小
+                if (@pModel.Age >= 70) {
+                    $("input[type=checkbox][name=ScreeningItemH]").prop("checked", true);
+                    $("input[type=checkbox][name=ScreeningItemH]").addClass("layui-disabled");
+                    $("input[type=checkbox][name=ScreeningItemH]").prop('disabled', true);
+                    $("#ageTd").text("1 分");
+                    $("#ScreeningItemK").val(1);
+                    $("#ScreeningItemHH").val('true');
+                    fm.win_render('checkbox');
+                } else {
+                    $("input[type=checkbox][name=ScreeningItemH]").prop("checked", false)
+                    $("input[type=checkbox][name=ScreeningItemH]").addClass("layui-disabled");
+                    $("input[type=checkbox][name=ScreeningItemH]").prop('disabled', true);
+                    $("#ageTd").text("0 分");
+                    $("#ScreeningItemK").val(0);
+                    $("#ScreeningItemHH").val('false');
+                    fm.win_render('checkbox');
+                }
+                //监控评分结果
+                fm.win_submit('PingFenJieGuo', function() {
+                    ScreeningScore(elems);
+                });
+                //监控筛查保存
+                fm.win_submit('SaveNRS2002', function() {
+                    var day = $.trim($("#FollowDate").val());
+                    if (day.length > 0) {
+                        ScreeningScore(elems); //再次评分结果
+                        var sc = $("#ScreeningScore").val();
+                        var risk = $("#IsRisk").val();
+                        return $("#result").val() == "true";
+                    } else if ("@ViewBag.isShow" == "y") {
+                        $("#FollowDate").css({ "border": "1px solid #FF5722" });
+                        dialog.win_msg("随诊几天后不能为空", 5);
+                        return false;
+                    }
+                });
+                //提示
+                if(@ViewBag.script > 0){
+                    if ("@ViewBag.isShow" == "y" || '@ViewBag.isShow' == 'm') {
+                        var bv = window.parent.document.getElementById("bv").value;
+                        var patCode = window.parent.document.getElementById("patCode").value;
+                        var beInNo = window.parent.document.getElementById("beInNo").value;
+                        if (bv == "99") {
+                            //parent.setRefVal(99,beInNo);
+                        }else if (bv == "9") {
+                            parent.setRefVal(9, patCode);
+                        } else {
+                            parent.setRefVal(0);
+                        }
+                    }
+                    dialog.win_msg("保存成功！", 6);
+                }else if(@ViewBag.script == 0){
+                    dialog.win_msg("保存失败！", 5);
+                }
+
+            }
+
+            if ("@ViewBag.isShow" == "y") {
+                $("#basicMsg").show();
+                fm.win_resize("#fxxc", 240);
+                $("td[class=isDisplay]").removeClass("isDisplay");
+            }else if ("@ViewBag.isShow" == "m") {
+                fm.win_resize("#fxxc", 160);
+                $("#startDate").attr("readonly", "readonly");
+                $("#startDate").datetimepicker({
+                    timepicker: false,
+                    datepicker: false
+                });
+            }else if ("@ViewBag.isShow" == "f") {
+                $("#patientInfo").show();
+                $("td[class=isDisplay]").removeClass("isDisplay");
+                fm.win_resize("#fxxc", 233);
+            }
+            else {
+                fm.win_resize("#fxxc", 190);
+            }
+        });
+
+        $("#divInitialScreen input[type=checkbox]").each(function(){
+            fm.win_switch($(this).attr("name"), function() {
+                SetInitialScreenClass(elems,IsInitialScreen);
+            }, function() {
+                SetInitialScreenClass(elems,IsInitialScreen);
+            });
+        });
+        //根据是否为初筛页面样式初始化
+        InitializePageForIsInitialScreen(elems,IsInitialScreen);
+    });
+
+    //住院号后页面跳转
+    function reloadContent(elem) {
+        var beInNo = $.trim($(elem).val());
+        if (beInNo.length > 0) {
+            exsitBeInNo(beInNo, headers, function(data) {
+                if (data.result) {
+                   window.document.location.href = parent.screen + "?beInNo=" + beInNo;
+                    //parent.reloadPritentList(beInNo);
+                } else {
+                    parent.dialog.win_alert("住院号不存在或该患者不在你的管辖范围内!", "系统提示", 5);
+                    $("#screenPanel").hide();
+                    $("#monitorPanel").hide();
+                    $("#patientInfo").hide();
+                }
+            });
+        } else {
+            parent.dialog.win_alert("住院号不能为空!", "系统提示", 5);
+        }
+    }
+
+    function refContent() {
+        $("input[type=radio][name=ScreeningItemA]").prop("checked", false);
+        $("input[type=radio][name=ScreeningItemE]").prop("checked", false);
+        $("input[type=radio][name=ScreeningItemG]").prop("checked", false);
+        $("input[type=checkbox][name=ScreeningItemC]").prop("checked", false);
+        $("input[type=checkbox][name=ScreeningItemF]").prop("checked", false);
+        $("#yyyycdTd").text("0 分");
+        ScreeningScore(elems);
+        fm.win_render('radio');
+        fm.win_render('checkbox');
+        $("#FollowDate").val("3");
+        ////初始化体重变化
+        CalculationPerc(elems);
+        ////初始化BMI
+        configBMI(elems, headers);
+
+    }
+
+    function WindowsPrint() {
+        if ("@ViewBag.isShow" == "y") {
+            parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/@nmodel.ScreeningID', 'NRS2002');
+        }
+        else if("@ViewBag.isShow" == "m")
+        {
+            parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/@nmodel.ScreeningID?mz=1', 'NRS2002');
+        }
+        else {
+            parent.parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/@nmodel.ScreeningID', 'NRS2002');
+        }
+    }
+
+    function PrintDiv() {
+        parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NRS2002Print/@pModel.PatientCode?sid=@nmodel.ScreeningID&isShow=@ViewBag.isShow', 'NRS2002');
+        //LoadPrintData();
+    }
+
+
+    function LoadPrintData()
+    {
+        $("#dttoexcel").show();
+        var headstr = "<html><head><title></title></head><body>";
+        var footstr = "</body>";
+        var newstr = $("#dttoexcel").html();                   // 获取要打印的div内容
+        var oldstr = document.body.innerHTML;                // 将过去的body内容存到oldstr
+        document.body.innerHTML = headstr + newstr + footstr;     // 组合打印内容
+        window.print();                                  // 弹出打印窗体
+        document.body.innerHTML = oldstr;               // 还原HTML内容
+        window.location.reload();
+        return false;
+    }
+</script>

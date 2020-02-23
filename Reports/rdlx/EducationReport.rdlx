@@ -1,0 +1,1201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>8.9cm</Height>
+		<ReportItems>
+			<Textbox Name="TextBox49">
+				<CanGrow>true</CanGrow>
+				<DataElementName>TextBox4</DataElementName>
+				<Height>1cm</Height>
+				<Left>8.612739E-07cm</Left>
+				<Value>一 营养宣教记录 一</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>16pt</FontSize>
+					<FontWeight>700</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Center</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Visibility>
+					<Hidden>=iif(Parameters!type.Value=0 or Parameters!type.Value=2,false,true)</Hidden>
+				</Visibility>
+				<Width>20.5cm</Width>
+				<ZIndex>1</ZIndex>
+			</Textbox>
+			<Table Name="Table1">
+				<DataSetName>EducationDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.932391cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox37">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.932353cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Left>Solid</Left>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<Value>="宣教日期："+Fields!ScreenDate.Value</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox20">
+											<CanGrow>true</CanGrow>
+											<Value>="宣教营养(医)师："+Fields!Name.Value</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox36">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Right>Solid</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.932353cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox68">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>10</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox69">
+											<CanGrow>true</CanGrow>
+											<Value>膳食计划</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox78">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.1058333cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox138">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox139">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox140">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox141">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox142">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox143">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox144">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox145">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox146">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox147">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox148">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox149">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.932353cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>10</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="eid">
+													<Value>=Fields!NE_ID.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Education_SSJHReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox14">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox126">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox127">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox128">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox129">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox130">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox131">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox132">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox133">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox134">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox135">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox136">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox137">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetDietaryIntake(Fields!JZGL.Value,Fields!CuLiang.Value,Fields!Gu.Value,Fields!Shu.Value,Fields!DianFen.Value,Fields!ShuDianFen.Value,Fields!ChunTang.Value,Fields!ShuCai.Value,Fields!JunZao.Value,Fields!ShuiGuo.Value,Fields!ChuRou.Value,Fields!QinRou.Value,Fields!ShuiChan.Value,Fields!Dan.Value,Fields!QuanDan.Value,Fields!DanQin.Value,Fields!Ru.Value,Fields!QZRu.Value,Fields!DZRu.Value,Fields!DaDou.Value,Fields!JianGuo.Value,Fields!You.Value,Fields!Yan.Value,1,0)&gt;20,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.932353cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>10</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox70">
+											<CanGrow>true</CanGrow>
+											<Value>宣教内容</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox86">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.86836cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox43">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Left>Solid</Left>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>10</ColSpan>
+									<ReportItems>
+										<CustomReportItem Name="FormattedText1">
+											<Type>FormattedText</Type>
+											<CustomProperties>
+												<CustomProperty>
+													<Name>Html</Name>
+													<Value>="&lt;body style='font-family: 微软雅黑'&gt;"+Fields!NE_Content.Value+"&lt;/body&gt;"</Value>
+												</CustomProperty>
+											</CustomProperties>
+											<DataElementName>FormattedText1</DataElementName>
+										</CustomReportItem>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox53">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.833439cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox35">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Left>Solid</Left>
+													<Right>Solid</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>12</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox38">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>7.269438cm</Height>
+				<Left>0.35cm</Left>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.475225cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.9cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.444908cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>1.4cm</Top>
+				<Width>20.02013cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<Code>
+Function GetDietaryIntake(ByVal item1 As Double, ByVal item2 As Double, ByVal item3 As Double, ByVal item4 As Double, ByVal item5 As Double, ByVal item6 As Double, ByVal item7 As Double, ByVal item8 As Double, ByVal item9 As Double, ByVal item10 As Double, ByVal item11 As Double, ByVal item12 As Double, ByVal item13 As Double, ByVal item14 As Double, ByVal item15 As Double, ByVal item16 As Double, ByVal item17 As Double, ByVal item18 As Double, ByVal item19 As Double, ByVal item20 As Double, ByVal item21 As Double, ByVal item22 As Double, ByVal item23 As Double, ByVal col As Integer, ByVal t As Integer) As String
+	Dim cc As Integer
+	Dim showStr As String
+	Dim showValue As String
+	
+	If(item1 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "精制谷类"
+			showValue = item1
+		End If
+	End If
+	
+	If(item2 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "粗粮"
+			showValue = item2
+		End If
+	End If
+	
+	If(item3 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "谷类"
+			showValue = item3
+		End If
+	End If
+	
+	If(item4 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "薯类"
+			showValue = item4
+		End If
+	End If
+	
+	If(item5 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "淀粉"
+			showValue = item5
+		End If
+	End If	
+
+	If(item7 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "纯糖制品"
+			showValue = item7
+		End If
+	End If
+	
+	If(item6 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "薯类及淀粉"
+			showValue = item6
+		End If
+	End If
+	
+	If(item20 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "大豆类"
+			showValue = item20
+		End If
+	End If
+	
+	If(item8 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "蔬菜"
+			showValue = item8
+		End If
+	End If
+	
+	If(item9 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "菌藻"
+			showValue = item9
+		End If
+	End If
+	
+	If(item10 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "水果"
+			showValue = item10
+		End If
+	End If
+	
+	If(item21 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "坚果"
+			showValue = item21
+		End If
+	End If
+	
+	If(item12 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "禽肉类"
+			showValue = item12
+		End If
+	End If
+	
+	
+	If(item11 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "畜肉类"
+			showValue = item11
+		End If
+	End If
+	
+
+	If(item13 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "水产类"
+			showValue = item13
+		End If
+	End If
+	
+	If(item15 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "全蛋"
+			showValue = item15
+		End If
+	End If
+	
+	If(item16 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "蛋清"
+			showValue = item16
+		End If
+	End If
+	
+	If(item14 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "蛋类"
+			showValue = item14
+		End If
+	End If	
+		
+	If(item18 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "全脂乳类"
+			showValue = item18
+		End If
+	End If
+	
+	If(item19 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "低脂乳类"
+			showValue = item19
+		End If
+	End If
+	
+	
+	If(item17 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "乳类"
+			showValue = item17
+		End If
+	End If
+
+	If(item22 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "油脂类"
+			showValue = item22
+		End If
+	End If
+	
+	If(item23 &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "调味品"
+			showValue = item23
+		End If
+	End If
+	
+	If(t = 0) Then
+		Return cc
+	Else If(t = 1)Then
+		Return showStr
+	Else If(t = 2)Then
+		Return showValue.ToString() + "g"
+	End If
+End Function</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>20.6cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="EducationDataSource">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="EducationDataSet">
+			<Fields>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="BMI">
+					<DataField>BMI</DataField>
+				</Field>
+				<Field Name="AgeStr">
+					<DataField>AgeStr</DataField>
+				</Field>
+				<Field Name="BeInWeight">
+					<DataField>BeInWeight</DataField>
+				</Field>
+				<Field Name="BeInHeight">
+					<DataField>BeInHeight</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="Name">
+					<DataField>Name</DataField>
+				</Field>
+				<Field Name="NE_Content">
+					<DataField>NE_Content</DataField>
+				</Field>
+				<Field Name="ScreenDate">
+					<DataField>ScreenDate</DataField>
+				</Field>
+				<Field Name="NE_ID">
+					<DataField>NE_ID</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select tp.PatientName,tp.BeInNo,tp.BedNo,tp.Sex,
+tp.Age,tp.BMI,
+dbo.Fun_GetAgeName(tp.Age) as AgeStr,
+tp.BeInWeight,
+tp.BeInHeight,ISNULL(sd.DepartName,'--') as DepartName,
+isnull(ui.FullName,'--') Name,
+NE_Content,convert(varchar(16),e.CreatedOn,120) as ScreenDate,NE_ID 
+from T_Education e 
+left join S_UserInfo ui on e.NE_UserId=ui.UserName 
+left join T_Patient tp on  e.PatientCode = tp.PatientCode 
+left join S_Department sd on tp.BranchType = sd.DepartValue
+where tp.PatientCode=@patientCode and e.IsDelete=0 order by e.CreatedOn</CommandText>
+				<DataSourceName>EducationDataSource</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

@@ -1,0 +1,1154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>11.4cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>YYSDDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>1.2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox13">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox1</DataElementName>
+											<Value>食谱清单</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>1.5pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox76">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>1.5pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox2</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Tablix Name="Tablix2">
+											<TablixCorner>
+												<TablixCornerRows>
+													<TablixCornerRow>
+														<TablixCornerCell>
+															<CellContents>
+																<Textbox Name="TextBox15">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox8</DataElementName>
+																	<Value>天数</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixCornerCell>
+														<TablixCornerCell>
+															<CellContents>
+																<Textbox Name="TextBox22">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox10</DataElementName>
+																	<Value>餐次</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixCornerCell>
+														<TablixCornerCell>
+															<CellContents>
+																<Textbox Name="TextBox23">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox12</DataElementName>
+																	<Value>品名</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixCornerCell>
+														<TablixCornerCell>
+															<CellContents>
+																<Textbox Name="TextBox81">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox14</DataElementName>
+																	<Value>原料</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixCornerCell>
+													</TablixCornerRow>
+												</TablixCornerRows>
+											</TablixCorner>
+											<TablixBody>
+												<TablixColumns>
+													<TablixColumn>
+														<Width>1.573227cm</Width>
+													</TablixColumn>
+													<TablixColumn>
+														<Width>1.322919cm</Width>
+													</TablixColumn>
+												</TablixColumns>
+												<TablixRows>
+													<TablixRow>
+														<Height>1cm</Height>
+														<TablixCells>
+															<TablixCell>
+																<CellContents>
+																	<Textbox Name="TextBox2">
+																		<CanGrow>true</CanGrow>
+																		<DataElementName>TextBox3</DataElementName>
+																		<Value>=Fields!Num.Value</Value>
+																		<Style>
+																			<FontFamily>微软雅黑</FontFamily>
+																			<FontSize>10pt</FontSize>
+																			<FontStyle>Normal</FontStyle>
+																			<FontWeight>400</FontWeight>
+																			<PaddingBottom>2pt</PaddingBottom>
+																			<PaddingLeft>2pt</PaddingLeft>
+																			<PaddingRight>2pt</PaddingRight>
+																			<PaddingTop>2pt</PaddingTop>
+																			<TextAlign>Center</TextAlign>
+																			<VerticalAlign>Middle</VerticalAlign>
+																			<Border>
+																				<Style>None</Style>
+																			</Border>
+																			<BottomBorder>
+																				<Style>Dashed</Style>
+																			</BottomBorder>
+																		</Style>
+																	</Textbox>
+																</CellContents>
+															</TablixCell>
+															<TablixCell>
+																<CellContents>
+																	<Textbox Name="TextBox6">
+																		<CanGrow>true</CanGrow>
+																		<DataElementName>TextBox4</DataElementName>
+																		<Value>=Fields!Unit.Value</Value>
+																		<Style>
+																			<FontFamily>微软雅黑</FontFamily>
+																			<FontSize>10pt</FontSize>
+																			<FontStyle>Normal</FontStyle>
+																			<FontWeight>400</FontWeight>
+																			<PaddingBottom>2pt</PaddingBottom>
+																			<PaddingLeft>2pt</PaddingLeft>
+																			<PaddingRight>2pt</PaddingRight>
+																			<PaddingTop>2pt</PaddingTop>
+																			<TextAlign>Center</TextAlign>
+																			<VerticalAlign>Middle</VerticalAlign>
+																			<Border>
+																				<Style>None</Style>
+																			</Border>
+																			<BottomBorder>
+																				<Style>Dashed</Style>
+																			</BottomBorder>
+																		</Style>
+																	</Textbox>
+																</CellContents>
+															</TablixCell>
+														</TablixCells>
+													</TablixRow>
+												</TablixRows>
+											</TablixBody>
+											<TablixColumnHierarchy>
+												<TablixMembers>
+													<TablixMember>
+														<TablixHeader>
+															<Size>1cm</Size>
+															<CellContents>
+																<Textbox Name="TextBox7">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox9</DataElementName>
+																	<Value>数量</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixHeader>
+														<TablixMembers>
+															<TablixMember />
+														</TablixMembers>
+													</TablixMember>
+													<TablixMember>
+														<TablixHeader>
+															<Size>1cm</Size>
+															<CellContents>
+																<Textbox Name="TextBox25">
+																	<CanGrow>true</CanGrow>
+																	<DataElementName>TextBox11</DataElementName>
+																	<Value>单位</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>700</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixHeader>
+														<TablixMembers>
+															<TablixMember />
+														</TablixMembers>
+													</TablixMember>
+												</TablixMembers>
+											</TablixColumnHierarchy>
+											<TablixRowHierarchy>
+												<TablixMembers>
+													<TablixMember>
+														<Group Name="Tablix2_DayNum1">
+															<GroupExpressions>
+																<GroupExpression>=Fields!DayNum.Value</GroupExpression>
+															</GroupExpressions>
+														</Group>
+														<TablixHeader>
+															<Size>1.682122cm</Size>
+															<CellContents>
+																<Textbox Name="TextBox17">
+																	<CanGrow>true</CanGrow>
+																	<Value>="第" + Fields!DayNum.Value.ToString() + "天"</Value>
+																	<Style>
+																		<FontFamily>微软雅黑</FontFamily>
+																		<FontSize>10pt</FontSize>
+																		<FontStyle>Normal</FontStyle>
+																		<FontWeight>400</FontWeight>
+																		<PaddingBottom>2pt</PaddingBottom>
+																		<PaddingLeft>2pt</PaddingLeft>
+																		<PaddingRight>2pt</PaddingRight>
+																		<PaddingTop>2pt</PaddingTop>
+																		<TextAlign>Center</TextAlign>
+																		<VerticalAlign>Middle</VerticalAlign>
+																		<Border>
+																			<Style>None</Style>
+																		</Border>
+																		<BottomBorder>
+																			<Style>Dashed</Style>
+																		</BottomBorder>
+																	</Style>
+																</Textbox>
+															</CellContents>
+														</TablixHeader>
+														<TablixMembers>
+															<TablixMember>
+																<Group Name="Tablix2_MealTtimes1">
+																	<GroupExpressions>
+																		<GroupExpression>=Fields!MealTtimes.Value</GroupExpression>
+																	</GroupExpressions>
+																</Group>
+																<TablixHeader>
+																	<Size>1.322122cm</Size>
+																	<CellContents>
+																		<Textbox Name="TextBox14">
+																			<CanGrow>true</CanGrow>
+																			<DataElementName>TextBox6</DataElementName>
+																			<Value>=Fields!MealTtimes.Value</Value>
+																			<Style>
+																				<FontFamily>微软雅黑</FontFamily>
+																				<FontSize>10pt</FontSize>
+																				<FontStyle>Normal</FontStyle>
+																				<FontWeight>400</FontWeight>
+																				<PaddingBottom>2pt</PaddingBottom>
+																				<PaddingLeft>2pt</PaddingLeft>
+																				<PaddingRight>2pt</PaddingRight>
+																				<PaddingTop>2pt</PaddingTop>
+																				<TextAlign>Center</TextAlign>
+																				<VerticalAlign>Middle</VerticalAlign>
+																				<Border>
+																					<Style>None</Style>
+																				</Border>
+																				<BottomBorder>
+																					<Style>Dashed</Style>
+																				</BottomBorder>
+																			</Style>
+																		</Textbox>
+																	</CellContents>
+																</TablixHeader>
+																<TablixMembers>
+																	<TablixMember>
+																		<Group Name="Tablix2_MenuName1">
+																			<GroupExpressions>
+																				<GroupExpression>=Fields!MenuName.Value</GroupExpression>
+																			</GroupExpressions>
+																		</Group>
+																		<TablixHeader>
+																			<Size>5.715021cm</Size>
+																			<CellContents>
+																				<Textbox Name="TextBox11">
+																					<CanGrow>true</CanGrow>
+																					<DataElementName>TextBox5</DataElementName>
+																					<Value>=Fields!MenuName.Value</Value>
+																					<Style>
+																						<FontFamily>微软雅黑</FontFamily>
+																						<FontSize>10pt</FontSize>
+																						<FontStyle>Normal</FontStyle>
+																						<FontWeight>400</FontWeight>
+																						<PaddingBottom>2pt</PaddingBottom>
+																						<PaddingLeft>2pt</PaddingLeft>
+																						<PaddingRight>2pt</PaddingRight>
+																						<PaddingTop>2pt</PaddingTop>
+																						<TextAlign>Center</TextAlign>
+																						<VerticalAlign>Middle</VerticalAlign>
+																						<Border>
+																							<Style>None</Style>
+																						</Border>
+																						<BottomBorder>
+																							<Style>Dashed</Style>
+																						</BottomBorder>
+																					</Style>
+																				</Textbox>
+																			</CellContents>
+																		</TablixHeader>
+																		<TablixMembers>
+																			<TablixMember>
+																				<Group Name="Tablix2_FoodName1">
+																					<GroupExpressions>
+																						<GroupExpression>=Fields!FoodName.Value</GroupExpression>
+																					</GroupExpressions>
+																				</Group>
+																				<TablixHeader>
+																					<Size>5.984597cm</Size>
+																					<CellContents>
+																						<Textbox Name="TextBox9">
+																							<CanGrow>true</CanGrow>
+																							<DataElementName>TextBox7</DataElementName>
+																							<Value>=Fields!FoodName.Value</Value>
+																							<Style>
+																								<FontFamily>微软雅黑</FontFamily>
+																								<FontSize>10pt</FontSize>
+																								<FontStyle>Normal</FontStyle>
+																								<FontWeight>400</FontWeight>
+																								<PaddingBottom>2pt</PaddingBottom>
+																								<PaddingLeft>2pt</PaddingLeft>
+																								<PaddingRight>2pt</PaddingRight>
+																								<PaddingTop>2pt</PaddingTop>
+																								<TextAlign>Center</TextAlign>
+																								<VerticalAlign>Middle</VerticalAlign>
+																								<Border>
+																									<Style>None</Style>
+																								</Border>
+																								<BottomBorder>
+																									<Style>Dashed</Style>
+																								</BottomBorder>
+																							</Style>
+																						</Textbox>
+																					</CellContents>
+																				</TablixHeader>
+																			</TablixMember>
+																		</TablixMembers>
+																	</TablixMember>
+																</TablixMembers>
+															</TablixMember>
+														</TablixMembers>
+													</TablixMember>
+												</TablixMembers>
+											</TablixRowHierarchy>
+											<DataSetName>YYSDDataSet</DataSetName>
+											<ZIndex>2</ZIndex>
+										</Tablix>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox37">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=First(Fields!AccommodationID.Value, "YYSDDataSet") = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox74">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox15</DataElementName>
+											<Value>营养素分析</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>1.5pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox102">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>1.5pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox18">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport2">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="dy">
+													<Value>99</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>4</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_SSFXAllReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox92">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=First(Fields!AccommodationID.Value, "YYSDDataSet") = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox19</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox20</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport3">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>1</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_GNFXReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox110">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport4">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>2</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_GNFXReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox94">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=First(Fields!AccommodationID.Value, "YYSDDataSet") = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox21</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport5">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>3</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_SRFXReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox111">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport6">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>4</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_SRFXReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox103">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=First(Fields!AccommodationID.Value, "YYSDDataSet") = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox22</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox23</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox24</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>6</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Zl_YYSD_SRFXReport_Ratio.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox25</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox80">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox87">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox112">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox119">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox90">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox68">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport7">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+												<Parameter Name="acid">
+													<Value>=Parameters!aid.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ZL24SD_SSGCReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox105">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=First(Fields!AccommodationID.Value, "YYSDDataSet") = 0</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Height>9.8cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.4cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>8.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>8.6cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.5cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>18.5cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>19cm</PageWidth>
+	<Width>18.5cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="aid">
+			<DataType>Integer</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="YYSDDataSet">
+			<Fields>
+				<Field Name="AccommodationID">
+					<DataField>AccommodationID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="DayNum">
+					<DataField>DayNum</DataField>
+				</Field>
+				<Field Name="MealTtimes">
+					<DataField>MealTtimes</DataField>
+				</Field>
+				<Field Name="MenuName">
+					<DataField>MenuName</DataField>
+				</Field>
+				<Field Name="FoodName">
+					<DataField>FoodName</DataField>
+				</Field>
+				<Field Name="Num">
+					<DataField>Num</DataField>
+				</Field>
+				<Field Name="Unit">
+					<DataField>Unit</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select sa.AccommodationID, sa.PatientCode, af.DayNum,af.MealTtimes,af.MenuName,afm.FoodName,afm.Num,case when afm.Unit='' then 'g' else afm.Unit end Unit 
+from dbo.T_AccommodationFoodMenu  afm
+left join  dbo.T_AccommodationFood af on af.AccommodationFoodID = afm.AccommodationFoodID
+left join dbo.T_Accommodation sa on sa.AccommodationID = af.AccommodationID and AccommodationType = 4 and IsDelete = 0 
+where 
+charindex(',' + ltrim(sa.AccommodationID) + ',' ,(select ','+AccommodationIDs+',' from dbo.T_Accomm 
+where PatientCode = sa.PatientCode and aid = @aid)) &gt;0 
+and sa.PatientCode = @patCode 
+order by af.DayNum ,af.MealTtimesID</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@aid">
+						<Value>=Parameters!aid.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>report:DesignTimeBackgroundRendering</Name>
+			<Value>True</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

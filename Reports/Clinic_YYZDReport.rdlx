@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>5cm</Height>
+    <ReportItems>
+      <Subreport Name="Subreport1">
+        <Height>2.5cm</Height>
+        <Left>4cm</Left>
+        <Parameters>
+          <Parameter Name="patCode">
+            <Value>N0001</Value>
+          </Parameter>
+          <Parameter Name="isET">
+            <Value>1</Value>
+          </Parameter>
+          <Parameter Name="isRF">
+            <Value>1</Value>
+          </Parameter>
+          <Parameter Name="isYB">
+            <Value>1</Value>
+          </Parameter>
+        </Parameters>
+        <ReportName>rdlx\Clinic_AssessmentReport.rdlx</ReportName>
+        <Style />
+        <Top>0.8cm</Top>
+        <Width>15.2cm</Width>
+      </Subreport>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <Width>31.6cm</Width>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>F:\projects\HNTS_MVC\HNTS\HNTS.Platform\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="N">
+          <DataField>N</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>SELECT 1 AS N</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>report:DesignTimeBackgroundRendering</Name>
+      <Value>True</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

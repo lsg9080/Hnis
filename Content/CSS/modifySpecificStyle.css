@@ -1,0 +1,17 @@
+﻿body {
+}
+/**
+    修改input镂空样式，如：复制按钮等
+*/
+.overall_inputCopyBtn{
+    color:#65b569;
+    border:1px solid #65b569;
+    background:none;
+    border-radius:3px;
+    display:inline-block;
+    line-height:inherit;
+    cursor:pointer;
+}
+.overall_inputCopyBtn:hover{
+    color:#65b569;
+}

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>19.8cm</Height>
+    <ReportItems>
+      <Shape Name="Shape1">
+        <Height>0.18cm</Height>
+        <Left>3.1cm</Left>
+        <Style>
+          <BackgroundColor>Black</BackgroundColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>1.8cm</Top>
+        <Width>0.14cm</Width>
+        <dd:ShapeStyle xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">Rectangle</dd:ShapeStyle>
+      </Shape>
+      <Shape Name="Shape2">
+        <Height>0.18cm</Height>
+        <Left>5.6cm</Left>
+        <Style>
+          <BackgroundColor>DarkSeaGreen</BackgroundColor>
+          <BorderColor>
+            <Default>DarkSeaGreen</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Top>14cm</Top>
+        <Width>0.14cm</Width>
+        <dd:ShapeStyle xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">Rectangle</dd:ShapeStyle>
+      </Shape>
+    </ReportItems>
+    <Style>
+      <BackgroundImage>
+        <BackgroundRepeat>NoRepeat</BackgroundRepeat>
+        <MIMEType>image/jpeg</MIMEType>
+        <Source>External</Source>
+        <Value>..\..\Content\images\nlbtw\（0-3]\nlbtw_p_0.jpg</Value>
+      </BackgroundImage>
+    </Style>
+  </Body>
+  <PageHeight>23.8cm</PageHeight>
+  <PageWidth>19cm</PageWidth>
+  <Width>11cm</Width>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Portrait</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

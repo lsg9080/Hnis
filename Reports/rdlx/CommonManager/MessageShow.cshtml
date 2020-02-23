@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+    var msg = ViewBag.Msg;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <!----引入样式表----->
+    <link href="/Content/H-ui_v3.0/static/h-ui/css/H-ui.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/CSS/style.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/JS/icheck/icheck.css" rel="stylesheet" type="text/css" />
+    <!---------引入JS----------->
+</head>
+<body style="background-color:rgb(255,255,255);">
+        <div>
+            <table height="100%" border="0" align="center" cellpadding="10" cellspacing="0">
+                <tr>
+                    <td style="height:160px; text-align: center;">
+                        <img id="Icon_1" src="/Content/js/attention/zDialog/skins/blue/icon_alert.gif" width="34" height="34" align="absmiddle">
+                        &nbsp;&nbsp;@msg
+                    </td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">
+                        <input class="btn btn-secondary" type="button" value="&nbsp;&nbsp;继续添加&nbsp;&nbsp;" onclick="Submit('save')">
+                        <span>&nbsp;</span>
+                        <input class="btn btn-secondary" type="button" value="&nbsp;&nbsp;现在修改&nbsp;&nbsp;" onclick="Submit('edit')">
+                        <span>&nbsp;</span>
+                        <input class="btn btn-primary" type="button" value="&nbsp;&nbsp;返回列表&nbsp;&nbsp;" onclick="Submit('list')">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <script type="text/javascript" src="/Content/js/jquery.js"></script>
+         <script type="text/javascript" src="/Content/js/admin.js"></script>
+        <script>
+            function Submit(o) {
+                var lturl = GetValueFromUrl("lu");
+                var adurl = GetValueFromUrl("au");
+                var edual = GetValueFromUrl("eu");
+                if (o == "save") window.parent.document.location.href = decodeURIComponent(adurl);
+                if (o == "edit") if (edual.length == 0) top.Dialog.close(); else window.parent.document.location.href = decodeURIComponent(edual);
+                if (o == "list") window.parent.document.location.href  = decodeURIComponent(lturl);
+                top.Dialog.close();
+            }
+        </script>
+    </body>
+</html>

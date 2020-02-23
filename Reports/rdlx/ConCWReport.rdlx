@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>5.6cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>ConCW</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>8</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox1">
+                      <CanGrow>true</CanGrow>
+                      <Value>肠外方案(建议)</Value>
+                      <Style>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox3">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox7">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox10">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox13">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox16">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox19">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox34">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox35">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>医嘱类型</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!AdviceName.Value</Value>
+                      <Style>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox6">
+                      <CanGrow>true</CanGrow>
+                      <Value>输注途径</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox11">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Way.Value</Value>
+                      <Style>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox14">
+                      <CanGrow>true</CanGrow>
+                      <Value>输注时间&gt;</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox17">
+                      <CanGrow>true</CanGrow>
+                      <Value>=IIF(Fields!EN_Hour.Value&gt;0, Fields!EN_Hour.Value.ToString("0.##") + "h","---")</Value>
+                      <Style>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox2">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox8">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.4cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox32">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox56">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox57">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox58">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox59">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox60">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox61">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox62">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox28">
+                      <CanGrow>true</CanGrow>
+                      <Value>制剂</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>黑体</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>7</ColSpan>
+                  <ReportItems>
+                    <CustomReportItem Name="FormattedText1">
+                      <Type>FormattedText</Type>
+                      <Style />
+                      <CustomProperties>
+                        <CustomProperty>
+                          <Name>Html</Name>
+                          <Value>=Fields!PrescriptionContent.Value</Value>
+                        </CustomProperty>
+                      </CustomProperties>
+                    </CustomReportItem>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox63">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox64">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox65">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox66">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox67">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox68">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox69">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox70">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>8</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox36">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>3.5cm</Height>
+        <Left>0.2cm</Left>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.364029cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.946044cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.164029cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.124461cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.636692cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.9cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Visibility>
+          <Hidden>=Count( First(Fields!In_ID.Value, "ConCN") )  = 0</Hidden>
+        </Visibility>
+        <Width>18.13526cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <Width>18.6cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="cid">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ConCW">
+      <Fields>
+        <Field Name="AdviceName">
+          <DataField>AdviceName</DataField>
+        </Field>
+        <Field Name="IN_Date">
+          <DataField>IN_Date</DataField>
+        </Field>
+        <Field Name="EN_Way">
+          <DataField>EN_Way</DataField>
+        </Field>
+        <Field Name="EN_Hour">
+          <DataField>EN_Hour</DataField>
+        </Field>
+        <Field Name="EN_Remark">
+          <DataField>EN_Remark</DataField>
+        </Field>
+        <Field Name="Con_iD">
+          <DataField>Con_iD</DataField>
+        </Field>
+        <Field Name="Way">
+          <DataField>Way</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="In_ID">
+          <DataField>In_ID</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText> select &#xD;
+(case AdviceType when 0 then '临时医嘱' else '长期医嘱' end) as AdviceName,IN_Date,&#xD;
+EN_Way,EN_Hour,EN_Remark,Con_iD,&#xD;
+isnull(s1.ItemText,'--') as Way,&#xD;
+'&lt;html&gt;&lt;body style="font-family: 宋体; font-size:10pt;"&gt;&lt;div style="height:20px; line-height:20px;"&gt;' + replace(jc.PrescriptionContent,'；','/次&lt;/div&gt;&lt;div  style="height:20px; line-height:20px;"&gt;') + '&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;' as PrescriptionContent,&#xD;
+jc.CreatedOn,&#xD;
+jc.In_ID&#xD;
+ from dbo.T_CWIntervention jc &#xD;
+ left join S_SelectedItem s1 on s1.ItemValue = jc.EN_Way and s1.ItemType = 1411&#xD;
+ where jc.IsFinished = 1 and Con_ID = @cid ORDER BY In_Date DESC </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="cid">
+            <Value>=Parameters!cid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="ConCNZF">
+      <Fields>
+        <Field Name="AdviceName">
+          <DataField>AdviceName</DataField>
+        </Field>
+        <Field Name="IN_Date">
+          <DataField>IN_Date</DataField>
+        </Field>
+        <Field Name="EN_Way">
+          <DataField>EN_Way</DataField>
+        </Field>
+        <Field Name="Way">
+          <DataField>Way</DataField>
+        </Field>
+        <Field Name="EN_Mode">
+          <DataField>EN_Mode</DataField>
+        </Field>
+        <Field Name="Model">
+          <DataField>Model</DataField>
+        </Field>
+        <Field Name="EN_Speed">
+          <DataField>EN_Speed</DataField>
+        </Field>
+        <Field Name="EN_Temperature">
+          <DataField>EN_Temperature</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="In_ID">
+          <DataField>In_ID</DataField>
+        </Field>
+        <Field Name="Cishu">
+          <DataField>Cishu</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText> select &#xD;
+(case AdviceType when 0 then '临时医嘱' else '长期医嘱' end) as AdviceName,IN_Date,&#xD;
+EN_Way,&#xD;
+isnull(s1.ItemText,'--') as Way,&#xD;
+EN_Mode,&#xD;
+isnull(s2.ItemText,'--') as Model,&#xD;
+EN_Speed,&#xD;
+EN_Temperature,&#xD;
+'&lt;html&gt;&lt;body style="font-family: 宋体; font-size:10pt;"&gt;&lt;div style="height:20px; line-height:20px;"&gt;' + replace(jc.PrescriptionContent,'；','/次&lt;/div&gt;&lt;div  style="height:20px; line-height:20px;"&gt;') + '&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;' as PrescriptionContent,&#xD;
+jc.CreatedOn,&#xD;
+jc.In_ID,&#xD;
+ltrim(EN_Num) + '次/日' as Cishu&#xD;
+ from dbo.T_CNIntervention jc &#xD;
+ left join S_SelectedItem s1 on s1.ItemValue = jc.EN_Way and s1.ItemType = 8&#xD;
+ left join S_SelectedItem s2 on s2.ItemValue = jc.EN_Mode and s2.ItemType = 9&#xD;
+ where Con_ID = @cid ORDER BY In_Date DESC  </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="cid">
+            <Value>=Parameters!cid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

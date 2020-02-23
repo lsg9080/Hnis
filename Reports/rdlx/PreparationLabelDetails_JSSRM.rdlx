@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>1.303792cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>PreparationDataSet</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.703792cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PreparationName.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Round (Fields!II_Quantitiy.Value,0) &amp; Fields!GuiGeName.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Right</TextAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.6cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox1">
+                      <CanGrow>true</CanGrow>
+                      <Value>=“用法: ” &amp; Fields!Nature.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>9pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.303792cm</Height>
+        <Left>0.1cm</Left>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>5.7cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.2cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>6.9cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>5cm</PageHeight>
+  <PageWidth>7cm</PageWidth>
+  <Width>7cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="pid">
+      <DataType>Integer</DataType>
+      <Prompt>pid</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTSDataSource">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="PreparationDataSet">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="PreparationCode">
+          <DataField>PreparationCode</DataField>
+        </Field>
+        <Field Name="PreparationName">
+          <DataField>PreparationName</DataField>
+        </Field>
+        <Field Name="II_Quantitiy">
+          <DataField>II_Quantitiy</DataField>
+        </Field>
+        <Field Name="GuiGeName">
+          <DataField>GuiGeName</DataField>
+        </Field>
+        <Field Name="Nature">
+          <DataField>Nature</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select pti.PID,p.PreparationCode,&#xD;
+p.FullName+'【'+(Convert(varchar(20),CAST(GuiGe as decimal(18,0)))+GuiGeUnit+'/'+GuiGeName)+'】' PreparationName,&#xD;
+Round(II_FinishedQuantitiy,0) II_Quantitiy,GuiGeName,p.Nature &#xD;
+from T_PreparationInfo pti &#xD;
+inner join T_CNIntervention cni on pti.In_ID=cni.In_ID &#xD;
+inner join T_Intervention_Intestine tii on tii.In_ID=cni.In_ID &#xD;
+inner join S_Preparation p on tii.PreparationCode=p.PreparationCode &#xD;
+where pti.pid=@pid</CommandText>
+        <DataSourceName>HNTSDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="pid">
+            <Value>=Parameters!pid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

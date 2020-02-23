@@ -1,0 +1,551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+  <Body>
+    <Height>5cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>5cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Container1">
+                      <Style />
+                      <ReportItems>
+                        <Rectangle Name="Container3">
+                          <Height>2.4cm</Height>
+                          <Left>5.4cm</Left>
+                          <Style />
+                          <Width>2.4cm</Width>
+                          <ZIndex>4</ZIndex>
+                          <ReportItems>
+                            <CustomReportItem Name="Barcode2">
+                              <Type>Barcode</Type>
+                              <Width>2.4cm</Width>
+                              <Height>2.2cm</Height>
+                              <Style>
+                                <FontFamily>Courier New</FontFamily>
+                                <FontSize>8pt</FontSize>
+                              </Style>
+                              <CustomProperties>
+                                <CustomProperty>
+                                  <Name>dd:Symbology</Name>
+                                  <Value>QRCode</Value>
+                                </CustomProperty>
+                                <CustomProperty>
+                                  <Name>dd:Value</Name>
+                                  <Value>=“mealsType=en&amp;weixinNo=“ &amp; Fields!BeInNo.Value &amp; ”&amp;visitNum=“&amp;Fields!BeInNum.Value &amp; ”&amp;orderId=“ &amp; Fields!In_ID.Value &amp; ”&amp;repastId=“ &amp; Fields!PID.Value &amp; ”&amp;adviceId=111“</Value>
+                                </CustomProperty>
+                              </CustomProperties>
+                            </CustomReportItem>
+                          </ReportItems>
+                        </Rectangle>
+                        <Table Name="Table3">
+                          <DataSetName>DataSet1</DataSetName>
+                          <Header>
+                            <TableRows>
+                              <TableRow>
+                                <Height>0.517161cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>4</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox20">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox11</DataElementName>
+                                        <Value>=Fields!PrescriptionContent.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>1pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>1</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                            </TableRows>
+                          </Header>
+                          <Footer>
+                            <TableRows>
+                              <TableRow>
+                                <Height>0.520127cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox22">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="能量 "+Fields!Energy.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox25">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="蛋白质 "+Fields!Protein.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.521716cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox24">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="脂肪 "+Fields!Fat.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox23">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="碳水化合物 "+Fields!Carbohydr.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.520487cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>4</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox26">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="注意：0~4℃贮藏，保存时间为24小时"</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.520509cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox27">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox16</DataElementName>
+                                        <Value>="禁止静脉输注  "</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>0pt</PaddingTop>
+                                          <TextAlign>Center</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>5</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox28">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox16</DataElementName>
+                                        <Value>="由肠内营养配制室提供  "</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>8pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>400</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>0pt</PaddingTop>
+                                          <TextAlign>Center</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>5</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                            </TableRows>
+                          </Footer>
+                          <Height>2.6cm</Height>
+                          <Left>0.113231cm</Left>
+                          <Style />
+                          <TableColumns>
+                            <TableColumn>
+                              <Width>1.950178cm</Width>
+                            </TableColumn>
+                            <TableColumn>
+                              <Width>1.948675cm</Width>
+                            </TableColumn>
+                            <TableColumn>
+                              <Width>1.952461cm</Width>
+                            </TableColumn>
+                            <TableColumn>
+                              <Width>1.948686cm</Width>
+                            </TableColumn>
+                          </TableColumns>
+                          <Top>2.4cm</Top>
+                          <Width>7.8cm</Width>
+                          <ZIndex>5</ZIndex>
+                        </Table>
+                        <Table Name="Table2">
+                          <Header>
+                            <TableRows>
+                              <TableRow>
+                                <Height>0.50426cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox12">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox1</DataElementName>
+                                        <Value>厦门大学附属中山医院营养科</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Center</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>6</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                            </TableRows>
+                          </Header>
+                          <Footer>
+                            <TableRows>
+                              <TableRow>
+                                <Height>0.504397cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox13">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox10</DataElementName>
+                                        <Value>=Fields!DepartName.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>0pt</PaddingBottom>
+                                          <PaddingLeft>0pt</PaddingLeft>
+                                          <PaddingRight>0pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox21">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox10</DataElementName>
+                                        <Value>=Fields!BedNo.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>0pt</PaddingBottom>
+                                          <PaddingLeft>0pt</PaddingLeft>
+                                          <PaddingRight>0pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.493704cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox17">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox11</DataElementName>
+                                        <Value>=Fields!PatientName.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>1pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>1</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox18">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox11</DataElementName>
+                                        <Value>=Fields!BeInNo.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>1pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>1</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.497639cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ColSpan>2</ColSpan>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox19">
+                                        <CanGrow>true</CanGrow>
+                                        <DataElementName>TextBox12</DataElementName>
+                                        <Value>="使用时间:"+Fields!In_Date.Value+"      "+Fields!EN_Use.Value</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                        <ZIndex>2</ZIndex>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                            </TableRows>
+                          </Footer>
+                          <Height>2cm</Height>
+                          <Left>0.08677291cm</Left>
+                          <Style />
+                          <TableColumns>
+                            <TableColumn>
+                              <Width>2.649704cm</Width>
+                            </TableColumn>
+                            <TableColumn>
+                              <Width>2.650296cm</Width>
+                            </TableColumn>
+                          </TableColumns>
+                          <Width>5.3cm</Width>
+                          <ZIndex>3</ZIndex>
+                        </Table>
+                      </ReportItems>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>5cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>8.000004cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>8cm</Width>
+        <ZIndex>6</ZIndex>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>5cm</PageHeight>
+  <PageWidth>8cm</PageWidth>
+  <Width>8cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>医院名</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pids">
+      <DataType>String</DataType>
+      <Prompt>标签ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <DataType>String</DataType>
+      <Prompt>使用日期</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="1527733415">
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAIAAAAI7H7bAAAEf0lEQVR4nO3dQW7cQAwAwSjI/7/sPCEE0qZHs1VnAytLaMyF4DxfX1+/gP/z+6cfAG4gJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCfyZ/9DzPdz/HySbjiJNXFI41bv6crz/5MycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWA0azfx0v141SDZ8mDbaW/7tOcZCscInUgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgWzWbmJ5Q9ppA2AfviDu7q/vRIKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aXWx5kGz5ylr+yYkEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEDBr15gMtoUDch++Iu9ATiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgsDq0+uErC/37P/0I38iJBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBDIZu0+fGVhtfxx+BqX91Emv3U3JxIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4Ll729hRDhxI8/UrTiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCwOodssvL3yqbj7Q8/La5+27otHV8w99yIkFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIERnvtNmfbDty09tIRwYkD33ZlefrRiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQGO21O20i6+K9dkMHPtI/HfiKQk4kCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQIDAaWn3p/bin3TQc/tZp/9pE+NUO5ESCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCBy3IHJ5QuylY4SVzRuLwyG6zZ9zGTPsERIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgee07Wcv9dJtbBPVYNvyWr+KWTvYIyQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAqNZu4sHySY299pd7MA7ZMPxPycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWB0h+zES/fjVZNdyzeWTpw22rd8h+xEuI7PiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQyGbtJpanv146/jexeWfrS8cIl7++EwkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrA6tXuyld1ofOJBaWR5sdSJBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBMzaNS6eo6sMn2cy/+YyZriTkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aHbj9rHLazccHWr6MecJeOziLkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIZLN2Fw+JHai6snZz+jHca1ex1w7OIiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAs/Fu+ZgjRMJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCPwFzc31MmFwBAgAAAAASUVORK5CYII=</ImageData>
+      <MIMEType>image/png</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="In_ID">
+          <DataField>In_ID</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="EN_Amount">
+          <DataField>EN_Amount</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="Energy">
+          <DataField>Energy</DataField>
+        </Field>
+        <Field Name="Protein">
+          <DataField>Protein</DataField>
+        </Field>
+        <Field Name="Fat">
+          <DataField>Fat</DataField>
+        </Field>
+        <Field Name="Carbohydr">
+          <DataField>Carbohydr</DataField>
+        </Field>
+        <Field Name="In_Date">
+          <DataField>In_Date</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+        <Field Name="BeInNum">
+          <DataField>BeInNum</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>pro_PreparationLabelXMZS</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@pids">
+            <Value>=Parameters!pids.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@useDate">
+            <Value>=Parameters!useDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Portrait</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

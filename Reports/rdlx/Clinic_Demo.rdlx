@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<Body>
+		<Height>6.622502cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.740831cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.736668cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport3">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport2">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport5">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport6">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport4">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ExercisePrescriptionReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.740834cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport7">
+											<Parameters>
+												<Parameter Name="patCode">
+													<Value>=Parameters!patCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Default>Solid</Default>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Height>5.922502cm</Height>
+				<Left>0.1cm</Left>
+				<Style />
+				<TableColumns>
+					<TableColumn>
+						<Width>18.7cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.7cm</Top>
+				<Width>18.7cm</Width>
+			</Table>
+		</ReportItems>
+		<Style />
+	</Body>
+	<BottomMargin>1cm</BottomMargin>
+	<LeftMargin>1cm</LeftMargin>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<RightMargin>1cm</RightMargin>
+	<TopMargin>1cm</TopMargin>
+	<Width>18.8cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>病人唯一号</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ClincPatientDetailsDataSet">
+			<Fields>
+				<Field Name="AgeStr">
+					<DataField>AgeStr</DataField>
+				</Field>
+				<Field Name="BirthDate">
+					<DataField>BirthDate</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="InputDate">
+					<DataField>InputDate</DataField>
+				</Field>
+				<Field Name="UserName">
+					<DataField>UserName</DataField>
+				</Field>
+				<Field Name="isET">
+					<DataField>isET</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="isRF">
+					<DataField>isRF</DataField>
+				</Field>
+				<Field Name="isYB">
+					<DataField>isYB</DataField>
+				</Field>
+				<Field Name="isJBXX">
+					<DataField>isJBXX</DataField>
+				</Field>
+				<Field Name="isTGPG">
+					<DataField>isTGPG</DataField>
+				</Field>
+				<Field Name="isYYSC">
+					<DataField>isYYSC</DataField>
+				</Field>
+				<Field Name="isSSPJ">
+					<DataField>isSSPJ</DataField>
+				</Field>
+				<Field Name="isZLYZ">
+					<DataField>isZLYZ</DataField>
+				</Field>
+				<Field Name="isYYSD">
+					<DataField>isYYSD</DataField>
+				</Field>
+				<Field Name="isYYPC">
+					<DataField>isYYPC</DataField>
+				</Field>
+				<Field Name="isCNCF">
+					<DataField>isCNCF</DataField>
+				</Field>
+				<Field Name="IsSSDLDC">
+					<DataField>IsSSDLDC</DataField>
+				</Field>
+				<Field Name="IsJHFPC">
+					<DataField>IsJHFPC</DataField>
+				</Field>
+				<Field Name="IsSYSLIS">
+					<DataField>IsSYSLIS</DataField>
+				</Field>
+				<Field Name="IsSYSLR">
+					<DataField>IsSYSLR</DataField>
+				</Field>
+				<Field Name="IsYDCF">
+					<DataField>IsYDCF</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select AgeStr,BirthDate,BeInNo,PatientCode,PatientName, InputDate, isnull(su.FullName,tp.CreatedBy ) as UserName,
+CASE WHEN tp.Age &lt; 18 then 1 else 0 end as isET,
+case tp.Sex when 1 then '男' when 0 then '女' else '未知' end as Sex,
+case when MaternalInfo = 1 and tp.Sex = 0 then 1 else 0 end as isRF, 
+case when tp.Age &gt;= 18 and MaternalInfo != 1 then 1 else 0 end isYB,
+ISNULL((SELECT top 1 LEN(RCXX) + LEN(CFXX) + LEN(ZYZD) + LEN(ZS) + LEN(XBS) + LEN(GRS) FROM V_ClinicPatientReport 
+WHERE PatientCode = tp.PatientCode),0) as isJBXX,
+(SELECT COUNT(1) FROM T_ClinicAssessment WHERE PatientCode = tp.PatientCode) as isTGPG,
+(SELECT COUNT(1) FROM V_MZScreeningList WHERE PatientCode = tp.PatientCode) AS isYYSC,
+(SELECT COUNT(1) FROM S_Accommodation WHERE PatientCode = tp.PatientCode and AccommodationType = 1) as isSSPJ,LEN(Pasthistory_Pat) as isZLYZ,
+LEN(PatientHistory_Pat) as isYYSD,
+(SELECT COUNT(1) FROM S_Accommodation WHERE PatientCode = tp.PatientCode and AccommodationType = 2) AS isYYPC,
+(SELECT COUNT(1) FROM T_MZCNIntervention WHERE PatientCode = tp.PatientCode) AS isCNCF,
+(select count(1) from T_DietarySurvey where PatientCode = tp.PatientCode) as IsSSDLDC,
+(select count(1) from T_ExchangeShare where PatientCode = tp.PatientCode) as IsJHFPC,(select COUNT(1) from H_BiochemistryTest where PatientCode = tp.PatientCode) as IsSYSLIS,
+(select COUNT(1) from T_BiochemicalManualEntry where PatientCode = tp.PatientCode) as IsSYSLR,(select COUNT(1) from T_PatientSportsBenefit where PatientCode = tp.PatientCode) as IsYDCF 
+From T_Patient tp
+left join S_UserInfo su on su.UserName  = tp.ModifiedBy 
+
+where PatientType = 2 and tp.PatientCode =@patCode</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

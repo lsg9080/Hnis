@@ -1,0 +1,310 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>3.400713cm</Height>
+    <ReportItems>
+      <Textbox Name="TextBox49">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox4</DataElementName>
+        <Height>1cm</Height>
+        <Value>一 营养相关实验室数据 一</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>16pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Visibility>
+          <Hidden>=iif(Parameters!type.Value=0 or Parameters!type.Value=2,false,true)</Hidden>
+        </Visibility>
+        <Width>20.5cm</Width>
+        <ZIndex>1</ZIndex>
+      </Textbox>
+      <Table Name="Table1">
+        <DataSetName>LaboratoryListDataSet</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.932353cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Left>Solid</Left>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox12">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!P_Name.Value</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>4</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox15">
+                      <CanGrow>true</CanGrow>
+                      <Value>="参考值："+Fields!AsBt_ReferenceValue.Value</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox36">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.86836cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox43">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>6</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="patientCode">
+                          <Value>=Parameters!patientCode.Value</Value>
+                        </Parameter>
+                        <Parameter Name="code">
+                          <Value>=Fields!P_Code.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>ChildLaboratoryDataReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox53">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Right>Solid</Right>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>8</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox35">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderColor>
+                          <Default>Gainsboro</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>2.000713cm</Height>
+        <Left>0.35cm</Left>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>0.475225cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4.221472cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.979365cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.019758cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.019758cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.019758cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.019758cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.444908cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>1.4cm</Top>
+        <Width>20.2cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <Width>20.6cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="patientCode">
+      <DataType>String</DataType>
+      <Prompt>patientCode</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="LaboratoryListDataSource">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="LaboratoryListDataSet">
+      <Fields>
+        <Field Name="P_Code">
+          <DataField>P_Code</DataField>
+        </Field>
+        <Field Name="P_Name">
+          <DataField>P_Name</DataField>
+        </Field>
+        <Field Name="AsBt_ReferenceValue">
+          <DataField>AsBt_ReferenceValue</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select b.P_Code,b.P_Name,AsBt_ReferenceValue from H_BiochemistryTest b left join H_ParameterChild p on b.P_Code=p.P_Code where IsAttention=1 and PatientCode=@patientCode&#xD;
+group by b.P_Code,b.P_Name,AsBt_ReferenceValue</CommandText>
+        <DataSourceName>LaboratoryListDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="patientCode">
+            <Value>=Parameters!patientCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

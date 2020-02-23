@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Width>16cm</Width>
+  <PageWidth>9cm</PageWidth>
+  <PageHeight>6cm</PageHeight>
+  <LeftMargin>2.5cm</LeftMargin>
+  <TopMargin>2.5cm</TopMargin>
+  <RightMargin>2.5cm</RightMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <Body>
+    <Height>5cm</Height>
+  </Body>
+</Report>

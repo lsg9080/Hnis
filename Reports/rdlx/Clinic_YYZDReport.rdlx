@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<Body>
+		<Height>1.2cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>ClincYYZDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>None</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<CustomReportItem Name="FormattedText1">
+											<Type>FormattedText</Type>
+											<Style>
+												<BorderStyle>
+													<Top>Solid</Top>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+											<CustomProperties>
+												<CustomProperty>
+													<Name>Html</Name>
+													<Value>=Fields!PatientHistory_Pat.Value</Value>
+												</CustomProperty>
+											</CustomProperties>
+										</CustomReportItem>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>None</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+												<BorderWidth>
+													<Default>2pt</Default>
+												</BorderWidth>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>1cm</Height>
+				<Style>
+					<BorderStyle>
+						<Default>None</Default>
+					</BorderStyle>
+					<BorderWidth>
+						<Default>2pt</Default>
+					</BorderWidth>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>17.2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.5cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Visibility>
+					<Hidden>=Fields!PatientHistory_Pat.Value  = ""</Hidden>
+				</Visibility>
+				<Width>18.2cm</Width>
+			</Table>
+		</ReportItems>
+		<Style />
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>18cm</PageWidth>
+	<Width>18.2cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<DataSourceReference>../../RDSX/hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ClincYYZDataSet">
+			<Fields>
+				<Field Name="PatientHistory_Pat">
+					<DataField>PatientHistory_Pat</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>SELECT '&lt;body style="font-family: 微软雅黑;"&gt;'+ PatientHistory_Pat + '&lt;/body&gt;' as PatientHistory_Pat
+FROM T_patient where patientCode = @patCode  and PatientType=2</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>report:DesignTimeBackgroundRendering</Name>
+			<Value>True</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>1cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>LaboratoryDataDataSet</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LaboratoryDate.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.GetAsBtValue(Fields!AsBtValue.Value,Fields!AsBtResult.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox6">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LaboratoryDate2.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox11">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.GetAsBtValue(Fields!AsBtValue2.Value,Fields!AsBtResult2.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox14">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!LaboratoryDate3.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox17">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.GetAsBtValue(Fields!AsBtValue3.Value,Fields!AsBtResult3.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.3cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.3cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.3cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>18.9cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <Code>Function GetAsBtValue(ByVal item1 As String, ByVal item2 As String) As String&#xD;
+	Dim GetShowStr As String&#xD;
+	If(item2 = "l" And item1 &lt;&gt; "999999") Then&#xD;
+		GetShowStr = item1 + " ↓"&#xD;
+	Else If(item2 = "h" And item1 &lt;&gt; "999999") Then&#xD;
+		GetShowStr = item1 + " ↑"&#xD;
+	Else&#xD;
+		If(item1 = "999999") Then&#xD;
+			GetShowStr = item2&#xD;
+		Else&#xD;
+			GetShowStr = item1&#xD;
+		End If&#xD;
+	End If&#xD;
+	Return GetShowStr&#xD;
+End Function&#xD;
+&#xD;
+&#xD;
+&#xD;
+</Code>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <Width>19cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="patientCode">
+      <DataType>String</DataType>
+      <Prompt>patientCode</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="code">
+      <DataType>String</DataType>
+      <Prompt>code</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="LaboratoryDataDataSource">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="LaboratoryDataDataSet">
+      <Fields>
+        <Field Name="LaboratoryDate">
+          <DataField>LaboratoryDate</DataField>
+        </Field>
+        <Field Name="AsBtValue">
+          <DataField>AsBtValue</DataField>
+        </Field>
+        <Field Name="AsBtResult">
+          <DataField>AsBtResult</DataField>
+        </Field>
+        <Field Name="LaboratoryDate2">
+          <DataField>LaboratoryDate2</DataField>
+        </Field>
+        <Field Name="AsBtValue2">
+          <DataField>AsBtValue2</DataField>
+        </Field>
+        <Field Name="AsBtResult2">
+          <DataField>AsBtResult2</DataField>
+        </Field>
+        <Field Name="LaboratoryDate3">
+          <DataField>LaboratoryDate3</DataField>
+        </Field>
+        <Field Name="AsBtValue3">
+          <DataField>AsBtValue3</DataField>
+        </Field>
+        <Field Name="AsBtResult3">
+          <DataField>AsBtResult3</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>Pro_LaboratoryData</CommandText>
+        <DataSourceName>LaboratoryDataDataSource</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@patientCode">
+            <Value>=Parameters!patientCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@code">
+            <Value>=Parameters!code.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

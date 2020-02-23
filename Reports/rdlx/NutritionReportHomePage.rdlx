@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>27cm</Height>
+		<ReportItems>
+			<Rectangle Name="Container1">
+				<Height>27cm</Height>
+				<Width>20.8cm</Width>
+				<ReportItems>
+					<Textbox Name="TextBox2">
+						<CanGrow>true</CanGrow>
+						<DataElementName>TextBox1</DataElementName>
+						<Height>2cm</Height>
+						<Value>营养报告</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>18pt</FontSize>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>Center</TextAlign>
+							<VerticalAlign>Middle</VerticalAlign>
+						</Style>
+						<Top>8.2cm</Top>
+						<Width>20cm</Width>
+					</Textbox>
+					<Textbox Name="TextBox1">
+						<CanGrow>true</CanGrow>
+						<DataElementName>TextBox2</DataElementName>
+						<Height>2cm</Height>
+						<Value>=Parameters!hospName.Value</Value>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<FontSize>22pt</FontSize>
+							<FontWeight>700</FontWeight>
+							<PaddingBottom>2pt</PaddingBottom>
+							<PaddingLeft>2pt</PaddingLeft>
+							<PaddingRight>2pt</PaddingRight>
+							<PaddingTop>2pt</PaddingTop>
+							<TextAlign>Center</TextAlign>
+							<VerticalAlign>Middle</VerticalAlign>
+						</Style>
+						<Top>6cm</Top>
+						<Width>20cm</Width>
+					</Textbox>
+					<Table Name="Table1">
+						<DataSetName>PatientModelDataSet</DataSetName>
+						<Details>
+							<TableRows>
+								<TableRow>
+									<Height>1.19724cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox6">
+													<CanGrow>true</CanGrow>
+													<Value>姓   名：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>13pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Right</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>2</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox11">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!PatientName.Value</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>14pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>1.19724cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox3">
+													<CanGrow>true</CanGrow>
+													<Value>住院号：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>13pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Right</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>2</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox12">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!BeInNo.Value</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>14pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>1.19724cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox5">
+													<CanGrow>true</CanGrow>
+													<Value>科   室：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>13pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Right</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>2</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox13">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!DepartName.Value</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>14pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>1.19724cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox9">
+													<CanGrow>true</CanGrow>
+													<Value>床   号：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>13pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Right</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox14">
+													<CanGrow>true</CanGrow>
+													<Value />
+													<Style>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox10">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!BedNo.Value</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>14pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Left</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+								<TableRow>
+									<Height>1.19724cm</Height>
+									<TableCells>
+										<TableCell>
+											<ReportItems>
+												<Textbox Name="TextBox4">
+													<CanGrow>true</CanGrow>
+													<Value>院   区：</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>13pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Right</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+										<TableCell>
+											<ColSpan>2</ColSpan>
+											<ReportItems>
+												<Textbox Name="TextBox7">
+													<CanGrow>true</CanGrow>
+													<Value>=Fields!CourtyardName.Value</Value>
+													<Style>
+														<FontFamily>微软雅黑</FontFamily>
+														<FontSize>14pt</FontSize>
+														<PaddingBottom>2pt</PaddingBottom>
+														<PaddingLeft>2pt</PaddingLeft>
+														<PaddingRight>2pt</PaddingRight>
+														<PaddingTop>2pt</PaddingTop>
+														<TextAlign>Center</TextAlign>
+														<VerticalAlign>Middle</VerticalAlign>
+														<BorderStyle>
+															<Bottom>Solid</Bottom>
+														</BorderStyle>
+													</Style>
+												</Textbox>
+											</ReportItems>
+										</TableCell>
+									</TableCells>
+								</TableRow>
+							</TableRows>
+						</Details>
+						<Height>5.99724cm</Height>
+						<Left>5.4cm</Left>
+						<Style>
+							<FontFamily>微软雅黑</FontFamily>
+							<VerticalAlign>Middle</VerticalAlign>
+						</Style>
+						<TableColumns>
+							<TableColumn>
+								<Width>2.5cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>3cm</Width>
+							</TableColumn>
+							<TableColumn>
+								<Width>4.5cm</Width>
+							</TableColumn>
+						</TableColumns>
+						<Top>13.2cm</Top>
+						<Width>10cm</Width>
+						<ZIndex>1</ZIndex>
+					</Table>
+				</ReportItems>
+			</Rectangle>
+		</ReportItems>
+	</Body>
+	<BottomMargin>1cm</BottomMargin>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<TopMargin>1cm</TopMargin>
+	<Width>20.8cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>hospName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="PatientModelDataSet">
+			<Fields>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="InputDate">
+					<DataField>InputDate</DataField>
+				</Field>
+				<Field Name="BranchType">
+					<DataField>BranchType</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="IllnessCode">
+					<DataField>IllnessCode</DataField>
+				</Field>
+				<Field Name="DietDoctorAdvice">
+					<DataField>DietDoctorAdvice</DataField>
+				</Field>
+				<Field Name="HDA_Name">
+					<DataField>HDA_Name</DataField>
+				</Field>
+				<Field Name="RiskStatus">
+					<DataField>RiskStatus</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="IsLeave">
+					<DataField>IsLeave</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="InputDateStr">
+					<DataField>InputDateStr</DataField>
+				</Field>
+				<Field Name="InputHeight">
+					<DataField>InputHeight</DataField>
+				</Field>
+				<Field Name="InputWeight">
+					<DataField>InputWeight</DataField>
+				</Field>
+				<Field Name="MaternalInfo">
+					<DataField>MaternalInfo</DataField>
+				</Field>
+				<Field Name="Marital">
+					<DataField>Marital</DataField>
+				</Field>
+				<Field Name="Nation">
+					<DataField>Nation</DataField>
+				</Field>
+				<Field Name="Profession">
+					<DataField>Profession</DataField>
+				</Field>
+				<Field Name="ChiefComplaint">
+					<DataField>ChiefComplaint</DataField>
+				</Field>
+				<Field Name="PresentHistory">
+					<DataField>PresentHistory</DataField>
+				</Field>
+				<Field Name="Pasthistory">
+					<DataField>Pasthistory</DataField>
+				</Field>
+				<Field Name="CourtyardAreaID">
+					<DataField>CourtyardAreaID</DataField>
+				</Field>
+				<Field Name="CourtyardName">
+					<DataField>CourtyardName</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>  select * from V_AllPatientInfoList where PatientCode=@patientCode </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>5cm</Height>
+    <ReportItems>
+      <Textbox Name="TextBox9">
+        <CanGrow>true</CanGrow>
+        <Height>0.8cm</Height>
+        <Value>=Parameters!hospName.Value + “物料单"</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Width>28.4cm</Width>
+        <ZIndex>1</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox7">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Value>=“收费时间：”+Parameters!StartDate.Value + "~" + Parameters!EndDate.Value+"                  打印时间： "&amp;now+"                  打印人： "&amp;Parameters!userName.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>2.9cm</Top>
+        <Width>26.9cm</Width>
+        <ZIndex>6</ZIndex>
+      </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="TextBox1">
+                    <CanGrow>true</CanGrow>
+                    <Value />
+                    <Style>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>4.4cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.7cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Sum(Fields!SYNum.Value)</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>5pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Tablix1_FullName1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!FullName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>0.6cm</Size>
+                <CellContents>
+                  <Textbox Name="TextBox2">
+                    <CanGrow>true</CanGrow>
+                    <Value>=Fields!FullName.Value</Value>
+                    <Style>
+                      <FontFamily>Arial</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>700</FontWeight>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>5pt</PaddingTop>
+                      <TextAlign>Center</TextAlign>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Tablix1_DepartName1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DepartName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>3.6cm</Size>
+                <CellContents>
+                  <Textbox Name="TextBox3">
+                    <CanGrow>true</CanGrow>
+                    <Value>=Fields!DepartName.Value</Value>
+                    <Style>
+                      <FontFamily>Arial</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>700</FontWeight>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>5pt</PaddingTop>
+                      <TextAlign>Center</TextAlign>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>DataSet1</DataSetName>
+        <Top>0.9cm</Top>
+        <Height>1.3cm</Height>
+        <Width>8cm</Width>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Tablix>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>21cm</PageHeight>
+  <PageWidth>29.7cm</PageWidth>
+  <Width>28.5cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>医院名称</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="startDate">
+      <DataType>String</DataType>
+      <Prompt>开始时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>String</DataType>
+      <Prompt>结束时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjmc">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂名称</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjlb">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂类别</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sysj">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>使用时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cflx">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>处方类型</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="type">
+      <DataType>String</DataType>
+      <Prompt>制剂规格显示</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="BranchType">
+          <DataField>BranchType</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="SYNum">
+          <DataField>SYNum</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_MaterialList]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjmc">
+            <Value>=Parameters!zjmc.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlb">
+            <Value>=Parameters!zjlb.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sysj">
+            <Value>=Parameters!sysj.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@cflx">
+            <Value>=Parameters!cflx.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@type">
+            <Value>=Parameters!type.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+    <CustomProperty>
+      <Name>report:DesignTimeBackgroundRendering</Name>
+      <Value>True</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

@@ -1,0 +1,161 @@
+<!-- 
+    删除 调试下的代码
+    取消iframe 注释
+ -->
+@using HNTSBusiness.Uility
+@using HNTSBusiness.EntityCenter.TreatmentCenter.PatientManagement
+@using HNTS.Model.TreatmentCenter
+@{
+    Layout = "~/Views/Shared/ActionPageShared.cshtml";
+    IList<PatientModel> list = Patient.GetPatientModel(ViewBag.beinNo, (int)HNTSEnums.PatientType.住院);
+}
+<!-- 调试 -->
+<link rel="stylesheet" href="http://demo.wincome.group/Content/css/layui.css" />
+
+<style type="text/css">
+    #ContentPanelL::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #ContentPanelL::-webkit-scrollbar {
+        width: 7px;
+        background-color: #FFFFFF;
+    }
+
+    #ContentPanelL::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar {
+        width: 7px;
+        background-color: #FFFFFF;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+</style>
+<div class="layui-row" id="report_content">
+    <div style="width: 20%; float: left;">
+        <div style="padding: 10px; padding-right: 0;">
+            <div style="margin-bottom: 5px;" id="divBack">
+                <input type="button" class="layui-btn layui-btn-primary" value="返回" onclick="window.document.location.href = '/TreatmentCenter/NutritionReportManagement/NutritionReportPatient/1';" />
+            </div>
+            <!-- <div style="background-color: #fff; border: 1px solid #e2e2e2; padding: 10px;overflow-y:auto;" id="ContentPanelL">
+                @{
+                    if (list != null && list.Any())
+                    {
+                        foreach (PatientModel item in list)
+                        {
+                            <div class="trrr" style="margin-left:10px;cursor:pointer;" onclick="GetReportToContent('@item.PatientCode',0);">@item.InputDate.ToString("yyyy-MM-dd")</div>
+                            foreach (var name in Enum.GetValues(typeof(HNTSEnums.NutritionReportItems)))
+                            {
+                                int index = (int)Enum.Parse(typeof(HNTSEnums.NutritionReportItems), name.ToString());
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('@item.PatientCode',@index);">@(name.ToString().IndexOf("膳调评估记录") > -1 ? "24h" + name : name)</a></label>
+                                </div>
+                            }
+                        }
+                    }
+
+                }
+
+            </div> -->
+
+            <!-- 调试 -->
+            <div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); padding: 10px; overflow-y: auto; height: 596px;" id="ContentPanelL">
+                <div class="trrr" style="margin-left:10px;cursor:pointer;" onclick="GetReportToContent('6237001_12',0);">2019-07-04</div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',1);">基本信息</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',2);">营养筛评记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',3);">营养评估记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',4);">24h膳调评估记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',5);">营养会诊记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',6);">肠内医嘱记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',7);">营养食谱记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',8);">营养查房记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',9);">营养宣教记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',10);">饮食变更记录</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',11);">营养相关实验室数据</a></label>
+                    </div>
+                    <div class="trrr" style="margin-left:25px;">
+                        <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',12);">出院记录</a></label>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div style="width: 0.5%; float: left;">&nbsp;</div>
+    <div style="width: 79%; float: left;">
+        <div style="background-color: #fff; border: 1px solid #e2e2e2; padding: 10px;margin-top:10px;" id="ReportContentPaneL">
+            <!-- <iframe id="mainIframe" src="/TreatmentCenter/NutritionReportManagement/NutritionReport?code=@ViewBag.patCode&type=0" frameborder="no" scrolling="no" style="width: 100%;" border="0" marginwidth="0" marginheight="0"></iframe> -->
+            <!-- 调试 -->
+            <iframe id="mainIframe" src="/NutritionReportManagement/NutritionReport?code=@ViewBag.patCode&type=0" frameborder="no" scrolling="no" style="width: 100%;" border="0" marginwidth="0" marginheight="0"></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- 调试 -->
+<script src="http://demo.wincome.group/Content/Jquery/jquery1.9.1.js"></script>
+
+
+<script>
+    var headers = {};
+    //获取防伪标记
+    var token = $('@Html.AntiForgeryToken()').val();
+    headers["__RequestVerificationToken"] = token;
+    var dialog, common, fm, edit;
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winForm', 'winDialog', 'winCommon'], function () {
+        fm = layui.winForm;
+        common = layui.winCommon;
+        dialog = layui.winDialog;
+        $(document).ready(function () {
+            var sheight = window.screen.height;
+            var occupy = $("#divBack").height();
+            $("#report_content").height(sheight - occupy - 150);
+            $("#ContentPanelL").height(sheight - occupy - 230);
+            $("#ReportContentPaneL").height(sheight - occupy - 187);
+            $("#mainIframe").height(sheight - occupy - 190);
+
+        });
+    });
+
+    function GetReportToContent(code, index) {
+        $("#mainIframe").attr("src", "/TreatmentCenter/NutritionReportManagement/NutritionReport?code=" + code + "&type=" + index);
+    }
+
+
+</script>
+

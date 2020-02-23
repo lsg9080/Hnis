@@ -1,0 +1,1549 @@
+<html><head>
+    <meta name="viewport" content="width=device-width">
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edgem">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link rel="stylesheet" href="/Content/BeginnerAdmin/plugins/layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="/Content/BeginnerAdmin/css/global.css" media="all">
+    <link rel="stylesheet" href="/Content/BeginnerAdmin/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/Content/css/style.css" media="all">
+    <link rel="stylesheet" href="/Content/Jquery/datetime/jquery.datetimepicker.css">
+    <script type="text/javascript" src="/Content/Jquery/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="/Content/Jquery/datetime/jquery.datetimepicker.full.min.js"></script>
+    <script type="text/javascript" src="/Content/BeginnerAdmin/plugins/layui/layui.js"></script>
+
+    <script>
+
+        layui.config({
+            skin: 'demo-class',
+            base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+        }).use(['winCookie'], function() {
+            var sh = window.screen.height;
+            var $ = layui.jquery;
+            var cook = layui.winCookie;
+            $(document).ready(function () {
+                cook.win_setCookie("SH", sh);
+                //$('.layui-layer-load').remove();
+                //var loading = '<div class="loading"><div class="pic"></div></div>';
+                //$("body").append(loading);
+                //document.onreadystatechange = function () {//即在加载的过程中执行下面的代码
+                //    if(document.readyState=="complete"){//complete加载完成
+                //        $(".loading").fadeOut();
+                //    }
+                //}
+            });
+        });
+        function openWindowUrl(url, code, title) {
+            $(window.parent.parent.document).find("dd[title=" + title + "]").click();
+            setTimeout(parent.openWindow(url, code),200);     
+        }
+        var indexxxxx = '';
+        function closeWin() {
+            if (indexxxxx) dialog.win_close(indexxxxx);
+        }
+        function openTemplate(t, elem, tp, url, msg) {
+            var c = $.trim($(elem).val());
+            if ((c.length > 0 && t == 0) || t == 1) {
+                var u = url + '&pType=' + tp;
+                var tit = t == 0 ? "存为模板" : "调用模板";
+                var area = t == 0 ? ["500px", "100px;"] : ["500px", "500px;"];
+                indexxxxx = dialog.win_open(u, tit, area);
+            } else {
+                dialog.win_alert(msg + '不能为空！', '提示', 5);
+            }
+        }
+    </script>
+    <style>
+        
+         input::-webkit-input-placeholder {
+             color: #d2d2d2;
+         }
+
+        input::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: #d2d2d2;
+        }
+
+        input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: #d2d2d2;
+        }
+
+        input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: #d2d2d2;
+        }
+
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: #FFFFFF;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar {
+            width:7px;
+            height: 7px;
+            background-color: #FFFFFF;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #4478a9;
+        }
+        .loading{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 100;
+            background-color: #fff;
+        }
+        .loading .pic{
+            width: 190px;
+            height: 14px;
+            background:url(/Content/images/rowLoading.gif);
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+<link id="layuicss-skinlayercss" rel="stylesheet" href="http://zyk.wincome.group/Content/BeginnerAdmin/plugins/layui/css/modules/layer/default/layer.css?v=3.0.2302" media="all"><link id="layuicss-laydatecss" rel="stylesheet" href="http://zyk.wincome.group/Content/BeginnerAdmin/plugins/layui/css/modules/laydate/laydate.css" media="all"></head>
+<body marginwidth="0" marginheight="0">
+<div style="background-color: #f3f7fd; overflow:hidden;">
+    
+<style type="text/css">
+    #ContentPanelL::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #ContentPanelL::-webkit-scrollbar {
+        width: 7px;
+        background-color: #FFFFFF;
+    }
+
+    #ContentPanelL::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar {
+        width: 7px;
+        background-color: #FFFFFF;
+    }
+
+    #ReportContentPaneL::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+</style>
+<div class="layui-row" id="report_content" style="height: 676px;">
+    <div style="width: 20%; float: left;">
+        <div style="padding: 10px; padding-right: 0;">
+            <div style="margin-bottom: 5px;" id="divBack">
+                <input type="button" class="layui-btn layui-btn-primary" value="返回" onclick="window.document.location.href = '/TreatmentCenter/NutritionReportManagement/NutritionReportPatient/1';">
+            </div>
+            <div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); padding: 10px; overflow-y: auto; height: 596px;" id="ContentPanelL">
+                            <div class="trrr" style="margin-left:10px;cursor:pointer;" onclick="GetReportToContent('6237001_12',0);">2019-07-04</div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',1);">基本信息</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',2);">营养筛评记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',3);">营养评估记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',4);">24h膳调评估记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',5);">营养会诊记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',6);">肠内医嘱记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',7);">营养食谱记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',8);">营养查房记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',9);">营养宣教记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',10);">饮食变更记录</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',11);">营养相关实验室数据</a></label>
+                                </div>
+                                <div class="trrr" style="margin-left:25px;">
+                                    <label style="font-weight: bold;cursor:pointer;"><a onclick="GetReportToContent('6237001_12',12);">出院记录</a></label>
+                                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div style="width: 0.5%; float: left;">&nbsp;</div>
+    <div style="width: 79%; float: left;">
+        <div style="background-color: rgb(255, 255, 255); border: 1px solid rgb(226, 226, 226); padding: 10px; margin-top: 10px; height: 639px;" id="ReportContentPaneL">
+            <!-- <iframe id="mainIframe" src="/TreatmentCenter/NutritionReportManagement/NutritionReport?code=6237001_12&amp;type=0" frameborder="no" scrolling="no" style="width: 100%; height: 636px;" border="0" marginwidth="0" marginheight="0"></iframe> -->
+            <html><head>
+                <meta name="viewport" content="width=device-width">
+                <title></title>
+                <meta charset="utf-8">
+                <meta name="renderer" content="webkit">
+                <meta http-equiv="X-UA-Compatible" content="IE=edgem">
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="format-detection" content="telephone=no">
+                <meta http-equiv="Access-Control-Allow-Origin" content="*">
+                <link href="/Content/css/theme-cosmo.css" rel="stylesheet">
+                <link href="/Content/css/site.css" rel="stylesheet">
+                <link href="/Content/css/GrapeCity.ActiveReports.Viewer.Html.css" rel="stylesheet">
+                <script src="/Content/Scripts/jquery-1.10.2.js"></script>
+                <script src="/Content/Scripts/bootstrap-3.0.0.js"></script>
+                <script src="/Content/Scripts/knockout-2.3.0.js"></script>
+                <script src="/Content/Scripts/GrapeCity.ActiveReports.Viewer.Html.js"></script><style type="text/css"></style>
+                <style type="text/css">
+                    ::-webkit-scrollbar-track {
+                        -webkit-box-shadow: #FFFFFF;
+                        background-color: #FFFFFF;
+                        border-radius: 10px;
+                    }
+            
+                    ::-webkit-scrollbar {
+                        width:7px;
+                        height: 7px;
+                        background-color: #FFFFFF;
+                    }
+            
+                    ::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background: #4478a9;
+                    }
+                </style>
+            </head>
+            <body marginwidth="0" marginheight="0" style="">
+                <div style="background-color: #f3f3f3;">
+                    
+            <div>
+                <div class="container">
+                    <div id="viewerContainer" style="height: 618px;"><div class="ar-viewer desktop" style="width: 100%; height: 100%" data-bind="resizeViewerBody: {}">
+                        <!-- toolbar -->
+                        <div class="btn-toolbar toolbar toolbar-top">
+                            <div class="btn-group btn-group-sm" style="display:none;">			
+                                <button class="btn btn-default" data-bind="command: toolbar.sidebar" title="侧边栏">
+                                    <span class="glyphicon glyphicon-list-alt"></span>
+                                </button>			
+                                <button class="btn btn-default" data-bind="command: toolbar.search" title="查找">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+                    
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-default" data-bind="command: toolbar.firstPage" title="第一页" disabled="disabled">
+                                    <span class="glyphicon glyphicon-step-backward"></span>
+                                </button>
+                                <button class="btn btn-default" data-bind="command: toolbar.prevPage" title="前一页" disabled="disabled">
+                                    <span class="glyphicon icon-large glyphicon-chevron-left"></span>
+                                </button>
+                                <div class="navbar-left input-group-sm" style="float:left; width:60px;">
+                                    <input class="form-control" type="text" data-bind="valueEdit: toolbar.pageNumber, enable: toolbar.pageNumberEnabled">
+                                </div>
+                                <button class="btn btn-default" data-bind="	command: toolbar.nextPage" title="后一页">
+                                    <span class="glyphicon icon-large glyphicon-chevron-right"></span>
+                                </button>
+                                <button class="btn btn-default" data-bind="command: toolbar.lastPage" title="最后页">
+                                    <span class="glyphicon icon-large glyphicon-step-forward"></span>
+                                </button>
+                            </div>
+                    
+                            <div class="btn-group btn-group-sm" style="display:none;">
+                                <button id="backToParent" class="btn btn-default" data-bind="command: toolbar.backToParent" title="返回上级报表" disabled="disabled">
+                                    <span class="glyphicon glyphicon-share-alt mirror-by-x"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-default" data-bind="command: toolbar.print" title="打印">
+                                    <span class="glyphicon glyphicon-print"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="btn-group btn-group-sm" style="display:none;">
+                                <button id="renderMode" class="btn btn-default" title="分页/不分页" data-bind="command: toolbar.renderMode, css: { active: toolbar.renderModeState() == 'Galley'}" style="">
+                                    <span class="glyphicon glyphicon-share"></span>
+                                </button>
+                            </div>
+                            
+                            <div class="btn-group btn-group-sm" style="display:none;">
+                                <button id="single" class="btn btn-default active" title="单页模式" data-bind="command: toolbar.singlePageView, css: { active: toolbar.pageViewMode === 'single' }">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 14 14">
+                                        <path fill="currentColor" d="M9.491,3.333C9.496,3.349,9.5,3.37,9.5,3.394v1.211c0,0.025-0.004,0.046-0.009,0.062H4.509
+                                            C4.504,4.65,4.5,4.63,4.5,4.604V3.394c0-0.023,0.004-0.045,0.009-0.061H9.491 M3,2v4h8V2H3z" shape-rendering="geometricPrecision">
+                                        </path>
+                                        <path fill="currentColor" d="M13,7.5h-2v-1h2V7.5z M10.5,7.5h-2v-1h2V7.5z M8,7.5H6v-1h2V7.5z
+                                            M5.5,7.5h-2v-1h2V7.5z M3,7.5H1v-1h2V7.5z" shape-rendering="geometricPrecision">
+                                        </path>
+                                        <path fill="currentColor" d="M9.491,9.333C9.496,9.349,9.5,9.37,9.5,9.394v1.211c0,0.025-0.004,0.046-0.009,0.062H4.509
+                                            C4.504,10.65,4.5,10.63,4.5,10.604V9.394c0-0.023,0.004-0.045,0.009-0.061H9.491 M3,8v4h8V8H3z" shape-rendering="geometricPrecision">
+                                        </path>
+                                    </svg>
+                                </button>
+                                <button id="continuous" class="btn btn-default" title="连续模式" data-bind="command: toolbar.continuousPageView, css: { active: toolbar.pageViewMode === 'continuous' }">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="1.4em" height="1.4em" viewBox="0 0 14 14">
+                                        <path fill="currentColor" d="M9.991,3.5C9.996,3.518,10,3.541,10,3.568v6.864c0,0.026-0.004,0.051-0.009,0.067H4.009
+                                            C4.004,10.482,4,10.459,4,10.432V3.568C4,3.541,4.004,3.518,4.009,3.5H9.991 M10.605,2H3.395C2.9,2,2.5,2.479,2.5,3.068v7.864
+                                            C2.5,11.521,2.9,12,3.395,12h7.211c0.494,0,0.895-0.479,0.895-1.068V3.068C11.5,2.479,11.1,2,10.605,2L10.605,2z" shape-rendering="geometricPrecision">
+                                        </path>
+                                        <path fill="currentColor" d="M5.5,7.5c-0.13,0-0.26-0.05-0.35-0.15C5.05,7.26,5,7.13,5,7s0.05-0.26,0.141-0.35
+                                            c0.199-0.2,0.529-0.19,0.719,0C5.95,6.74,6,6.87,6,7S5.95,7.26,5.85,7.35C5.76,7.45,5.63,7.5,5.5,7.5z" shape-rendering="geometricPrecision">
+                                        </path>
+                                        <path fill="currentColor" d="M7,7.5c-0.13,0-0.26-0.05-0.35-0.15C6.55,7.26,6.5,7.13,6.5,7s0.05-0.26,0.15-0.35
+                                            c0.18-0.19,0.52-0.19,0.699,0C7.45,6.74,7.5,6.87,7.5,7S7.45,7.26,7.35,7.35C7.26,7.45,7.13,7.5,7,7.5z" shape-rendering="geometricPrecision">
+                                        </path>
+                                        <path fill="currentColor" d="M8.5,7.5c-0.13,0-0.26-0.05-0.352-0.141C8.05,7.26,8,7.13,8,7s0.05-0.26,0.148-0.35
+                                            C8.33,6.46,8.66,6.46,8.85,6.641C8.95,6.74,9,6.87,9,7S8.95,7.26,8.85,7.35C8.76,7.45,8.63,7.5,8.5,7.5z" shape-rendering="geometricPrecision">
+                                        </path>
+                                    </svg>
+                                </button>
+                            </div>
+                            
+                            <div class="btn-group btn-group-sm" data-bind="visible: toolbar.exportsAreAvailable">
+                                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-bind="enable: toolbar.canExport">
+                                    <span class="loader" data-bind="visible: toolbar.isExportProcessing" role="status" style="display: none;"></span>
+                                    另存为<span class="caret" style="display:none;"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li data-bind="command: toolbar.exportTo('Pdf'), attr: { hidden: !toolbar.exportToAvailable('Pdf') } "><a href="#" "="">PDF</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Word'), attr: { hidden: !toolbar.exportToAvailable('Word') } "><a href="#" style="display:none;">Word</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Docx'), attr: { hidden: !toolbar.exportToAvailable('Docx') }"><a href="#" style="display:none;">Word Document (.docx)</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Image'), attr: { hidden: !toolbar.exportToAvailable('Image') }"><a href="#">图片</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Html'), attr: { hidden: !toolbar.exportToAvailable('Html') }"><a href="#">网页</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Xls'),  attr: { hidden: !toolbar.exportToAvailable('Xls') }"><a href="#">Excel</a></li>
+                                    <li data-bind="command: toolbar.exportTo('Csv'), attr: { hidden: !toolbar.exportToAvailable('Csv') }"><a style="display:none;" href="#">CSV File</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group btn-group-sm">
+                                <button class="btn btn-default" id="sendemail-btn" data-target="#sendemaildialog" data-toggle="modal" data-bind="enable: toolbar.canExport, visible: canSendEmail(), click: function() {sendEmailDialog.clear()}" style="display: none;">
+                                    email
+                                </button>
+                            </div>
+                    
+                            <div class="flex-group">
+                                <button id="cancelRender" class="btn btn-secondary btn-sm pull-right" title="Cancel Report" data-bind="command: toolbar.cancelRendering" style="display: none;">
+                                    <span>Cancel Report</span>
+                                    <span class="glyphicon glyphicon-remove-circle info"></span>
+                                </button>
+                                <button id="cancelling" class="btn btn-secondary btn-sm pull-right disabled" title="Cancelling..." data-bind="command: toolbar.showCancelling" style="display: none;">
+                                    <span>Cancelling...</span>
+                                    <span class="glyphicon info"></span>
+                                </button>
+                                <button id="renderFullReport" class="btn btn-secondary btn-sm pull-right" title="This report is based on partial data" data-bind="command: toolbar.renderFullReport" style="display: none;">
+                                    <span>Partial Data. Run Full Report</span>
+                                    <span class="glyphicon glyphicon-play"></span>
+                                </button>
+                            </div>
+                    
+                        </div>
+                    
+                        <div class="viewer-body" style="width: 100%; height: 570px;">
+                            <!-- sidebar -->
+                            <div class="sidebar" data-bind="visible: sidebarState() != 'Hidden', showSidebar: sidebarState() != 'Hidden'" style="height: 570px; display: none;">
+                                <ul class="nav nav-tabs">
+                                    <li data-bind="visible: hasToc, css: { 'active': sidebarState() === 'TOC' }" class="" style="display: none;"><a href="#gc-viewer-tab-toc" data-toggle="tab" data-bind="	click: function () { setSidebarState('TOC') }">目录</a></li>
+                                    <li data-bind="visible: hasParameters, css: { 'active': sidebarState() === 'Parameters' }" class="" style=""><a href="#gc-viewer-tab-params" data-toggle="tab" data-bind="click: function () { setSidebarState('Parameters') }">参数</a></li>
+                                    <li data-bind="css: { 'active': sidebarState() === 'Search' }" class=""><a href="#gc-viewer-tab-search" data-toggle="tab" data-bind="	click: function () { setSidebarState('Search') }">查找</a></li>
+                                </ul>
+                                <div class="tab-content" style="width: 100%" data-bind="activeTab: sidebarState">
+                                    <div id="gc-viewer-tab-toc" class="tab-pane toc-container" data-tab-name="TOC" data-bind="visible: hasToc" style="display: none;">
+                                        <div data-bind="template: { name: 'toc-template', data: tocPane.root }">
+                        <ul class="toc" data-bind="template: { name: 'toc-node-template', foreach: $data.kids }"></ul>
+                    </div>
+                    <script id="toc-node-template" type="text/html">
+                        <li class="toc-node collapsed"
+                            data-bind="css: { leaf: $data.isLeaf != false, branch: $data.isLeaf == false }, treeNode: { template: 'toc-template', node: $data }">
+                            <a class="toggle" href="#" data-bind="visible: $data.isLeaf == false"></a>
+                            <a class="link" href="#" data-bind="text: name, click: function() { $root.tocPane.navigate($data); return false; }"></a>
+                        </li>
+                    </script>
+                    <script id="toc-template" type="text/html">
+                        <ul class="toc" data-bind="template: { name: 'toc-node-template', foreach: $data.kids }"></ul>
+                    </script>
+                                    </div>
+                                    <div id="gc-viewer-tab-params" class="tab-pane" data-tab-name="Parameters" data-bind="visible: hasParameters, spin: document.parameterValidation" style="">
+                                        <!-- parameters pane for desktop layout -->
+                    <div class="panel-body" style="min-width: 120px">
+                    
+                        <div data-bind="foreach: parametersPane.parameters">
+                            <div style="margin-bottom: 10px;">
+                                <label data-bind="text: prompt, tooltip: name">hospName</label>
+                    
+                                <div class="param-value" data-bind="css: { 'has-error': errorText().length > 0 }, attr: { pname: name }" pname="hospName">
+                                    <!-- ko if: editor() == 'SingleValue' -->
+                                    <!-- ko if: type == 'bool' --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == true) --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == false) --><!-- /ko -->
+                                    <!-- ko if: !(type == 'datetime' || type == 'bool') -->
+                                    <input type="text" class="form-control" data-bind="value: stringValue, enable: enabled">
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiLine' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'SelectOneFromMany' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiValue' --><!-- /ko -->
+                    
+                                    <span data-bind="visible: nullable &amp;&amp; editor() != 'SelectOneFromMany'" style="display: none;">
+                                            <input type="checkbox" data-bind="checked: isValueNull, enable: enabled, style:{ 'margin-left': type == 'bool' ? '10px' : ''}">
+                                            <label>Null</label>
+                                    </span>
+                                </div>
+                    
+                                <div style="color: red; display: none;" data-bind="visible: errorText().length > 0">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    <span data-bind="text: errorText" style="font-size: small"></span>
+                                </div>
+                            </div>
+                        
+                            <div style="margin-bottom: 10px;">
+                                <label data-bind="text: prompt, tooltip: name">patientCode</label>
+                    
+                                <div class="param-value" data-bind="css: { 'has-error': errorText().length > 0 }, attr: { pname: name }" pname="patientCode">
+                                    <!-- ko if: editor() == 'SingleValue' -->
+                                    <!-- ko if: type == 'bool' --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == true) --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == false) --><!-- /ko -->
+                                    <!-- ko if: !(type == 'datetime' || type == 'bool') -->
+                                    <input type="text" class="form-control" data-bind="value: stringValue, enable: enabled">
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiLine' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'SelectOneFromMany' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiValue' --><!-- /ko -->
+                    
+                                    <span data-bind="visible: nullable &amp;&amp; editor() != 'SelectOneFromMany'" style="display: none;">
+                                            <input type="checkbox" data-bind="checked: isValueNull, enable: enabled, style:{ 'margin-left': type == 'bool' ? '10px' : ''}">
+                                            <label>Null</label>
+                                    </span>
+                                </div>
+                    
+                                <div style="color: red; display: none;" data-bind="visible: errorText().length > 0">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    <span data-bind="text: errorText" style="font-size: small"></span>
+                                </div>
+                            </div>
+                        
+                            <div style="margin-bottom: 10px;">
+                                <label data-bind="text: prompt, tooltip: name">userName</label>
+                    
+                                <div class="param-value" data-bind="css: { 'has-error': errorText().length > 0 }, attr: { pname: name }" pname="userName">
+                                    <!-- ko if: editor() == 'SingleValue' -->
+                                    <!-- ko if: type == 'bool' --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == true) --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == false) --><!-- /ko -->
+                                    <!-- ko if: !(type == 'datetime' || type == 'bool') -->
+                                    <input type="text" class="form-control" data-bind="value: stringValue, enable: enabled">
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiLine' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'SelectOneFromMany' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiValue' --><!-- /ko -->
+                    
+                                    <span data-bind="visible: nullable &amp;&amp; editor() != 'SelectOneFromMany'" style="display: none;">
+                                            <input type="checkbox" data-bind="checked: isValueNull, enable: enabled, style:{ 'margin-left': type == 'bool' ? '10px' : ''}">
+                                            <label>Null</label>
+                                    </span>
+                                </div>
+                    
+                                <div style="color: red; display: none;" data-bind="visible: errorText().length > 0">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    <span data-bind="text: errorText" style="font-size: small"></span>
+                                </div>
+                            </div>
+                        
+                            <div style="margin-bottom: 10px;">
+                                <label data-bind="text: prompt, tooltip: name">type</label>
+                    
+                                <div class="param-value" data-bind="css: { 'has-error': errorText().length > 0 }, attr: { pname: name }" pname="type">
+                                    <!-- ko if: editor() == 'SingleValue' -->
+                                    <!-- ko if: type == 'bool' --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == true) --><!-- /ko -->
+                                    <!-- ko if: (type == 'datetime' && dateOnly == false) --><!-- /ko -->
+                                    <!-- ko if: !(type == 'datetime' || type == 'bool') -->
+                                    <input type="text" class="form-control" data-bind="value: stringValue, enable: enabled">
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiLine' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'SelectOneFromMany' --><!-- /ko -->
+                    
+                                    <!-- ko if: editor() == 'MultiValue' --><!-- /ko -->
+                    
+                                    <span data-bind="visible: nullable &amp;&amp; editor() != 'SelectOneFromMany'" style="display: none;">
+                                            <input type="checkbox" data-bind="checked: isValueNull, enable: enabled, style:{ 'margin-left': type == 'bool' ? '10px' : ''}">
+                                            <label>Null</label>
+                                    </span>
+                                </div>
+                    
+                                <div style="color: red; display: none;" data-bind="visible: errorText().length > 0">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    <span data-bind="text: errorText" style="font-size: small"></span>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div>
+                            <button id="refresh-button" class="btn btn-block btn-default btn-primary" data-bind="command: parametersPane.refreshReport">
+                                查看报表
+                            </button>
+                        </div>
+                    </div>
+                    
+                                    </div>
+                                    <div id="gc-viewer-tab-search" class="tab-pane" data-tab-name="Search">
+                                        <div class="panel-body" data-bind="with: searchPane">
+                        <div>
+                            <label class="control-label">查找:</label>
+                        </div>
+                        <div>
+                            <input type="search" class="form-control" data-bind="value: searchString, valueUpdate: 'input', event: { keypress: keyPressHandler }">
+                        </div>
+                        <div style="margin-top: 5pt">
+                            <input type="checkbox" data-bind="checked: matchCase">
+                            <label class="control-label">大小写敏感</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" data-bind="checked: wholePhrase">
+                            <label class="control-label">全字匹配</label>
+                        </div>
+                        <div style="float: right">
+                            <button class="btn btn-primary" data-bind="command: clear" style="margin: 1pt">清空</button>
+                            <button class="btn btn-primary" data-bind="command: search" style="margin: 1pt" disabled="disabled">查找</button>
+                        </div>
+                        <div style="clear: both">
+                            <!-- ko if: searchInProgress --><!-- /ko-->
+                            <!-- ko if: isReady --><!-- /ko -->
+                        </div>
+                    </div>
+                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="height: 100%; overflow: hidden; position: relative;" data-bind="spin: document.inProgress">
+                    
+                        <!-- error panel for desktop mode data is bound to ViewerViewModel -->
+                    
+                    <div id="gcv-errorpane" class="errorpane alert alert-danger" data-bind="visible: errorPane.visible, with: errorPane" style="display: none;">
+                        <div data-bind="visible: !showErrorInfo()">
+                            
+                            <button id="gcv-details" type="button" class="btn btn-sm btn-danger pull-right" data-bind="click: function () { showErrorInfo(true); }, visible: !showOnlyLastError">
+                                <span>显示明细</span>
+                            </button>
+                            <span class="glyphicon glyphicon-warning-sign"></span>
+                            <span id="gcv-lasterror" data-bind="text: lastError().message"></span>
+                            <span class="badge" data-bind="text: errors().length > 1 ? errors().length : ''"></span>
+                    
+                            <button id="placeholder" type="button" class="btn btn-sm" style="visibility: hidden;">&nbsp;</button>
+                        </div>
+                            
+                        <!-- Extended error info -->
+                        <div id="gcv-exterrinfo" data-bind="visible: showErrorInfo" style="overflow-y: auto; max-height: 200pt; display: none;">
+                            <button id="gcv-hidedetails" type="button" class="btn btn-sm btn-danger pull-right" data-bind="click: function () { showErrorInfo(false); }">
+                                <span>隐藏明细</span>
+                            </button>
+                            
+                            <span class="glyphicon glyphicon-warning-sign"></span>
+                            <span>发生了错误</span>
+                                
+                            <ul data-bind="foreach: errors"></ul>
+                    
+                            <div style="text-align: right">
+                                <button id="gcv-dismissall" type="button" class="btn btn-default btn-sm" data-bind="click: dismissErrors">
+                                    <span>全部隐藏</span>
+                                </button>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                        <div id="contentView" style="width: 100%; height: 100%; padding: 5pt; overflow: auto; position: absolute; line-height: normal;" data-bind="scrollPosition: document.location, event: { scroll: document.scrolled }">
+                            <!-- ko if: document.isSinglePageMode -->
+                                <div id="singleView" style="position: absolute;" class="document-view" data-bind="htmlPage: { page: document.singlePage.pageContent, onupdate: processPage }"><!--?xml version="1.0" encoding="utf-8"?-->
+                    
+                    
+                    
+                    
+                        <title>
+                    报表1
+                    </title>
+                    <style type="text/css">
+                    /*<![CDATA[*/
+                    
+                    div#reportContainer{
+                        background-color: white;
+                    }
+                    div{
+                        box-sizing:border-box;
+                    }
+                    div.pageSection{
+                        position:relative;
+                    }
+                    div.component{
+                        position:absolute;
+                    }
+                    table.component{
+                        position:absolute;
+                    }
+                    div.hideOverflow{
+                        overflow:hidden;
+                    }
+                    .ar-bookmarklink{
+                        text-decoration:none;
+                    }
+                    @page{
+                        size:595.275573730469pt 841.889770507813pt;
+                        margin-top:0;
+                        margin-left:0;
+                        margin-right:0;
+                        margin-bottom:0
+                    }
+                    div.page{
+                        page-break-inside:avoid;
+                        page-break-after:always;
+                        position:relative;
+                        width:595.275573730469pt;
+                        height:841.889770507813pt;
+                        padding-top:28.34645652771pt;
+                        padding-left:0pt;
+                        padding-right:0pt;
+                        padding-bottom:0pt;
+                    }
+                    .style16-0{
+                        background-color:transparent;
+                        background-repeat:repeat;
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:Arial, serif;
+                        font-size:10pt;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:11.5pt;
+                    }
+                    .style16-1{
+                        background-color:transparent;
+                        background-repeat:repeat;
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:\5FAE\8F6F\96C5\9ED1, serif;
+                        font-size:10pt;
+                        font-style:normal;
+                        font-weight:normal;
+                        padding-bottom:2pt;
+                        padding-left:2pt;
+                        padding-right:2pt;
+                        padding-top:2pt;
+                        line-height:13.2pt;
+                        overflow-wrap:break-word;
+                        word-wrap:break-word;
+                    }
+                    .style16-2{width:586.75pt;height:21.25pt;top:0pt;left:2.79999995231628pt;
+                    }
+                    .style16-3{
+                        position:relative;
+                        width:100%;
+                        height:100%;
+                    }
+                    .style16-4{
+                        text-decoration:none;
+                        white-space:pre-wrap;
+                        text-align:center;
+                        width:100%;
+                        position:absolute;
+                        top:50%;
+                        transform:translateY(-50%);
+                    }
+                    .style16-5{
+                        border-top-color:rgb(128,128,128);
+                        border-top-style:solid;
+                        border-top-width:1pt;
+                    }
+                    .style16-6{width:589.599975585938pt;height:731.400024414063pt;top:8.5pt;left:0pt;
+                    }
+                    .style16-7{background-repeat:repeat;box-sizing: border-box;vertical-align: top;
+                    }
+                    .style16-8{width:589.599975585938pt;height:294.549987792969pt;
+                    }
+                    .style16-9{
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:Arial, serif;
+                        font-size:10pt;
+                        font-style:normal;
+                        font-weight:normal;
+                        line-height:11.5pt;
+                    }
+                    .style16-10{width:589.599975585938pt;height:294.549987792969pt;top:0pt;left:0pt;
+                    }
+                    .style16-11{
+                        background-color:transparent;
+                        background-repeat:repeat;
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:\5FAE\8F6F\96C5\9ED1, serif;
+                        font-size:16pt;
+                        font-style:normal;
+                        font-weight:700;
+                        padding-bottom:2pt;
+                        padding-left:2pt;
+                        padding-right:2pt;
+                        padding-top:2pt;
+                        line-height:21.1pt;
+                        overflow-wrap:break-word;
+                        word-wrap:break-word;
+                    }
+                    .style16-12{width:587.349975585938pt;height:28.2999992370605pt;top:1.10000002384186pt;left:1.85000002384186pt;
+                    }
+                    .style16-13{width:566.900024414063pt;height:254.850006103516pt;top:39.6500015258789pt;left:14.1499996185303pt;
+                    }
+                    .style16-14{border-top-style:solid;border-top-width:1pt;border-top-color:rgb(220,220,220);border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:rgb(220,220,220);border-left-style:solid;border-left-width:1pt;border-left-color:rgb(220,220,220);border-right-style:solid;border-right-width:1pt;border-right-color:rgb(220,220,220);background-color:rgb(245,245,245);background-repeat:repeat;box-sizing: border-box;vertical-align: middle;
+                    }
+                    .style16-15{width:70pt;height:28.4500007629395pt;
+                    }
+                    .style16-16{width:100%;height:100%;overflow:hidden;
+                    }
+                    .style16-17{
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:\5FAE\8F6F\96C5\9ED1, serif;
+                        font-size:10pt;
+                        font-style:normal;
+                        font-weight:normal;
+                        padding-bottom:2.5pt;
+                        padding-left:2.5pt;
+                        padding-right:2.5pt;
+                        padding-top:2.5pt;margin-top:-0.5pt;margin-bottom:-0.5pt;margin-left:-0.5pt;margin-right:-0.5pt;
+                        line-height:13.2pt;
+                        overflow-wrap:break-word;
+                        word-wrap:break-word;
+                    }
+                    .style16-18{width:70pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-19{border-top-style:solid;border-top-width:1pt;border-top-color:rgb(220,220,220);border-bottom-style:solid;border-bottom-width:1pt;border-bottom-color:rgb(220,220,220);border-left-style:solid;border-left-width:1pt;border-left-color:rgb(220,220,220);border-right-style:solid;border-right-width:1pt;border-right-color:rgb(220,220,220);background-repeat:repeat;box-sizing: border-box;vertical-align: middle;
+                    }
+                    .style16-20{width:117.900001525879pt;height:28.4500007629395pt;
+                    }
+                    .style16-21{width:117.900001525879pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-22{
+                        text-decoration:none;
+                        white-space:pre-wrap;
+                        text-align:left;
+                        width:100%;
+                        position:absolute;
+                        top:50%;
+                        transform:translateY(-50%);
+                    }
+                    .style16-23{width:71pt;height:28.4500007629395pt;
+                    }
+                    .style16-24{width:71pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-25{width:118.199996948242pt;height:28.4500007629395pt;
+                    }
+                    .style16-26{width:118.199996948242pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-27{width:70.9499969482422pt;height:28.4500007629395pt;
+                    }
+                    .style16-28{width:70.9499969482422pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-29{width:118.849998474121pt;height:28.4500007629395pt;
+                    }
+                    .style16-30{width:118.849998474121pt;height:28.4500007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-31{width:70pt;height:28.2999992370605pt;
+                    }
+                    .style16-32{width:70pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-33{width:117.900001525879pt;height:28.2999992370605pt;
+                    }
+                    .style16-34{width:117.900001525879pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-35{width:71pt;height:28.2999992370605pt;
+                    }
+                    .style16-36{width:71pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-37{width:118.199996948242pt;height:28.2999992370605pt;
+                    }
+                    .style16-38{width:118.199996948242pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-39{width:70.9499969482422pt;height:28.2999992370605pt;
+                    }
+                    .style16-40{width:70.9499969482422pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-41{width:118.849998474121pt;height:28.2999992370605pt;
+                    }
+                    .style16-42{width:118.849998474121pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-43{width:496.899993896484pt;height:28.2999992370605pt;
+                    }
+                    .style16-44{width:496.899993896484pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-45{width:566.900024414063pt;height:28.2999992370605pt;
+                    }
+                    .style16-46{
+                        color:rgb(0,0,0);
+                        direction:ltr;
+                        font-family:Arial, serif;
+                        font-size:10pt;
+                        font-style:normal;
+                        font-weight:normal;
+                        padding-bottom:2pt;
+                        padding-left:2pt;
+                        padding-right:2pt;
+                        padding-top:2pt;
+                        line-height:11.5pt;
+                        overflow-wrap:break-word;
+                        word-wrap:break-word;
+                    }
+                    .style16-47{width:566.900024414063pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-48{
+                        text-decoration:none;
+                        white-space:pre-wrap;
+                        text-align:left;
+                        width:100%;
+                    }
+                    .style16-49{width:589.599975585938pt;height:45.3499984741211pt;
+                    }
+                    .style16-50{width:589.599975585938pt;height:45.3499984741211pt;top:0pt;left:0pt;
+                    }
+                    .style16-51{width:583.950012207031pt;height:45.3499984741211pt;top:0pt;left:0pt;
+                    }
+                    .style16-52{width:583.900024414063pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-53{width:589.599975585938pt;height:39.6500015258789pt;
+                    }
+                    .style16-54{width:589.599975585938pt;height:39.6500015258789pt;top:0pt;left:0pt;
+                    }
+                    .style16-55{width:581.099975585938pt;height:39.6500015258789pt;top:0pt;left:0pt;
+                    }
+                    .style16-56{width:581.099975585938pt;height:28.2999992370605pt;top:0pt;left:0pt;
+                    }
+                    .style16-57{width:589.599975585938pt;height:39.7000007629395pt;
+                    }
+                    .style16-58{width:589.599975585938pt;height:39.7000007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-59{width:584.200012207031pt;height:39.7000007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-60{width:555.549987792969pt;height:28.2999992370605pt;top:2.79999995231628pt;left:5.65000009536743pt;
+                    }
+                    .style16-61{width:581.099975585938pt;height:28.2999992370605pt;top:0pt;left:1.39999997615814pt;
+                    }
+                    .style16-62{width:584.75pt;height:39.7000007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-63{width:589.599975585938pt;height:36.8499984741211pt;
+                    }
+                    .style16-64{width:589.599975585938pt;height:36.8499984741211pt;top:0pt;left:0pt;
+                    }
+                    .style16-65{width:584.200012207031pt;height:36.8499984741211pt;top:0pt;left:0pt;
+                    }
+                    .style16-66{width:530.049987792969pt;height:28.2999992370605pt;top:1.10000002384186pt;left:25.5pt;
+                    }
+                    .style16-67{width:582.849975585938pt;height:39.6500015258789pt;top:0pt;left:0pt;
+                    }
+                    .style16-68{width:584.200012207031pt;height:39.6500015258789pt;top:0pt;left:0pt;
+                    }
+                    .style16-69{width:582.849975585938pt;height:39.7000007629395pt;top:0pt;left:0pt;
+                    }
+                    .style16-70{width:589.599975585938pt;height:37.25pt;
+                    }
+                    .style16-71{width:589.599975585938pt;height:37.25pt;top:0pt;left:0pt;
+                    }
+                    .style16-72{width:583.900024414063pt;height:28.2999992370605pt;top:1.10000002384186pt;left:5.65000009536743pt;
+                    }
+                    
+                    /*]]>*/
+                    </style>
+                    
+                    
+                        <div id="reportContainer">
+                            <div class="page">
+                                <div class="style16-0" style="position:relative;width:595.25pt;height:45.3543319702148pt">
+                                    <div class="component style16-1 hideOverflow style16-2">
+                                        <div class="style16-3">
+                                            <div class="style16-4">张美廷（女，34岁，日间病区（新），6237001，N0901床）</div>
+                                        </div>
+                                    </div>
+                                    <div class="style16-5 component" style="width:569.75pt;height:0;left:11.3000001907349pt;top:27.7999992370605pt"> </div>
+                                </div>
+                                <div class="style16-0" style="position:relative;width:595.25pt;height:739.900024414063pt">
+                                    <table style="border-collapse: collapse; table-layout: fixed;" cellpadding="0" cellspacing="0" class="component style16-0 style16-6">
+                                        <tbody><tr>
+                                            <td class="style16-7 component style16-8">
+                                                <div class="component style16-9 style16-10" style="position:relative;">
+                                                    <div class="component style16-0 style16-10">
+                                                        <div class="component style16-11 hideOverflow style16-12">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 基本信息 一</div>
+                                                            </div>
+                                                        </div>
+                                                        <table style="border-collapse: collapse; table-layout: fixed;" cellpadding="0" cellspacing="0" class="component style16-0 style16-13">
+                                                            <colgroup><col style="width:70pt;">
+                                                            
+                                                            <col style="width:117.900001525879pt;">
+                                                            
+                                                            <col style="width:71pt;">
+                                                            
+                                                            <col style="width:118.199996948242pt;">
+                                                            
+                                                            <col style="width:70.9499969482422pt;">
+                                                            
+                                                            <col style="width:118.849998474121pt;">
+                                                            
+                                                            </colgroup><tbody><tr>
+                                                                <td class="style16-14 component style16-15">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-18" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">姓名</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-20">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-21" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">张美廷</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-23">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-24" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">科室</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-25">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-26" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">日间病区（新）</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-27">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-28" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">床号</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-29">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-30" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">N0901</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">住院号</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-33">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-34" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">6237001</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-35">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-36" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">年龄</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-37">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-38" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">34岁</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-39">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-40" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">性别</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-41">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-42" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22"> 女</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">民族</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-33">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-34" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">--</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-35">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-36" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">婚姻状况</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-37">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-38" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">未知</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-39">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-40" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">职业</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-41">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-42" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">--</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">入院日期</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-33">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-34" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">2019-07-04</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-35">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-36" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">入院身高</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-37">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-38" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">--</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-14 component style16-39">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-40" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">入院体重</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-41">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-42" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">--</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">入院诊断</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-43" colspan="5">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-44" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">主诉</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-43" colspan="5">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-44" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">0</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">现病史</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-43" colspan="5">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-44" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">0</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-14 component style16-31">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-32" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-4">既往史</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                                <td class="style16-19 component style16-43" colspan="5">
+                                                                    <div class="style16-16">
+                                                                        <div class="component style16-17 hideOverflow style16-44" style="position:relative;">
+                                                                            <div class="style16-3">
+                                                                                <div class="style16-22">0</div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="style16-7 component style16-45" colspan="6">
+                                                                    <div class="component style16-46 hideOverflow style16-47" style="position:relative;">
+                                                                        <div class="style16-48"></div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody></table>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-49">
+                                                <div class="component style16-9 style16-50" style="position:relative;">
+                                                    <div class="component style16-0 style16-51">
+                                                        <div class="component style16-11 hideOverflow style16-52">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养筛评记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-53">
+                                                <div class="component style16-9 style16-54" style="position:relative;">
+                                                    <div class="component style16-0 style16-55">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养评估记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-57">
+                                                <div class="component style16-9 style16-58" style="position:relative;">
+                                                    <div class="component style16-0 style16-59">
+                                                        <div class="component style16-11 hideOverflow style16-60">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 24h膳食评估记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-57">
+                                                <div class="component style16-9 style16-58" style="position:relative;">
+                                                    <div class="component style16-0 style16-59">
+                                                        <div class="component style16-11 hideOverflow style16-61">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养会诊记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-57">
+                                                <div class="component style16-9 style16-58" style="position:relative;">
+                                                    <div class="component style16-0 style16-62">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 肠内医嘱记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-63">
+                                                <div class="component style16-9 style16-64" style="position:relative;">
+                                                    <div class="component style16-0 style16-65">
+                                                        <div class="component style16-11 hideOverflow style16-66">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养食谱记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-53">
+                                                <div class="component style16-9 style16-54" style="position:relative;">
+                                                    <div class="component style16-0 style16-67">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养查房记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-53">
+                                                <div class="component style16-9 style16-54" style="position:relative;">
+                                                    <div class="component style16-0 style16-68">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养宣教记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-57">
+                                                <div class="component style16-9 style16-58" style="position:relative;">
+                                                    <div class="component style16-0 style16-69">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 饮食医嘱变更记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-53">
+                                                <div class="component style16-9 style16-54" style="position:relative;">
+                                                    <div class="component style16-0 style16-67">
+                                                        <div class="component style16-11 hideOverflow style16-56">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 营养相关实验室数据 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style16-7 component style16-70">
+                                                <div class="component style16-9 style16-70" style="position:relative;">
+                                                    <div class="component style16-0 style16-71">
+                                                        <div class="component style16-11 hideOverflow style16-72">
+                                                            <div class="style16-3">
+                                                                <div class="style16-4">一 出院记录 一</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </div>
+                                <!--@ar.page.metadata { pageindex: 0, width:595.25, height:841.9429, delayedContent: False }-->
+                            </div>
+                        </div>
+                    
+                    </div>
+                            <!-- /ko -->
+                            <!-- ko if: document.isContinuousPageMode --><!-- /ko -->
+                    
+                            <div style="position: absolute; background: blueviolet; opacity: 0.5; display: none;" data-bind="visible: searchPane.highlightEnabled, 
+                                style: { left: searchPane.highlightLeft, top: searchPane.highlightTop, width: searchPane.highlightWidth, height: searchPane.highlightHeight }"></div>
+                        </div>
+                    
+                    </div>
+                        </div>
+                        <div id="sendemaildialog" class="modal fade" role="dialog">
+                            <div class="modal-dialog" data-bind="with: sendEmailDialog">
+                        <div class="modal-content">
+                            <form data-bind="submit: $root.sendEmail">
+                                <div class="modal-header">
+                    
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                    <h4 class="modal-title">sendEmailTitle</h4>
+                    
+                                </div>
+                                <div class="modal-body">
+                                    <div style="margin-top: 5pt">
+                                        <label class="control-label">sendEmailTo</label>
+                                        <input id="email-input" class="form-control" type="text" data-bind="value: distribution.To">
+                                    </div>
+                                    <div style="color: red; display: none;" data-bind="visible: errorText().length > 0">
+                                        <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                        <span data-bind="text: errorText" style="font-size: small"></span>
+                                    </div>
+                                    <div style="margin-top: 5pt">
+                                        <label class="control-label">emailSubject</label>
+                                        <input class="form-control" type="text" data-bind="value: distribution.Subject, valueUpdate: 'input'">
+                                    </div>
+                                    <div style="margin-top: 5pt">
+                                        <label class="control-label">emailMessage</label>
+                                        <textarea rows="5" class="form-control" data-bind="value: distribution.MessageBody, valueUpdate: 'input'"></textarea>
+                                    </div>
+                                    <div style="margin-top: 5pt">
+                                        <label class="control-label">documentFormat</label>
+                                        <select class="btn btn-default dropdown-toggle form-control" data-bind="value: documentFormat">
+                                            <option value="PDF">PDF document</option>
+                                            <option value="Excel">Excel file (xls)</option>
+                                            <option value="Mht">MHT document</option>
+                                            <option value="Image">Image file</option>
+                                            <option value="Word">Word document</option>
+                                            <option value="XML">XML file (xml)</option>
+                                <option value="CSV">CSV file</option>
+                                        </select>
+                                    </div>
+                                    <div style="margin-top: 5pt">
+                                        <div>
+                                            <label class="control-label">deliveryMethodCaption</label>
+                                        </div>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sendtype" value="aslink" data-bind="checked: distribution.asCheck">asLink
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="sendtype" value="asattachment" data-bind="checked: distribution.asCheck">asAttachment
+                                        </label>
+                                    </div>
+                                </div>
+                                <div id="errorResponse" class="errorpane alert alert-danger" data-bind="visible: errorResponse().length>0" style="display: none;">
+                                    <span class="glyphicon glyphicon-exclamation-sign"></span>
+                                    <span data-bind="text: errorResponse" style="font-size: small"></span>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="pull-left">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+                                    </div>
+                                    <div class="pull-right">
+                                        <button class="btn btn-primary" type="submit" style="margin: 1pt" data-bind="enable: sendEnabled" disabled="">sendEmail</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                        </div>
+                    </div></div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $(function () {
+                    var viewer = GrapeCity.ActiveReports.Viewer({
+                        element: '#viewerContainer',
+                        reportService: {
+                            url: '/Reports/rdlx/ActiveReports.ReportService.asmx'
+                        },
+                        report: {
+                            id: "Reports/rdlx/PatientNutritionReport.rdlx",
+                            parameters: [{
+                                name: 'hospName',
+                                value: '上海营康科技'
+                            }, {
+                                name: 'patientCode',
+                                value: '6237001_12'
+                            }, {
+                                name: 'userName',
+                                value: 'jasion'
+                            }, {
+                                name: 'type',
+                                value: '0'
+                            }]
+                        },
+                        uiType: 'desktop',
+                        localeUri: '/Content/Scripts/i18n/Localeuri.txt'
+                    });
+                    var $content = $(window.parent.document);
+                    $("#viewerContainer").height($content.height() - 65);
+                    $(viewer.toolbar).css({ 'background-color': '#f3f3f3', 'border-color': '#d2d2d2' });
+                });
+            </script>
+                </div>
+            
+            
+            <style title="e14186c70689">.ar-sorting {visibility: hidden;}
+            .ar-toggle {visibility: hidden;}</style></body></html>
+        </div>
+    </div>
+</div>
+<script>
+    var headers = {};
+    //获取防伪标记
+    var token = $('<input name="__RequestVerificationToken" type="hidden" value="R1IzRsGxMJo3v3Z8cvESBtCaNL38cY7XpYPv0JaCGGo_p56XVuWOsnUHlW-EwOhvbo4YsKwXFTnHf9qeCpiH33KAi2O_ZgWu1GiWppuUtT8pdXoEvtV7ZorihGffMs4bwLefY7kvClhGloN7TwvTnQ2" />').val();
+    headers["__RequestVerificationToken"] = token;
+    var dialog, common, fm, edit;
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winForm', 'winDialog', 'winCommon'], function () {
+        fm = layui.winForm;
+        common = layui.winCommon;
+        dialog = layui.winDialog;
+        $(document).ready(function () {
+            var sheight = window.screen.height;
+            var occupy = $("#divBack").height();
+            $("#report_content").height(sheight - occupy - 150);
+            $("#ContentPanelL").height(sheight - occupy - 230);
+            $("#ReportContentPaneL").height(sheight - occupy - 187);
+            $("#mainIframe").height(sheight - occupy - 190);
+
+        });
+    });
+
+    function GetReportToContent(code, index) {
+        $("#mainIframe").attr("src", "/TreatmentCenter/NutritionReportManagement/NutritionReport?code=" + code + "&type=" + index);
+    }
+
+
+</script>
+
+
+</div>
+
+
+
+</body></html>

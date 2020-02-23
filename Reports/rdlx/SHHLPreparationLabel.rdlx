@@ -1,0 +1,484 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+  <Body>
+    <Height>7.3025cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>6.984128cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Container1">
+                      <Style />
+                      <ZIndex>1</ZIndex>
+                      <ReportItems>
+                        <Textbox Name="TextBox11">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.635cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="姓名 "+Fields!PatientName.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>1pt</PaddingTop>
+                          </Style>
+                          <Top>0.5in</Top>
+                          <Width>2.8575cm</Width>
+                          <ZIndex>1</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox12">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.3175cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="建议用法: "</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.5in</Top>
+                          <Width>1.5875cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox13">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.5cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="配置时间"+Fields!EN_Use.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>0pt</PaddingTop>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                          <Top>6.484128cm</Top>
+                          <Width>2.5cm</Width>
+                          <ZIndex>3</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox10">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.6085cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="床号:"+Fields!BedNo.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>0pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>0pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>0.2604167in</Top>
+                          <Width>3.4925cm</Width>
+                        </Textbox>
+                        <Textbox Name="TextBox16">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.5cm</Height>
+                          <Left>1.625in</Left>
+                          <Value>="配置人:"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>0pt</PaddingTop>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
+                          <Top>2.552806in</Top>
+                          <Width>2.635cm</Width>
+                          <ZIndex>5</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox1">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.125in</Height>
+                          <Value>上海市快乐家园护理院</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <Width>6.985cm</Width>
+                          <ZIndex>6</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox2">
+                          <CanGrow>true</CanGrow>
+                          <Height>0.125in</Height>
+                          <Value>临床营养科肠内营养液标签</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>700</FontWeight>
+                            <PaddingBottom>2pt</PaddingBottom>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                          <Top>0.125in</Top>
+                          <Width>6.985cm</Width>
+                          <ZIndex>7</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox3">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox10</DataElementName>
+                          <Height>0.635cm</Height>
+                          <Left>3.81cm</Left>
+                          <Value>="日期:"+Fields!UseDate.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>0pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>0pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>0.25in</Top>
+                          <Width>3.175cm</Width>
+                        </Textbox>
+                        <Textbox Name="TextBox4">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox11</DataElementName>
+                          <Height>0.635cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="营养液配方:"+Fields!PrescriptionContent.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>1pt</PaddingTop>
+                          </Style>
+                          <Top>0.75in</Top>
+                          <Width>6.6675cm</Width>
+                          <ZIndex>1</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox5">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.375cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="能量密度"+Fields!NLMD.Value+"KCAL/ML"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.102362in</Top>
+                          <Width>3.175cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox6">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.375cm</Height>
+                          <Left>1.5in</Left>
+                          <Value>="蛋白质含量"+Fields!NLMD.Value+"%"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.102362in</Top>
+                          <Width>3.175cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox7">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.635cm</Height>
+                          <Left>0.125in</Left>
+                          <Value>="输注途径"+Fields!ItemText2.Value</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.25in</Top>
+                          <Width>6.35cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox9">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>="1.    ML/H(连续/间隔滴注) "</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.5in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox8">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>="2.150 ML/3H"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.625in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox14">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>="1.禁止静脉输注"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.875in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox17">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>="营养液需冷藏，保质期24小时"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>2in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox18">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>="试用前请用水浴加热并均摇"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>2.125in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox19">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox12</DataElementName>
+                          <Height>0.3175cm</Height>
+                          <Left>1.905cm</Left>
+                          <Value>3.输注结束请用适量温开水冲管</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>2.25in</Top>
+                          <Width>4.7625cm</Width>
+                          <ZIndex>2</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox15">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox11</DataElementName>
+                          <Height>0.635cm</Height>
+                          <Left>1.25in</Left>
+                          <Value>="液体量/总液量"+Fields!EN_Amount.Value+Fields!EN_Amount.Value+"ML"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingTop>1pt</PaddingTop>
+                          </Style>
+                          <Top>0.5in</Top>
+                          <Width>3.81cm</Width>
+                          <ZIndex>1</ZIndex>
+                        </Textbox>
+                        <Textbox Name="TextBox20">
+                          <CanGrow>true</CanGrow>
+                          <DataElementName>TextBox10</DataElementName>
+                          <Height>1.9cm</Height>
+                          <Left>0.8cm</Left>
+                          <Value>="注意事项"</Value>
+                          <Style>
+                            <FontFamily>Arial</FontFamily>
+                            <FontSize>9pt</FontSize>
+                            <FontStyle>Normal</FontStyle>
+                            <FontWeight>400</FontWeight>
+                            <PaddingBottom>0pt</PaddingBottom>
+                            <PaddingLeft>0pt</PaddingLeft>
+                            <PaddingRight>0pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                          </Style>
+                          <Top>1.653543in</Top>
+                          <Width>0.6cm</Width>
+                        </Textbox>
+                      </ReportItems>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>2.75in</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>6.985cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>2.75in</Width>
+        <ZIndex>2</ZIndex>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>9cm</PageHeight>
+  <PageWidth>7cm</PageWidth>
+  <Width>6.985cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Prompt>医院名</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pids">
+      <DataType>String</DataType>
+      <Prompt>标签ID</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <DataType>String</DataType>
+      <Prompt>使用日期</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <EmbeddedImages>
+    <EmbeddedImage Name="1527733415">
+      <ImageData>iVBORw0KGgoAAAANSUhEUgAAARgAAAEYCAIAAAAI7H7bAAAEf0lEQVR4nO3dQW7cQAwAwSjI/7/sPCEE0qZHs1VnAytLaMyF4DxfX1+/gP/z+6cfAG4gJAgICQJCgoCQICAkCAgJAkKCgJAgICQICAkCfyZ/9DzPdz/HySbjiJNXFI41bv6crz/5MycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWA0azfx0v141SDZ8mDbaW/7tOcZCscInUgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgWzWbmJ5Q9ppA2AfviDu7q/vRIKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aXWx5kGz5ylr+yYkEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEDBr15gMtoUDch++Iu9ATiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgsDq0+uErC/37P/0I38iJBAEhQUBIEBASBIQEASFBQEgQEBIEhAQBIUFASBDIZu0+fGVhtfxx+BqX91Emv3U3JxIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFB4Ll729hRDhxI8/UrTiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCwOodssvL3yqbj7Q8/La5+27otHV8w99yIkFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQEBIERnvtNmfbDty09tIRwYkD33ZlefrRiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQGO21O20i6+K9dkMHPtI/HfiKQk4kCAgJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQIDAaWn3p/bin3TQc/tZp/9pE+NUO5ESCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCBy3IHJ5QuylY4SVzRuLwyG6zZ9zGTPsERIEhAQBIUFASBAQEgSEBAEhQUBIEBASBIQEgee07Wcv9dJtbBPVYNvyWr+KWTvYIyQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAqNZu4sHySY299pd7MA7ZMPxPycSBIQEASFBQEgQEBIEhAQBIUFASBAQEgSEBAEhQWB0h+zES/fjVZNdyzeWTpw22rd8h+xEuI7PiQQBIUFASBAQEgSEBAEhQUBIEBASBIQEASFBQEgQyGbtJpanv146/jexeWfrS8cIl7++EwkCQoKAkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrA6tXuyld1ofOJBaWR5sdSJBQEgQEBIEhAQBIUFASBAQEgSEBAEhQUBIEBASBMzaNS6eo6sMn2cy/+YyZriTkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIrM7aHbj9rHLazccHWr6MecJeOziLkCAgJAgICQJCgoCQICAkCAgJAkKCgJAgICQIZLN2Fw+JHai6snZz+jHca1ex1w7OIiQICAkCQoKAkCAgJAgICQJCgoCQICAkCAgJAs/Fu+ZgjRMJAkKCgJAgICQICAkCQoKAkCAgJAgICQJCgoCQICAkCPwFzc31MmFwBAgAAAAASUVORK5CYII=</ImageData>
+      <MIMEType>image/png</MIMEType>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="EN_Amount">
+          <DataField>EN_Amount</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="NLMD">
+          <DataField>NLMD</DataField>
+        </Field>
+        <Field Name="DBZ">
+          <DataField>DBZ</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+        <Field Name="ItemText2">
+          <DataField>ItemText2</DataField>
+        </Field>
+        <Field Name="UseDate">
+          <DataField>UseDate</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>pro_SHHLPreparationLabel</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@pids">
+            <Value>=Parameters!pids.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@useDate">
+            <Value>=Parameters!useDate.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Portrait</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

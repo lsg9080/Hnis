@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>3.8cm</Height>
+    <ReportItems>
+      <Textbox Name="TextBox28">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Value>收费时间：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>General</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>1.9471cm</Width>
+        <ZIndex>7</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox24">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>16.14cm</Left>
+        <Value>打印人：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Right</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>2cm</Width>
+        <ZIndex>8</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox30">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>2cm</Left>
+        <Value>=Parameters!showStartDate.Value + "~" +  Parameters!showEndDate.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>8cm</Width>
+        <ZIndex>6</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox29">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>12.34cm</Left>
+        <Value>=Now</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>3.8cm</Width>
+        <ZIndex>9</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox25">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>18.28947cm</Left>
+        <Value>=Parameters!userName.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>2.4cm</Width>
+        <ZIndex>5</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox22">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Value>=Parameters!hospName.Value.ToString() + "肠内营养制剂核对单"</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Width>20.6cm</Width>
+        <ZIndex>2</ZIndex>
+      </Textbox>
+      <Tablix Name="Tablix1">
+        <TablixCorner>
+          <TablixCornerRows>
+            <TablixCornerRow>
+              <TablixCornerCell>
+                <CellContents>
+                  <Textbox Name="TextBox1">
+                    <CanGrow>true</CanGrow>
+                    <Value>科室</Value>
+                    <Style>
+                      <BackgroundColor>WhiteSmoke</BackgroundColor>
+                      <FontFamily>微软雅黑</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>700</FontWeight>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <TextAlign>Center</TextAlign>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixCornerCell>
+            </TablixCornerRow>
+          </TablixCornerRows>
+        </TablixCorner>
+        <TablixBody>
+          <TablixColumns>
+            <TablixColumn>
+              <Width>1.503041cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.553142cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.90668cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>6.592184cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>1.603244cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>2.605271cm</Width>
+            </TablixColumn>
+          </TablixColumns>
+          <TablixRows>
+            <TablixRow>
+              <Height>0.75cm</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BedNo.Value</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PatientName.Value</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox6">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BeInNo.Value</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox7">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PrescriptionContent.Value</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox9">
+                      <CanGrow>true</CanGrow>
+                      <Value>=First(Fields!IsState.Value)</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="TextBox32">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!UseName.Value</Value>
+                      <Style>
+                        <BackgroundColor>=Switch(Fields!IsColor.Value = "1","#E5B8B7",Fields!IsColor.Value = "2","#B6DDE8",Fields!IsColor.Value.ToString() = "0","")</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>=Switch(Fields!IsColor.Value = "1","11pt",Fields!IsColor.Value = "2","10pt",Fields!IsColor.Value.ToString() = "0","10pt")</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>=Switch(Fields!IsColor.Value = "1","Normal",Fields!IsColor.Value = "2","Bold",Fields!IsColor.Value.ToString() = "0","Normal")</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <Border>
+                          <Style>Solid</Style>
+                        </Border>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+          </TablixRows>
+        </TablixBody>
+        <TablixColumnHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Tablix1_ColumnGroup1">
+                <GroupExpressions>
+                  <GroupExpression />
+                </GroupExpressions>
+              </Group>
+              <TablixMembers>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox2">
+                        <CanGrow>true</CanGrow>
+                        <Value>床号</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <FontStyle>Normal</FontStyle>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox13">
+                        <Value>姓名</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <FontStyle>Normal</FontStyle>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox14">
+                        <Value>住院号</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <FontStyle>Normal</FontStyle>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox15">
+                        <Value>处方内容</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <FontStyle>Normal</FontStyle>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                  <TablixMembers>
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox8">
+                        <CanGrow>true</CanGrow>
+                        <Value>状态</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+                <TablixMember>
+                  <TablixHeader>
+                    <Size>0.75cm</Size>
+                    <CellContents>
+                      <Textbox Name="TextBox31">
+                        <CanGrow>true</CanGrow>
+                        <Value>餐次</Value>
+                        <Style>
+                          <BackgroundColor>WhiteSmoke</BackgroundColor>
+                          <FontFamily>微软雅黑</FontFamily>
+                          <FontSize>10pt</FontSize>
+                          <FontStyle>Normal</FontStyle>
+                          <FontWeight>700</FontWeight>
+                          <PaddingBottom>2pt</PaddingBottom>
+                          <PaddingLeft>2pt</PaddingLeft>
+                          <PaddingRight>2pt</PaddingRight>
+                          <PaddingTop>2pt</PaddingTop>
+                          <TextAlign>Center</TextAlign>
+                          <VerticalAlign>Middle</VerticalAlign>
+                          <Border>
+                            <Style>Solid</Style>
+                          </Border>
+                        </Style>
+                      </Textbox>
+                    </CellContents>
+                  </TablixHeader>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixColumnHierarchy>
+        <TablixRowHierarchy>
+          <TablixMembers>
+            <TablixMember>
+              <Group Name="Tablix1_DepartName1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!DepartName.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <TablixHeader>
+                <Size>4.836439cm</Size>
+                <CellContents>
+                  <Textbox Name="TextBox3">
+                    <CanGrow>true</CanGrow>
+                    <Value>=Fields!DepartName.Value</Value>
+                    <Style>
+                      <BackgroundColor>=iif(Fields!IsState.Value="新开",Red,Transparent)</BackgroundColor>
+                      <FontFamily>微软雅黑</FontFamily>
+                      <FontSize>10pt</FontSize>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>400</FontWeight>
+                      <PaddingBottom>2pt</PaddingBottom>
+                      <PaddingLeft>2pt</PaddingLeft>
+                      <PaddingRight>2pt</PaddingRight>
+                      <PaddingTop>2pt</PaddingTop>
+                      <TextAlign>Center</TextAlign>
+                      <VerticalAlign>Middle</VerticalAlign>
+                      <Border>
+                        <Style>Solid</Style>
+                      </Border>
+                    </Style>
+                  </Textbox>
+                </CellContents>
+              </TablixHeader>
+              <TablixMembers>
+                <TablixMember>
+                  <Group Name="Tablix1_In_ID1">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!ID.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                </TablixMember>
+              </TablixMembers>
+            </TablixMember>
+          </TablixMembers>
+        </TablixRowHierarchy>
+        <DataSetName>ChecklistDataSet</DataSetName>
+        <Top>1cm</Top>
+        <Height>1.5cm</Height>
+        <Width>20.6cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>Solid</Style>
+          </Border>
+        </Style>
+      </Tablix>
+      <Textbox Name="TextBox27">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>10.2cm</Left>
+        <Value>打印时间：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Right</TextAlign>
+        </Style>
+        <Top>3cm</Top>
+        <Width>2cm</Width>
+        <ZIndex>4</ZIndex>
+      </Textbox>
+    </ReportItems>
+    <Style />
+  </Body>
+  <LeftMargin>0.1cm</LeftMargin>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <RightMargin>0.1cm</RightMargin>
+  <Width>20.8cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>hospName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="startDate">
+      <DataType>String</DataType>
+      <Prompt>startDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>String</DataType>
+      <Prompt>endDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>userName</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="depts">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>depts</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="showStartDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>showStartDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="showEndDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>showEndDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="beInNo">
+      <AllowBlank>true</AllowBlank>
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>beInNo</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ChecklistDataSet">
+      <Fields>
+        <Field Name="ID">
+          <DataField>ID</DataField>
+        </Field>
+        <Field Name="In_ID">
+          <DataField>In_ID</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PrescriptionContent">
+          <DataField>PrescriptionContent</DataField>
+        </Field>
+        <Field Name="BranchType">
+          <DataField>BranchType</DataField>
+        </Field>
+        <Field Name="IsState">
+          <DataField>IsState</DataField>
+        </Field>
+        <Field Name="In_Date">
+          <DataField>In_Date</DataField>
+        </Field>
+        <Field Name="IsColor">
+          <DataField>IsColor</DataField>
+        </Field>
+        <Field Name="UseName">
+          <DataField>UseName</DataField>
+        </Field>
+        <Field Name="Quantitiy">
+          <DataField>Quantitiy</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>Pro_EnteralPreparationChecklist </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@depts">
+            <Value>=Parameters!depts.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@beInNo">
+            <Value>=Parameters!beInNo.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

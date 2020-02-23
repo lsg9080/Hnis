@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>6cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>DataSet2</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Image Name="Image1">
+											<DataElementName>Image1</DataElementName>
+											<Sizing>Fit</Sizing>
+											<Source>External</Source>
+											<Style>
+												<PaddingBottom>5pt</PaddingBottom>
+												<PaddingLeft>5pt</PaddingLeft>
+												<PaddingRight>5pt</PaddingRight>
+												<PaddingTop>5pt</PaddingTop>
+												<BorderWidth>
+													<Default>0.7pt</Default>
+												</BorderWidth>
+											</Style>
+											<Value>img\tg.png</Value>
+										</Image>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>食物选择说明</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox37">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox13">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox7</DataElementName>
+											<Value>按照常见各类食物的蛋白质含量以每份0-1g、4g、7g为标准分为八类食物、同类食物间可以互相交换。</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=Parameters!tp.Value = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox23">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox20">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox6</DataElementName>
+											<Value>各食物种类每一份能量均为90kcal、所有食物交换份均指食物的生重。</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox29">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=Parameters!tp.Value &gt;0</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<CustomReportItem Name="FormattedText1">
+											<Type>FormattedText</Type>
+											<CustomProperties>
+												<CustomProperty>
+													<Name>Html</Name>
+													<Value>=Fields!AllBody.Value</Value>
+												</CustomProperty>
+											</CustomProperties>
+											<DataElementName>FormattedText1</DataElementName>
+										</CustomReportItem>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox28">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>3.25cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.4cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.7cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>16.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.3cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>2.4cm</Top>
+				<Width>17.9cm</Width>
+			</Table>
+			<Tablix Name="Tablix1">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox9">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox13</DataElementName>
+										<Value>食物种类</Value>
+										<Style>
+											<BackgroundColor>Transparent</BackgroundColor>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox14">
+										<CanGrow>true</CanGrow>
+										<Value>每日建议量(份)</Value>
+										<Style>
+											<BackgroundColor>Transparent</BackgroundColor>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox10">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox17</DataElementName>
+										<Value />
+										<Style>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>1.8cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>1.1cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox4</DataElementName>
+											<Value>=IIF(Fields!item.Value &gt; 0, Fields!item.Value.ToString("0.##") ,"-")</Value>
+											<Style>
+												<BackgroundColor>Transparent</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<NumeralVariant>6</NumeralVariant>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BottomBorder>
+													<Style>Dashed</Style>
+												</BottomBorder>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_meal1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!meal.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>1.05cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox11">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!meal.Value</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>700</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>12pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_name1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!name.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>2.785024cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox6">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox10</DataElementName>
+										<Value>=Fields!name.Value</Value>
+										<Style>
+											<BackgroundColor>Transparent</BackgroundColor>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<BottomBorder>
+												<Style>Dashed</Style>
+											</BottomBorder>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember>
+									<TablixHeader>
+										<Size>2.681159cm</Size>
+										<CellContents>
+											<Textbox Name="TextBox4">
+												<CanGrow>true</CanGrow>
+												<DataElementName>TextBox9</DataElementName>
+												<Value>=IIF(Fields!qut.Value &gt; 0,Fields!qut.Value.ToString("0.##"),"-")</Value>
+												<Style>
+													<BackgroundColor>Transparent</BackgroundColor>
+													<FontFamily>微软雅黑</FontFamily>
+													<PaddingBottom>2pt</PaddingBottom>
+													<PaddingLeft>2pt</PaddingLeft>
+													<PaddingRight>2pt</PaddingRight>
+													<PaddingTop>2pt</PaddingTop>
+													<TextAlign>Center</TextAlign>
+													<VerticalAlign>Middle</VerticalAlign>
+													<BottomBorder>
+														<Style>Dashed</Style>
+													</BottomBorder>
+												</Style>
+											</Textbox>
+										</CellContents>
+									</TablixHeader>
+									<TablixMembers>
+										<TablixMember>
+											<TablixHeader>
+												<Size>0.345411cm</Size>
+												<CellContents>
+													<Textbox Name="TextBox5">
+														<CanGrow>true</CanGrow>
+														<Value />
+														<Style>
+															<PaddingBottom>2pt</PaddingBottom>
+															<PaddingLeft>2pt</PaddingLeft>
+															<PaddingRight>2pt</PaddingRight>
+															<PaddingTop>2pt</PaddingTop>
+															<BottomBorder>
+																<Style>Dashed</Style>
+															</BottomBorder>
+														</Style>
+													</Textbox>
+												</CellContents>
+											</TablixHeader>
+										</TablixMember>
+									</TablixMembers>
+								</TablixMember>
+							</TablixMembers>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<DataSetName>YYSDDataSet</DataSetName>
+				<Top>0.2cm</Top>
+				<Left>0.4cm</Left>
+				<Height>2.15cm</Height>
+				<Width>7.611594cm</Width>
+				<ZIndex>2</ZIndex>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>10pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>700</FontWeight>
+					<TextAlign>Center</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+			</Tablix>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>19cm</PageWidth>
+	<Width>18cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="eid">
+			<DataType>Integer</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="tp">
+			<DataType>Integer</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="YYSDDataSet">
+			<Fields>
+				<Field Name="name">
+					<DataField>name</DataField>
+				</Field>
+				<Field Name="qut">
+					<DataField>qut</DataField>
+				</Field>
+				<Field Name="meal">
+					<DataField>meal</DataField>
+				</Field>
+				<Field Name="item">
+					<DataField>item</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_ExchangeShar </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@eid">
+						<Value>=Parameters!eid.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@tp">
+						<Value>=Parameters!tp.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="DataSet2">
+			<Fields>
+				<Field Name="AllBody">
+					<DataField>AllBody</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_ExchangeShare </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@tp">
+						<Value>=Parameters!tp.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>report:DesignTimeBackgroundRendering</Name>
+			<Value>True</Value>
+		</CustomProperty>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Portrait</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

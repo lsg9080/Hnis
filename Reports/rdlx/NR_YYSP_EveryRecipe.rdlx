@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>3.3cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>1.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>="营养(医)师：" &amp; Fields!FullName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Double</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.243542cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+												<Parameter Name="t">
+													<Value>=Parameters!accType.Value</Value>
+												</Parameter>
+												<Parameter Name="createdBy">
+													<Value>=Fields!CreateBy.Value</Value>
+												</Parameter>
+												<Parameter Name="useDate">
+													<Value>=Fields!UseDate.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>NR_YYSP_Recipelist.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>2.643542cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>5.823672cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>5.831244cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>5.834043cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.1cm</Top>
+				<Width>17.5cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>17.5cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="accType">
+			<DataType>Integer</DataType>
+			<Prompt>3（配餐）--4(膳调)</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="UseDate">
+					<DataField>UseDate</DataField>
+				</Field>
+				<Field Name="CreateBy">
+					<DataField>CreateBy</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>SELECT UseDate,CreateBy,FullName FROM dbo.T_Accommodation a INNER JOIN dbo.S_UserInfo s ON a.CreateBy=s.UserName WHERE PatientCode=@patientCode AND a.IsDelete=0 AND AccommodationType=@accType GROUP BY UseDate,CreateBy,FullName</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@accType">
+						<Value>=Parameters!accType.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

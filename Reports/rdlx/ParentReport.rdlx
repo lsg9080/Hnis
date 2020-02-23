@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <Height>1cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="In_ID">
+                          <Value>=Fields!In_ID.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>TestReport.rdlx</ReportName>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>0.8cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>2.933333cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.933333cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.933333cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>0.2cm</Top>
+        <Width>8.8cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>10cm</PageHeight>
+  <PageWidth>9cm</PageWidth>
+  <Width>9cm</Width>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet">
+      <Fields>
+        <Field Name="In_ID">
+          <DataField>In_ID</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>pro_GetInIds</CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

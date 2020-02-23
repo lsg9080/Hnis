@@ -1,0 +1,59 @@
+.iframe-container {
+    min-width: 900px;
+    background-color: #f3f7fd;
+}
+
+@media screen and (max-width: 500px) {
+    table {
+        font-size: 12px;
+    }
+}
+
+/* 感觉IE下字偏小 */
+
+body {
+    font-size: 18px\0;
+    /* IE8+ */
+}
+
+/* input */
+
+input {
+    line-height: 30px !important;
+    min-height: 30px;
+}
+
+input.placeholder {
+    color: #838383 !important;
+}
+
+input::-ms-clear, input::-ms-reveal {
+    display: none;
+}
+
+/* IE低版本50%+50%>100%,解决方法，最后一个元素加clear：right */
+
+.layout-format {
+    clear: right;
+}
+
+@media  screen and (max-width: 990px){
+    .action-group .layui-form-item div {
+        display: inline-block;
+    }
+}
+@media screen and (min-width: 990px) {
+    .action-group .layui-form-item>input {
+        float: left;
+        margin: 20px 0;
+    }
+    .action-group .layui-form-item div {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    .action-group .layui-form-item div input {
+        margin-top: 10px;
+    }
+}

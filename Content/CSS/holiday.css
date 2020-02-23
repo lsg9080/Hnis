@@ -1,0 +1,45 @@
+﻿.body {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/main.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_yd {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/yuandan.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_cj {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/chunjie.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_yx {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/yuanxiao.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_ldj {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/laodongjie.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_dw {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/duanwu.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_ysj {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/yishijie.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_zq {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/zhongqiu.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}
+.body_gq {
+    margin:0;
+    padding:0;
+background:url('../../Content/images/holiday/guoqing.jpg') no-repeat center top;background-size: cover;height: 100vh;overflow: hidden;
+}

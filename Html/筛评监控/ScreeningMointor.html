@@ -1,0 +1,764 @@
+@using System.Collections
+@using HNTS.Model.ConfigCenter
+@using HNTS.Utility
+@using HUI.Components.Controls
+@using HNTSBusiness.Uility
+@using HUI.Components.Config
+@{
+    Layout = "~/Views/Shared/ActionPageShared.cshtml";
+    IList<ShareSelectItemModel> list = ViewBag.ScreenLevels;
+}
+
+<!-- 调试 -->
+<link rel="stylesheet" href="/Content/css/layui.css" />
+<link rel="stylesheet" href="/Content/css/style.css" />
+<script src="/Content/Jquery/jquery1.9.1.js"></script>
+<!-- end -->
+
+<link rel="stylesheet" href="/Content/Jquery/autocomplete/jquery.autocomplete.css" />
+<script type="text/javascript" src="/Content/Jquery/autocomplete/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/autocomplete/jquery.autocomplete.min.js"></script>
+
+<script type="text/javascript" src="/Content/Jquery/export/js-xlsx/xlsx.core.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/export/FileSaver/FileSaver.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/export/jsPDF/jspdf.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/export/jsPDF-AutoTable/jspdf.plugin.autotable.js"></script>
+<script type="text/javascript" src="/Content/Jquery/export/es6-promise/es6-promise.auto.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/export/html2canvas/html2canvas.min.js"></script>
+
+<script type="text/javascript" src="/Content/Jquery/export/tableExport.js"></script>
+<style type="text/css">
+    body {
+        background: #f3f7fd;
+    }
+    /* 调试 */
+    input{
+        line-height: 30px !important;
+    }
+</style>
+
+<!-- IE下兼容处理 -->
+<!--[if lt IE9]>
+    <script src="IE.js"></script>
+<![endif]-->
+<!-- 调试 -->
+<script>
+    //  function PrintWindow(u,t) {
+    //     dialog.win_print(u, t);
+    // }
+</script>
+<!-- end -->
+
+<div class="panel panel-default layui-form" style="margin: 0 25px 0 15px; font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, WenQuanYi Micro Hei, sans-serif;">
+    <div style="position: absolute; top: -1000px; height: 0; overflow: auto;">
+        <table class="table table-striped table-bordered table-hover" id="issue124">
+            <thead>
+            <tr>
+                <th style="width: 5%;">科室</th>
+                <th style="width: 5%;">床号</th>
+                <th style="width: 5%;">姓名</th>
+                <th style="width: 5%;">住院号</th>
+                <th style="width: 5%;">年龄</th>
+                <th style="width: 7%;">身高(cm)</th>
+                <th style="width: 7%;">体重(kg)</th>
+                <th style="width: 7%;">BMIkg/m²</th>
+                <th style="width: 15%;">最新诊断</th>
+                <th style="width: 10%;">筛查时间</th>
+                <th style="width: 7%;">筛查方式</th>
+                <th style="width: 5%;">筛查得分</th>
+                <th>筛查结果</th>
+                <th style="width: 5%;">筛评人</th>
+            </tr>
+            </thead>
+            
+            <tbody id="dataTbody">
+               
+            </tbody>
+        </table>
+    </div>
+    <div class="panel-header" style="height: 5px; border: none; background: #f3f7fd;">
+        <!-- <label style="background:none;border:none">病人查询</label>-->
+    </div>
+    <!-- 调试 -->
+    <div class="panel-body-no-padding-bottom">
+            <form class="layui-form layui-row">
+                    <div class="layui-col-xs12 layui-col-md10">
+                        <div class="layui-form-item">
+                            <div class="layui-row">
+                                <div class="layui-col-xs6 layui-col-sm5 date">
+                                    <label class="layui-form-label">日期：</label>
+                                    <div class="layui-input-inline">
+                                        <input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input time" id="startDate"
+                                            placeholder="开始日期" autocomplete="off">
+                                    </div>
+                                    <div class="layui-form-mid">-</div>
+                                    <div class="layui-input-inline">
+                                        <input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input time" id="endDate"
+                                            value="2020-02-20" placeholder="截止日期" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs6 layui-col-sm4">
+                                    <label class="layui-form-label special-label">姓名/住院号：</label>
+                                    <div class="layui-input-inline">
+                                        <input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input" id="nORc" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs5 layui-col-sm3">
+                                    <label class="layui-form-label">待办事项：</label>
+                                    <div class="layui-input-inline">
+                                        <div class="layui-col-xs12">
+                                            <select name="scfs" lay-filter="scfs">
+                                                <option value="-1" selected="">==全部==</option>
+                                                <option value="1">NRS2002</option>
+                                                <option value="2">MUST</option>
+                                                <option value="8">KIDNRS</option>
+                                                <option value="3">PG-SGA</option>
+                                                <option value="4">SGA</option>
+                                                <option value="5">MNA-SF</option>
+                                                <option value="6">MNA</option>
+                                                <option value="7">MIS</option>
+                                                <option value="9">BCA</option>
+                                                <option value="10">PNYS</option>
+                                                <option value="12">STAMP</option>
+                                                <option value="11">STRONGkids</option>
+                                                <option value="13">Neonatal</option>
+                                                <option value="14">NUTRIC</option>
+                                            </select>
+                                            <div class="layui-unselect layui-form-select">
+                                                <div class="layui-select-title">
+                                                    <input type="text" placeholder="==全部==" value="==全部==" readonly="" class="layui-input layui-unselect" autocomplete="off">
+                                                    <i class="layui-edge"></i>
+                                                </div>
+                                                <dl class="layui-anim layui-anim-upbit">
+                                                    <dd lay-value="-1" class="layui-this">==全部==</dd>
+                                                    <dd lay-value="1" class="">NRS2002</dd>
+                                                    <dd lay-value="2" class="">MUST</dd>
+                                                    <dd lay-value="8" class="">KIDNRS</dd>
+                                                    <dd lay-value="3" class="">PG-SGA</dd>
+                                                    <dd lay-value="4" class="">SGA</dd>
+                                                    <dd lay-value="5" class="">MNA-SF</dd>
+                                                    <dd lay-value="6" class="">MNA</dd>
+                                                    <dd lay-value="7" class="">MIS</dd>
+                                                    <dd lay-value="9" class="">BCA</dd>
+                                                    <dd lay-value="10" class="">PNYS</dd>
+                                                    <dd lay-value="12" class="">STAMP</dd>
+                                                    <dd lay-value="11" class="">STRONGkids</dd>
+                                                    <dd lay-value="13" class="">Neonatal</dd>
+                                                    <dd lay-value="14" class="">NUTRIC</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div> -->
+                                <!-- <div class="layui-row"> -->
+                                <div class="layui-col-xs4 layui-col-sm4">
+                                    <label class="layui-form-label">状态：</label>
+                                    <div class="layui-input-inline">
+                                        <div class="layui-col-xs12">
+                                            <select name="fszt" lay-filter="fszt">
+                                                <option value="-1" selected="">==全部==</option>
+                                                <option value="0" selected="">未复筛</option>
+                                                <option value="1">已复筛</option>
+                                            </select>
+                                            <div class="layui-unselect layui-form-select">
+                                                <div class="layui-select-title">
+                                                    <input type="text" placeholder="==全部==" value="未复筛" readonly="" class="layui-input layui-unselect" autocomplete="off">
+                                                    <i class="layui-edge"></i>
+                                                </div>
+                                                <dl class="layui-anim layui-anim-upbit">
+                                                    <dd lay-value="-1" class="">==全部==</dd>
+                                                    <dd lay-value="0" class="layui-this">未复筛</dd>
+                                                    <dd lay-value="1" class="">已复筛</dd>
+                                                </dl>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="layui-col-xs3 layui-col-sm3 layui-col-sm-offset5">
+                                    <label class="layui-form-label">是否在院：</label>
+                                    <div class="layui-input-inline">
+                                        <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                            <div class="layui-input-block" style="margin-left: 0;">
+                                                <input type="checkbox" name="isLeave" value="true" lay-skin="switch" lay-text="是|否" lay-filter="isLeave" checked="">
+                                                <div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch">
+                                                    <em>是</em>
+                                                    <i></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-col-xs12 layui-col-md2 action-group">
+                        <div class="layui-form-item">
+                            <input type="button" class="layui-btn" value="查询" onclick="InitContentPage('/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList/1');"
+                            />
+                            <div>
+                                <input type="button" class="layui-btn  layui-btn-small" style="background-color: #E64545;" value="取消待办" onclick="operCancle();"
+                                />
+                                <input type="button" class="layui-btn  layui-btn-small" style="background-color: #297EB7;" value="打印待办" onclick="printSearchDataList();"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        <table class="table" style="color: #333333;">
+            <tbody><tr style="">
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">所属科室：</td>
+                <td style="width: 16%;">
+                    <input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input ac_input" id="dept" onchange="common.win_clearhidden(this, '#deptCode');" onkeydown="if (event.keyCode == 46) {return false;}" placeholder="双击选择或输入搜索" autocomplete="off">
+                    <input type="hidden" id="deptCode">
+                </td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r"> 筛评日期：</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input time" id="startDate" placeholder="开始日期" value="2020-02-18" autocomplete="off"></td>
+                <td style="width: 1%;">-</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input time" id="endDate" placeholder="截止日期" value="2020-02-19" autocomplete="off"></td>
+                <td style="width: 10%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">姓名/住院号：</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="nORc" autocomplete="off"></td>
+                <td style="text-align: center; padding: 0;" rowspan="2"><input type="button" class="layui-btn " style="width: 120px; font-size: 16px; padding-top: 0; padding-bottom: 0;" value="查询" onclick="InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/1');"></td>
+                <td style="text-align: center; padding: 0;" rowspan="2"><input type="button" class="layui-btn " style="width: 120px; font-size: 16px; padding-top: 0; padding-bottom: 0;" value="导出Execl" onclick="doExport('#issue124', { type: 'excel' });"></td>
+            </tr>
+            <tr>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">筛评方式：</td>
+                <td><div class="layui-col-xs12"><select name="scfs" lay-filter="scfs"><option value="-1" selected="">==全部==</option><option value="1">NRS2002</option><option value="2">MUST</option><option value="8">KIDNRS</option><option value="3">PG-SGA</option><option value="4">SGA</option><option value="5">MNA-SF</option><option value="6">MNA</option><option value="7">MIS</option><option value="9">BCA</option><option value="10">PNYS</option><option value="12">STAMP</option><option value="11">STRONGkids</option><option value="13">Neonatal</option><option value="14">NUTRIC</option></select><div class="layui-unselect layui-form-select"><div class="layui-select-title"><input type="text" placeholder="==全部==" value="==全部==" readonly="" class="layui-input layui-unselect" autocomplete="off"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="-1" class="layui-this">==全部==</dd><dd lay-value="1" class="">NRS2002</dd><dd lay-value="2" class="">MUST</dd><dd lay-value="8" class="">KIDNRS</dd><dd lay-value="3" class="">PG-SGA</dd><dd lay-value="4" class="">SGA</dd><dd lay-value="5" class="">MNA-SF</dd><dd lay-value="6" class="">MNA</dd><dd lay-value="7" class="">MIS</dd><dd lay-value="9" class="">BCA</dd><dd lay-value="10" class="">PNYS</dd><dd lay-value="12" class="">STAMP</dd><dd lay-value="11" class="">STRONGkids</dd><dd lay-value="13" class="">Neonatal</dd><dd lay-value="14" class="">NUTRIC</dd></dl></div></div></td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">筛评分数：</td>
+                <td><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="startScore" autocomplete="off"></td>
+                <td>-</td>
+                <td><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="endScore" autocomplete="off"></td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">是否在院：</td>
+                <td colspan="2" class="text-l"><div class="layui-form-item" style="padding: 0; margin: 0;"><div class="layui-input-block" style="margin-left: 0;"><input type="checkbox" name="isLeave" value="true" lay-skin="switch" lay-text="是|否" lay-filter="isLeave" checked=""><div class="layui-unselect layui-form-switch layui-form-onswitch" lay-skin="_switch"><em>是</em><i></i></div></div></div></td>
+            </tr>
+        </tbody></table>
+
+    </div>
+    <!-- end -->
+
+     <div class="panel-body-no-padding-bottom">
+        <table class="table" style="color: #333333;">
+            <tr style="">
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">所属科室：</td>
+                <td style="width: 16%;">
+                    <input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="dept" onchange="common.win_clearhidden(this, '#deptCode');" onkeydown="if (event.keyCode == 46) {return false;}" placeholder="双击选择或输入搜索" />
+                    <input type="hidden" id="deptCode" />
+                </td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r"> 筛评日期：</td>
+                <td style="width: 10%;" colspan="3"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input time" id="startDate" placeholder="开始日期" value="@DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")"></td>
+                <td style="width: 1%;">-</td>
+                <td style="width: 10%;" colspan="2"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input time" id="endDate" placeholder="截止日期" value="@DateTime.Now.ToString("yyyy-MM-dd")"></td>
+                <td style="width: 10%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">姓名/住院号：</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" style="width: 120px;" id="nORc" /></td>
+                <td style="text-align: center; padding: 0;" rowspan="2"><input type="button" class="layui-btn " style="width: 120px; font-size: 16px; padding-top: 0; padding-bottom: 0;" value="查询" onclick="InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/1');" /></td>
+                <td style="text-align: center; padding: 0;" rowspan="2"><input type="button" class="layui-btn " style="width: 120px; font-size: 16px; padding-top: 0; padding-bottom: 0;" value="导出Execl" onclick="doExport('#issue124', { type: 'excel' });" /></td>
+            </tr>
+            <tr>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">筛评方式：</td>
+                <td>@Html.Raw(CreatedControl.SelectHtml(list, "scfs", "-1", true, null, 12, false))</td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">筛评分数：</td>
+                <td><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="startScore" /></td>
+                <td>-</td>
+                <td><input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="endScore" /></td>
+                <td colspan="3"><span class="layui-col-xs8" style="padding-top: 10px;font-size: 16px; font-weight: normal;">是否在院：</span><span class="layui-col-xs4">@Html.Raw(CreatedControl.CheckboxSwitchHtml("isLeave", "是|否", true))</span></td>
+                <td style="font-size: 16px; font-weight: normal;" class="text-r">筛评人：</td>
+                <td class="text-l">
+                    <input style="border-radius: 3px; border-color: #bbbbbb; color: #999999;" type="text" class="layui-input" id="userSel" onchange="common.win_clearhidden(this, '#userCode');" onkeydown="if(event.keyCode==46) {return false;}" placeholder="双击选择或输入搜索" />
+                    <input type="hidden" id="userCode" />
+                </td>
+            </tr>
+        </table>
+
+    </div> 
+    <div class="panel-header" style="height: 3px; border: none; background: #f3f7fd;"></div>
+    <div class="panel-body-no-padding-bottom" style="font-size: 15px; font-family: PingFang SC, Hiragino Sans GB, Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei, sans-serif;">
+        <div style="margin: 0; padding: 0;" id="tablescrollPanel">
+            <table class="table" style="width: 100%; margin: 0; padding: 0;">
+                <thead style="margin: 0; padding: 0;">
+                <tr style="height: 8px;"></tr>
+                <tr class="th" style="margin: 0; padding: 0;">
+                    <th style="width: 12%; white-space: nowrap; cursor: pointer;">科室</th>
+                    <th style="text-align: center; width: 7%; white-space: nowrap;">床号</th>
+                    <th style="text-align: center; width: 7%; white-space: nowrap;">姓名</th>
+                    <th style="text-align: center; width: 7%; white-space: nowrap;">住院号</th>
+                    <th style="text-align: center; width: 12%; white-space: nowrap;"onclick="deptLoadContent('ScreenDate', '#span1', '#span2');">筛查时间<span style="cursor: pointer;" id="span1">(↓)</span></th>
+                    <th style="text-align: center; width: 8%; white-space: nowrap;">筛查方式</th>
+                    <th style="text-align: center; width: 5%; white-space: nowrap;"onclick="deptLoadContent('ScreeningScore', '#span2', '#span1');">筛查得分<span style="cursor: pointer;" id="span2">(||)</span></th>
+                    <th style="text-align: center; width: 15%; white-space: nowrap;">筛查结果</th>
+                    <th style="text-align: center; width: 5%; white-space: nowrap;">筛评人</th>
+                    <th style="text-align: center; width: 7%; white-space: nowrap;">操作<input type="hidden" id="orderBy"/><input type="hidden" id="orderCol"/></th>
+                </tr>
+                </thead>
+                <tbody id="" style="white-space:nowrap;font-size:14px;font-family:Microsoft YaHei, PingFang SC, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei,sans-serif;color:#333333;">
+                    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: green;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">耳鼻喉科病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">1970</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">徐欣语</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z603235</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-19 19:48</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">SGA</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">A</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="">营养良好</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jiangc</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/SGAReport/6','SGA');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">435</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">孙同春</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z573919</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-19 15:32</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">NRS2002</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">4</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="患者具有营养风险,应开始制定营养治疗计划(包括治疗膳食,经口营养补充,肠内营养及肠外营养)。">患者具有营养风险,应开始制定营...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/NS2002Report/72','NRS2002');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">416</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">商廷瑞</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z598476</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-19 11:37</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">儿童营养风险筛查</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">8</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="“高”患儿处于营养风险，开始制定营养治疗计划。">“高”患儿处于营养风险，开始制...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/KIDNRSReport/6','儿童营养风险筛查');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: green;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">435</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">孙同春</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z573919</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-11 18:32</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">Neonatal</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">A</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="低风险：无营养干预的必要，定期称体重（1次/周），医师1次/周复筛查。">低风险：无营养干预的必要，定期...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/NeonatalReport/3','Neonatal');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">432</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">陈敏</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z066230</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-11 18:32</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">儿童营养风险筛查</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">4</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="“高”患儿处于营养风险，开始制定营养治疗计划。">“高”患儿处于营养风险，开始制...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/KIDNRSReport/5','儿童营养风险筛查');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">435</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">孙同春</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z573919</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-11 16:38</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">NRS2002</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">3</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="患者具有营养风险,应开始制定营养治疗计划(包括治疗膳食,经口营养补充,肠内营养及肠外营养)。">患者具有营养风险,应开始制定营...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/NS2002Report/71','NRS2002');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">416</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">商廷瑞</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z598476</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-02-03 16:55</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">Neonatal</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">C</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="高风险：新生儿主治医师和NST小组成员联合进行全面诊断，制定个体化的营养建议和随访，医师1次/周复评。必要时NST核心小组成员参与诊疗。">高风险：新生儿主治医师和NST...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/NeonatalReport/2','Neonatal');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消三</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">318</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">金建强</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z596997</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-01-10 10:33</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">MNA-SF</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">9</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="有营养不良风险,如果伴有体重下降,即应进行营养补充(强化膳食或经口营养补充400Kcal/d),如果没有体重下降,应监测体重变化并每3个月复查一次。">有营养不良风险,如果伴有体重下...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/MNASFReport/4','MNA-SF');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消化四楼病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">432</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">陈敏</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z066230</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-01-10 10:30</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">PG-SGA</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">14</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="重度营养不良,急需进行症状改善和/或同时进行营养干预。">重度营养不良,急需进行症状改善...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/PGSGAReport/4','PG-SGA');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">耳鼻喉科病区</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">1970</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">徐欣语</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z603235</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-01-10 10:28</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">儿童营养风险筛查</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">3</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="“高”患儿处于营养风险，开始制定营养治疗计划。">“高”患儿处于营养风险，开始制...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/KIDNRSReport/4','儿童营养风险筛查');">
+    </td>
+    </tr>
+    <tr class="tr" style="border-bottom: 1px dashed #d2d2d2;padding:0;color: red;">
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">消三</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">318</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">金建强</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">z596997</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:12%;">2020-01-10 10:21</td>
+    <td style="text-align: center; padding: 3px 0 3px 0; width: 8%;">MUST</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">4</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:15%;" title="“高”营养风险状态,需接受营养干预。">“高”营养风险状态,需接受营养...</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:5%;">jasion</td>
+    <td style="text-align: center;padding:3px 0 3px 0;width:7%;">
+        <input type="button" class="layui-btn layui-btn" value="查看" style="background:none;height:28px;color:#297fb8;border-radius:0;border-bottom:1px solid #297fb8;display:inline-block;padding:0 2px;margin:1px 0;" onclick="PrintWindow('/TreatmentCenter/ScreeningManagement/MUSTReport/8','MUST');">
+    </td>
+    </tr>
+    
+    <tr><td colspan="9" style="border: 0;"><div class="full-screen" style=""><div id="pagerBar" class="pagerBar"><div class="float_left" style=" margin-top:5px;">&nbsp;总数：<label for="total">[65]条记录｜共[6]页</label></div><div class="float_right paging"><div class="float_left"><span class="paging_disabled" disabled="disabled"><a>上一页</a></span><span class="paging_current"><a href="javascript:void(0);">&nbsp;&nbsp;1&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/2');">&nbsp;&nbsp;2&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/3');">&nbsp;&nbsp;3&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/4');">&nbsp;&nbsp;4&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/5');">&nbsp;&nbsp;5&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/6');">&nbsp;&nbsp;6&nbsp;&nbsp;</a></span><span><a href="javascript:InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/2');">下一页</a></span></div><div class="clear"></div></div></div></div></td></tr>
+    
+    
+    </tbody>
+                <!-- <tbody id="tablescroll" style="white-space: nowrap; font-size: 14px; font-family: Microsoft YaHei, PingFang SC, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif; color: #333333;">
+                @RenderPage("~/Views/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList.cshtml")
+                </tbody> -->
+            </table>
+        </div>
+    </div>
+
+</div>
+<div style="font-size:12px;position:fixed;bottom:0;line-height: 40px; height: 45px;background:none;margin-left:20%;font-family: PingFang SC, Hiragino Sans GB,Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei,sans-serif;color:#333333;">黑:未筛查；<span style="color: #65b569;">绿：筛评后正常；</span><span style="color: blue;">蓝：筛评后轻度异常；</span><span style="color: orange;">橙：筛评后中度异常；</span><span style="color: #e64545;">红：筛评后重度异常；</span><span>(||):点击排序；</span></div>
+<script>
+    var fm,dialog, common,pager;
+    var headers = {};
+    //获取防伪标记
+    var token = $('@Html.AntiForgeryToken()').val();
+    //防伪标记放入headers
+    //也可以将防伪标记放入data
+    headers["__RequestVerificationToken"] = token;
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winForm', 'winDialog', 'winCommon', 'winPager'], function() {
+        fm = layui.winForm;
+        dialog = layui.winDialog;
+        common = layui.winCommon;
+        pager = layui.winPager;
+        $(document).ready(function() {
+            fm.win_resize('#tablescrollPanel', 220);
+            var startDate;
+            var endDate;
+            var sd = new Date();
+            $.datetimepicker.setLocale('ch'); //新版
+            // 初始加载时间控件
+            $("#startDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: sd //当天
+                    });
+                },
+                onChangeDateTime: function(dp, $input) {
+                    startDate = $("#startDate").val();
+                },
+                onClose: function(current_time, $input) {
+                    if (startDate > endDate) {
+                        $("#startDate").val(endDate);
+                        startDate = endDate;
+                    }
+                },
+                timepicker: false
+            });
+            // 初始加载时间控件
+            $("#endDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: sd //当天
+                    });
+                },
+                onClose: function(current_time, $input) {
+                    endDate = $("#endDate").val();
+                    if (startDate > endDate) {
+                        $("#endDate").val(startDate);
+                        endDate = startDate;
+                    }
+                },
+                timepicker: false
+            });
+
+            var deptData = @Html.Raw(ViewBag.deptData);
+            $("#dept").autocomplete(deptData, {
+                minChars: 0,
+                width: 240,
+                matchContains: true,
+                autoFill: false,
+                formatItem: function(row, i, max) {
+                    return row.name;
+                },
+                formatMatch: function(row, i, max) {
+                    return row.name + "" + row.code;
+                },
+                formatResult: function(row) {
+                    return row.name;
+                }
+            }).result(function(event, row, formatted) {
+                $("#deptCode").val(row.key);
+                $("input[type=checkbox][name=myDept]").prop("checked", false);
+                fm.win_render("checkbox");
+            });
+    // 调试： 结束后放开注释
+            // var sprData = @Html.Raw(UserInfo.GetDietitianListStr(1,ViewBag.courtyardId));
+      
+            $("#userSel").autocomplete(sprData, {
+                minChars: 0,
+                width: 240,
+                matchContains: true,
+                autoFill: false,
+                formatItem: function(row, i, max) {
+                    return row.name;
+                },
+                formatMatch: function(row, i, max) {
+                    return row.name + "" + row.code;
+                },
+                formatResult: function(row) {
+                    return row.name;
+                }
+            }).result(function(event, row, formatted) {
+                $("#userCode").val(row.key);
+            });
+        });
+    });
+    function fllow(val,patCode) {
+        common.win_formAction('/TreatmentCenter/PatientManagement/ChanagePatientFollow','POST',{patCode:patCode,isFllow:val},headers,function(json) {
+            if(!json.result){
+                //InitContentPage('/TreatmentCenter/PatientManagement/InHospitalPatientTableList/1');
+                parent.dialog.win_alert('关注失败!','操作提示',  5);
+}
+        },'JSON');
+    }
+    function InitContentPage(href) {
+        var url = href;
+        //用户名
+        var pm,val;
+        pm = $.trim($("#startDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "startDate", val);
+        }
+        pm = $.trim($("#endDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "endDate", val);
+        }
+        pm = $.trim($("#deptCode").val());
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "deptCode", val);
+        } else {
+            var dept = $.trim($("#dept").val());
+            if (dept.length > 0) {
+                val = window.escape(dept);
+                url = common.win_loadParamUrl(url, "dept", val);
+            }
+        }
+        pm = $.trim($("#userCode").val());
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "userCode", val);
+        } else {
+            var userSel = $.trim($("#userSel").val());
+            if (userSel.length > 0) {
+                val = window.escape(userSel);
+                url = common.win_loadParamUrl(url, "userSel", val);
+            }
+        }
+        pm = $.trim($("#nORc").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "nORc", val);
+        }
+        pm = $("select[name=scfs]").val();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "scfs", val);
+        pm = $.trim($("#startScore").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "sscore", val);
+        }
+        pm = $.trim($("#endScore").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "escore", val);
+        }
+        pm = $("input[type=checkbox][name=isLeave]:checked").size();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "isLeave", val);
+        var orderBy = $("#orderBy").val();
+        var orderCol = $("#orderCol").val();
+        if (orderBy.length > 0 && orderCol.length > 0) {
+            url = common.win_loadParamUrl(url, "ob", orderCol + "_" + orderBy);
+        }
+         pager.win_laypage('#tablescroll', url, headers, function ()
+         {
+             fm.win_checkbox('gz', function(data) {
+                 fllow(true,data.value);
+             },function(data) {
+                 fllow(false,data.value);
+             });
+            fm.win_render('checkbox');
+        });
+    }
+    function doExport(selector, params) {
+        var url = '/TreatmentCenter/ScreeningManagement/ScreeningMointorDataList/1';
+        var pm,val;
+        pm = $.trim($("#startDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "startDate", val);
+        }
+        pm = $.trim($("#endDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "endDate", val);
+        }
+        pm = $.trim($("#deptCode").val());
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "deptCode", val);
+        } else {
+            var dept = $.trim($("#dept").val());
+            if (dept.length > 0) {
+                val = window.escape(dept);
+                url = common.win_loadParamUrl(url, "dept", val);
+            }
+        }
+        pm = $.trim($("#nORc").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "nORc", val);
+        }
+        pm = $("select[name=scfs]").val();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "scfs", val);
+        pm = $.trim($("#startScore").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "sscore", val);
+        }
+        pm = $.trim($("#endScore").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "escore", val);
+        }
+        pm = $("input[type=checkbox][name=isLeave]:checked").size();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "isLeave", val);
+        var orderBy = $("#orderBy").val();
+        var orderCol = $("#orderCol").val();
+        if (orderBy.length > 0 && orderCol.length > 0) {
+            url = common.win_loadParamUrl(url, "ob", orderCol + "_" + orderBy);
+        }
+        common.win_formAction(url, 'GET', {}, headers, function(json) {
+            if(json) {
+                $('#dataTbody').html('');
+                $(json).each(function(i,n) {
+                    var tr = '<tr>' +
+                        '<td style="text-align: center;">'+ n.departName +'</td>' +
+                        '<td style="text-align: center;">'+ n.bedNo +'</td>' +
+                        '<td style="text-align: center;">'+ n.patientName +'</td>' +
+                        '<td style="text-align: center;">'+ n.beInNo + '</td>' +
+                        '<td style="text-align: center;">'+  n.currentAge + '</td>' +
+                        '<td style="text-align: center;">'+ n.currentHeight +'</td>' +
+                        '<td style="text-align: center;">'+ n.currentWeight +'</td>' +
+                        '<td style="text-align: center;">'+ n.currentBMI +'</td>' +
+                        '<td style="text-align: center;">'+ n.currentIllnessName +'</td>' +
+                        '<td style="text-align: center;">'+ n.screenDate +'</td>' +
+                        '<td style="text-align: center;">'+ n.screenTypeName +'</td>' +
+                        '<td style="text-align: center;">'+ n.score +'</td>' +
+                        '<td style="text-align: center;">'+ n.screeningApprise +'</td>' +
+                        '<td style="text-align: center;">'+ n.fullName +'</td>' +
+                        '</tr>';
+                    $('#dataTbody').append(tr);
+                });
+                var options = {
+                    fileName: '筛查监控记录'
+                };
+
+                jQuery.extend(true, options, params);
+
+                $(selector).tableExport(options);
+            }
+        });    
+    }
+
+    function backDiagnosis(patCode) {
+        parent.document.location.href = '/CommonManager/DiagnosisIndex/' + patCode;
+    }
+    function deptLoadContent(col, elem,elm) {
+        $(elm).text("(||)");
+        var order = $("#orderBy").val();
+        var txt = $(elem).text();
+        var ord = '';
+        if (order == "") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+        if (order == "asc") {
+            ord = "desc";
+            txt = "(↓)";
+        }
+        if (order == "desc") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+       $(elem).text(txt);
+       $("#orderBy").val(ord);
+       $("#orderCol").val(col);
+       var url = '/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/1?ob=' + col + "_" + ord + "_";
+       InitContentPage(url);
+    }
+
+    function PrintWindow(u,t) {
+        dialog.win_print(u, t);
+    }
+    
+    /*
+   *v=0
+   */
+    function setRefVal(v) {
+        InitContentPage('/TreatmentCenter/ScreeningManagement/ScreeningMointorTableList/1');
+    }
+</script>

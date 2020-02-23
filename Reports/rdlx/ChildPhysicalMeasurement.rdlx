@@ -1,0 +1,2516 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>11.2cm</Height>
+		<ReportItems>
+			<Table Name="Table2">
+				<DataSetName>AssessmentInfoDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>1.43319cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>8</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox70">
+											<CanGrow>true</CanGrow>
+											<Value>体格测量</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>None</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Fields!PhysicalMeasurement.Value=True and Fields!As_Type.Value=0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox96">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox97">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox98">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox99">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox100">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox102">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox103">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox104">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.033358cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox9</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,1,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;0,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox10</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,1,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+													<Top>None</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox11</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,2,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;1,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;1,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox18">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,2,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+													<Top>None</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,3,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;2,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;2,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox26">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,3,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+													<Top>None</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox30">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,4,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;3,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;3,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox35">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,4,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+													<Top>None</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox105">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox106">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox107">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox108">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox109">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox110">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox111">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox112">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1.03332cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox39">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,5,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;4,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;4,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox40">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,5,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox41">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,6,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;5,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;5,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox42">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,6,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox43">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,7,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;6,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;6,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox44">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,7,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox45">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,8,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;7,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;7,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox46">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,8,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;4,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox113">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox114">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox115">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox116">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox117">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox118">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox119">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox120">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;4,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1.003729cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox12</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,9,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;8,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;8,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox14</DataElementName>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,9,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,10,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;9,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;9,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,10,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,11,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;10,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;10,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox29">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,11,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox34">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,12,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;11,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;11,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox38">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,12,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;8,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox121">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox122">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox123">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox124">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox125">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox126">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox127">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox128">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;8,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox161">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,13,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;12,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;12,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox162">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,13,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox163">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,14,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;13,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;13,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox164">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,14,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox165">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,15,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;14,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;14,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox166">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,15,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox167">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,16,1)</Value>
+											<Style>
+												<BackgroundColor>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;15,"WhiteSmoke","Transparent")</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderColor>
+													<Default>Gainsboro</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Default>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;15,"solid","none")</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox168">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalItems(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1203_describe.Value,Fields!Item_1204_describe.Value,Fields!Item_1208_describe.Value,Fields!Item_1209_describe.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value,16,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;12,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox169">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox170">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox171">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox172">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox173">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox174">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox175">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox176">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetShowCount(Fields!Item_1201.Value,Fields!Item_1202.Value,Fields!Item_1203.Value,Fields!Item_1204.Value,Fields!Item_1205.Value,Fields!Item_1206.Value,Fields!Item_1207.Value,Fields!Item_1208.Value,Fields!Item_1209.Value,Fields!Item_1204_2.Value,Fields!Item_1204_1.Value,Fields!Item_1208_3.Value,Fields!Item_1208_1.Value,Fields!Item_1208_2.Value,Fields!Item_1209_1.Value,Fields!Item_1209_2.Value)&gt;12,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>7.303597cm</Height>
+				<Left>0.02cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>1.954089cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.954089cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.954089cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.8cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.954089cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.8cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.04cm</Top>
+				<Visibility>
+					<Hidden>=iif(Fields!PhysicalMeasurement.Value=True and Fields!As_Type.Value=0,false,true)</Hidden>
+				</Visibility>
+				<Width>19.01636cm</Width>
+				<ZIndex>1</ZIndex>
+			</Table>
+			<Table Name="Table3">
+				<DataSetName>AssessmentInfoDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.933802cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox51">
+											<CanGrow>true</CanGrow>
+											<Value>计算结果：</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox53">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,1,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox54">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,2,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox59">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,3,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox62">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,4,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,1,2)&gt;0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.964453cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox64">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox65">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,5,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox66">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,6,1)</Value>
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox67">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox68">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<BackgroundColor>WhiteSmoke</BackgroundColor>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Code.GetPhysicalResult(Fields!IdealWeight.Value,Fields!IBW.Value,Fields!BMI.Value,Fields!WeightChangeRate.Value,Fields!WaistHipRatio.Value,Fields!UpperArmMuscle.Value,1,2)&gt;4,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.9017448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Silver</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Dashed</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Fields!PhysicalMeasurement.Value=True,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>2.8cm</Height>
+				<Left>0.02cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>2.917659cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.020252cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.009877cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.008467cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.043745cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>7.64cm</Top>
+				<Visibility>
+					<Hidden>=iif(Fields!PhysicalMeasurement.Value=True and Fields!As_Type.Value=0,false,true)</Hidden>
+				</Visibility>
+				<Width>19cm</Width>
+				<ZIndex>2</ZIndex>
+			</Table>
+		</ReportItems>
+	</Body>
+	<Code>Function IsState(ByVal v As String, ByVal p As String, ByVal sign As String) As Boolean
+	Dim s As String
+	Dim val As String
+	s = sign + v + sign
+	val = sign + p + sign
+	Return s.Contains(val)
+End Function
+Function IsShow(ByVal v As String) As Boolean
+	If(v.Length &gt; 0)Then
+		Return False
+	Else 
+		Return True
+	End If	
+End Function
+Function GetShowCount(ByVal i1 As Double, ByVal i2 As Double, ByVal i3 As Double, ByVal i4 As Double, ByVal i5 As Double, ByVal i6 As Double, ByVal i7 As Double, ByVal i8 As Double, ByVal i9 As Double, ByVal i10 As Double, ByVal i11 As Double, ByVal i12 As Double, ByVal i13 As Double, ByVal i14 As Double, ByVal i15 As Double, ByVal i16 As Double) As String
+	Dim cc As Integer
+	If(i1 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i2 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i3 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i4 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i5 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i6 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i7 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i8 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i9 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i10 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i11 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i12 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i13 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i14 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i15 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	If(i16 &gt; -1) Then
+		cc = cc + 1	
+	End If
+	Return cc
+End Function
+Function GetPhysicalItems(ByVal i1 As Double, ByVal i2 As Double, ByVal i3 As Double, ByVal i4 As Double, ByVal i5 As Double, ByVal i6 As Double, ByVal i7 As Double, ByVal i8 As Double, ByVal i9 As Double, ByVal i3_d As String, ByVal i4_d As String, ByVal i8_d As String, ByVal i9_d As String, ByVal i10 As Double, ByVal i11 As Double, ByVal i12 As Double, ByVal i13 As Double, ByVal i14 As Double, ByVal i15 As Double, ByVal i16 As Double, ByVal col As Integer, ByVal t As Integer) As String
+	Dim cc As Integer
+	Dim showStr As String
+	Dim showValue As String
+	If(i1 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "目前身高"
+			showValue = i1.ToString() + " cm"
+		End If
+	End If
+	If(i2 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "目前体重"	
+			showValue = i2.ToString() + " kg"
+		End If	
+	End If
+	If(i3 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "近期体重"
+			Dim des As String
+			If(i3_d &lt;&gt; "-1")Then
+				If(i3_d = "1203_1") Then
+					des = "(1个月前)"
+				Else If(i3_d = "1203_2") Then
+					des = "(3个月前)"
+				Else
+					des = "(6个月前)"
+				End If
+			End If
+			showValue = i3.ToString() + " kg " + des
+		End If
+	End If
+	If(i4 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "握力"	
+			Dim des_2 As String
+			If(i4_d = "1204_1") Then
+				des_2 = "（右手）"
+			Else
+				des_2 = "（左手）"
+			End If
+			showValue = i4.ToString() + " kg " + des_2
+		End If
+	End If
+	If(i5 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "腰围"	
+			showValue = i5.ToString() + " cm"
+		End If
+	End If
+	If(i6 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "臀围"	
+			showValue = i6.ToString() + " cm"
+		End If
+	End If
+	If(i7 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "上臂围"	
+			showValue = i7.ToString() + " cm"
+		End If
+	End If
+	If(i8 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "皮褶厚度"
+			Dim des_3 As String
+			If(i8_d &lt;&gt; "-1")Then
+				If(i8_d = "1208_1") Then
+					des_3 = "(三头肌)"
+				Else If(i8_d = "1208_2") Then
+					des_3 = "(肩胛下)"
+				Else
+					des_3 = "(髂前上棘)"
+				End If
+			End If
+			showValue = i8.ToString() + " mm" + des_3
+		End If
+	End If
+	If(i9 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col)Then
+			showStr = "小腿围"	
+			Dim des_4 As String
+			If(i9_d &lt;&gt; "-1")Then
+				If(i9_d = "1209_1") Then
+					des_4 = "（右腿）"
+				Else
+					des_4 = "（左腿）"
+				End If
+			End If
+			showValue = i9.ToString() + " cm " + des_4
+		End If
+	End If
+	
+	If(i10 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "左手握力"
+			showValue = i10.ToString() + " kg"
+		End If
+	End If
+	If(i11 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "右手握力"
+			showValue = i11.ToString() + " kg"
+		End If
+	End If
+	If(i12 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "三头肌皮褶厚度"
+			showValue = i12.ToString() + " mm"
+		End If
+	End If
+	If(i13 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "肩胛下皮褶厚度"
+			showValue = i13.ToString() + " mm"
+		End If
+	End If
+	If(i14 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "髂前上棘皮褶厚度"
+			showValue = i14.ToString() + " mm"
+		End If
+	End If
+	If(i15 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "左小腿围"
+			showValue = i15.ToString() + " cm"
+		End If
+	End If
+	If(i16 &gt; -1) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "右小腿围"
+			showValue = i16.ToString() + " cm"
+		End If
+	End If
+
+	If(t = 1) Then
+		Return showStr
+	Else
+		Return showValue
+	End If
+End Function
+Function GetPhysicalResult(ByVal item1 As Double, ByVal item2 As Double, ByVal item3 As Double, ByVal item4 As Double, ByVal item5 As Double, ByVal item6 As Double, ByVal col As Integer, ByVal t As Integer) As String
+	Dim cc As Integer
+	Dim showStr As String
+	If(item1 &gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "IBW  " + round(item1, 1).ToString() + " kg"
+		End If
+	End If
+	If(item2 &gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "体重占IBW  " + round(item2, 1).ToString() + " %"
+		End If
+	End If
+	If(item3 &gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "BMI  " + round(item3, 1).ToString() + " kg/m²"
+		End If
+	End If
+	If(item4 &lt;&gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "体重变化率  " + round(item4, 1).ToString() + " %"
+		End If
+	End If
+	If(item5 &gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "腰臀比  " + round(item5, 1).ToString()
+		End If
+	End If
+	If(item6 &gt; -1) Then
+		cc = cc + 1	
+		If(cc = col) Then
+			showStr = "上臂肌围  " + round(item6, 1).ToString() + " cm"
+		End If
+	End If
+
+	If(t = 1) Then
+		Return showStr
+	Else
+		Return cc
+	End If
+End Function
+
+Function GetClinicalSigns(ByVal item1 As String, ByVal item2 As String, ByVal item3 As String, ByVal item4 As String, ByVal item5 As String, ByVal item6 As String, ByVal item7 As String, ByVal item8 As String, ByVal item9 As String, ByVal col As Integer, ByVal t As Integer) As String
+	Dim cc As Integer
+	Dim showStr As String
+	Dim showValue As String
+	
+	If(item1.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "意识"
+			If(item1 = "1301_1") Then
+				showValue = "清醒"
+			Else If(item1 = "1301_2") Then
+				showValue = "嗜睡"
+			Else If(item1 = "1301_3") Then
+				showValue = "昏迷"
+			Else If(item1 = "1301_4") Then
+				showValue = "痴呆"
+			End If
+		End If
+	End If
+	
+	If(item2.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "呼吸"
+			If(item2 = "1302_1") Then
+				showValue = "自主呼吸"
+			Else If(item2 = "1302_2") Then
+				showValue = "气促"
+			Else If(item2 = "1302_3") Then
+				showValue = "机械通气"
+			End If
+		End If
+	End If
+	
+	If(item3.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "体温"
+			If(item3 = "1303_1") Then
+				showValue = "正常"
+			Else If(item3 = "1303_2") Then
+				showValue = "发热"
+			End If
+		End If
+	End If
+	
+	If(item4.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "水肿"
+			If(item4 = "1304_1") Then
+				showValue = "无"
+			Else If(item4 = "1304_2") Then
+				showValue = "有"
+			End If
+		End If
+	End If
+	
+	If(item5.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "皮肤弹性"
+			If(item5 = "1305_1") Then
+				showValue = "好"
+			Else If(item5 = "1305_2") Then
+				showValue = "中"
+			Else If(item5 = "1305_3") Then
+				showValue = "差"
+			End If
+		End If
+	End If
+	
+	If(item6.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "粘膜"
+			If(item6 = "1306_1") Then
+				showValue = "红润"
+			Else If(item6 = "1306_2") Then
+				showValue = "苍白"
+			End If
+		End If
+	End If
+	
+	If(item7.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "胸水"
+			If(item7 = "1307_1") Then
+				showValue = "无"
+			Else If(item7 = "1307_2") Then
+				showValue = "有"
+			End If
+		End If
+	End If
+	
+	If(item8.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "腹水"
+			If(item8 = "1308_1") Then
+				showValue = "无"
+			Else If(item8 = "1308_2") Then
+				showValue = "有"
+			End If
+		End If
+	End If
+		
+	If(item9.Length &gt; 0) Then
+		cc = cc + 1
+		If(cc = col) Then
+			showStr = "腹部"
+			If(item9 = "1309_1") Then
+				showValue = "平坦"
+			Else If(item9 = "1309_2") Then
+				showValue = "膨隆"
+			Else If(item9 = "1309_3") Then
+				showValue = "凹陷"
+			End If
+		End If
+	End If
+	If(t = 0) Then
+		Return cc
+	Else If(t = 1)Then
+		Return showStr
+	Else If(t = 2)Then
+		Return showValue
+	End If
+End Function
+
+
+Function SetAdverseReaction(ByVal v As String, ByVal t As Integer) As String
+	Dim showStr As String
+	If(v.Length &gt; 0) Then
+		showStr = v
+	Else
+		showStr = "--"
+	End If
+	
+	If(t = 1) Then
+		Return showStr + " 次/天"	
+	Else If(t = 2) Then
+		Return showStr + " g/天"	
+	Else If(t = 3) Then
+		Return "持续 " + showStr + " 天"	
+	Else If(t = 4) Then	
+		Return "若为便秘，持续 " + showStr + " 天未解大便"	
+	End If
+End Function
+
+
+Function GetAdverseIsShow(ByVal v As String, ByVal v2 As String, ByVal v3 As String, ByVal v4 As String, ByVal t As Integer) As Boolean
+	If(t &gt; 0) Then
+		If(v.Length &gt; 0) Then
+			Return False
+		Else 
+			Return True
+		End If
+	Else
+		If(v.Length = 0 And v2.Length = 0 And v3.Length = 0 And v4.Length = 0) Then
+			Return True
+		Else
+			Return False
+		End If
+	End If
+End Function
+
+
+
+
+</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>19.03636cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="asId">
+			<DataType>Integer</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="AssessmentInfoDataSet">
+			<Fields>
+				<Field Name="As_ID">
+					<DataField>As_ID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="As_Type">
+					<DataField>As_Type</DataField>
+				</Field>
+				<Field Name="Con_ID">
+					<DataField>Con_ID</DataField>
+				</Field>
+				<Field Name="As_Date">
+					<DataField>As_Date</DataField>
+				</Field>
+				<Field Name="Item_1001">
+					<DataField>Item_1001</DataField>
+				</Field>
+				<Field Name="Item_1002">
+					<DataField>Item_1002</DataField>
+				</Field>
+				<Field Name="Item_1003">
+					<DataField>Item_1003</DataField>
+				</Field>
+				<Field Name="Item_1003_other">
+					<DataField>Item_1003_other</DataField>
+				</Field>
+				<Field Name="Item_1003_MalnutritionScore">
+					<DataField>Item_1003_MalnutritionScore</DataField>
+				</Field>
+				<Field Name="Item_1201">
+					<DataField>Item_1201</DataField>
+				</Field>
+				<Field Name="Item_1202">
+					<DataField>Item_1202</DataField>
+				</Field>
+				<Field Name="Item_1203">
+					<DataField>Item_1203</DataField>
+				</Field>
+				<Field Name="Item_1203_describe">
+					<DataField>Item_1203_describe</DataField>
+				</Field>
+				<Field Name="Item_1204">
+					<DataField>Item_1204</DataField>
+				</Field>
+				<Field Name="Item_1204_describe">
+					<DataField>Item_1204_describe</DataField>
+				</Field>
+				<Field Name="Item_1205">
+					<DataField>Item_1205</DataField>
+				</Field>
+				<Field Name="Item_1206">
+					<DataField>Item_1206</DataField>
+				</Field>
+				<Field Name="Item_1207">
+					<DataField>Item_1207</DataField>
+				</Field>
+				<Field Name="Item_1208">
+					<DataField>Item_1208</DataField>
+				</Field>
+				<Field Name="Item_1208_describe">
+					<DataField>Item_1208_describe</DataField>
+				</Field>
+				<Field Name="Item_1209">
+					<DataField>Item_1209</DataField>
+				</Field>
+				<Field Name="Item_1209_describe">
+					<DataField>Item_1209_describe</DataField>
+				</Field>
+				<Field Name="IdealWeight">
+					<DataField>IdealWeight</DataField>
+				</Field>
+				<Field Name="IBW">
+					<DataField>IBW</DataField>
+				</Field>
+				<Field Name="BMI">
+					<DataField>BMI</DataField>
+				</Field>
+				<Field Name="WeightChangeRate">
+					<DataField>WeightChangeRate</DataField>
+				</Field>
+				<Field Name="WaistHipRatio">
+					<DataField>WaistHipRatio</DataField>
+				</Field>
+				<Field Name="UpperArmMuscle">
+					<DataField>UpperArmMuscle</DataField>
+				</Field>
+				<Field Name="Item_1301">
+					<DataField>Item_1301</DataField>
+				</Field>
+				<Field Name="Item_1302">
+					<DataField>Item_1302</DataField>
+				</Field>
+				<Field Name="Item_1303">
+					<DataField>Item_1303</DataField>
+				</Field>
+				<Field Name="Item_1304">
+					<DataField>Item_1304</DataField>
+				</Field>
+				<Field Name="Item_1305">
+					<DataField>Item_1305</DataField>
+				</Field>
+				<Field Name="Item_1306">
+					<DataField>Item_1306</DataField>
+				</Field>
+				<Field Name="Item_1307">
+					<DataField>Item_1307</DataField>
+				</Field>
+				<Field Name="Item_1308">
+					<DataField>Item_1308</DataField>
+				</Field>
+				<Field Name="Item_1401">
+					<DataField>Item_1401</DataField>
+				</Field>
+				<Field Name="Item_1402">
+					<DataField>Item_1402</DataField>
+				</Field>
+				<Field Name="Item_1403">
+					<DataField>Item_1403</DataField>
+				</Field>
+				<Field Name="Item_1404">
+					<DataField>Item_1404</DataField>
+				</Field>
+				<Field Name="Item_1405">
+					<DataField>Item_1405</DataField>
+				</Field>
+				<Field Name="Item_1406">
+					<DataField>Item_1406</DataField>
+				</Field>
+				<Field Name="Item_1407">
+					<DataField>Item_1407</DataField>
+				</Field>
+				<Field Name="Item_1501">
+					<DataField>Item_1501</DataField>
+				</Field>
+				<Field Name="Item_1600">
+					<DataField>Item_1600</DataField>
+				</Field>
+				<Field Name="Item_1601">
+					<DataField>Item_1601</DataField>
+				</Field>
+				<Field Name="Item_1602">
+					<DataField>Item_1602</DataField>
+				</Field>
+				<Field Name="Item_1603">
+					<DataField>Item_1603</DataField>
+				</Field>
+				<Field Name="Item_1604_01">
+					<DataField>Item_1604_01</DataField>
+				</Field>
+				<Field Name="Item_1604_02">
+					<DataField>Item_1604_02</DataField>
+				</Field>
+				<Field Name="Item_1604_03">
+					<DataField>Item_1604_03</DataField>
+				</Field>
+				<Field Name="Item_1604_04">
+					<DataField>Item_1604_04</DataField>
+				</Field>
+				<Field Name="Item_1605">
+					<DataField>Item_1605</DataField>
+				</Field>
+				<Field Name="Item_1606">
+					<DataField>Item_1606</DataField>
+				</Field>
+				<Field Name="Item_1607">
+					<DataField>Item_1607</DataField>
+				</Field>
+				<Field Name="Item_1608">
+					<DataField>Item_1608</DataField>
+				</Field>
+				<Field Name="CreatedOn">
+					<DataField>CreatedOn</DataField>
+				</Field>
+				<Field Name="CreatedBy">
+					<DataField>CreatedBy</DataField>
+				</Field>
+				<Field Name="ModifiedOn">
+					<DataField>ModifiedOn</DataField>
+				</Field>
+				<Field Name="ModifiedBy">
+					<DataField>ModifiedBy</DataField>
+				</Field>
+				<Field Name="IsDelete">
+					<DataField>IsDelete</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="NutritionalIntake">
+					<DataField>NutritionalIntake</DataField>
+				</Field>
+				<Field Name="PhysicalMeasurement">
+					<DataField>PhysicalMeasurement</DataField>
+				</Field>
+				<Field Name="ClinicalSigns">
+					<DataField>ClinicalSigns</DataField>
+				</Field>
+				<Field Name="NutritionalDiagnosis">
+					<DataField>NutritionalDiagnosis</DataField>
+				</Field>
+				<Field Name="NutritionalSummary">
+					<DataField>NutritionalSummary</DataField>
+				</Field>
+				<Field Name="Item_1204_1">
+					<DataField>Item_1204_1</DataField>
+				</Field>
+				<Field Name="Item_1204_2">
+					<DataField>Item_1204_2</DataField>
+				</Field>
+				<Field Name="Item_1209_1">
+					<DataField>Item_1209_1</DataField>
+				</Field>
+				<Field Name="Item_1209_2">
+					<DataField>Item_1209_2</DataField>
+				</Field>
+				<Field Name="Item_1208_3">
+					<DataField>Item_1208_3</DataField>
+				</Field>
+				<Field Name="Item_1208_2">
+					<DataField>Item_1208_2</DataField>
+				</Field>
+				<Field Name="Item_1208_1">
+					<DataField>Item_1208_1</DataField>
+				</Field>
+				<Field Name="AdverseReaction">
+					<DataField>AdverseReaction</DataField>
+				</Field>
+				<Field Name="Item_1309">
+					<DataField>Item_1309</DataField>
+				</Field>
+				<Field Name="CurrentSex">
+					<DataField>CurrentSex</DataField>
+				</Field>
+				<Field Name="CurrentAge">
+					<DataField>CurrentAge</DataField>
+				</Field>
+				<Field Name="PosturesHeight">
+					<DataField>PosturesHeight</DataField>
+				</Field>
+				<Field Name="BirthWeight">
+					<DataField>BirthWeight</DataField>
+				</Field>
+				<Field Name="BirthLength">
+					<DataField>BirthLength</DataField>
+				</Field>
+				<Field Name="HeadCircumference">
+					<DataField>HeadCircumference</DataField>
+				</Field>
+				<Field Name="Circumference">
+					<DataField>Circumference</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from V_AssessmentList where As_ID=@asId</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="asId">
+						<Value>=Parameters!asId.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

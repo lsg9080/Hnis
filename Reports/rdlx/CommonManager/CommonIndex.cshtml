@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Views/Shared/HeaderShared.cshtml";
+}
+<div class="layui-layout" id="layui-layout">
+    <div class="layui-side layui-bg-black" id="admin-side"  style="border-right: solid 2px #297EB7; width: 200px ">
+        <div class="layui-side-scroll" id="admin-navbar-side" lay-filter="side"></div>
+    </div>
+    <div class="layui-body" style="padding: 0; margin: 0; overflow: hidden;" id="admin-body">
+        <div class="layui-tab admin-nav-card layui-tab-brief" lay-filter="admin-tab" id="admin-nav-side" style="margin: 0; padding: 0; ">
+            <div class="layui-tab-content" style="min-height: 150px; padding: 0; margin: 0;">
+                <div class="layui-tab-item layui-show">
+                    <iframe id="mainIframe" src="/CommonManager/Main" frameborder="no" border="0" marginwidth="0" marginheight="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var navData = @Html.Raw(ViewBag.navData);
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winDiagnosis'], function () {
+        var index_diagnosis = layui.winDiagnosis;
+        index_diagnosis.win_createNavbar("#admin-navbar-side",navData,'side',"#mainIframe");
+        index_diagnosis.win_resize("#mainIframe",70);
+
+    });
+</script>

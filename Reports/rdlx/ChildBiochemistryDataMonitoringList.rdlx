@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>1.5cm</Height>
+		<ReportItems>
+			<Rectangle Name="Container1">
+				<Height>1.4867cm</Height>
+				<Width>6.1881cm</Width>
+				<ZIndex>10</ZIndex>
+			</Rectangle>
+			<Tablix Name="Tablix2">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox7">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox9</DataElementName>
+										<Value>指标项</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>2.3cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>0.75cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<Value>=iif(Fields!BasicValue.Value&lt;&gt;"-1",Fields!BasicValue.Value,"")</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>Solid</Style>
+												</Border>
+											</Style>
+											<Visibility>
+												<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+											</Visibility>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix2_OperationDate1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<SortExpressions>
+								<SortExpression>
+									<Direction>Ascending</Direction>
+									<Value>=Fields!OperationDate.Value</Value>
+								</SortExpression>
+							</SortExpressions>
+							<TablixHeader>
+								<Size>0.75cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox8">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!OperationDate.Value</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix2_RowGroup1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!BasicName.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<SortExpressions>
+								<SortExpression>
+									<Direction>Ascending</Direction>
+									<Value>=Fields!OrderID.Value</Value>
+								</SortExpression>
+							</SortExpressions>
+							<TablixHeader>
+								<Size>3.888065cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox10">
+										<CanGrow>true</CanGrow>
+										<Value>=Code.SetBasicName(Fields!BasicName.Value)</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+										<Visibility>
+											<Hidden>=iif(Fields!ExistRow.Value=0 and Fields!BasicValue.Value=-1,true,false)</Hidden>
+										</Visibility>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<RepeatColumnHeaders>true</RepeatColumnHeaders>
+				<RepeatRowHeaders>true</RepeatRowHeaders>
+				<DataSetName>DataSet</DataSetName>
+				<Filters>
+					<Filter>
+						<FilterExpression>=Fields!BasicName.Value</FilterExpression>
+						<FilterValues>
+							<FilterValue>''</FilterValue>
+						</FilterValues>
+						<Operator>NotEqual</Operator>
+					</Filter>
+				</Filters>
+				<Height>1.5cm</Height>
+				<Width>6.188065cm</Width>
+				<ZIndex>11</ZIndex>
+			</Tablix>
+		</ReportItems>
+	</Body>
+	<Code>Function SetBasicName(ByVal n As String) As String
+	If(n.Length &gt; 0) Then
+		Dim t = split(n, "§")
+		If IsArray(t) Then
+			Return t(1)
+		Else
+			Return n
+		End If
+	End If
+End Function
+</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>6.2cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="startDate">
+			<DataType>String</DataType>
+			<Prompt>startDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="endDate">
+			<DataType>String</DataType>
+			<Prompt>endDate</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="pdCode">
+			<DataType>String</DataType>
+			<Prompt>pdCode</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="BasicName">
+					<DataField>BasicName</DataField>
+				</Field>
+				<Field Name="BasicValue">
+					<DataField>BasicValue</DataField>
+				</Field>
+				<Field Name="OrderID">
+					<DataField>OrderID</DataField>
+				</Field>
+				<Field Name="ExistRow">
+					<DataField>ExistRow</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>PRO_BiochemistryDataMonitoringList</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@PDCode">
+						<Value>=Parameters!pdCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

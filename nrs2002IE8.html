@@ -1,0 +1,686 @@
+@using System.Collections @using HNTS.Entity @using HNTS.Model.ConfigCenter @using HNTSBusiness.EntityCenter.TreatmentCenter.NutritionScreeningManagement
+@using HNTSBusiness.EntityCenter.TreatmentCenter.PatientManagement @using HNTSBusiness.Uility @using HUI.Components.Controls
+@{ Layout = null; IList
+<ShareSelectItemModel> lylcd = SelectedItem.GetSelectedItemList(HNTSEnums.SelectedItemTypes.需要量程度); PatientViewModel pModel = ((NRS2002Data)Model).patientViewModel;
+    NRS2002Model nmodel = ((NRS2002Data)Model).Nrs2002Model; float los = (float)Math.Round(nmodel.Lossperc, 1, MidpointRounding.AwayFromZero);
+    string Lossperc = "--"; if (los > 0) { Lossperc = "-" + los; } if (los
+    < 0) { Lossperc="+" + Math.Abs(los); } string currentDate=n model.ScreenDate.ToString( "yyyy-MM-dd"); string zyzd=p Model.Maindiagnosis;
+        string mds=p Model.Maindiagnosis; if (zyzd.Length> 8) { mds = mds.Substring(0, 8) + "..."; } else { zyzd = string.Empty; } string sex = pModel.Sex == 1 ? "男" : pModel.Sex
+        == 0 ? "女" : "未知"; IList
+        <ShareSelectItemModel> ltype = new List
+            <ShareSelectItemModel>(); }
+                <!DOCTYPE html>
+                <link rel="stylesheet" href="http://demo.wincome.group/Content/css/layui.css" />
+                <html>
+
+                <head>
+                    <meta name="viewport" content="width=device-width" />
+                    <title></title>
+                    <style>
+                        html,
+                        body {
+                            height: 95%;
+                            width: 99%;
+                            font-size: 14px;
+                        }
+
+                        .gwc_personalInfo_title {
+                            color: #167cbe;
+                        }
+
+                        .title {
+                            font-weight: bold;
+                        }
+
+                        .item {
+                            display: inline-block;
+                            width: 43%;
+                        }
+
+                        .text {
+                            width: 70px;
+                            height: 20px;
+                        }
+
+                        #main {
+                            padding: 5px 10px;
+                            background-color: #F3F7FD;
+                        }
+
+                        #patient-info {
+                            margin-bottom: 5px;
+                            padding: 5px 10px;
+                            background-color: #FFFFFF;
+                        }
+
+                        #patient-info table {
+                            width: 100%;
+                        }
+
+                        #screening-info .flag {
+                            padding: 5px 10px;
+                            background-color: #FFFFFF;
+                        }
+
+                        #screening-info table {
+                            width: 100%;
+                            background-color: #FFFFFF;
+                            border-collapse: collapse;
+                        }
+
+                        #screening-info tbody td {
+                            padding: 5px 5px;
+                            border: 1px solid #dddddd;
+                        }
+
+                        #screening-info td.score {
+                            color: red;
+                        }
+
+                        #optionTr {
+                            margin-top: 10px;
+                        }
+
+                        .spanTitle {
+                            color: #167cbe;
+                            font-weight: 700;
+                        }
+
+                        table {
+                            padding: 5px 5px;
+                        }
+
+                        .btn {
+                            height: 30px;
+                            /*line-height: 30px;*/
+                            padding: 0 10px;
+                            font-size: 12px;
+                            width: 70px;
+                            background-color: #167cbe;
+                            color: white;
+                            border-color: #167cbe;
+                            font-size: 14px;
+                        }
+
+                        input{
+                            line-height: 30px !important;
+                        }
+                        input.placeholder {
+                            color: #838383 !important;
+                        }
+                        input::-ms-clear, input::-ms-reveal{display: none;}
+                    </style>
+                    <!--[if lt IE9]>
+                        <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+                       
+                    <![endif]-->
+                </head>
+
+                <body>
+                    <div id="main">
+                        <div id="basicMsg">
+                            <div style="height: 40px; padding-top: 10px; padding-left: 10px;" class="layui-row">
+                                <form class="layui-col-xs3">
+                                    <div class="layui-col-xs5">
+                                        <input type="text" class="layui-input" placeholder="住院号" name="beInNo" id="beInNo" />
+                                    </div>
+                                    <div class="layui-col-xs7" style="text-align: center;">
+                                        <input type="button" class="layui-btn layui-btn-small" value="粘贴" id="btnPaste" onclick="common.win_paste('#beInNo');" />
+                                        <input type="button" class="layui-btn layui-btn-small" value="确定" onclick="reloadContent('#beInNo');" />
+                                    </div>
+                                </form>
+                                <div id="monitorPanel" class="layui-col-xs9 layui-row">
+                                    @{ if (pModel.IsLeave == false) { @Html.Raw(HNTS.Model.ConfigCenter.Roles.CreatedToolsHtml(ViewBag.role, ViewBag.patCode))
+                                    } }
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-hd">
+                            <div id="patientInfo" class="layui-field-box" style="height: 70px;background-color: #fff; width: 98%; margin: 0 auto; ">
+                                <div>
+                                    <div class="layui-col-xs2">
+                                        <span class="layui-col-xs12" style="width: 90%; margin-left: 5%; text-align: center; border-right: 1px solid #d2d2d2; margin-top: 15px;">
+                                            <span class="layui-col-xs12" style="color: #167cbe; font-size: 24px; height: 28px; line-height: 28px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"
+                                                title="@pModel.PatientName">@pModel.PatientName</span>
+                                            <span class="layui-col-xs12" style="height: 24px; line-height: 24px;">@sex,&nbsp;&nbsp;@pModel.AgeStr</span>
+                                        </span>
+                                    </div>
+                                    <div class="layui-col-xs10">
+                                        <span style="width: 100%;">
+                                            <span class="layui-col-xs5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="@pModel.DepartName">
+                                                <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">科室&nbsp;</span>
+                                                <span style="height: 24px; line-height: 24px;">@pModel.DepartName</span>
+                                            </span>
+                                            <span class="layui-col-xs3">
+                                                <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">床号&nbsp;</span>
+                                                <span style="height: 24px; line-height: 24px;">@pModel.BedNo</span>
+                                            </span>
+                                            <span class="layui-col-xs3">
+                                                <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">住院号&nbsp;</span>
+                                                <span>
+                                                    <label id="copyMsg" style="height: 24px; line-height: 24px;">@pModel.BeInNo</label>&nbsp;
+                                                    <input type="button" id="btnCopy" class="layui-btn layui-btn-mini copyBtnSpecicalCSS" value="复制" onclick="common.win_copy('#copyMsg');"
+                                                        style="color: #65b569; border: 1px solid #65b569; background: none; border-radius: 3px; display: inline-block; line-height: inherit;"
+                                                    />
+                                                </span>
+                                            </span>
+                                        </span>
+                                        <span style="width: 100%;">
+                                            <span class="layui-col-xs6">
+                                                <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">主要诊断&nbsp;</span>
+                                                <span title="@zyzd" style="height: 24px; line-height: 24px;">@mds</span>
+                                            </span>
+                                            <span class="layui-col-xs6" style="*clear:right;">
+                                                <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">饮食医嘱&nbsp;</span>
+                                                <span title="@pModel.Dietaryadvice" style="height: 24px; line-height: 24px;">@pModel.Dietaryadvice</span>
+                                            </span>
+                                        </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <form method="POST" action="/TreatmentCenter/ScreeningManagement/NRS2002IE8">
+                                @Html.AntiForgeryToken()
+                                <div id="screening-info">
+                                    <div class="flag" style="margin:5px 0px;">
+                                        <span class="spanTitle">筛查日期：</span>
+                                        <input style="width:100px;" type="text" value='@DateTime.Now.ToString("yyyy-MM-dd")' onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})"
+                                            id="startDate" name="ScreenDate">
+                                    </div>
+                                    <table style="font-size: 14px;">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width:20%;" class="title">
+                                                    <input type="hidden" name="userName" value="@ViewBag.username" /> 1、疾病营养需要程度
+                                                    <span title="0分：正常营养需要量：对营养需求没有过多影响。1分：营养需要量轻度提高：如髋部骨折、慢性疾病有急性并发症者（如肝硬化、慢性阻塞性肺疾病）、长期血液透析、糖尿病、一般恶性肿瘤。2分：营养需要量中度增加：如腹部大手术、脑卒中、重症肺炎、血液恶性肿瘤。3分：营养需要量明显增加：如重症头部损伤、骨髓移植、急性生理与慢性健康Ⅱ（APACHEⅡ）评分＞10的重症监护患者。">?</span>
+                                                </td>
+                                                <td style="width:75%;" colspan="2">
+                                                    @*@Html.Raw(CreatedControl.RadioHtml(lylcd, "ScreeningItemA", nmodel.ScreeningItemA.ToString("0.##"), 2))*@
+                                                    <label for="nutr-need-0" style="margin-right:20px;">
+                                                        <input id="nutr-need-0" type="radio" name="ScreeningItemA" @(nmodel.ScreeningItemA.ToString( "0.##")=="0" ?
+                                                            "checked=checked" : "") onclick="ScreeningItemAChange(1, elems);" value="0" />正常
+                                                    </label>
+                                                    <label for="nutr-need-1" style="margin-right:20px;">
+                                                        <input type="radio" id="nutr-need-1" name="ScreeningItemA" @(nmodel.ScreeningItemA.ToString( "0.##")=="1" ?
+                                                            "checked=checked" : "") onclick="ScreeningItemAChange(1, elems);" value="1" />轻度提高
+                                                    </label>
+                                                    <label for="nutr-need-2" style="margin-right:20px;">
+                                                        <input type="radio" id="nutr-need-2" name="ScreeningItemA" @(nmodel.ScreeningItemA.ToString( "0.##")=="2" ?
+                                                            "checked=checked" : "") onclick="ScreeningItemAChange(1, elems);" value="2" />中度增加
+                                                    </label>
+                                                    <label for="nutr-need-3" style="margin-right:20px;">
+                                                        <input type="radio" id="nutr-need-3" name="ScreeningItemA" @(nmodel.ScreeningItemA.ToString( "0.##")=="3" ?
+                                                            "checked=checked" : "") onclick="ScreeningItemAChange(1, elems);" value="3" />明显增加
+                                                    </label>
+                                                </td>
+                                                <td id="yyyycdTd" class="score">
+                                                    @(nmodel.ScreeningScore1 > -1 ? nmodel.ScreeningScore1.ToString("0.##") + " 分" : "0" + " 分")
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title" rowspan="3">2、营养受损
+                                                    <span title="1分：轻度受损；<br/>2分：中度受损；<br/>3分：重度受损；">?</span>
+                                                </td>
+                                                <td style="width:33%;">
+                                                    1)患者是否BMI＜18.5且伴一般情况差?
+                                                    <br />
+                                                    <br />
+                                                    <div>
+                                                        <span class="item">身高:</span>
+                                                        <span>
+                                                            <input class="text" name="Height" style="width:40px;" maxlength="5" type="text" onchange="clearResult(4, elems);" value="@(nmodel.Height > 0 ? nmodel.Height.ToString("
+                                                                0.##
+                                                                ") : (pModel.BeInHeight > 0 ? pModel.BeInHeight.ToString("0.## ") : string.Empty) )" /> cm
+                                                        </span>
+                                                    </div>
+                                                    <br />
+                                                    <div>
+                                                        <span class="item">当前体重:</span>
+                                                        <span>
+                                                            <input class="text" name="Weight" style="width:40px;" maxlength="5" type="text" onchange="clearResult(3, elems);" value="@(nmodel.Weight > 0 ? nmodel.Weight.ToString("
+                                                                0.##
+                                                                ") : (pModel.BeInWeight > 0 ? pModel.BeInWeight.ToString("0.## ") : string.Empty) )" /> kg
+                                                        </span>
+                                                    </div>
+                                                    <br />
+                                                    <div>
+                                                        <span class="item">BMI:</span>
+                                                        <span id="bmilbl">@(nmodel.BMI > 0 ? nmodel.BMI.ToString("0.##") : "--")</span>
+                                                        <span>kg/m²</span>
+                                                    </div>
+                                                    <br />
+                                                </td>
+                                                <td id="bmiTd">
+                                                    <input type="radio" id="ScreeningItemB" name="ScreeningItemB" @(nmodel.ScreeningItemB.ToString( "0.##")=="3" ?
+                                                        "checked=checked" : "") onclick="ScreeningItemBChange(this)" value="3" /> 是
+                                                    <input type="radio" id="ScreeningItemB" name="ScreeningItemB" @(nmodel.ScreeningItemB.ToString( "0.##")=="0" ?
+                                                        "checked=checked" : "") onclick="ScreeningItemBChange(this)" value="0" /> 否
+                                                </td>
+                                                <td class="score" rowspan="3" id="yyssTd">@(nmodel.ScreeningScore2 > -1 ? nmodel.ScreeningScore2.ToString("0.##") +
+                                                    " 分" : "0" + " 分")</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    2)近期(1-3个月)体重有无下降?
+                                                    <br />
+                                                    <br />
+                                                    <div>
+                                                        <span class="item">近期体重:</span>
+                                                        <span>
+                                                            <input class="text" type="text" style="width:40px;" name="OldWeight" maxlength="5" onchange="clearResult(2, elems);" value="@(nmodel.OldWeight > 0 ? nmodel.OldWeight.ToString("
+                                                                0.## ") :(pModel.OldWeight > 0 ? pModel.OldWeight.ToString("0.##
+                                                                ") : string.Empty) )" />kg
+                                                            <select name="MonthsAgo" onchange="MonthsAgo()">
+                                                                <option value="1">1个月前</option>
+                                                                <option value="2">2个月前</option>
+                                                                <option value="3">3个月前</option>
+                                                            </select>
+                                                            @*@Html.Raw(CreatedControl.SelectHtml(ltype, "MonthsAgo", pModel.MonthsAgo.ToString(), false, null, 0, false))*@
+                                                        </span>
+                                                    </div>
+                                                    <br />
+                                                    <div>
+                                                        <span class="item">体重变化:</span>
+                                                        <span id="tzbhlbl">@Lossperc</span>
+                                                        <span>%</span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ScreeningItemD" @(nmodel.ScreeningItemD ? "checked=checked" : "") onclick="ScreeningItemDChange(this)"
+                                                        value="true" />有
+                                                    <input type="radio" name="ScreeningItemD" @(nmodel.ScreeningItemD ? "" : "checked=checked") onclick="ScreeningItemDChange(this)"
+                                                        value="false" />无
+                                                    <br />
+                                                    <div id="tzxjTr">
+                                                        <label for="se0">
+                                                            <input id="se0" type="radio" name="ScreeningItemE" @(nmodel.ScreeningItemE.ToString( "0.##")=="1" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemEChange(this)" value="1" /> 3个月体重下降＞5%
+                                                        </label>
+                                                        <br />
+                                                        <label for="se1">
+                                                            <input id="se1" type="radio" name="ScreeningItemE" @(nmodel.ScreeningItemE.ToString( "0.##")=="2" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemEChange(this)" value="2" /> 2个月体重下降＞5%
+                                                        </label>
+                                                        <br />
+                                                        <label for="se2">
+                                                            <input id="se2" type="radio" name="ScreeningItemE" @(nmodel.ScreeningItemE.ToString( "0.##")=="3" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemEChange(this)" value="3" /> 1个月体重下降＞5%或3个月体重下降＞15%
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    3)一周内进食量有无减少?
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="ScreeningItemF" @(nmodel.ScreeningItemF ? "checked=checked" : " ") onclick="ScreeningItemFChange(this)"
+                                                        value="true" />是
+                                                    <input type="radio" name="ScreeningItemF" @(nmodel.ScreeningItemF ? " " : "checked=checked") onclick="ScreeningItemFChange(this)"
+                                                        value="false" />否
+                                                    <div id="jsljsTr">
+                                                        <label for="sg1">
+                                                            <input id="sg1" type="radio" name="ScreeningItemG" @(nmodel.ScreeningItemG.ToString( "0.##")=="1" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemGChange(this)" value="1" /> 减少25-50%
+                                                        </label>
+                                                        <label for="sg2">
+                                                            <input id="sg2" type="radio" name="ScreeningItemG" @(nmodel.ScreeningItemG.ToString( "0.##")=="2" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemGChange(this)" value="2" /> 减少50-75%
+                                                        </label>
+                                                        <label for="sg3">
+                                                            <input id="sg3" type="radio" name="ScreeningItemG" @(nmodel.ScreeningItemG.ToString( "0.##")=="3" ? "checked=checked" :
+                                                                "") onclick="ScreeningItemGChange(this)" value="3" /> 减少75-100%
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="title">
+                                                    3、年龄
+                                                </td>
+                                                <td colspan="2">
+                                                    <label>
+                                                        <input type="radio" name="ScreeningItemI" value="0" onchange="ScreeningItemIChange(this)" /> 18岁～69岁
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="ScreeningItemI" value="1" onchange="ScreeningItemIChange(this)" /> ≥70岁
+                                                    </label>
+                                                </td>
+                                                <td class="score" id="ageTd">
+                                                    @(nmodel.ScreeningScore3 > -1 ? nmodel.ScreeningScore3.ToString("0.##") + " 分" : "0" + " 分")
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="optionTr">
+                                    下次复筛
+                                    <input type="text" class="text" name="FollowDate" id="FollowDate" value="@(nmodel.FollowDate > 0 ? nmodel.FollowDate.ToString() : string.Empty)"
+                                    />天后
+                                    <input type="submit" class="btn" value="保存" onsubmit="Submit()" />&nbsp;&nbsp;&nbsp;
+                                    <input type="button" id="printBtn" class="btn" value="打印" onclick="PrintDiv();" />
+                                    <br />
+                                    <br /> 评分结果：
+                                    <span class="caution" id="resultTd" style="color: @nmodel.Color">
+                                        @nmodel.ScreeningApprise
+                                    </span>
+                                </div>
+                                <div style="display: none;">
+                                    <input type="hidden" name="ScreeningID" id="ScreeningID" value="@nmodel.ScreeningID" />
+                                    <br />
+                                    <input type="hidden" name="PatientCode" id="PatientCode" value="@pModel.PatientCode" />
+                                    <br />
+                                    <input type="hidden" name="Con_ID" id="Con_ID" value="@nmodel.Con_ID" />
+                                    <br />
+                                    <!--单项分数-->
+                                    <input type="hidden" name="ScreeningScore1" id="ScreeningScore1" value="@nmodel.ScreeningScore1" />
+                                    <br />
+                                    <input type="hidden" name="ScreeningScore2" id="ScreeningScore2" value="@nmodel.ScreeningScore2" />
+                                    <br />
+                                    <input type="hidden" name="ScreeningScore3" id="ScreeningScore3" value="@nmodel.ScreeningScore3" />
+                                    <br />
+                                    <!---->
+                                    <input type="hidden" name="ScreeningItemK" id="ScreeningItemK" value="@nmodel.ScreeningItemK" />
+                                    <br />
+                                    <input type="hidden" name="Lossperc" id="Lossperc" value="@nmodel.Lossperc" />
+                                    <br />
+                                    <input type="hidden" name="BMI" id="BMI" value="@nmodel.BMI" />
+                                    <br />
+                                    <input type="hidden" name="DropWeight" id="DropWeight" value="@nmodel.DropWeight" />
+                                    <br />
+                                    <input type="hidden" name="ScreeningScore" id="ScreeningScore" value="@nmodel.ScreeningScore" />
+                                    <br />
+                                    <input type="hidden" name="ScreeningApprise" id="ScreeningApprise" value="@nmodel.ScreeningApprise" />
+                                    <input type="hidden" id="result" value="false" />
+                                    <input type="hidden" id="IsRisk" name="IsRisk" value="@nmodel.IsRisk" />
+                                    <input type="hidden" name="InitialScreenA" id="InitialScreenA" value="@nmodel.InitialScreenA.ToString().ToLower()" />
+                                    <input type="hidden" name="InitialScreenB" id="InitialScreenB" value="@nmodel.InitialScreenB.ToString().ToLower()" />
+                                    <input type="hidden" name="InitialScreenC" id="InitialScreenC" value="@nmodel.InitialScreenC.ToString().ToLower()" />
+                                    <input type="hidden" name="InitialScreenD" id="InitialScreenD" value="@nmodel.InitialScreenD.ToString().ToLower()" />
+                                    <input type="hidden" name="NeedSecondaryScreen" id="NeedSecondaryScreen" value="@nmodel.NeedSecondaryScreen.ToString().ToLower()"
+                                    />
+                                    <input type="hidden" name="isShow" value="@ViewBag.isShow" />
+                                    <input type="hidden" name="Color" id="Color" value="@nmodel.Color" />
+                                </div>
+                            </form>
+                        </div>
+
+
+                        <script src="http://demo.wincome.group/Content/Jquery/jquery1.9.1.js"></script>
+                        <script src="http://demo.wincome.group/Content/My97DatePicker/WdatePicker.js"></script>
+                        <script src="http://demo.wincome.group/Content/Js/nrs2002IE6.js"></script>
+                        
+                        <!--[if lt IE9]>
+                            IE下兼容处理
+                            <script src="IE.js"></script>
+                        <![endif]-->
+                        <script>
+
+                            window.onload = function () {
+                                //document.getElementById("bedno").innerText = window.location.href.split('id')[1];
+                            }
+                            var ref = 0;
+                            var headers = {};
+                            var dialog, common, fm;
+                            var i = 1;
+                            var IsInitialScreen = "0"// "@ViewBag.IsInitialScreen";
+                            var elems = {
+                                col: "Color",
+                                ht: "input[name=Height]", //身高
+                                wt: "input[name=Weight]", //体重
+                                age: '38', //年龄@pModel.Age
+                                physiology: '0', //生理状况@pModel.MaternalInfo
+                                yyyycdTd: "#yyyycdTd",        //显示营养需要程度
+                                yyyycdrdo: "ScreeningItemA", //营养需要程度
+                                bmilbl: "#bmilbl", //BMI显示
+                                bmitxt: "#BMI", //BMI保存
+                                bmitd: "#bmiTd", //BMI百分比选择框布局
+                                bmirdo: "ScreeningItemB", //BMI范围
+                                owt: "input[name=OldWeight]", //原体重
+                                wtchk: "ScreeningItemD", //体重下降复选框
+                                wttr: "#tzxjTr", //体重百分比选择框布局
+                                wtlbl: "#tzbhlbl", //体重下降量显示
+                                wttxt: "#tzxjlbl", //体重下降显示
+                                dwtxt: "#DropWeight", //体重下降保存
+                                lossperstxt: "#Lossperc", //体重下降百分比保存
+                                bdb: "ScreeningItemC", //白蛋白
+                                xjrado: "ScreeningItemE", //体重下降百分比
+                                jschk: "ScreeningItemF", //进食量减少复选框
+                                jstr: "#jsljsTr", //进食量减少百分比布局
+                                jsrdo: "ScreeningItemG", //进食量减少百分比
+                                agerdo: "ScreeningItemI", //年龄
+                                yyssTd: "#yyssTd", //营养受损评分结果
+                                //ssssScoretxt: "#ScreeningItemJ",
+                                printBtn: "#printBtn", //打印按钮
+                                screeningScore1: "#ScreeningScore1", //第一项分数
+                                screeningScore2: "#ScreeningScore2", //第二项分数
+                                screeningScore3: "#ScreeningScore3", //第三项分数
+                                screeningScore4: "", //第三项分数
+                                screeningScore5: "", //第三项分数
+                                screeningScore6: "", //第三项分数
+                                screeningScore7: "", //第三项分数
+                                screeningScore8: "", //第三项分数
+                                screeningScore9: "", //第三项分数
+                                fen: 3, //大于等于三有风险
+                                screeningScore: "#ScreeningScore", //总评分保存
+                                result: "#ScreeningApprise", //总结果赋值保存
+                                resultMsg: "#resultTd", //总结果赋值显示
+                                result1Msg: " 分,无明显营养风险。", //无风险结果内容
+                                result2Msg: " 分,患者具有营养风险,应开始制定营养治疗计划(包括治疗膳食,经口营养补充,肠内营养及肠外营养)。", //有风险结果内容
+                                result3Msg: "患者目前没有营养风险，无需进行第二步筛查，请一周后复查。",
+                                actionTr: "#optionTr", //保存操作区
+                                submit: "#result",        //是否可是提交状态
+                                ageTd: "#ageTd",            //显示年龄分数
+                                monthAgo: "select[name=MonthsAgo]", // 几个月前的体重
+                                InitialScreenA: "#InitialScreenA",//初筛1
+                                InitialScreenB: "#InitialScreenB",//初筛2
+                                InitialScreenC: "#InitialScreenC",//初筛3
+                                InitialScreenD: "#InitialScreenD",//初筛4
+                                NeedSecondaryScreen: "#NeedSecondaryScreen"//是否需要复筛
+                            }; //营养受损分数
+
+                            $(function () {
+                                if ('@pModel.PatientCode' != "--" && '@pModel.PatientCode'.length > 0) {
+                                    $("#screenPanel").show();
+                                    $("#monitorPanel").show();
+                                    if ("@ViewBag.isShow" != "m") $("#patientInfo").show();
+                                    if (@nmodel.ScreeningID > 0) {
+                                if ('@nmodel.ScreeningItemD.ToString()' == "True") {
+                                    $("input[type=checkbox][name=" + elems.wtchk + "]").prop("checked", true);
+                                    //fm.win_render('checkbox');
+                                } else {
+                                    if ($("input[type=checkbox][name=" + elems.wtchk + "]").not(":checked")) {
+                                        $("input[type=checkbox][name=" + elems.wtchk + "]").prop("checked", false);
+                                        $("input[type=checkbox][name=" + elems.wtchk + "]").addClass("layui-disabled");
+                                        $("input[type=checkbox][name=" + elems.wtchk + "]").prop('disabled', true);
+                                        //fm.win_render('checkbox');
+                                    }
+                                }
+
+                                ConfigoptionTr(elems.actionTr, 1);
+                            } else {
+                                //初始化体重变化
+                                CalculationPerc(elems);
+                                //初始化BMI
+                                configBMI(elems, headers, CalculationScore,@nmodel.BMI > 0 ? 0 : 99);
+                            }
+
+                            ////绑定注释
+                            //var tip;
+                            //var t = '0分：正常营养需要量：对营养需求没有过多影响。<br/>' +
+                            //    '1分：营养需要量轻度提高：如髋部骨折、慢性疾病有急性并发症者（如肝硬化、慢性阻塞性肺疾病）、<br/>' +
+                            //    '　　 长期血液透析、糖尿病、一般恶性肿瘤。<br/>' +
+                            //    '2分：营养需要量中度增加：如腹部大手术、脑卒中、重症肺炎、血液恶性肿瘤。<br/>' +
+                            //    '3分：营养需要量明显增加：如重症头部损伤、骨髓移植、急性生理与慢性健康Ⅱ（APACHEⅡ）评分＞10的重症监护患者。<br/>';
+                            //$("#tip1").hover(function() {
+                            //    tip = dialog.win_tips(this, t);
+                            //}, function() {
+                            //    dialog.win_close(tip);
+                            //});
+
+                            //var t2 = '1分：轻度受损；<br/>2分：中度受损；<br/>3分：重度受损；';
+                            //$("#tip2").hover(function() {
+                            //    tip = dialog.win_tips(this, t2, 2);
+                            //}, function() {
+                            //    dialog.win_close(tip);
+                            //});
+
+
+                            //年龄为固定不能托运改变大小
+                            if (@pModel.Age >= 70) {
+                                $("input[type=radio][name=ScreeningItemI][value=1]").prop("checked", true);
+                                $("#ageTd").text("1 分");
+                                $("#ScreeningScore3").val(1);
+                                //fm.win_render('radio');
+                            } else if (@pModel.Age >= 18) {
+                                $("input[type=radio][name=ScreeningItemI][value=0]").prop("checked", true);
+                                $("#ageTd").text("0 分");
+                                $("#ScreeningScore3").val(0);
+                                //fm.win_render('radio');
+                            } else {
+                                $("input[type=radio][name=ScreeningItemI]").prop("checked", false);
+                                $("input[type=radio][name=ScreeningItemI]").prop("disabled", true);
+                                $("#ageTd").text("--");
+                                $("#ScreeningScore3").val(-1);
+                                //fm.win_render('radio');
+                            }
+
+                            if ('@nmodel.ScreeningItemD' === 'False') {
+                                $(elems.wttr).hide();
+                                $("input[name=ScreeningItemD][value=false]").prop("checked", true);
+                                //$("input[type=radio][name=" + elems.xjrado + "][value=false]").prop("checked", true);
+
+                            } else {
+                                $(elems.wttr).show();
+                                $("input[name=ScreeningItemD][value=true]").prop("checked", true);
+                                //$("input[type=radio][name=" + elems.xjrado + "][value=true]").prop("checked", true);
+                            }
+
+                            if ('@nmodel.ScreeningItemF' === 'False') {
+                                $(elems.jstr).hide();
+                                $("input[type=radio][name=" + elems.jschk + "][value=false]").prop("checked", true);
+
+                            } else {
+                                $(elems.jstr).show();
+                                $("input[type=radio][name=" + elems.jschk + "][value=true]").prop("checked", true);
+                            }
+                            //提示
+                            if (@ViewBag.script > 0) {
+                                parent.ChanageScore2('@pModel.PatientCode', 'N' + @ViewBag.score, @ViewBag.isRisk);
+                                alert("保存成功！", 6);
+                            }else if (@ViewBag.script == 0) {
+                                alert("保存失败！", 5);
+                            }
+
+            }
+
+                            if ("@ViewBag.isShow" == "y") {
+                                $("#basicMsg").show();
+                                //fm.win_resize("#fxxc", 240);
+                                $("td[class=isDisplay]").removeClass("isDisplay");
+                            } else if ("@ViewBag.isShow" == "m") {
+                                //fm.win_resize("#fxxc", 160);
+                                $("#startDate").attr("readonly", "readonly");
+                                $("#startDate").datetimepicker({
+                                    timepicker: false,
+                                    datepicker: false
+                                });
+                            } else if ("@ViewBag.isShow" == "f") {
+                                $("#patientInfo").show();
+                                $("td[class=isDisplay]").removeClass("isDisplay");
+                                //fm.win_resize("#fxxc", 343);
+                            } else {
+                                //fm.win_resize("#fxxc", 190);
+                            }
+        })
+
+
+                            function setRefVal(v) {
+                                ref = v;
+                            }
+                            function ChanageScore(id, o, risk) {
+                                $("#" + id).find("span[lang=score]").text(o);
+                                if (risk == 1) {
+                                    $("#" + id).css({ color: "#e64545" });
+                                } else if (risk == 0) {
+                                    $("#" + id).css({ color: "#65b569" });
+                                }
+                            }
+
+                            function Submit() {
+                                var day = $.trim($("#FollowDate").val());
+                                if (day.length > 0) {
+                                    ScreeningScore(elems); //再次评分结果
+                                    var sc = $("#ScreeningScore").val();
+                                    var risk = $("#IsRisk").val();
+                                    if ("@ViewBag.isShow" == "y") {
+                                        ChanageScore('@pModel.PatientCode', "N" + sc, risk);
+                                    } else {
+                                        setRefVal(99);
+                                    }
+                                    return $("#result").val() == "true";
+                                } else if ("@ViewBag.isShow" == "y") {
+                                    $("#FollowDate").css({ "border": "1px solid #FF5722" });
+                                    dialog.win_msg("随诊几天后不能为空", 5);
+                                    return false;
+                                }
+                            }
+
+                            function MonthsAgo() {
+                                clearResult(2, elems);
+                            }
+
+                            function ScreeningItemAChange(obj) {
+                                clearResult(1, elems);
+                            }
+                            function ScreeningItemBChange(obj) {
+                                clearResult(4, elems);
+                            }
+
+                            function ScreeningItemCChange(obj) {
+                            }
+
+                            function ScreeningItemDChange(obj) {
+                                if ($(obj).val() === "true") {
+                                    $(elems.wttr).show();
+                                } else {
+                                    $(elems.wttr).hide();
+                                    $(elems.wttr).find("input[type=radio]").prop("checked", false);
+                                }
+                            }
+                            function ScreeningItemEChange(obj) {
+                                clearResult(7, elems);
+                            }
+
+                            function ScreeningItemFChange(obj) {
+                                if ($(obj).val() === "true") {
+                                    $(elems.jstr).show();
+                                } else {
+                                    $(elems.jstr).hide();
+                                    $(elems.jstr).find("input[type=radio]").prop("checked", false);
+                                }
+                            }
+
+                            function ScreeningItemGChange(obj) {
+                                clearResult(8, elems);
+                            }
+
+                            function ScreeningItemIChange(obj) {
+                                if (@pModel.Age >= 70) {
+                                    $("input[type=radio][name=ScreeningItemI][value=1]").prop("checked", true);
+                                } else {
+                                    $("input[type=radio][name=ScreeningItemI][value=0]").prop("checked", true);
+                                }
+                            }
+
+                            function PrintDiv() {
+                                var url = '/TreatmentCenter/ScreeningManagement/NRS2002PrintIE8?id=@pModel.PatientCode&sid=@nmodel.ScreeningID&isShow=@ViewBag.isShow';
+                                top.location.href = url;
+                                //parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NRS2002Print/@pModel.PatientCode?sid=@nmodel.ScreeningID&isShow=@ViewBag.isShow', 'NRS2002');
+                                //LoadPrintData();
+                            }
+                        </script>
+                </body>
+
+                </html>

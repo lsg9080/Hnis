@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>2.6cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>Preparation</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>1.198197cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>肠内制剂名称</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>总量</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>单次使用量</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>1.001803cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!PreparationName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!II_FinishedQuantitiy.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!II_Quantitiy.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>2.2cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>12.36226cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.318868cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.318868cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>17cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>19cm</PageWidth>
+	<Width>17cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="key">
+			<DataType>Integer</DataType>
+			<Prompt>ID</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="Preparation">
+			<Fields>
+				<Field Name="PreparationName">
+					<DataField>PreparationName</DataField>
+				</Field>
+				<Field Name="II_Quantitiy">
+					<DataField>II_Quantitiy</DataField>
+				</Field>
+				<Field Name="II_FinishedQuantitiy">
+					<DataField>II_FinishedQuantitiy</DataField>
+				</Field>
+				<Field Name="InType">
+					<DataField>InType</DataField>
+				</Field>
+				<Field Name="In_ID">
+					<DataField>In_ID</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from (
+select 
+sp.FullName + '【'  + ltrim(cast(sp.GuiGe as float)) + sp.GuiGeUnit + '/' + sp.GuiGeName + '】' as PreparationName,
+ltrim(cast(II_Quantitiy as float)) + sp.GuiGeUnit + '/次' as II_Quantitiy,
+(case tm.IsFinished when 0 then ltrim(cast(II_FinishedQuantitiy as float)) + sp.GuiGeName 
+when 1 then ltrim(cast(II_FinishedQuantitiy as float)) + sp.GuiGeUnit end)
+as II_FinishedQuantitiy,ti.InType,
+ ti.In_ID
+ from dbo.T_MZIntervention_Intestine ti
+left join dbo.S_Preparation sp on sp.PreparationCode = ti.PreparationCode
+left join dbo.T_MZCNIntervention tm on tm.In_ID = ti.In_ID
+where ti.InType = 'CN00001'
+union
+select 
+ms.MSName+ '【'  + ltrim(cast(ms.Specifications as float)) + ms.SpecificationsUnit + '/' + ms.SpecificationsName + '】' as PreparationName,
+ltrim(cast(II_Quantitiy as float)) + ms.SpecificationsName+ '/次' as II_Quantitiy,
+(case tm.IsFinished when 0 then ltrim(cast(II_FinishedQuantitiy as float)) + ms.SpecificationsName
+when 1 then ltrim(cast(II_FinishedQuantitiy as float)) + ms.SpecificationsName end)
+as II_FinishedQuantitiy , ti.InType, 
+ti.In_ID 
+from dbo.T_MZIntervention_Intestine ti
+left join dbo.S_PreparationMS ms on ms.MSCode = ti.PreparationCode
+left join dbo.T_MZCNIntervention tm on tm.In_ID = ti.In_ID
+where ti.InType = 'CL00000'
+) x  where x.In_ID = @inid order by x.InType desc, x.PreparationName</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@inid">
+						<Value>=Parameters!key.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

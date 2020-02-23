@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>5cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>PreparationLabel</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.43869cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox10</DataElementName>
+											<Value>肠内营养标签</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>11pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.474993cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!DepartName.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!BedNo.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!PatientName.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!BedNo.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.186998cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!NewPrescriptionContent.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.791654cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="pid">
+													<Value>=Fields!PID.Value</Value>
+												</Parameter>
+												<Parameter Name="useDate">
+													<Value>=Parameters!useDate.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>PreparationLableChild.rdlx</ReportName>
+											<Style>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.470909cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>="使用时间:" +  Fields!UseDate.Value + " [" +  Fields!EN_Use.Value + "]"</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>General</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox27">
+											<CanGrow>true</CanGrow>
+											<Value>="途径:"+ Fields!ItemText2.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>General</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.461763cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value>="方式:" +  Fields!ItemText.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>General</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox23">
+											<CanGrow>true</CanGrow>
+											<Value>="温度:" + IIF( Fields!EN_Temperature.Value &gt; 0 ,Fields!EN_Temperature.Value +"°C", "--")</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>General</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.474993cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>5</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value>=Parameters!hospName.Value+"临床营养科"</Value>
+											<Style>
+												<Color>Gray</Color>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>9pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Bottom</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>4.3cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>2.857829cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.934403cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.929557cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.926956cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.351254cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>7cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>5cm</PageHeight>
+	<PageWidth>7cm</PageWidth>
+	<Width>7cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>医院名</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="userName">
+			<DataType>String</DataType>
+			<Prompt>打印人</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="pids">
+			<DataType>String</DataType>
+			<Prompt>标签ID</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="useDate">
+			<DataType>String</DataType>
+			<Prompt>使用日期</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="PreparationLabel">
+			<Fields>
+				<Field Name="PID">
+					<DataField>PID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="PrescriptionContent">
+					<DataField>PrescriptionContent</DataField>
+				</Field>
+				<Field Name="EN_Use">
+					<DataField>EN_Use</DataField>
+				</Field>
+				<Field Name="Price">
+					<DataField>Price</DataField>
+				</Field>
+				<Field Name="UseDate">
+					<DataField>UseDate</DataField>
+				</Field>
+				<Field Name="EN_Temperature">
+					<DataField>EN_Temperature</DataField>
+				</Field>
+				<Field Name="EN_Speed">
+					<DataField>EN_Speed</DataField>
+				</Field>
+				<Field Name="ItemText">
+					<DataField>ItemText</DataField>
+				</Field>
+				<Field Name="ItemText2">
+					<DataField>ItemText2</DataField>
+				</Field>
+				<Field Name="NewPrescriptionContent">
+					<DataField>NewPrescriptionContent</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_PreparationLabel </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@pids">
+						<Value>=Parameters!pids.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@useDate">
+						<Value>=Parameters!useDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="PreparationLabelInfo">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="PName">
+					<DataField>PName</DataField>
+				</Field>
+				<Field Name="Quantity">
+					<DataField>Quantity</DataField>
+				</Field>
+				<Field Name="FQuantity">
+					<DataField>FQuantity</DataField>
+				</Field>
+				<Field Name="unit">
+					<DataField>unit</DataField>
+				</Field>
+				<Field Name="GeName">
+					<DataField>GeName</DataField>
+				</Field>
+				<Field Name="PName2">
+					<DataField>PName2</DataField>
+				</Field>
+				<Field Name="Quantity2">
+					<DataField>Quantity2</DataField>
+				</Field>
+				<Field Name="FQuantity2">
+					<DataField>FQuantity2</DataField>
+				</Field>
+				<Field Name="unit2">
+					<DataField>unit2</DataField>
+				</Field>
+				<Field Name="GeName2">
+					<DataField>GeName2</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_PreparationLabelInfo</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@pid">
+						<Value>=First(Fields!PID.Value, "PreparationLabel")</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="PreparationLabelNutritent">
+			<Fields>
+				<Field Name="Energy">
+					<DataField>Energy</DataField>
+				</Field>
+				<Field Name="Protein">
+					<DataField>Protein</DataField>
+				</Field>
+				<Field Name="Fat">
+					<DataField>Fat</DataField>
+				</Field>
+				<Field Name="Carbohydr">
+					<DataField>Carbohydr</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_PreparationLabelNutritent</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@pid">
+						<Value>=First(Fields!PID.Value, "PreparationLabel")</Value>
+					</QueryParameter>
+					<QueryParameter Name="@useDate">
+						<Value>=Parameters!useDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Portrait</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

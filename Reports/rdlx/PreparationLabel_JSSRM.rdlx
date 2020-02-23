@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>3.8cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>PatientInfoDataSet</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>3.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Rectangle Name="Container1">
+                      <Style />
+                      <ReportItems>
+                        <Table Name="Table2">
+                          <DataSetName>PatientInfoDataSet</DataSetName>
+                          <Details>
+                            <TableRows>
+                              <TableRow>
+                                <Height>0.6cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox4">
+                                        <CanGrow>true</CanGrow>
+                                        <Value>肠内营养单</Value>
+                                        <Style>
+                                          <FontFamily>微软雅黑</FontFamily>
+                                          <FontSize>12pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Center</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.6cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox1">
+                                        <CanGrow>true</CanGrow>
+                                        <Value>="病区:"&amp;Fields!DepartName.Value &amp;"   床号:" &amp; Fields!BedNo.Value</Value>
+                                        <Style>
+                                          <FontFamily>微软雅黑</FontFamily>
+                                          <FontSize>9pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Left</TextAlign>
+                                          <BorderStyle>
+                                            <Bottom>None</Bottom>
+                                            <Left>None</Left>
+                                            <Top>Solid</Top>
+                                          </BorderStyle>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.6cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox3">
+                                        <CanGrow>true</CanGrow>
+                                        <Value>="姓名:"&amp;Fields!PatientName.Value &amp; "   住院号:" &amp; Fields!BeInNo.Value</Value>
+                                        <Style>
+                                          <FontFamily>微软雅黑</FontFamily>
+                                          <FontSize>9pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Left</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                          <BorderStyle>
+                                            <Bottom>Solid</Bottom>
+                                            <Left>None</Left>
+                                          </BorderStyle>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.8cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Subreport Name="Subreport1">
+                                        <Parameters>
+                                          <Parameter Name="pid">
+                                            <Value>=Fields!PID.Value</Value>
+                                          </Parameter>
+                                        </Parameters>
+                                        <ReportName>PreparationLabelDetails_JSSRM.rdlx</ReportName>
+                                        <Style />
+                                      </Subreport>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.6598338cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox6">
+                                        <CanGrow>true</CanGrow>
+                                        <Value>=“开立医生:" &amp;  Fields!NutritionistId.Value &amp; "   医嘱日期:" &amp; Fields!In_Date.Value</Value>
+                                        <Style>
+                                          <FontFamily>微软雅黑</FontFamily>
+                                          <FontSize>10pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>700</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Left</TextAlign>
+                                          <VerticalAlign>Middle</VerticalAlign>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                              <TableRow>
+                                <Height>0.5cm</Height>
+                                <TableCells>
+                                  <TableCell>
+                                    <ReportItems>
+                                      <Textbox Name="TextBox10">
+                                        <CanGrow>true</CanGrow>
+                                        <Value>=Parameters!hospName.Value &amp; " 临床营养科"</Value>
+                                        <Style>
+                                          <FontFamily>Arial</FontFamily>
+                                          <FontSize>9pt</FontSize>
+                                          <FontStyle>Normal</FontStyle>
+                                          <FontWeight>400</FontWeight>
+                                          <PaddingBottom>2pt</PaddingBottom>
+                                          <PaddingLeft>2pt</PaddingLeft>
+                                          <PaddingRight>2pt</PaddingRight>
+                                          <PaddingTop>2pt</PaddingTop>
+                                          <TextAlign>Center</TextAlign>
+                                        </Style>
+                                      </Textbox>
+                                    </ReportItems>
+                                  </TableCell>
+                                </TableCells>
+                              </TableRow>
+                            </TableRows>
+                          </Details>
+                          <Height>3.759834cm</Height>
+                          <Style />
+                          <TableColumns>
+                            <TableColumn>
+                              <Width>7cm</Width>
+                            </TableColumn>
+                          </TableColumns>
+                          <Width>7cm</Width>
+                        </Table>
+                      </ReportItems>
+                    </Rectangle>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>3.8cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>7cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>7cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>5cm</PageHeight>
+  <PageWidth>7cm</PageWidth>
+  <Width>7cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="pids">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="useDate">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTSDataSource">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="PatientInfoDataSet">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="SexName">
+          <DataField>SexName</DataField>
+        </Field>
+        <Field Name="Age">
+          <DataField>Age</DataField>
+        </Field>
+        <Field Name="EN_Usager">
+          <DataField>EN_Usager</DataField>
+        </Field>
+        <Field Name="NutritionistId">
+          <DataField>NutritionistId</DataField>
+        </Field>
+        <Field Name="In_Date">
+          <DataField>In_Date</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select pti.PID,pti.PatientCode,p.BeInNo,p.PatientName,p.BedNo,ISNULL(d.DepartName,'') DepartName,&#xD;
+case Sex when 1 then '男' when 0 then '女' end SexName,Age,pti.EN_Usager,cn.NutritionistId,&#xD;
+convert(nvarchar(10),pti.In_Date,120)In_Date &#xD;
+from T_PreparationInfo pti&#xD;
+inner join T_CNIntervention cn on pti.In_ID=cn.In_ID &#xD;
+inner join T_Patient p on pti.PatientCode=p.PatientCode &#xD;
+inner join S_Department d on p.BranchType=d.DepartValue &#xD;
+where charindex(','+ltrim(pti.pid)+',',','+@pids+',') &gt; 0</CommandText>
+        <DataSourceName>HNTSDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="pids">
+            <Value>=Parameters!pids.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

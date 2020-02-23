@@ -1,0 +1,398 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>20.4cm</Height>
+    <ReportItems>
+      <Table Name="Table1">
+        <DataSetName>YYSDDataSet</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox1">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="bid">
+                          <Value>=Parameters!bid.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>BigDict_YYSD_SSDLReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox7">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox18">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport2">
+                      <Parameters>
+                        <Parameter Name="bid">
+                          <Value>=Parameters!bid.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>BigDict_YYSD_PCFXReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox92">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>5</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox3">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox8">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport4">
+                      <Parameters>
+                        <Parameter Name="bid">
+                          <Value>=Parameters!bid.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>BigDict_YYSD_SRFXReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox110">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Subreport Name="Subreport3">
+                      <Parameters>
+                        <Parameter Name="bid">
+                          <Value>=Parameters!bid.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>BigDict_YYSD_GNFXReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox94">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>0.4cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox80">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox87">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox112">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox119">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox90">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>None</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Height>3.6cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>0.4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>8.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>8.6cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>0.5cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>18.5cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>19cm</PageWidth>
+  <Width>18.5cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="bid">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="YYSDDataSet">
+      <Fields>
+        <Field Name="BID">
+          <DataField>BID</DataField>
+        </Field>
+        <Field Name="BIDType">
+          <DataField>BIDType</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="AssessmentDate">
+          <DataField>AssessmentDate</DataField>
+        </Field>
+        <Field Name="CreatedOn">
+          <DataField>CreatedOn</DataField>
+        </Field>
+        <Field Name="CreatedBy">
+          <DataField>CreatedBy</DataField>
+        </Field>
+        <Field Name="ModifiedOn">
+          <DataField>ModifiedOn</DataField>
+        </Field>
+        <Field Name="ModifiedBy">
+          <DataField>ModifiedBy</DataField>
+        </Field>
+        <Field Name="IsDelete">
+          <DataField>IsDelete</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>&#xD;
+select &#xD;
+	  BID&#xD;
+      ,BIDType&#xD;
+      ,PatientCode&#xD;
+      ,AssessmentDate&#xD;
+      ,CreatedOn&#xD;
+      ,CreatedBy&#xD;
+      ,ModifiedOn&#xD;
+      ,ModifiedBy&#xD;
+      ,IsDelete&#xD;
+from dbo.T_BigDietAssessment&#xD;
+&#xD;
+where PatientCode = @patCode AND BID=@asid </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@patCode">
+            <Value>=Parameters!patCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@asid">
+            <Value>=Parameters!asid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>report:DesignTimeBackgroundRendering</Name>
+      <Value>True</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

@@ -1,0 +1,1005 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+  <Body>
+    <Height>24.4475cm</Height>
+    <ReportItems>
+      <Table Name="Table2">
+        <DataSetName>ClincPatientDetailsDataSet</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox22">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox4</DataElementName>
+                      <Value>=Parameters!hospName.Value +  "医院临床营养科"</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderColor>
+                          <Default>Black</Default>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox21">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox5</DataElementName>
+                      <Value>="姓名：" +  Fields!PatientName.Value + “（”  +  Fields!AgeStr.Value  + “）”</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>General</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox24">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox1</DataElementName>
+                      <Value>="医院地址："  + Parameters!hospAddress.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>None</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox23">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox2</DataElementName>
+                      <Value>="出生日期："  +  Fields!BirthDate.Value.ToString("yyyy-MM-dd")</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Bottom>None</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>None</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>1cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox20">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox3</DataElementName>
+                      <Value>="联系电话：" +  Parameters!hospTel.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>None</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ColSpan>2</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox25">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox6</DataElementName>
+                      <Value>="门诊号：" +  Fields!BeInNo.Value　+ "          " +　"病人ID："  + Fields!PatientCode.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>General</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Bottom>Solid</Bottom>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>None</Top>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Footer>
+          <TableRows>
+            <TableRow>
+              <Height>0.800001cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox13">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox8">
+                      <CanGrow>true</CanGrow>
+                      <Value>营养门诊报告</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>14pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox30">
+                      <CanGrow>true</CanGrow>
+                      <Value />
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox10">
+                      <CanGrow>true</CanGrow>
+                      <Value>="日期：" +  Fields!InputDate.Value.ToString("yyyy-MM-dd")</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!isSingle.Value &gt; 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox12">
+                      <CanGrow>true</CanGrow>
+                      <Value>基本信息</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!jbxx.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_PatientDetailReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!jbxx.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox7">
+                      <CanGrow>true</CanGrow>
+                      <Value>=“体格评估” +  Fields!isET.Value.ToString() +  Fields!isRF.Value.ToString() + Fields!isYB.Value.ToString()</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!tjpg.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport6">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                        <Parameter Name="isET">
+                          <Value>=Fields!isET.Value</Value>
+                        </Parameter>
+                        <Parameter Name="isRF">
+                          <Value>=Fields!isRF.Value</Value>
+                        </Parameter>
+                        <Parameter Name="isYB">
+                          <Value>=Fields!isYB.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_AssessmentReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!tjpg.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox11">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox9</DataElementName>
+                      <Value>营养筛评</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yysp.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport7">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_ScreentReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yysp.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox16">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox11</DataElementName>
+                      <Value>膳食评价</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!sspj.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport4">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_YYSDReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!sspj.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox15">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox14</DataElementName>
+                      <Value>营养诊断</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yyzd.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport2">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_YYZDReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yyzd.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox17">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox15</DataElementName>
+                      <Value>营养治疗原则</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!zlyz.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport3">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_ZLYZReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!zlyz.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox18">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox16</DataElementName>
+                      <Value>营养治疗方案-营养食谱</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yypc.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport8">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_YYPCReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!yypc.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox19">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox17</DataElementName>
+                      <Value>营养治疗方案-肠内处方</Value>
+                      <Style>
+                        <BackgroundColor>#eeeeee</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>12pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>10pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!cnzf.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>0.8cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport5">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_CNCFReport.rdlx</ReportName>
+                      <Style>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Visibility>
+                <Hidden>=Parameters!cnzf.Value = 0</Hidden>
+              </Visibility>
+            </TableRow>
+            <TableRow>
+              <Height>1.2cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Textbox Name="TextBox14">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox18</DataElementName>
+                      <Value>="门诊营养(医)师：" +  Fields!UserName.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Right</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Default>2pt</Default>
+                        </BorderWidth>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Footer>
+        <Height>22.2cm</Height>
+        <TableColumns>
+          <TableColumn>
+            <Width>9cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4.6cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>4.8cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>18.4cm</Width>
+        <ZIndex>1</ZIndex>
+      </Table>
+    </ReportItems>
+  </Body>
+  <BottomMargin>1cm</BottomMargin>
+  <LeftMargin>1cm</LeftMargin>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <RightMargin>1cm</RightMargin>
+  <TopMargin>1cm</TopMargin>
+  <Width>18.415cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="patCode">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="jbxx">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="tjpg">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="yysp">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sspj">
+      <DataType>Integer</DataType>
+      <Prompt>参数2</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="yyzd">
+      <DataType>Integer</DataType>
+      <Prompt>参数3</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zlyz">
+      <DataType>Integer</DataType>
+      <Prompt>参数4</Prompt>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+    </ReportParameter>
+    <ReportParameter Name="yypc">
+      <DataType>Integer</DataType>
+      <Prompt>参数5</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="cnzf">
+      <DataType>Integer</DataType>
+      <Prompt>参数6</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="hospAddress">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="hospTel">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="isSingle">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTSDataSource">
+      <ConnectionProperties>
+        <ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+        <DataProvider>SQL</DataProvider>
+      </ConnectionProperties>
+      <DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="ClincPatientDetailsDataSet">
+      <Fields>
+        <Field Name="AgeStr">
+          <DataField>AgeStr</DataField>
+        </Field>
+        <Field Name="BirthDate">
+          <DataField>BirthDate</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PatientCode">
+          <DataField>PatientCode</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="InputDate">
+          <DataField>InputDate</DataField>
+        </Field>
+        <Field Name="UserName">
+          <DataField>UserName</DataField>
+        </Field>
+        <Field Name="isET">
+          <DataField>isET</DataField>
+        </Field>
+        <Field Name="isRF">
+          <DataField>isRF</DataField>
+        </Field>
+        <Field Name="isYB">
+          <DataField>isYB</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select AgeStr,BirthDate,BeInNo,PatientCode,PatientName, InputDate, isnull(su.FullName,tp.CreatedBy ) as UserName,&#xD;
+CASE WHEN tp.Age &lt; 18 then 1 else 0 end as isET,&#xD;
+case when MaternalInfo = 1 and tp.Sex = 0 then 1 else 0 end as isRF, &#xD;
+case when tp.Age &gt;= 18 and MaternalInfo != 1 then 1 else 0 end isYB&#xD;
+From T_Patient tp&#xD;
+left join S_UserInfo su on su.UserName  = tp.CreatedBy&#xD;
+where PatientType = 2 and PatientCode =@patCode&#xD;
+</CommandText>
+        <DataSourceName>HNTSDataSource</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@patCode">
+            <Value>=Parameters!patCode.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>

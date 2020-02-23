@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>1cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>DataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.998716cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox5</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox6</DataElementName>
+											<Value>=Fields!NrName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox7</DataElementName>
+											<Value>=Fields!NrRatio.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>0.998716cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.773436cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3.018084cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.106283cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.202197cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>8.1cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>8.1cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>patCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="t">
+			<DataType>Integer</DataType>
+			<Prompt>t</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="acid">
+			<DataType>Integer</DataType>
+			<Prompt>acid</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="NrName">
+					<DataField>NrName</DataField>
+				</Field>
+				<Field Name="NrRatio">
+					<DataField>NrRatio</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select NrName,NrRatio
+from dbo.S_AccommodationAnalysis
+where patientCode = @patCode AND NrType = @t  AND AccommodationID = @acid  </CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@acid">
+						<Value>=Parameters!acid.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@t">
+						<Value>=Parameters!t.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

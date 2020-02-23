@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>2.8cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>ConScreen</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.751003cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>营养筛查</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Count(Fields!Con_ID.Value, "ConScreen")=0,true,false)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.751004cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!ScreenTypeName.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!ScreeningApprise.Value</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox4</DataElementName>
+											<Value>=Fields!ScreenDate.Value.ToString("yyyy-MM-dd HH:mm")</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Footer>
+					<TableRows>
+						<TableRow>
+							<Height>0.749036cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderColor>
+													<Default>Silver</Default>
+												</BorderColor>
+												<BorderStyle>
+													<Bottom>Dashed</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Count(Fields!Con_ID.Value, "ConScreen")=0,true,false)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Footer>
+				<Height>2.25cm</Height>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>10pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>400</FontWeight>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>1.833884cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>13.3cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.003219cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>19.1371cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>19.1371cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="cid">
+			<DataType>Integer</DataType>
+			<Prompt>会诊ID</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ConScreen">
+			<Fields>
+				<Field Name="Con_ID">
+					<DataField>Con_ID</DataField>
+				</Field>
+				<Field Name="ScreenDate">
+					<DataField>ScreenDate</DataField>
+				</Field>
+				<Field Name="ScreenTypeName">
+					<DataField>ScreenTypeName</DataField>
+				</Field>
+				<Field Name="ScreeningApprise">
+					<DataField>ScreeningApprise</DataField>
+				</Field>
+				<Field Name="CreatedBy">
+					<DataField>CreatedBy</DataField>
+				</Field>
+				<Field Name="IsRisk">
+					<DataField>IsRisk</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from
+(
+select   
+Con_ID,
+ScreenDate,  
+'NRS2002' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+from T_NRS2002 tn
+inner join (select MAX(ScreeningID) as ScreeningID from T_NRS2002 group by PatientCode) X on X.ScreeningID = tn.ScreeningID
+left join S_UserInfo ui on ui.UserName= tn.CreatedBy
+where tn.IsDelete = 0  and tn.Con_ID &gt; 0
+union all   
+select   
+Con_ID,   
+ScreenDate,   
+'MUST' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_MUST  tt
+ inner join (select MAX(ScreeningID) as ScreeningID from T_MUST group by PatientCode) X on X.ScreeningID = tt.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tt.CreatedBy
+where tt.IsDelete = 0  and tt.Con_ID &gt; 0
+union all  
+select   
+Con_ID,  
+ScreenDate,  
+'PG-SGA' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_PGSGA tp
+ inner join (select MAX(ScreeningID) as ScreeningID from T_PGSGA group by PatientCode) X on X.ScreeningID = tp.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tp.CreatedBy
+where tp.IsDelete = 0  and tp.Con_ID &gt; 0
+ union all
+ select 
+ Con_ID,  
+ScreenDate,  
+'KIDNRS' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_KIDNRS tk
+ inner join (select MAX(ScreeningID) as ScreeningID from T_KIDNRS group by PatientCode) X on X.ScreeningID = tk.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tk.CreatedBy
+where tk.IsDelete = 0  and tk.Con_ID &gt; 0
+ union all
+ select 
+ Con_ID,  
+ScreenDate,  
+'SGA' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_SGA ts
+ inner join (select MAX(ScreeningID) as ScreeningID from T_SGA group by PatientCode) X on X.ScreeningID = ts.ScreeningID
+ left join S_UserInfo ui on ui.UserName= ts.CreatedBy
+where ts.IsDelete = 0  and ts.Con_ID &gt; 0
+ union all
+ select 
+ Con_ID,  
+ScreenDate,  
+'MNA-SF' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_MNASF tf
+ inner join (select MAX(ScreeningID) as ScreeningID from T_MNASF group by PatientCode) X on X.ScreeningID = tf.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tf.CreatedBy
+where tf.IsDelete = 0  and tf.Con_ID &gt; 0
+ union all
+ select 
+ Con_ID,  
+ScreenDate,  
+'MNA' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_MNA ta
+ inner join (select MAX(ScreeningID) as ScreeningID from T_MNA group by PatientCode) X on X.ScreeningID = ta.ScreeningID
+ left join S_UserInfo ui on ui.UserName= ta.CreatedBy
+where ta.IsDelete = 0  and ta.Con_ID &gt; 0
+  union all
+ select  
+ Con_ID,  
+ScreenDate,  
+'MIS' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from T_MIS tm
+ inner join (select MAX(ScreeningID) as ScreeningID from T_MIS group by PatientCode) X on X.ScreeningID = tm.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tm.CreatedBy
+where tm.IsDelete = 0  and tm.Con_ID &gt; 0
+union all
+ select  
+ Con_ID,  
+ScreenDate,  
+'Neonatal' as ScreenTypeName,  
+ScreeningApprise,  
+FullName CreatedBy,  
+IsRisk
+ from dbo.T_Neonatal tm
+ inner join (select MAX(ScreeningID) as ScreeningID from T_Neonatal group by PatientCode) X on X.ScreeningID = tm.ScreeningID
+ left join S_UserInfo ui on ui.UserName= tm.CreatedBy
+where tm.IsDelete = 0  and tm.Con_ID &gt; 0
+) X where Con_ID = @cid order by ScreenDate desc</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="cid">
+						<Value>=Parameters!cid.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

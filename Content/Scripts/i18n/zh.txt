@@ -1,0 +1,107 @@
+﻿sidebar=侧边栏
+toc=目录
+tocfull=目录
+firstPage=第一页
+lastPage=最后页
+prevPage=前一页
+nextPage=后一页
+print=打印
+backToParent=返回上级报表
+params=参数
+saveas=另存为
+renderMode=分页/不分页
+Galley=不分页
+Paginated=分页
+SinglePageView=单页模式
+ContinuousPageView=连续模式
+CancelRendering=取消渲染
+RunFullReport=运行整个报表
+Cancelling=取消中…
+PartialData=该报表基于部分数据
+	
+pdfDocument=PDF
+wordDocument=Word
+docxDocument=Word (.docx)
+imageFile=图片
+mhtDocument=网页
+excelWorkbook=Excel
+csvFile=CSV File
+
+yes=是
+no=否
+true=True
+false=False
+null=Null
+null-label=Null
+on=打开
+off=关闭
+selectall=(全选)
+enterValue=输入值
+clearAllOptions=重置
+blank=空白
+empty=空值
+
+back=返回
+refreshReport=查看报表
+
+search=查找
+matchCase=大小写敏感
+wholePhrase=全字匹配
+more=更多...
+noResults=没有结果
+clear=清空
+findLabel=查找:
+
+# Document formats
+docformat.pdf=Pdf
+docformat.excel=Excel (xls)
+docformat.mht=MHT
+docformat.image=图片
+docformat.word=Word
+docformat.xml=Xml
+docformat.csv=CSV
+
+errorPane.Details=显示明细
+errorPane.HideDetails=隐藏明细
+errorPane.DismissAll=全部隐藏
+errorPane.ErrorPaneTitle=发生了错误
+
+# errors
+error.ExpectValue=必填项
+error.ExpectNotEmptyValue=必填项
+error.ExpectNotNullValue=必填项
+error.ExpectValueValidationFailed=无效数据
+error.ValidationFailed=验证失败
+error.HasOutstandingDependencies=包含强依赖
+error.ExpectNumericValue=不是数字值
+error.ExpectBooleanValue=不是布尔值
+error.ExpectDateValue=非法日期值
+error.NotSupported=不支持该操作.
+error.NotFound=没有找到
+error.ReportNotFound=不能打开报表 '{0}'.
+error.InvalidReportToken=无效的报表Token.
+error.InvalidDocumentToken=无效的文档Token.
+error.RequestFailed=请求失败.
+error.RequestRejected=请求被拒绝.
+error.RequestCancelled=请求被取消.
+error.InvalidRequestId=无效的请求 id.
+error.InvalidDrillthroughLink=无效的钻取链接 '{0}'.
+error.InvalidDrillthroughParameters=无效的钻取参数.
+error.InvalidResponse=无效的相应.
+error.InvalidParameters=无效的报表参数.
+error.DocumentNotInCache=该文件未被缓存，请刷新报表 
+error.JsVersionsMismatch= 文件 GrapeCity.ActiveReports.Viewer.Html.js 或 GrapeCity.ActiveReports.Viewer.Html.min.js 的版本与您当前安装的ActiveReports版本不一致，请更新你项目中使用的该文件
+error.InvalidSharedDataSource=不能加载共享数据源 '{0}'.
+error.InternalServerError=内部错误
+error.ReportError.DataSetNotSpecified=在固定页面布局报表中需要指定数据集名称。
+error.ReportError.NoDataSets=没有数据集。
+error.NoDataSets=没有数据集。
+error.ReportError.SubreportNotFound=无法加载子报表 '{0}'
+error.ReportError.NoMasterReport=无法加载母版报表
+error.ReportError.UnableToCreateConnection=无法连接数据源。
+error.ReportError.JsonSchemaNotAvailableOrInvalid=Json schema 不可用或者无效。
+error.InvalidDbEntity=数据库示例包含非法值
+error.ReportError.BlankValueAssignedToNonBlankParameter=非空白值参数{0} 值不能为空白
+error.ReportError.InvalidDataTypeForParameter=参数{0}为无效的数据类型
+error.ReportError.NullValueAssignedToNonNullableParameter=非空参数{0} 值不能为空
+error.ReportError.ParameterValueIsNotValid=参数{0} 为非法值

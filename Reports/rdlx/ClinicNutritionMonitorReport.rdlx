@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>4cm</Height>
+		<ReportItems>
+			<Textbox Name="TextBox5">
+				<DataElementName>TextBox1</DataElementName>
+				<Height>0.75cm</Height>
+				<Left>0.08cm</Left>
+				<Value>重要指征</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>11pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>700</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Left</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Top>0.2cm</Top>
+				<Width>2.8cm</Width>
+				<ZIndex>2</ZIndex>
+			</Textbox>
+			<Tablix Name="Tablix1">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox1">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox5</DataElementName>
+										<Value>指标项</Value>
+										<Style>
+											<BackgroundColor>Gainsboro</BackgroundColor>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>2.215981cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>0.75cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.SetQueryContent(Fields!QueryValue.Value,Fields!QueryType.Value,1,Parameters!isChlid.Value,Fields!QueryDescribe.Value)</Value>
+											<Style>
+												<Color>=Code.SetQueryContent(Fields!QueryValue.Value,Fields!QueryType.Value,0,Parameters!isChlid.Value,Fields!QueryDescribe.Value)</Color>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>Solid</Style>
+												</Border>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_OperationDate1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!OperationDate.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<SortExpressions>
+								<SortExpression>
+									<Direction>Ascending</Direction>
+									<Value>=Fields!OperationDate.Value</Value>
+								</SortExpression>
+							</SortExpressions>
+							<TablixHeader>
+								<Size>1cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox2">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!OperationDate.Value</Value>
+										<Style>
+											<BackgroundColor>Gainsboro</BackgroundColor>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_QueryDescribe1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!QueryDescribe.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<SortExpressions>
+								<SortExpression>
+									<Direction>Ascending</Direction>
+									<Value>=Fields!QueryType.Value</Value>
+								</SortExpression>
+								<SortExpression>
+									<Direction>Ascending</Direction>
+									<Value>=Fields!QueryDescribe.Value</Value>
+								</SortExpression>
+							</SortExpressions>
+							<TablixHeader>
+								<Size>6.10402cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox3">
+										<CanGrow>true</CanGrow>
+										<Value>=Code.GetQueryDescribe(Fields!QueryDescribe.Value)</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<RepeatColumnHeaders>true</RepeatColumnHeaders>
+				<RepeatRowHeaders>true</RepeatRowHeaders>
+				<DataSetName>ClinicMontiorDataSet</DataSetName>
+				<Top>1.3cm</Top>
+				<Left>0.08cm</Left>
+				<Height>1.75cm</Height>
+				<Width>8.32cm</Width>
+				<ZIndex>3</ZIndex>
+			</Tablix>
+		</ReportItems>
+	</Body>
+	<BottomMargin>0.2cm</BottomMargin>
+	<Code>Function GetQueryDescribe(ByVal n As String) As String
+	If(n.Length &gt; 0) Then
+		If(InStr(n, "§")) Then
+			Dim t = split(n, "§")
+			If IsArray(t) Then
+				Return t(1)
+			End If
+	Else
+			Return n
+	End If
+	End If
+End Function
+
+Function SetQueryContent(ByVal value As String, ByVal type As String, ByVal flag As Integer, ByVal ischild As Integer, ByVal n As String) As String
+	Dim colorType As String
+	colorType = "Black"
+	Dim content As String
+	If(type = 6) Then
+		Dim ctt = split(value, "◎")
+		content = ctt(0)
+		If(n = "SGA") Then
+			If(content = "1") Then
+				content = "A"
+			Else If(content = "2") Then
+				content = "B"
+			Else If(content = "3") Then
+				content = "C"
+			End If
+		End If
+	Else If(type = 1) Then
+		If(InStr(n, "§")) Then
+			Dim t = split(n, "§")
+			If IsArray(t) Then
+				If(t(0) = "3") Then
+					Dim maxValue As Double
+					maxValue = iif(ischild = 1, 17.9, 23.9)
+					Dim minValue As Double
+					minValue = iif(ischild = 1, 13.5, 18.5)
+					If(value &lt;= minValue) Then
+						value = value + " ↓"
+						content = value
+					Else If(value &gt;= maxValue) Then
+						value = value + " ↑"
+						content = value
+					Else
+						content = value
+					End If
+				Else
+					content = value
+				End If
+			End If
+		End If
+	Else 
+		content = value
+	End If
+	
+	If(type = 6) Then
+		Dim ct = split(value, "◎")
+		colorType = ct(1)
+	Else
+		If(InStr(value, "↑")) Then
+		colorType = "Red"
+		Else If(InStr(value, "↓")) Then
+		colorType = "Green"
+		End If
+	End If
+	
+	If(flag = 1) Then
+		Return content
+	Else
+		Return colorType
+	End If
+End Function</Code>
+	<LeftMargin>0.2cm</LeftMargin>
+	<PageHeight>21cm</PageHeight>
+	<PageWidth>29.7cm</PageWidth>
+	<RightMargin>0.2cm</RightMargin>
+	<TopMargin>0.2cm</TopMargin>
+	<Width>8.4cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>hospName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="startDate">
+			<DataType>DateTime</DataType>
+			<Prompt>startDate</Prompt>
+			<dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+		</ReportParameter>
+		<ReportParameter Name="endDate">
+			<DataType>DateTime</DataType>
+			<Prompt>endDate</Prompt>
+			<dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+		</ReportParameter>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isChlid">
+			<DataType>Integer</DataType>
+			<Prompt>isChlid</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ClinicMontiorDataSet">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="QueryDescribe">
+					<DataField>QueryDescribe</DataField>
+				</Field>
+				<Field Name="QueryValue">
+					<DataField>QueryValue</DataField>
+				</Field>
+				<Field Name="QueryType">
+					<DataField>QueryType</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_ClinicNutritionMonitorReport</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@PatientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@StartDate">
+						<Value>=Parameters!startDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@EndDate">
+						<Value>=Parameters!endDate.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

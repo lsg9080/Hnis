@@ -1,0 +1,47 @@
+    /* start */
+
+    .gwc_personalInfo_title {
+        color: #167cbe;
+    }
+
+    /* input */
+    input {
+        line-height: 30px !important;
+        min-height:30px;
+    }
+
+    input.placeholder {
+        color: #838383 !important;
+    }
+
+    input::-ms-clear,
+    input::-ms-reveal {
+        display: none;
+    }
+
+    /* IE低版本50%+50%>100%,解决方法，最后一个元素加clear：right */
+    .layout-format {
+        clear: right;
+    }
+
+
+
+
+    .layui-form-item{
+        margin-bottom:10px;
+    }
+    .layui-form-label {
+        width: auto;
+        padding: 5px 0;
+        font-weight: 600;
+    }
+
+    .layui-form-label+.layui-input-block {
+        margin-left: 0;
+    }
+
+    .layui-form-label+.layui-input-block input {
+        width: 100px;
+        height: 30px;
+        padding-left: 6px;
+    }

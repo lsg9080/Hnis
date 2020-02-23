@@ -1,0 +1,575 @@
+<!-- 
+    整合时所需操作：
+    修改 css\js 路径 http://demo.wincome.group/Content/ =>/Content/
+        html中display: block;=>display: none;
+        注意js中的路径
+    删除 style.css
+        table html
+        是否删除body处的js？（调试加的）
+ -->
+@using HNTS.Entity @using HNTSBusiness.EntityCenter.TreatmentCenter.PatientManagement @using HNTSBusiness.EntityCenter.TreatmentCenter.NutritionScreeningManagement
+@using HNTSBusiness.EntityCenter.ConfigCenter.CommonManagement @using HNTS.Model.ConfigCenter @using HNTSBusiness.Uility
+@{ Layout = "~/Views/Shared/ActionPageShared.cshtml"; PatientViewModel pModel = ((NeonatalData)Model).patientViewModel; NeonatalModel
+nmodel = ((NeonatalData)Model).neonatalModel; string currentDate = nmodel.ScreenDate.ToString("yyyy-MM-dd"); string zyzd
+= pModel.Maindiagnosis; string mds = pModel.Maindiagnosis; if (zyzd.Length > 8) { mds = mds.Substring(0, 8) + "..."; } else
+{ zyzd = string.Empty; } string sex = pModel.Sex == 1 ? "男" : pModel.Sex == 0 ? "女" : "未知"; }
+<style>
+    #monitorPanel ul {
+        top: -7px;
+        padding: 0;
+        width: 530px;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    #monitorPanel ul li {
+        cursor: pointer;
+    }
+
+    .gwc_personalInfo_title {
+        color: #167cbe;
+    }
+</style>
+<script type="text/javascript" src="http://demo.wincome.group/Content/Js/neonatal.js"></script>
+<link rel="stylesheet" href="http://demo.wincome.group/Content/css/layui.css" />
+<!-- 用于调试可删除 -->
+<link rel="stylesheet" href="http://demo.wincome.group/Content/css/style.css" />
+<!-- 新增css -->
+<link rel="stylesheet" href="screen.css" />
+
+
+<div style="background-color: #f3f7fd;" id="page-body">
+    <div id="basicMsg" style="display: block;">
+        <div style="height: 40px; padding-top: 10px; padding-left: 10px;" class="layui-row">
+            <div class="layui-col-xs3">
+                <span class="layui-col-xs5">
+                    <input type="text" class="layui-input" placeholder="住院号" name="beInNo" id="beInNo" />
+                </span>
+                <span class="layui-col-xs7" style="text-align: center;">
+                    <input type="button" class="layui-btn layui-btn-small" value="粘贴" id="btnPaste" onclick="common.win_paste('#beInNo');" />
+                    <input type="button" class="layui-btn layui-btn-small" value="确定" onclick="reloadContent('#beInNo');" />
+                </span>
+            </div>
+            <div style="display: block;" id="monitorPanel" class="layui-col-xs9 layui-row">
+                @{ if (pModel.IsLeave == false) { @Html.Raw(HNTS.Model.ConfigCenter.Roles.CreatedToolsHtml(ViewBag.role, ViewBag.patCode))
+                } }
+            </div>
+        </div>
+    </div>
+    <div class="layui-field-box" style="height:70px;display: block;background-color:#fff;width:98%;margin:0 auto;" id="patientInfo">
+        <!-- 修改后 -->
+        <div>
+            <div class="layui-col-xs2" style="">
+                <div class="layui-col-xs12" style="width:90%;margin-left:5%;text-align:center;border-right:1px solid #d2d2d2;margin-top:15px;">
+                    <span class="layui-col-xs12" style="color:#167cbe;font-size:24px;height:28px;line-height:28px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"
+                        title="@pModel.PatientName">@pModel.PatientName</span>
+                    <span class="layui-col-xs12" style="height:24px;line-height:24px;">@sex,&nbsp;&nbsp;@pModel.AgeStr</span>
+                </div>
+            </div>
+            <div class="layui-col-xs10">
+                <div style="width:100%;">
+                    <span class="layui-col-xs5" style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="@pModel.DepartName">
+                        <span class="gwc_personalInfo_title" style="height:24px;line-height:24px;">科室&nbsp;</span>
+                        <span style="height:24px;line-height:24px;">@pModel.DepartName</span>
+                    </span>
+                    <span class="layui-col-xs3">
+                        <span class="gwc_personalInfo_title" style="height:24px;line-height:24px;">床号&nbsp;</span>
+                        <span style="height:24px;line-height:24px;">@pModel.BedNo</span>
+                    </span>
+                    <span class="layui-col-xs3">
+                        <span class="gwc_personalInfo_title" style="height:24px;line-height:24px;">住院号&nbsp;</span>
+                        <span>
+                            <label id="copyMsg" style="height:24px;line-height:24px;">@pModel.BeInNo</label>&nbsp;
+                            <input type="button" id="btnCopy" class="layui-btn layui-btn-mini" value="复制" onclick="common.win_copy('#copyMsg');" style="color:#65b569;border:1px solid #65b569;background:none;border-radius:3px;display:inline-block;line-height:inherit;"
+                            />
+                        </span>
+                    </span>
+                </div>
+                <div style="width:100%;">
+                    <span class="layui-col-xs6">
+                        <span class="gwc_personalInfo_title" style="height:24px;line-height:24px;">主要诊断&nbsp;</span>
+                        <span title="@zyzd" style="height:24px;line-height:24px;">@mds</span>
+                    </span>
+                    <span class="layui-col-xs6">
+                        <span class="gwc_personalInfo_title" style="height:24px;line-height:24px;">饮食医嘱&nbsp;</span>
+                        <span title="@pModel.Dietaryadvice" style="height:24px;line-height:24px;">@pModel.Dietaryadvice</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-field-box" id="screenPanel" style="display: block;">
+        <form method="POST" action="/TreatmentCenter/ScreeningManagement/Neonatal" class="layui-form">
+            @Html.AntiForgeryToken()
+            <div class="layui-field-box" id="fxxc" style="overflow: hidden; overflow-y: auto; border: none; padding: 5px 10px; background-color: #fff; margin: 5px 10px;">
+                <!-- <div class="layui-field-box" style="margin-top: 3px;">
+                    <table class="table">
+                        <tr>
+                            <td class="text-r" style="width: 10%; padding: 0;">筛查日期：</td>
+                            <td class="text-l" style="width: 14%;padding: 0;">
+                                <input type="text" class="layui-input time" onchange="SetClearScreenID();" id="startDate" lay-verify="required" name="ScreenDate">
+                            </td>
+                            <td class="text-r" style="padding: 0;"></td>
+                    </table>
+                </div> -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-col-xs1">筛查日期：</label>
+                    <div class="layui-input-block layui-col-xs10">
+                        <input type="text" value='@DateTime.Now.ToString("yyyy-MM-dd")' onClick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd'})" id="startDate"
+                            name="ScreenDate">
+                    </div>
+                </div>
+                <div class="layui-field-box">
+                    <table class="table" id="tbNeonatal" style="margin-top:10px;border: solid #cccccc;border-width: 1px 0px 0px 1px;">
+                        @{ IList
+                        <SelectedItemModel> lrList = SelectedItem.GetDictionary().Values.Where(x => x.ItemType == (int)HNTSEnums.SelectedItemTypes.低风险).OrderBy(x
+                            => x.OrderID).ToList(); int i = 0; string bgcolor = "#FFFFFF"; string[] item_lr = nmodel.ScreeningItemA
+                            != null ? nmodel.ScreeningItemA.Split('€') : null; foreach (SelectedItemModel sm in lrList) {
+                            bool ischecked = false; if (item_lr != null) { for (int s = 0; s
+                            < item_lr.Length; s++) { if (item_lr[s]==s m.ItemValue) { ischecked=t rue; break; } } } <tr>
+                                @if (i == 0) {
+                                <td class="text-c" rowspan="2" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">低风险</td>
+                                } else { bgcolor = "#F2F2F2"; }
+                                <td class="text-l" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background: @bgcolor;">
+                                    <input type="checkbox" name="ckb_nelowRisk" lay-skin="primary" lay-filter="ckb_nelowRisk" title="@sm.ItemText" value="@sm.ItemValue"
+                                        checked="@ischecked" />
+                                </td>
+                                </tr>
+                                i++; } IList
+
+                                <SelectedItemModel> mrList = SelectedItem.GetDictionary().Values.Where(x => x.ItemType == (int)HNTSEnums.SelectedItemTypes.中等风险).OrderBy(x
+                                    => x.OrderID).ToList(); int j = 0; string bgcolor2 = "#FFFFFF"; string[] item_mr = nmodel.ScreeningItemB
+                                    != null ? nmodel.ScreeningItemB.Split('€') : null; foreach (SelectedItemModel mr in mrList)
+                                    { bool ischecked = false; if (item_mr != null) { for (int s = 0; s
+                                    < item_mr.Length; s++) { if (item_mr[s]==m r.ItemValue) { ischecked=t rue; break; } } } <tr>
+                                        @if (j == 0) {
+                                        <td class="text-c" rowspan="7" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">中等风险</td>
+                                        } @if (j % 2 == 1) { bgcolor2 = "#F2F2F2"; } else { bgcolor2 = "#FFFFFF"; }
+                                        <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:@bgcolor2;">
+                                            <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="@mr.ItemText" value="@mr.ItemValue"
+                                                checked="@ischecked" />
+                                        </td>
+                                        </tr>
+                                        j++; } IList
+
+                                        <SelectedItemModel> hrList = SelectedItem.GetDictionary().Values.Where(x => x.ItemType == (int)HNTSEnums.SelectedItemTypes.高风险).OrderBy(x
+                                            => x.OrderID).ToList(); int k = 0; string bgcolor3 = "#FFFFFF"; string[] item_hr
+                                            = nmodel.ScreeningItemC != null ? nmodel.ScreeningItemC.Split('€') : null; foreach
+                                            (SelectedItemModel hr in hrList) { bool ischecked = false; if (item_hr != null)
+                                            { for (int s = 0; s
+                                            < item_hr.Length; s++) { if (item_hr[s]==h r.ItemValue) { ischecked=t rue; break; } } } <tr>
+                                                @if (k == 0) {
+                                                <td class="text-c" rowspan="3" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">高风险</td>
+                                                } @if (k % 2 == 1) { bgcolor3 = "#FFFFFF"; } else { bgcolor3 = "#F2F2F2"; }
+                                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:@bgcolor3;">
+                                                    <input type="checkbox" name="ckb_nehighRisk" lay-skin="primary" lay-filter="ckb_nehighRisk" title="@hr.ItemText" value="@hr.ItemValue"
+                                                        checked="@ischecked" />
+                                                </td>
+                                                </tr>
+                                                k++; } }
+
+                    </table>
+
+                    <!-- 调试 -->
+                    <table class="table" id="tbNeonatal" style="margin-top:10px;border: solid #cccccc;border-width: 1px 0px 0px 1px;">
+                        <tbody>
+                            <tr>
+                                <td class="text-c" rowspan="2" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">低风险</td>
+                                <td class="text-l" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background: #FFFFFF;">
+                                    <input type="checkbox" name="ckb_nelowRisk" lay-skin="primary" lay-filter="ckb_nelowRisk" title="生后3天内开始喂养的BW>1800g的早产儿或足月儿"
+                                        value="item210_1">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>生后3天内开始喂养的BW&gt;1800g的早产儿或足月儿</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background: #F2F2F2;">
+                                    <input type="checkbox" name="ckb_nelowRisk" lay-skin="primary" lay-filter="ckb_nelowRisk" title="生长速率达预期值且病情相对稳定的早产儿" value="item210_2">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>生长速率达预期值且病情相对稳定的早产儿</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-c" rowspan="7" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">中等风险</td>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#FFFFFF;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="BW1000-1500g生后1个月内"
+                                        value="item211_1">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>BW1000-1500g生后1个月内</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#F2F2F2;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="BW1500-1800g生后两周内"
+                                        value="item211_2">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>BW1500-1800g生后两周内</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#FFFFFF;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="入院体重＜P3" value="item211_3">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>入院体重＜P3</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#F2F2F2;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="体重增长持续低于预期＞2周" value="item211_4">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>体重增长持续低于预期＞2周</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#FFFFFF;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="先天性遗传代谢异常、消化道畸形" value="item211_5">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>先天性遗传代谢异常、消化道畸形</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#F2F2F2;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="新诊断NEC、BPD、代谢性骨病、胆汁淤积症"
+                                        value="item211_6">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>新诊断NEC、BPD、代谢性骨病、胆汁淤积症</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#FFFFFF;">
+                                    <input type="checkbox" name="ckb_nemiddleRisk" lay-skin="primary" lay-filter="ckb_nemiddleRisk" title="外科手术后，1周内不能建立肠内营养"
+                                        value="item211_7">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>外科手术后，1周内不能建立肠内营养</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-c" rowspan="3" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;width:15%">高风险</td>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#F2F2F2;">
+                                    <input type="checkbox" name="ckb_nehighRisk" lay-skin="primary" lay-filter="ckb_nehighRisk" title="BW＜1000g，且当前体重＜1500g"
+                                        value="item212_1">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>BW＜1000g，且当前体重＜1500g</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#FFFFFF;">
+                                    <input type="checkbox" name="ckb_nehighRisk" lay-skin="primary" lay-filter="ckb_nehighRisk" title="持续全静脉营养＞2周" value="item212_2">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>持续全静脉营养＞2周</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-l" id="tl" style="border: solid #cccccc; border-width: 0px 1px 1px 0px; padding: 5px 0px;padding-left:10px;background:#F2F2F2;">
+                                    <input type="checkbox" name="ckb_nehighRisk" lay-skin="primary" lay-filter="ckb_nehighRisk" title="月龄＞2个月仍需要持续静脉营养（＞2周）"
+                                        value="item212_3">
+                                    <div class="layui-unselect layui-form-checkbox" lay-skin="primary">
+                                        <span>月龄＞2个月仍需要持续静脉营养（＞2周）</span>
+                                        <i class="layui-icon"></i>
+                                    </div>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="layui-field-box">
+
+                <table class="table-l">
+                    <tr id="optionTr">
+                        <td style="text-align: left;width:90px;" class="isDisplay">下次复筛</td>
+                        <td style="width: 60px;" class="isDisplay">
+                            <input type="text" maxlength="3" class="layui-input layui-disabled" disabled="disabled" name="FollowDate" id="FollowDate"
+                                onfocus="common.win_clearInput(this)" lay-verify="int0" value="@(nmodel.FollowDate > 0 ? nmodel.FollowDate.ToString() : string.Empty)"
+                            />
+                        </td>
+                        <td style="text-align: left;width:40px;" class="isDisplay">天后</td>
+                        <td style="text-align:left;">
+                            <input type="submit" class="layui-btn-small layui-disabled" disabled="disabled" value="保存" lay-filter="SaveNeonatal" lay-submit
+                            />&nbsp;&nbsp;
+                            <input type="button" class="layui-btn-small layui-disabled" disabled="disabled" value="打印" onclick="WindowsPrint();" id="printBtn"
+                            />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <div class="layui-row">评分结果：
+                                <span id="resultTd" style="color: @nmodel.Color">@nmodel.ScreeningApprise</span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!--隐藏元素也占高度位置-->
+            <div style="display: block;">
+                <input type="hidden" name="ScreeningID" id="ScreeningID" value="@nmodel.ScreeningID" />
+                <br />
+                <input type="hidden" name="PatientCode" id="PatientCode" value="@pModel.PatientCode" />
+                <br />
+                <input type="hidden" name="Con_ID" id="Con_ID" value="@nmodel.Con_ID" />
+                <br />
+                <input type="hidden" name="ScreeningScore" id="ScreeningScore" value="@nmodel.ScreeningScore" />
+                <br />
+                <input type="hidden" name="ScreeningApprise" id="ScreeningApprise" value="@nmodel.ScreeningApprise" />
+                <input type="hidden" id="result" value="false" />
+                <input type="hidden" id="IsRisk" name="IsRisk" value="@nmodel.IsRisk" />
+                <input type="hidden" name="ScreeningItemA" id="ScreeningItemA" value="@nmodel.ScreeningItemA" />
+                <br />
+                <input type="hidden" name="ScreeningItemB" id="ScreeningItemB" value="@nmodel.ScreeningItemB" />
+                <br />
+                <input type="hidden" name="ScreeningItemC" id="ScreeningItemC" value="@nmodel.ScreeningItemC" />
+                <input type="hidden" name="isShow" value="@ViewBag.isShow" />
+                <input type="hidden" name="Color" id="Color" value="@nmodel.Color" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- 调试 -->
+<script src="http://demo.wincome.group/Content/Jquery/jquery1.9.1.js"></script>
+<script src="http://demo.wincome.group/Content/My97DatePicker/WdatePicker.js"></script>
+<script src="http://demo.wincome.group/Content/Js/nrs2002IE6.js"></script>
+<!-- IE下兼容处理 -->
+<!--[if lt IE9]>
+    <script src="IE.js"></script>
+<![endif]-->
+<script>
+    var headers = {};
+    var dialog, common, fm;
+    var i = 1;
+    var elems = {
+        col: "Color",
+        itemContainer: "#tbNeonatal",
+        lowrisk: "ckb_nelowRisk", //低风险
+        mediumrisk: "ckb_nemiddleRisk", //中等风险
+        highrisk: "ckb_nehighRisk", //高风险
+        printBtn: "#printBtn", //打印按钮
+        fen1: "A", //A
+        fen2: "B", //B
+        fen3: "C", //C
+        screeningScore: "#ScreeningScore", //总评分保存
+        result: "#ScreeningApprise", //总结果赋值保存
+        resultMsg: "#resultTd", //总结果赋值显示
+        result0Msg: ",低风险：无营养干预的必要，定期称体重（1次/周），医师1次/周复筛查。", //0
+        result1Msg: ",中等风险：新生儿主治医师确定是否干预，医师1次/周复评，必要时NST小组成员参与诊疗。", //>=3
+        result2Msg: ",高风险：新生儿主治医师和NST小组成员联合进行全面诊断，制定个体化的营养建议和随访，医师1次/周复评。必要时NST核心小组成员参与诊疗。", //>=3
+        actionTr: "#optionTr", //保存操作区
+        submit: "#result",        //是否可是提交状态
+
+    }; //营养受损分数
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winDialog', 'winForm', 'winCommon'], function () {
+        var $ = layui.jquery;
+        fm = layui.winForm;
+        dialog = layui.winDialog;
+        common = layui.winCommon;
+        //获取防伪标记
+        var token = $('@Html.AntiForgeryToken()').val();
+        headers["__RequestVerificationToken"] = token;
+        $(document).ready(function () {
+            if ('@pModel.PatientCode' != "--" && '@pModel.PatientCode'.length > 0) {
+                $("#screenPanel").show();
+                $("#monitorPanel").show();
+                if ("@ViewBag.isShow" != "m") $("#patientInfo").show();
+                if (@nmodel.ScreeningID > 0) {
+
+            ConfigoptionTr(elems.actionTr, 1);
+        }
+
+
+        // 初始加载时间控件
+        var startDate;
+        var currentDate = '@currentDate';
+        var sd = new Date();
+        $.datetimepicker.setLocale('ch'); //新版
+        $("#startDate").val(currentDate);
+        $("#startDate").datetimepicker({
+            format: 'Y-m-d',
+            //lang:"ch",旧版
+            onShow: function () {
+                this.setOptions({
+                    minDate: '@pModel.InputDate',
+                    maxDate: sd //当天
+                });
+            },
+            onChangeDateTime: function (dp, $input) {
+                startDate = $("#startDate").val();
+            },
+            onClose: function (current_time, $input) {
+                if (startDate != currentDate) {
+                    if ("@ViewBag.isShow" == "y") {
+                        refContent();
+                    }
+                }
+            },
+            timepicker: false
+        });
+
+        //监控筛查保存
+        fm.win_submit('SaveNeonatal', function () {
+            var day = $.trim($("#FollowDate").val());
+            if (day.length > 0) {
+                ScreeningScore(elems); //再次评分结果
+                var sc = $("#ScreeningScore").val();
+                var risk = $("#IsRisk").val();
+                //选项赋值
+                var ia = "", ib = "", ic = "";
+                $(elems.itemContainer).find("input[type=checkbox][name=" + elems.lowrisk + "]:checked").each(function (data) {
+                    ia = $(this).val() + "€" + ia;
+                });
+                $("#ScreeningItemA").val(ia);
+                $(elems.itemContainer).find("input[type=checkbox][name=" + elems.mediumrisk + "]:checked").each(function (data) {
+                    ib = $(this).val() + "€" + ib;
+                });
+                $("#ScreeningItemB").val(ib);
+                $(elems.itemContainer).find("input[type=checkbox][name=" + elems.highrisk + "]:checked").each(function (data) {
+                    ic = $(this).val() + "€" + ic;
+                });
+                $("#ScreeningItemC").val(ic);
+                return $("#result").val() == "true";
+            } else {
+                $("#FollowDate").css({ "border": "1px solid #FF5722" });
+                dialog.win_msg("随诊几天后不能为空", 5);
+                return false;
+            }
+        });
+        //提示
+        if (@ViewBag.script > 0){
+        if ("@ViewBag.isShow" == "y") {
+            var bv = window.parent.document.getElementById("bv").value;
+            var patCode = window.parent.document.getElementById("patCode").value;
+            var beInNo = window.parent.document.getElementById("beInNo").value;
+            if (bv == "99") {
+                //parent.setRefVal(99,beInNo);
+            } else if (bv == "9") {
+                parent.setRefVal(9, patCode);
+            } else {
+                parent.setRefVal(0);
+            }
+        } else if ("@ViewBag.isShow" == "m") {
+            parent.setRefVal(99);
+        }
+        dialog.win_msg("保存成功！", 6);
+    }else if (@ViewBag.script == 0) {
+        dialog.win_msg("保存失败！", 5);
+    }
+            }
+
+    fm.win_checkbox('ckb_nelowRisk', function (data) {
+        clearResult(elems);
+    }, function (data) {
+        if (CheckedCount(elems)) {
+            ConfigoptionTr(elems.actionTr, 0);
+        }
+        ScreeningScore(elems);
+    });
+    fm.win_checkbox('ckb_nemiddleRisk', function (data) {
+        clearResult(elems);
+    }, function (data) {
+        if (CheckedCount(elems)) {
+            ConfigoptionTr(elems.actionTr, 0);
+        }
+        ScreeningScore(elems);
+    });
+    fm.win_checkbox('ckb_nehighRisk', function (data) {
+        clearResult(elems);
+    }, function (data) {
+        if (CheckedCount(elems)) {
+            ConfigoptionTr(elems.actionTr, 0);
+        }
+        ScreeningScore(elems);
+    });
+
+    if ("@ViewBag.isShow" == "y") {
+        $("#basicMsg").show();
+        fm.win_resize("#fxxc", 230);
+        $("td[class=isDisplay]").removeClass("isDisplay");
+    } else if ("@ViewBag.isShow" == "m") {
+        fm.win_resize("#fxxc", 160);
+        $("#startDate").attr("readonly", "readonly");
+        $("#startDate").datetimepicker({
+            timepicker: false,
+            datepicker: false
+        });
+    } else if ("@ViewBag.isShow" == "f") {
+        $("#patientInfo").show();
+        $("td[class=isDisplay]").removeClass("isDisplay");
+        fm.win_resize("#fxxc", 233);
+    }
+    else {
+        fm.win_resize("#fxxc", 190);
+    }
+        });
+
+    });
+
+
+    //住院号后页面跳转
+    function reloadContent(elem) {
+        var beInNo = $.trim($(elem).val());
+        if (beInNo.length > 0) {
+            exsitBeInNo(beInNo, 1, headers, function (data) {
+                if (data.result) {
+                    window.document.location.href = parent.screen + "?beInNo=" + beInNo;
+                    //parent.reloadPritentList(beInNo);
+                } else {
+                    parent.dialog.win_alert("住院号不存在或该患者不在你的管辖范围内!", "系统提示", 5);
+                    $("#screenPanel").hide();
+                    $("#monitorPanel").hide();
+                    $("#patientInfo").hide();
+                }
+            });
+        } else {
+            parent.dialog.win_alert("住院号不能为空!", "系统提示", 5);
+        }
+    }
+    function refContent() {
+        $("input[type=radio]").prop("checked", false);
+        ScreeningScore(elems);
+        fm.win_render('radio');
+        fm.win_render('checkbox');
+        $("#FollowDate").val("3");
+
+    }
+    function WindowsPrint() {
+        if ("@ViewBag.isShow" == "y") {
+            parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NeonatalReport/@nmodel.ScreeningID', 'Neonatal');
+        } else if ("@ViewBag.isShow" == "m") {
+            parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NeonatalReport/@nmodel.ScreeningID?mz=1', 'Neonatal');
+        } else {
+            parent.parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NeonatalReport/@nmodel.ScreeningID', 'Neonatal');
+        }
+    }
+    function SetClearScreenID() {
+        var selectedDate = $.trim($("#startDate").val());
+        if (selectedDate != '@currentDate' && @nmodel.ScreeningID > 0) {
+            $("#ScreeningID").val(0);//清空记录
+        }
+    }
+</script>

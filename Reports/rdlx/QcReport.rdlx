@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>5.85cm</Height>
+		<ReportItems>
+			<Textbox Name="TextBox1">
+				<CanGrow>true</CanGrow>
+				<Height>1.8cm</Height>
+				<Left>1.653543in</Left>
+				<Value>=Parameters!hospFullName.Value</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>18pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>700</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Right</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Width>14cm</Width>
+			</Textbox>
+			<Textbox Name="TextBox8">
+				<CanGrow>true</CanGrow>
+				<Height>0.75cm</Height>
+				<Value>="统计时间：" +  Parameters!stDate.Value  + “ - ”  +  Parameters!seDate.Value</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+				</Style>
+				<Top>4.46cm</Top>
+				<Width>7.0413cm</Width>
+				<ZIndex>3</ZIndex>
+			</Textbox>
+			<Textbox Name="TextBox9">
+				<CanGrow>true</CanGrow>
+				<DataElementName>TextBox2</DataElementName>
+				<Height>0.75cm</Height>
+				<Left>6.8cm</Left>
+				<Value>="打印时间：" 　+  Now ().tostring("yyyy-MM-dd HH:mm:ss")+  "          " + "打印人："+ Parameters!userName.Value</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+				</Style>
+				<Top>4.46cm</Top>
+				<Width>11.6cm</Width>
+				<ZIndex>4</ZIndex>
+			</Textbox>
+			<Tablix Name="Tablix1">
+				<TablixCorner>
+					<TablixCornerRows>
+						<TablixCornerRow>
+							<TablixCornerCell>
+								<CellContents>
+									<Textbox Name="TextBox4">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox9</DataElementName>
+										<Value>项目</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixCornerCell>
+						</TablixCornerRow>
+					</TablixCornerRows>
+				</TablixCorner>
+				<TablixBody>
+					<TablixColumns>
+						<TablixColumn>
+							<Width>1.5cm</Width>
+						</TablixColumn>
+						<TablixColumn>
+							<Width>2cm</Width>
+						</TablixColumn>
+					</TablixColumns>
+					<TablixRows>
+						<TablixRow>
+							<Height>0.75cm</Height>
+							<TablixCells>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!RVal.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>Solid</Style>
+												</Border>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+								<TablixCell>
+									<CellContents>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value>=IIF(  Fields!Tval.Value  &gt; 0 , Fields!Tval.Value  ,Sum( Fields!RVal.Value )</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<Border>
+													<Style>Solid</Style>
+												</Border>
+											</Style>
+										</Textbox>
+									</CellContents>
+								</TablixCell>
+							</TablixCells>
+						</TablixRow>
+					</TablixRows>
+				</TablixBody>
+				<TablixColumnHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_RDate1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!RDate.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>0.75cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox3">
+										<CanGrow>true</CanGrow>
+										<Value>=Fields!RDate.Value</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember />
+							</TablixMembers>
+						</TablixMember>
+						<TablixMember>
+							<TablixHeader>
+								<Size>0.75cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox2">
+										<CanGrow>true</CanGrow>
+										<DataElementName>TextBox4</DataElementName>
+										<Value>合计</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>Center</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+							<TablixMembers>
+								<TablixMember />
+							</TablixMembers>
+						</TablixMember>
+					</TablixMembers>
+				</TablixColumnHierarchy>
+				<TablixRowHierarchy>
+					<TablixMembers>
+						<TablixMember>
+							<Group Name="Tablix1_RTitle1">
+								<GroupExpressions>
+									<GroupExpression>=Fields!RTitle.Value</GroupExpression>
+								</GroupExpressions>
+							</Group>
+							<TablixHeader>
+								<Size>6cm</Size>
+								<CellContents>
+									<Textbox Name="TextBox6">
+										<CanGrow>true</CanGrow>
+										<Value>=SubValue(Fields!RTitle.Value, Fields!RCode.Value )</Value>
+										<Style>
+											<FontFamily>微软雅黑</FontFamily>
+											<FontSize>10pt</FontSize>
+											<FontStyle>Normal</FontStyle>
+											<FontWeight>400</FontWeight>
+											<PaddingBottom>2pt</PaddingBottom>
+											<PaddingLeft>2pt</PaddingLeft>
+											<PaddingRight>2pt</PaddingRight>
+											<PaddingTop>2pt</PaddingTop>
+											<TextAlign>=IIF(Fields!RStyle.Value &gt; 0 , "Right","Left")</TextAlign>
+											<VerticalAlign>Middle</VerticalAlign>
+											<Border>
+												<Style>Solid</Style>
+											</Border>
+										</Style>
+									</Textbox>
+								</CellContents>
+							</TablixHeader>
+						</TablixMember>
+					</TablixMembers>
+				</TablixRowHierarchy>
+				<DataSetName>Statistics</DataSetName>
+				<Top>2.76cm</Top>
+				<Left>0.02645833cm</Left>
+				<Height>1.5cm</Height>
+				<Width>9.5cm</Width>
+				<ZIndex>1</ZIndex>
+				<Style>
+					<Border>
+						<Style>Solid</Style>
+					</Border>
+				</Style>
+			</Tablix>
+			<Textbox Name="TextBox10">
+				<CanGrow>true</CanGrow>
+				<Height>0.75cm</Height>
+				<Left>0.1cm</Left>
+				<Value>="营养师：" + iif(Parameters!screenFullName.Value="","全部",Parameters!screenFullName.Value)</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+				</Style>
+				<Top>1.9cm</Top>
+				<Width>7.0413cm</Width>
+				<ZIndex>3</ZIndex>
+			</Textbox>
+		</ReportItems>
+	</Body>
+	<BottomMargin>0.5cm</BottomMargin>
+	<Code>Function SetValue(ByVal v As Double, ByVal isRate As Boolean, ByVal ci As Integer) As String
+	If(ci &gt; 0) Then
+		If(isRate) Then
+			Return round(v / ci, 1)
+		Else 
+			Return v
+		End If
+	Else Return ci
+	End If
+End Function
+Function SubValue(ByVal v As String, ByVal r As String) As String
+	If(r.Length &gt; 0) Then
+		Return v.Replace(r, "")
+	Else 
+		Return v
+	End If
+End Function</Code>
+	<LeftMargin>1.7cm</LeftMargin>
+	<PageHeight>21cm</PageHeight>
+	<PageWidth>29.7cm</PageWidth>
+	<RightMargin>1.7cm</RightMargin>
+	<TopMargin>0.5cm</TopMargin>
+	<Width>18.4cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="hospFullName">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>医院名</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="stDate">
+			<DataType>String</DataType>
+			<Prompt>开始日期</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="seDate">
+			<DataType>String</DataType>
+			<Prompt>结束时间</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="userName">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>打印人</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="rdlxType">
+			<DataType>Integer</DataType>
+			<Prompt>报表种类</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="screenUser">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>营养师</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="isDay">
+			<DataType>Integer</DataType>
+			<Prompt>是否按天统计</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="screenFullName">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>营养师真实名</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="depts">
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>depts</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="courtyardId">
+			<DataType>Integer</DataType>
+			<Prompt>courtyardId</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="tjlb">
+			<DataType>Integer</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="Statistics">
+			<Fields>
+				<Field Name="ID">
+					<DataField>ID</DataField>
+				</Field>
+				<Field Name="RTitle">
+					<DataField>RTitle</DataField>
+				</Field>
+				<Field Name="RDate">
+					<DataField>RDate</DataField>
+				</Field>
+				<Field Name="RStyle">
+					<DataField>RStyle</DataField>
+				</Field>
+				<Field Name="RVal">
+					<DataField>RVal</DataField>
+				</Field>
+				<Field Name="IsRate">
+					<DataField>IsRate</DataField>
+				</Field>
+				<Field Name="Tval">
+					<DataField>Tval</DataField>
+				</Field>
+				<Field Name="RCode">
+					<DataField>RCode</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>Pro_Statistics</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@stDate">
+						<Value>=Parameters!stDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@edDate">
+						<Value>=Parameters!seDate.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@screenUser">
+						<Value>=Parameters!screenUser.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@rdlx">
+						<Value>=Parameters!rdlxType.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@isDay">
+						<Value>=Parameters!isDay.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@depts">
+						<Value>=Parameters!depts.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@courtyardId">
+						<Value>=Parameters!courtyardId.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@tjlb">
+						<Value>=Parameters!tjlb.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

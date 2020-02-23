@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>1.4cm</Height>
+    <ReportItems>
+      <Table Name="Table8">
+        <DataElementOutput>Output</DataElementOutput>
+        <DataSetName>DAYListDataSet</DataSetName>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.999999cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ColSpan>3</ColSpan>
+                  <ReportItems>
+                    <Subreport Name="Subreport1">
+                      <Parameters>
+                        <Parameter Name="patCode">
+                          <Value>=Parameters!patCode.Value</Value>
+                        </Parameter>
+                        <Parameter Name="dy">
+                          <Value>=Fields!DayNum.Value</Value>
+                        </Parameter>
+                        <Parameter Name="acid">
+                          <Value>=Parameters!acid.Value</Value>
+                        </Parameter>
+                        <Parameter Name="t">
+                          <Value>=Parameters!t.Value</Value>
+                        </Parameter>
+                      </Parameters>
+                      <ReportName>Clinic_YYSD_SSFXReport.rdlx</ReportName>
+                      <Style />
+                    </Subreport>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1cm</Height>
+        <Style />
+        <TableColumns>
+          <TableColumn>
+            <Width>5.635479cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>5.667846cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>5.826926cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Width>17.13025cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>19cm</PageWidth>
+  <Width>17.13025cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="patCode">
+      <DataType>String</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="acid">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="t">
+      <DataType>Integer</DataType>
+      <Prompt>参数1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DAYListDataSet">
+      <Fields>
+        <Field Name="DayNum">
+          <DataField>DayNum</DataField>
+        </Field>
+        <Field Name="ACID">
+          <DataField>ACID</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>select MAX(af.DayNum) as DayNum,MAX(af.AccommodationID) as ACID from dbo.S_AccommodationFoodMenu  afm&#xD;
+left join  dbo.S_AccommodationFood af on af.AccommodationFoodID = afm.AccommodationFoodID&#xD;
+left join dbo.S_Accommodation sa on sa.AccommodationID = af.AccommodationID and AccommodationType = @t&#xD;
+ where sa.PatientCode =@patCode and sa.AccommodationID= @acid &#xD;
+group by af.DayNum </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@patCode">
+            <Value>=Parameters!patCode.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@t">
+            <Value>=Parameters!t.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@acid">
+            <Value>=Parameters!acid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>report:DesignTimeBackgroundRendering</Name>
+      <Value>True</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

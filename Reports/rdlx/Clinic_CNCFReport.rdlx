@@ -1,0 +1,541 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>6.6cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>CNDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.797055cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>10</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox26">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.797055cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox31">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>8</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport2">
+											<Parameters>
+												<Parameter Name="key">
+													<Value>=Fields!In_ID.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ClinicPreparation.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox27">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=Fields!In_ID.Value = 0</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>1.009604cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox34">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>8</ColSpan>
+									<ReportItems>
+										<CustomReportItem Name="FormattedText1">
+											<Type>FormattedText</Type>
+											<CustomProperties>
+												<CustomProperty>
+													<Name>Html</Name>
+													<Value>=Fields!HTML.Value</Value>
+												</CustomProperty>
+											</CustomProperties>
+											<DataElementName>FormattedText1</DataElementName>
+										</CustomReportItem>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Footer>
+					<TableRows>
+						<TableRow>
+							<Height>1.156024cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox35">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox9</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox11</DataElementName>
+											<Value>能量：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox12</DataElementName>
+											<Value>=First(Fields!Energy.Value, "CNYYDataSet").ToString() + " kcal/天"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox14</DataElementName>
+											<Value>蛋白质：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox15</DataElementName>
+											<Value>=First(Fields!Protein.Value, "CNYYDataSet").ToString()  + " g"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox17</DataElementName>
+											<Value>脂肪：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox18">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!Fat.Value, "CNYYDataSet") .ToString() +" g"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<Value>碳水化合物：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox24">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!Carbohydr.Value, "CNYYDataSet") .ToString() + " g"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox30">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox20</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=RowNumber( First(Fields!In_ID.Value, "CNDataSet") ) = 0</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Footer>
+				<Height>3.759738cm</Height>
+				<Style>
+					<BorderStyle>
+						<Default>None</Default>
+					</BorderStyle>
+					<BorderWidth>
+						<Default>2pt</Default>
+					</BorderWidth>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.513907cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.9973cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.842059cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.624036cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.496625cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.218026cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.334549cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.436052cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.19703cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.509308cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Width>18.16885cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>18.2cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="hnts">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>../..\RDSX\hnts.rdsx</DataSourceReference>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="CNDataSet">
+			<Fields>
+				<Field Name="In_ID">
+					<DataField>In_ID</DataField>
+				</Field>
+				<Field Name="EN_Amount">
+					<DataField>EN_Amount</DataField>
+				</Field>
+				<Field Name="FName">
+					<DataField>FName</DataField>
+				</Field>
+				<Field Name="EN_Num">
+					<DataField>EN_Num</DataField>
+				</Field>
+				<Field Name="EN_Way">
+					<DataField>EN_Way</DataField>
+				</Field>
+				<Field Name="EN_Mode">
+					<DataField>EN_Mode</DataField>
+				</Field>
+				<Field Name="EN_Temperature">
+					<DataField>EN_Temperature</DataField>
+				</Field>
+				<Field Name="EN_Speed">
+					<DataField>EN_Speed</DataField>
+				</Field>
+				<Field Name="EN_Remark">
+					<DataField>EN_Remark</DataField>
+				</Field>
+				<Field Name="HTML">
+					<DataField>HTML</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select
+In_ID,
+(case when EN_Amount &gt; 0 then ltrim(cast(EN_Amount as float)) +  'ml/次' else '--' end) as EN_Amount,
+spf.FName,
+EN_Num,
+isnull(ss.ItemText,'--') as EN_Way,  --途径
+isnull(sss.ItemText,'--') as EN_Mode,  --输注
+(case when EN_Temperature &gt; 0 then ltrim(cast(EN_Temperature as float)) +  '℃' else '--' end) as EN_Temperature,
+(case when EN_Speed &gt; 0 then ltrim(cast(EN_Speed as float)) +  'ml/h' else '--' end) as EN_Speed,
+(case when len(ltrim(EN_Remark)) = 0 then '--' else EN_Remark end) as EN_Remark, --备注
+replace(dbo.Fun_CNContentHtml(0,
+					(case when EN_Amount &gt; 0 then ltrim(cast(EN_Amount as float)) +  'ml/次' else '--' end),	--液量
+			(case when EN_concentration &gt; 0 then ltrim(cast(EN_concentration as float)) +  '%' else '--' end),	--浓度
+			isnull(sp.FName,'--'),														--用法
+			EN_Num,																		--天数
+			isnull(ss.ItemText,'--'),													--途径
+			isnull(sss.ItemText,'--'),													--喂养方式
+			(case when EN_Speed &gt; 0 then ltrim(cast(EN_Speed as float)) +  'ml/h' else '--' end),		--速度
+			(case when EN_Temperature &gt; 0 then ltrim(cast(EN_Temperature as float)) +  '℃' else '--' end),--温度
+			(case when len(ltrim(EN_Remark)) = 0 then '--' else EN_Remark end),			--备注
+			'none',																		--使用时间
+			'none',												--剂型
+			'none',														--配送
+			'none',														--配方
+			'none',															--保质期
+			'none',
+			'none'										--保质期
+			),'12pt','10pt') as HTML
+from dbo.T_MZCNIntervention tm
+left join dbo.S_PreparationFrequency sp on tm.EN_UseCode = sp.FCode
+left join dbo.S_SelectedItem ss on ss.ItemValue = tm.EN_Way and ss.ItemType = 8
+left join dbo.S_SelectedItem sss on sss.ItemValue = tm.EN_Mode and sss.ItemType = 9
+left join dbo.S_PreparationFrequency spf on spf.FCode = tm.EN_UseCode
+WHERE tm.PatientCode=@patientCode AND tm.IsState=0</CommandText>
+				<DataSourceName>hnts</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="CNYYDataSet">
+			<Fields>
+				<Field Name="Energy">
+					<DataField>Energy</DataField>
+				</Field>
+				<Field Name="Protein">
+					<DataField>Protein</DataField>
+				</Field>
+				<Field Name="Fat">
+					<DataField>Fat</DataField>
+				</Field>
+				<Field Name="Carbohydr">
+					<DataField>Carbohydr</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>pro_ClinicCNCFNutrition</CommandText>
+				<DataSourceName>hnts</DataSourceName>
+				<CommandType>StoredProcedure</CommandType>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>report:DesignTimeBackgroundRendering</Name>
+			<Value>True</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

@@ -1,0 +1,48 @@
+@{
+    Layout = "~/Views/Shared/ActionReportPageShared.cshtml";
+}
+<div>
+    <div class="container">
+        <div id="viewerContainer">
+        </div>
+    </div>
+</div>
+
+<!-- 调试 -->
+<link href="/Content/css/theme-cosmo.css" rel="stylesheet">
+<script src="/Content/Scripts/jquery-1.10.2.js"></script>
+<script src="/Content/Scripts/knockout-2.3.0.js"></script>
+<script src="/Content/Scripts/GrapeCity.ActiveReports.Viewer.Html.js"></script>
+
+
+<script type="text/javascript">
+    $(function () {
+        var viewer = GrapeCity.ActiveReports.Viewer({
+            element: '#viewerContainer',
+            reportService: {
+                url: '/Reports/rdlx/ActiveReports.ReportService.asmx'
+            },
+            report: {
+                id: "Reports/rdlx/PatientNutritionReport.rdlx",
+                parameters: [{
+                    name: 'hospName',
+                    value: '@ViewBag.hospName'
+                }, {
+                    name: 'patientCode',
+                    value: '@ViewBag.patientCode'
+                }, {
+                    name: 'userName',
+                    value: '@ViewBag.userName'
+                }, {
+                    name: 'type',
+                    value: '@ViewBag.type'
+                }]
+            },
+            uiType: 'desktop',
+            localeUri: '/Content/Scripts/i18n/Localeuri.txt'
+        });
+        var $content = $(window.parent.document);
+        $("#viewerContainer").height($content.height() - 65);
+        $(viewer.toolbar).css({ 'background-color': '#f3f3f3', 'border-color': '#d2d2d2' });
+    });
+</script>

@@ -1,0 +1,1048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>18cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>ExercisePrescriptionListDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>运动名称</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>运动频次</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>运动时长</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value>运动组数</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<Value>运动个数</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<Value>运动消耗</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>Solid</Default>
+													<Left>None</Left>
+													<Right>None</Right>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!SportsAbbreviation.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Dashed</Bottom>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!ItemText.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.SetShowField(Fields!ExerciseMinutes.Value,1)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.SetShowField(Fields!ExerciseGroups.Value,2)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.SetShowField(Fields!ExerciseGroupsNumbers.Value,3)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.SetShowField(Fields!SingleExerciseConsumption.Value.tostring("0.##"),4)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Dashed</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>1.5cm</Height>
+				<Left>0.19cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>5.4cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.8cm</Top>
+				<Width>17.9cm</Width>
+			</Table>
+			<Textbox Name="TextBox13">
+				<CanGrow>true</CanGrow>
+				<Height>0.75cm</Height>
+				<Left>0.19cm</Left>
+				<Value>运动效益</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontWeight>700</FontWeight>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Top>3.3cm</Top>
+				<Width>5.8cm</Width>
+				<ZIndex>1</ZIndex>
+			</Textbox>
+			<Table Name="Table2">
+				<DataSetName>PatientSportsBenefitDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox14">
+											<CanGrow>true</CanGrow>
+											<Value>膳食摄入</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<Value>基础代谢</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<CanGrow>true</CanGrow>
+											<Value>运动总能耗</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox20">
+											<CanGrow>true</CanGrow>
+											<Value>特殊需求</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value>运动消耗</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox24">
+											<CanGrow>true</CanGrow>
+											<Value>体重预测</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.75cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox17">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!EnergyRecommendation.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox18">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!BasalMetabolism.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!TotalExerciseConsumption.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!SpecialNeeds.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox23">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetExerciseConsumption(Fields!ExerciseConsumption.Value.tostring("0.##"))</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value>=Code.GetWeightPrediction(Fields!WeightPrediction.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Solid</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>Solid</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>1.5cm</Height>
+				<Left>0.19cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.5cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>5cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>4.3cm</Top>
+				<Width>18cm</Width>
+				<ZIndex>2</ZIndex>
+			</Table>
+			<Table Name="Table3">
+				<DataSetName>ShowPicDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>7.7cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Image Name="Image1">
+											<DataElementName>Image1</DataElementName>
+											<Sizing>Fit</Sizing>
+											<Source>External</Source>
+											<Value>="img/"+Fields!PictureNo.Value</Value>
+										</Image>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!sportsType.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox26">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!sportsType.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>8.5cm</Height>
+				<Left>0.2cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>17.8cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>6.3cm</Top>
+				<Width>17.8cm</Width>
+				<ZIndex>3</ZIndex>
+			</Table>
+			<Table Name="Table4">
+				<DataSetName>PatientSportsBenefitDataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>0.9cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox28">
+											<CanGrow>true</CanGrow>
+											<Value>营养医师建议</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!sportsType.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.9cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox27">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!NutritionistAdvice.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!sportsType.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.9cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox29">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!sportsType.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Height>2.7cm</Height>
+				<Left>0.2cm</Left>
+				<TableColumns>
+					<TableColumn>
+						<Width>17.8cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>15.1cm</Top>
+				<Width>17.8cm</Width>
+				<ZIndex>4</ZIndex>
+			</Table>
+		</ReportItems>
+	</Body>
+	<Code>Function SetShowField(ByVal value As String, ByVal type As Integer) As String
+	Dim showStr As String
+	If(value &gt; 0) Then
+		If(type = 1) Then
+			showStr = value + "min/次"
+		Else If(type = 2) Then
+			showStr = value + "组/次"
+		Else If(type = 3) Then
+			showStr = value + "个/组"
+		Else If(type = 4) Then
+			showStr = value + "kcal/次"
+		End If
+	Else
+		showStr = "--"
+	End If
+	Return showStr
+End Function
+
+Function GetWeightPrediction(ByVal value As Decimal) As String
+	Dim rtStr As String
+	If(value = -10000) Then
+		rtStr = "--"
+	Else If(value &gt;= 0) Then
+		rtStr = "一个月后体重增加" + value.ToString("0.##") + "kg"
+	Else If(value &lt; 0 And value &gt; -10000) Then
+		rtStr = "一个月后体重减轻" + Math.Abs(value).ToString("0.##") + "kg"
+	End If
+	Return rtStr
+End Function
+
+Function GetExerciseConsumption(ByVal value As String) As String
+	Return value + "kcal/日"
+End Function</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>18.2cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<DataType>String</DataType>
+			<Prompt>病人唯一号</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="sportsType">
+			<DataType>Integer</DataType>
+			<Prompt>1为运动处方；2为运动调查</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="ExercisePrescriptionListDataSet">
+			<Fields>
+				<Field Name="PSBID">
+					<DataField>PSBID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="SportsItemCode">
+					<DataField>SportsItemCode</DataField>
+				</Field>
+				<Field Name="SportsAbbreviation">
+					<DataField>SportsAbbreviation</DataField>
+				</Field>
+				<Field Name="ItemText">
+					<DataField>ItemText</DataField>
+				</Field>
+				<Field Name="ExerciseMinutes">
+					<DataField>ExerciseMinutes</DataField>
+				</Field>
+				<Field Name="ExerciseGroups">
+					<DataField>ExerciseGroups</DataField>
+				</Field>
+				<Field Name="ExerciseGroupsNumbers">
+					<DataField>ExerciseGroupsNumbers</DataField>
+				</Field>
+				<Field Name="SingleExerciseConsumption">
+					<DataField>SingleExerciseConsumption</DataField>
+				</Field>
+				<Field Name="PictureNo">
+					<DataField>PictureNo</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select PSBID,PatientCode,SportsItemCode,SportsAbbreviation,ItemText,ExerciseMinutes,ExerciseGroups,
+ExerciseGroupsNumbers,SingleExerciseConsumption,PictureNo from V_ExercisePrescriptionList 
+where PatientCode=@patCode and SportsType=@sportsType
+ order by PSSID</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="sportsType">
+						<Value>=Parameters!sportsType.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="PatientSportsBenefitDataSet">
+			<Fields>
+				<Field Name="PSBID">
+					<DataField>PSBID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="ExerciseDate">
+					<DataField>ExerciseDate</DataField>
+				</Field>
+				<Field Name="EnergyRecommendation">
+					<DataField>EnergyRecommendation</DataField>
+				</Field>
+				<Field Name="BasalMetabolism">
+					<DataField>BasalMetabolism</DataField>
+				</Field>
+				<Field Name="TotalExerciseConsumption">
+					<DataField>TotalExerciseConsumption</DataField>
+				</Field>
+				<Field Name="SpecialNeeds">
+					<DataField>SpecialNeeds</DataField>
+				</Field>
+				<Field Name="ExerciseConsumption">
+					<DataField>ExerciseConsumption</DataField>
+				</Field>
+				<Field Name="WeightPrediction">
+					<DataField>WeightPrediction</DataField>
+				</Field>
+				<Field Name="NutritionistAdvice">
+					<DataField>NutritionistAdvice</DataField>
+				</Field>
+				<Field Name="CreatedOn">
+					<DataField>CreatedOn</DataField>
+				</Field>
+				<Field Name="CreatedBy">
+					<DataField>CreatedBy</DataField>
+				</Field>
+				<Field Name="ModifiedBy">
+					<DataField>ModifiedBy</DataField>
+				</Field>
+				<Field Name="ModifiedOn">
+					<DataField>ModifiedOn</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select PSBID,PatientCode,ExerciseDate,case when EnergyRecommendation&gt;0 then Convert(varchar(50),CONVERT(float,EnergyRecommendation)) else '--' end EnergyRecommendation
+,case when BasalMetabolism&gt;0 then Convert(varchar(50),CONVERT(float,BasalMetabolism)) else '--' end BasalMetabolism,
+case when TotalExerciseConsumption&gt;0 then Convert(varchar(50),CONVERT(float,TotalExerciseConsumption)) else '--' end TotalExerciseConsumption,
+case when SpecialNeeds&gt;0 then Convert(varchar(50),CONVERT(float,SpecialNeeds)) else '--' end SpecialNeeds,
+ExerciseConsumption,
+WeightPrediction,NutritionistAdvice,CreatedOn,CreatedBy,ModifiedBy,ModifiedOn from T_PatientSportsBenefit where PatientCode=@patCode  and SportsType=@sportsType</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="sportsType">
+						<Value>=Parameters!sportsType.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="ShowPicDataSet">
+			<Fields>
+				<Field Name="PictureNo">
+					<DataField>PictureNo</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select PictureNo from V_ExercisePrescriptionList 
+where PatientCode=@patCode and PictureNo&lt;&gt;''  and SportsType=1 order by PSSID</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

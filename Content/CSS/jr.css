@@ -1,0 +1,634 @@
+﻿
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {
+	
+	.ri .rinrbot .you .bao{ 
+		margin: 20px 10px 0 0;
+	}	
+	.ri .rinrbot .you .bao img{
+		width: 100%;
+	}	
+	.dlindex .dlle{
+		top: 39%;
+		left: 10%;
+	}
+	.dlindex .dlle .log{
+		font-size: 30px;
+		margin: 0 0 30px 0;
+	}
+	.dlindex .dlle .log img{
+		margin: 0 10px 0 0;
+	}
+	.dlindex .dlle h1{
+		font-size: 55px;
+		letter-spacing: 5px;
+		margin: 5px 0 10px 0;
+	}
+	.dlindex .dlle p{
+		font-size: 28px;
+	}
+	.dlindex .dlle p .xian{
+		width: 61%;
+		top: -7px;
+	}
+	.dlindex .dlkuang{
+		width: 410px;
+		top: 8%;
+		right: 5%;
+	}
+	.dlindex .dlkuang .dlnr .dlll h2{
+		font-size: 38px;
+		line-height: 80px;
+		margin: 0 0 60px 0;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang{
+		width: 320px;
+		margin: 0 auto 35px auto;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang input{
+		width: 245px;
+		height: 70px;
+		padding: 0 0 0 75px;
+		border-radius: 5px;
+		font-size: 18px;
+		line-height: 70px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .tit{
+		top: 25px;
+		left: 15px;
+		font-size: 18px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .xian{
+		height: 36px;
+		top: 18px;
+		left: 62px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .jzmm{
+		margin: 30px 0 40px 0;
+		font-size: 18px;
+		padding: 0 0 0 47px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but{
+		width: 365px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but span{
+		font-size: 28px;
+		line-height:75px;		
+	}	
+	.wyle .nrul{
+		height: 698px;
+	}
+	.wyri .wyritop{		
+		margin: 10px 0 10px 0;
+	}
+	.le .nnr2{
+		height: 275px;
+	}	
+	.ri .rinrtop .tab td{
+		line-height: 15px;
+		padding: 7px 0 0 0;
+	}
+	.ri .rinrbot{
+		margin: 20px 0 0 0;
+	}	
+	.in2le{
+		/*height: 810px;*/
+	}	
+	.index2 .top .hang{
+		margin: 8px 0;
+	}
+	.index2 .tab2{
+		margin: 0px 0 0 0 ;
+	}
+	.index2 .feiy{
+		padding: 8px 0 10px 0;
+	}
+	.index2 .suom{
+		padding: 11px 0 12px 4%;
+		font-size: 15px;
+		margin: 8px 0 0 0;
+	}
+	
+	
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 1280px) {
+
+	.header .logo img{
+		margin: 5px 10px 0 10px;
+	}
+	.wyri{
+		width: 81%;
+	}
+	.ri .rinrbot .you{
+		padding: 2px 0;
+	}
+	.ri .rinrbot .you .bao{		
+		width: 320px;
+	}
+	.ri .rinrbot .you .bao .tubnr{
+		margin: 8px 0 8px 50px;
+		width: 240px;
+	}
+	.ri .rinrbot .you .bao .tubnr .tbnrk{
+		height: 120px;
+	}
+	
+	.ri .rinrbot .zuo li{
+		font-size: 12px;
+		width: 16px;
+	}
+	.index2{
+		width: 85%;
+	}
+	.index2 .feiy{
+		padding: 0px 0 5px 0;
+	}
+	.index2 .suom{
+		padding: 14px 0 10px 4%;
+		margin: 15px 0 0 0;
+	}
+		
+	.dlindex .dlle{
+		top: 39%;
+		left: 10%;
+	}
+	.dlindex .dlle .log{
+		font-size: 27px;
+		margin: 0 0 20px 0;
+	}
+	.dlindex .dlle .log img{
+		margin: 0 10px 0 0;
+	}
+	.dlindex .dlle h1{
+		font-size: 50px;
+		letter-spacing: 5px;
+		margin: 5px 0 10px 0;
+	}
+	.dlindex .dlle p{
+		font-size: 26px;
+	}
+	.dlindex .dlle p .xian{
+		width: 61%;
+		top: -8px;
+	}
+	.dlindex .dlkuang{
+		width: 380px;
+		top: 8%;
+		right: 5%;
+	}
+	.dlindex .dlkuang .dlnr .dlll h2{
+		font-size: 35px;
+		line-height: 70px;
+		margin: 0 0 50px 0;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang{
+		width: 320px;
+		margin: 0 auto 35px auto;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang input{
+		width: 245px;
+		height: 70px;
+		padding: 0 0 0 75px;
+		border-radius: 5px;
+		font-size: 18px;
+		line-height: 70px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .tit{
+		top: 25px;
+		left: 15px;
+		font-size: 18px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .xian{
+		height: 36px;
+		top: 18px;
+		left: 62px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .jzmm{
+		margin: 30px 0 35px 0;
+		font-size: 18px;
+		padding: 0 0 0 31px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but{
+		width: 345px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but span{
+		font-size: 26px;
+		line-height:70px;		
+	}	
+	.wyle .nrul{
+		height: 609px;
+	}
+	.wyri .wyritop{		
+		margin: 5px 0 0px 0;
+	}
+	.wyri .wyrinr{
+		margin: 5px 0 0 0;
+	}
+	.le .nnr2{
+		height: 198px;
+	}
+	.ri .rinrtop .tab{
+		width: 780px;
+	}
+	.ri .rinrtop .tab th{
+		line-height: 36px;
+		font-size: 15px;
+	}
+	.ri .rinrtop .tab td{
+		line-height: 16px;
+		font-size: 12px;
+		padding: 5px 0 0 0;
+	}	
+	.ri .rinrtop .bott{
+		margin: 5px 0 0 0;
+	}	
+	.ri .rinrtop .bott p{
+		font-size: 15px;
+		line-height: 40px;
+	}
+	.ri .rinrbot{
+		margin: 10px 0 0 0;
+		height: 235px;
+	}
+	.in2le{
+		height: 720px;
+	}	
+	.index2 .top .hang{
+		margin: 4px 0;
+		padding: 0 1%;
+	}
+	.index2 .top .hang .bao{
+		margin: 3px 1.5%;	
+	}
+	.index2 .top .hang .chax{
+		margin: 0 4.5% 0 0;
+	}
+	.index2 .tab2{
+		margin: 0px 0 0 0 ;
+	}
+	.index2 .feiy{
+		padding: 0px 0 10px 0;
+	}
+	.index2 .suom{
+		padding: 10px 0 8px 4%;
+		font-size: 15px;
+		margin: 8px 0 0 0;
+	}	
+	.index2 .tab2 th{
+		line-height: 45px;
+		font-size: 18px;
+	}
+	.index2 .tab2 td{
+		padding: 7px 0;
+	}
+	
+		
+}
+
+@media only screen and (max-width: 1200px) {
+	.wyle{
+		width: 200px;
+	}
+	.wyle .top{
+		height: 60px;
+	}
+	.wyle .top .bao{
+		width: 140px;
+		height: 36px;
+		background-size: 100%;
+		line-height: 36px;
+		margin: 12px 0 0 12px;
+	}
+	.wyle .top .bao .zuo{
+		width: 70px;
+		font-size: 13px;
+	}
+	.wyle .top .tub5{
+		margin: 20px 15px 0 0px;
+	}
+	.wyle .top .tub5 img{
+		width: 26px;
+	}
+	.wyle .nrul li .bo{
+		font-size: 16px;
+	}	
+	.wyri{
+		margin: 0 0px 0 5px;
+		width: 80%;
+	}	
+	.wyri .wyritop{
+		line-height: 40px;
+		margin: 20px 0 10px 0;
+	}
+	.wyri .wyritop .nrul li{
+		font-size: 17px;
+		margin: 0 5px;
+	}
+	.le .topul li{
+		font-size: 15px;
+		line-height: 35px;
+	}
+	.le .nnr2 li{
+		font-size: 14px;
+	}
+	.le .nnr3 li{
+		font-size: 14px;
+	}
+	.le .nnr3 li input{
+		height: 16px;
+		top: -2px;
+		width: 70px;
+	}
+	.le .nnr3 li select{
+		width: 100px;
+	}
+	.le .nnr3 li .boo{
+		width: 90px;
+	}
+	.le .nnr3 li textarea{
+		width: 110px;
+	}	
+	.ri .rinrtop .toptop li{
+		line-height: 35px;
+		font-size: 15px;
+	}
+	.ri .rinrtop .tab th{
+		line-height: 36px;
+		font-size: 14px;
+	}
+	.ri .rinrtop .bott p{
+		font-size: 15px;
+		line-height: 35px;
+	}
+	.ri .rinrbot{
+		margin: 10px 0 0 0;
+	}
+	.ri .rinrbot .zuo{
+		width: 48px;
+		margin: 5px 0px 0 5px;
+	}
+	.ri .rinrbot .zuo li{
+		font-size: 12px;
+		width: 16px;
+	}
+	.ri .rinrbot .you{
+		padding: 2px 0;
+	}
+	.ri .rinrbot .you .bao{		
+		width: 320px;
+	}
+	.ri .rinrbot .you .bao .tubnr{
+		margin: 8px 0 8px 50px;
+		width: 240px;
+	}
+	.ri .rinrbot .you .bao .tubnr .tbnrk{
+		height: 124px;
+	}
+	.index2{
+		width: 80%;
+	}
+	.logo2 p{
+		margin: 22px 10px 0 0;
+	}	
+	.index2 .feiy{
+		padding: 0px 0 5px 0;
+	}
+	.index2 .suom{
+		padding: 14px 0 10px 4%;
+		margin: 15px 0 0 0;
+	}
+	.dlindex .dlle{
+		top: 39%;
+		left: 9%;
+	}
+	.dlindex .dlle .log{
+		font-size: 27px;
+		margin: 0 0 20px 0;
+	}
+	.dlindex .dlle .log img{
+		margin: 0 10px 0 0;
+	}
+	.dlindex .dlle h1{
+		font-size: 43px;
+		letter-spacing: 5px;
+		margin: 5px 0 10px 0;
+	}
+	.dlindex .dlle p{
+		font-size: 24px;
+	}
+	.dlindex .dlle p .xian{
+		width: 58%;
+		top: -8px;
+	}
+	.dlindex .dlkuang{
+		width: 345px;
+		top: 6%;
+		right: 4%;
+	}
+	.dlindex .dlkuang .dlnr .dlll h2{
+		font-size: 30px;
+		line-height: 75px;
+		margin: 0 0 40px 0;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang{
+		width: 295px;
+		margin: 0 auto 35px auto;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang input{
+		width: 220px;
+		height: 60px;
+		padding: 0 0 0 73px;
+		border-radius: 5px;
+		font-size: 18px;
+		line-height: 60px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .tit{
+		top: 20px;
+		left: 15px;
+		font-size: 17px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang .xian{
+		height: 30px;
+		top: 18px;
+		left: 60px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .jzmm{
+		margin: 30px 0 35px 0;
+		font-size: 18px;		
+		padding: 0 0 0 8%;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but{
+		width: 300px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but span{
+		font-size: 22px;
+		line-height:60px;		
+	}
+	
+	.wyle .nrul{
+		height: 592px;
+	}
+	.wyri .wyritop{		
+		margin: 5px 0 0px 0;
+	}
+	.wyri .wyrinr{
+		margin: 5px 0 0 0;
+	}
+	.le .nnr2{
+		height: 189px;
+	}
+	.ri .rinrtop .tab{
+		width: 780px;
+	}
+	.ri .rinrtop .tab td{
+		line-height: 16px;
+		padding: 4px 0 0 0;
+		font-size: 12px;
+	}
+	.ri .rinrtop .tab td p{
+		margin: 0 0 5px 0;
+	}	
+	.ri .rinrtop .bott{
+		margin: 5px 0 0 0;
+	}	
+	.ri .rinrtop .bott p{
+		font-size: 15px;
+		line-height: 35px;
+	}
+	.ri .rinrbot{
+		margin: 7px 0 0 0;
+		height: 238px;
+	}
+	.in2le{
+		height: 693px;
+	}	
+	.index2 .top .hang{
+		margin: 4px 0;
+		padding: 0 1%;
+	}
+	.index2 .top .hang .bao{
+		font-size: 15px;
+		margin: 0 1%;
+	}
+	.index2 .top .hang .bao input{
+		font-size: 13px;
+		width: 90px;
+	}
+	.index2 .top .hang .bao select{		
+		width: 131px;
+	}
+	.index2 .top .hang .chax{
+		width: 140px;
+		line-height: 32px;
+		margin: 0 15px 0 0;
+		font-size: 16px;
+	}
+	.index2 .tab2{
+		margin: 0px 0 0 0 ;
+	}
+	.index2 .feiy{
+		padding: 0px 0 10px 0;
+	}
+	.index2 .suom{
+		padding: 10px 0 8px 4%;
+		font-size: 15px;
+		margin: 5px 0 0 0;
+	}	
+	.index2 .tab2 th{
+		line-height: 45px;
+		font-size: 18px;
+	}
+	.index2 .tab2 td{
+		padding: 7px 0;
+	}
+	.wyri .wyritop .nrul{
+		width: 66%;
+	}
+	
+	
+}
+
+@media only screen and (max-width: 1024px) {
+	
+	.dlindex .dlle{
+		top: 38%;
+		left: 9%;
+	}
+	.dlindex .dlle .log{
+		font-size: 26px;
+	}
+	.dlindex .dlle h1{
+		font-size: 42px;
+	}
+	.dlindex .dlkuang{
+		width: 320px;
+	}
+	.dlindex .dlkuang .dlnr .dlll h2{
+		font-size: 28px;
+		line-height: 70px;
+		margin: 0 0 35px 0;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang{
+		width: 275px;
+		margin: 0 auto 25px auto;
+	}
+	.dlindex .dlkuang .dlnr .dlll .hang input{
+		width: 200px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .jzmm{
+		margin: 0px 0 25px 0;
+		font-size: 16px;		
+		padding: 0 0 0 8%;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but{
+		width: 280px;
+	}
+	.dlindex .dlkuang .dlnr .dlll .but span{
+		font-size: 21px;
+		line-height:55px;		
+	}
+	.index2{
+		width: 775px;
+	}
+	.index2 .top .hang{
+		margin: 4px 0;
+		padding: 0 0.5%;
+	}
+	.index2 .top .hang .bao{
+		font-size: 15px;
+		margin: 0 0.5% 0 0.5%;
+	}
+	.index2 .top .hang .bao input{
+		font-size: 12px;
+		width: 70px;
+		padding: 0;
+	}
+	.index2 .top .hang .bao input.xiao{
+		width: 50px;
+	}
+	.index2 .top .hang .bao select{		
+		width: 130px;
+	}
+	.index2 .top .hang .chax{
+		width: 140px;
+		line-height: 30px;
+		margin: 0 16px 0 0;
+		font-size: 16px;
+	}
+	.wyri{
+		margin: 0 0px 0 3px;
+		width: 79%;
+	}
+	.wyri .wyritop .nrul{
+		width: 66%;
+	}
+	
+	
+	
+	
+}
+
+
+
+
+

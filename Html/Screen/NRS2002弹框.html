@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <div class="layui-layer layui-layer-iframe " id="layui-layer1" type="iframe" times="1" showtime="0" contype="object" style="z-index: 19891015; width: 83.3333%; height: 96%; top: 9.5px; left: 10%;">
+        <div class="layui-layer-title" style="">NRS2002</div>
+        <div id="" class="layui-layer-content">
+            <html>
+
+            <head>
+                <meta name="viewport" content="width=device-width">
+                <title></title>
+                <meta charset="utf-8">
+                <meta name="renderer" content="webkit">
+                <meta http-equiv="X-UA-Compatible" content="IE=edgem">
+                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                <meta name="format-detection" content="telephone=no">
+                <meta http-equiv="Access-Control-Allow-Origin" content="*">
+                <link rel="stylesheet" href="/Content/BeginnerAdmin/plugins/layui/css/layui.css" media="all">
+                <link rel="stylesheet" href="/Content/BeginnerAdmin/css/global.css" media="all">
+                <link rel="stylesheet" href="/Content/BeginnerAdmin/plugins/font-awesome/css/font-awesome.min.css">
+                <link rel="stylesheet" href="/Content/css/style.css" media="all">
+                <link rel="stylesheet" href="/Content/Jquery/datetime/jquery.datetimepicker.css">
+                <script type="text/javascript" src="/Content/Jquery/jquery-1.9.1.min.js"></script>
+                <script type="text/javascript" src="/Content/Jquery/datetime/jquery.datetimepicker.full.min.js"></script>
+                <script type="text/javascript" src="/Content/BeginnerAdmin/plugins/layui/layui.js"></script>
+
+                <script>
+
+                    layui.config({
+                        skin: 'demo-class',
+                        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+                    }).use(['winCookie'], function () {
+                        var sh = window.screen.height;
+                        var $ = layui.jquery;
+                        var cook = layui.winCookie;
+                        $(document).ready(function () {
+                            cook.win_setCookie("SH", sh);
+                            //$('.layui-layer-load').remove();
+                            //var loading = '<div class="loading"><div class="pic"></div></div>';
+                            //$("body").append(loading);
+                            //document.onreadystatechange = function () {//即在加载的过程中执行下面的代码
+                            //    if(document.readyState=="complete"){//complete加载完成
+                            //        $(".loading").fadeOut();
+                            //    }
+                            //}
+                        });
+                    });
+                    function openWindowUrl(url, code, title) {
+                        $(window.parent.parent.document).find("dd[title=" + title + "]").click();
+                        setTimeout(parent.openWindow(url, code), 200);
+                    }
+                    var indexxxxx = '';
+                    function closeWin() {
+                        if (indexxxxx) dialog.win_close(indexxxxx);
+                    }
+                    function openTemplate(t, elem, tp, url, msg) {
+                        var c = $.trim($(elem).val());
+                        if ((c.length > 0 && t == 0) || t == 1) {
+                            var u = url + '&pType=' + tp;
+                            var tit = t == 0 ? "存为模板" : "调用模板";
+                            var area = t == 0 ? ["500px", "100px;"] : ["500px", "500px;"];
+                            indexxxxx = dialog.win_open(u, tit, area);
+                        } else {
+                            dialog.win_alert(msg + '不能为空！', '提示', 5);
+                        }
+                    }
+                </script>
+                <style>
+                    input::-webkit-input-placeholder {
+                        color: #d2d2d2;
+                    }
+
+                    input::-moz-placeholder {
+                        /* Mozilla Firefox 19+ */
+                        color: #d2d2d2;
+                    }
+
+                    input:-moz-placeholder {
+                        /* Mozilla Firefox 4 to 18 */
+                        color: #d2d2d2;
+                    }
+
+                    input:-ms-input-placeholder {
+                        /* Internet Explorer 10-11 */
+                        color: #d2d2d2;
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        -webkit-box-shadow: #FFFFFF;
+                        background-color: #FFFFFF;
+                        border-radius: 10px;
+                    }
+
+                    ::-webkit-scrollbar {
+                        width: 7px;
+                        height: 7px;
+                        background-color: #FFFFFF;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+                        border-radius: 10px;
+                        background: #4478a9;
+                    }
+
+                    .loading {
+                        width: 100%;
+                        height: 100%;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        z-index: 100;
+                        background-color: #fff;
+                    }
+
+                    .loading .pic {
+                        width: 190px;
+                        height: 14px;
+                        background: url(/Content/images/rowLoading.gif);
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        margin: auto;
+                    }
+                </style>
+                <link id="layuicss-skinlayercss" rel="stylesheet" href="http://zyk.wincome.group/Content/BeginnerAdmin/plugins/layui/css/modules/layer/default/layer.css?v=3.0.2302"
+                    media="all">
+                <link id="layuicss-laydatecss" rel="stylesheet" href="http://zyk.wincome.group/Content/BeginnerAdmin/plugins/layui/css/modules/laydate/laydate.css"
+                    media="all">
+            </head>
+
+            <body>
+                <!-- 调试
+                    将 overflow:hidden; => overflow:auto;
+                -->
+                <div style="background-color: #f3f7fd; overflow:auto;">
+
+                    <script type="text/javascript" src="/Content/Js/nrs2002.js"></script>
+                    <link rel="stylesheet" href="/Content/css/layui.css">
+                    <!-- 调试 
+                        在最外层div上添加该class 
+                            .iframe-container
+                    -->
+                    <link rel="stylesheet" href="/Common/Css/screen.css">
+                    <!-- end -->
+                    <style type="text/css">
+                        body {
+                            background: #f3f7fd;
+                        }
+
+                        .gwc_personalInfo_title {
+                            color: #167cbe;
+                        }
+
+                        #fxxc::-webkit-scrollbar-track {
+                            -webkit-box-shadow: #FFFFFF;
+                            background-color: #FFFFFF;
+                            border-radius: 10px;
+                        }
+
+                        #fxxc::-webkit-scrollbar {
+                            width: 7px;
+                            background-color: #FFFFFF;
+                        }
+
+                        #fxxc::-webkit-scrollbar-thumb {
+                            border-radius: 10px;
+                            background: #4478a9;
+                        }
+
+                        .layui-span span {
+                            height: 30px;
+                            line-height: 30px;
+                            margin-top: 5px;
+                        }
+
+                        .layui-title {
+                            height: 35px;
+                            line-height: 35px;
+                            font-weight: bold;
+                        }
+
+                        #monitorPanel ul {
+                            top: -7px;
+                            padding: 0;
+                            width: 530px;
+                            margin: 0 auto;
+                            cursor: pointer;
+                        }
+
+                        #monitorPanel ul li {
+                            cursor: pointer;
+                        }
+                    </style>
+                    <div class="iframe-container">
+                        <div id="basicMsg" style="display: none;">
+                            <div style="height: 40px; padding-top: 10px; padding-left: 10px;" class="layui-row">
+                                <div class="layui-col-xs3">
+                                    <span class="layui-col-xs5">
+                                        <input type="text" class="layui-input" placeholder="住院号" name="beInNo" id="beInNo" autocomplete="off">
+                                    </span>
+                                    <span class="layui-col-xs7" style="text-align: center;">
+                                        <input type="button" class="layui-btn layui-btn-small" value="粘贴" id="btnPaste" onclick="common.win_paste('#beInNo');">
+                                        <input type="button" class="layui-btn layui-btn-small" value="确定" onclick="reloadContent('#beInNo');">
+                                    </span>
+                                </div>
+                                <div style="" id="monitorPanel" class="layui-col-xs9 layui-row">
+                                    <ul class="layui-nav layui-bg-green">
+                                        <li class="layui-nav-item">
+                                            <a href="javascript:;">| 营养筛查
+                                                <span class="layui-nav-more"></span>
+                                            </a>
+                                            <dl class="layui-nav-child">
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/ScreeningManagement/Screening/1','6009883_44','NRS2002');">
+                                                        NRS2002 </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/ScreeningManagement/Screening/2','6009883_44','MUST');">
+                                                        MUST </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/ScreeningManagement/Screening/8','6009883_44','KIDNRS');">
+                                                        KIDNRS </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/ScreeningManagement/Screening/12','6009883_44','STAMP');">
+                                                        STAMP </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/ScreeningManagement/Screening/13','6009883_44','Neonatal');">
+                                                        Neonatal </a>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li class="layui-nav-item">
+                                            <a href="javascript:;">| 营养评估
+                                                <span class="layui-nav-more"></span>
+                                            </a>
+                                            <dl class="layui-nav-child">
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/3','6009883_44','PG-SGA');">
+                                                        PG-SGA </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/4','6009883_44','SGA');">
+                                                        SGA </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery//5','6009883_44','MNA-SF');">
+                                                        MNA-SF </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/6','6009883_44','MNA');">
+                                                        MNA </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/7','6009883_44','MIS');">
+                                                        MIS </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/9','6009883_44','BCA');">
+                                                        BCA </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/10','6009883_44','PNYS');">
+                                                        PNYS </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/11','6009883_44','STRONGkids');">
+                                                        STRONGkids </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/14','6009883_44','NUTRIC');">
+                                                        NUTRIC </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/100','6009883_44','营养评估');">
+                                                        营养评估 </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/110','6009883_44','膳食大类评估');">
+                                                        膳食大类评估 </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessmentOfQuery/130','6009883_44','24h膳调');">
+                                                        24h膳调 </a>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li class="layui-nav-item">
+                                            <a href="javascript:;">| 营养治疗
+                                                <span class="layui-nav-more"></span>
+                                            </a>
+                                            <dl class="layui-nav-child">
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/EnteralPrescribingManagement/YYKEnteralprescribing','6009883_44','营养干预');">
+                                                        营养干预 </a>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li class="layui-nav-item">
+                                            <a href="javascript:;">| 查房工具
+                                                <span class="layui-nav-more"></span>
+                                            </a>
+                                            <dl class="layui-nav-child">
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/WardRoundManagement/PatientRoundForm','6009883_44','查房记录');">
+                                                        查房记录 </a>
+                                                </dd>
+                                                <dd>
+                                                    <a href="javascript:;" onclick="openWindowUrl('/TreatmentCenter/WardRoundManagement/PatientRoundForm/1','6009883_44','营养宣教');">
+                                                        营养宣教 </a>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li class="layui-nav-item">
+                                            <a href="javascript:;" onclick="openMonitorCenter('6009883_44', parent.parent.dialog, null, 0);">| 监测中心</a>
+                                        </li>
+                                        <span class="layui-nav-bar"></span>
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-field-box" style="height: 70px; background-color: rgb(255, 255, 255); width: 98%; margin: 0px auto;" id="patientInfo">
+                            <!-- 修改后 -->
+                            <span style="padding: 15px;">
+                                <span class="layui-col-xs2" style="">
+                                    <span class="layui-col-xs12" style="width: 90%; margin-left: 5%; text-align: center; border-right: 1px solid #d2d2d2; margin-top: 15px;">
+                                        <span class="layui-col-xs12" style="color: #167cbe; font-size: 24px; height: 28px; line-height: 28px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"
+                                            title="崔建山">崔建山</span>
+                                        <span class="layui-col-xs12" style="height: 24px; line-height: 24px;">男,&nbsp;&nbsp;47岁</span>
+                                    </span>
+                                </span>
+                                <span class="layui-col-xs10">
+                                    <span style="width: 100%;">
+                                        <span class="layui-col-xs5" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="七病区">
+                                            <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">科室&nbsp;</span>
+                                            <span style="height: 24px; line-height: 24px;">七病区</span>
+                                        </span>
+                                        <span class="layui-col-xs3">
+                                            <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">床号&nbsp;</span>
+                                            <span style="height: 24px; line-height: 24px;">N6701</span>
+                                        </span>
+                                        <span class="layui-col-xs3">
+                                            <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">住院号&nbsp;</span>
+                                            <span>
+                                                <label id="copyMsg" style="height: 24px; line-height: 24px;">6009883</label>&nbsp;
+                                                <input type="button" id="btnCopy" class="layui-btn layui-btn-mini copyBtnSpecicalCSS" value="复制" onclick="common.win_copy('#copyMsg');"
+                                                    style="color: #65b569; border: 1px solid #65b569; background: none; border-radius: 3px; display: inline-block; line-height: inherit;">
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span style="width: 100%;">
+                                        <span class="layui-col-xs6">
+                                            <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">主要诊断&nbsp;</span>
+                                            <span title="" style="height: 24px; line-height: 24px;">尺骨鹰嘴骨折</span>
+                                        </span>
+                                        <span class="layui-col-xs6">
+                                            <span class="gwc_personalInfo_title" style="height: 24px; line-height: 24px;">饮食医嘱&nbsp;</span>
+                                            <span title="--" style="height: 24px; line-height: 24px;">--</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </span>
+
+                        </div>
+
+                        <div class="layui-field-box" id="screenPanel" style="">
+                            <form method="POST" action="/TreatmentCenter/ScreeningManagement/NRS2002" class="layui-form">
+                                <input name="__RequestVerificationToken" type="hidden" value="SyfHur1FxDGiexC8XLkTuzZGTUZzqMie95i-P3LJBnDagugYrzewxmUkCr2Jfg4QBcUfwXuCuMl-59ZZBM1bQ48GsSJcwhyCcJFz6DonIKoEqoUdpIVZM88kfy_JVQx0-DvOjQv8pANpITsPEg3gJQ2">
+                                <!--
+                                    调试  -->
+                                <div class="layui-field-box" id="fxxc" style="overflow: hidden auto; border: none; padding: 5px 10px; background-color: rgb(255, 255, 255); margin: 5px 10px; height: 119px;">
+                                    <div class="layui-field-box" style="margin-top: 3px;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr style="float:left;">
+                                                    <td class="text-r" style="width: 10%; padding: 0;white-space:nowrap;">筛查日期：</td>
+                                                    <td class="text-l" style="width: 10%; padding: 0;">
+                                                        <input style="width:100px;" type="text" onchange="SetClearScreenID();" class="layui-input time" id="startDate" lay-verify="required"
+                                                            name="ScreenDate" autocomplete="off">
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div style="height:10px;"></div>
+                                    <div class="layui-field-box" id="divInitialScreen" style="display: none;">
+                                        <table class="table">
+                                            <tbody>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:100%;border:1px solid #d2d2d2;" colspan="2">
+                                                        <span style="font-weight:bold;color: #167cbe;">营养初筛</span>
+                                                    </td>
+                                                </tr>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:40%;border:1px solid #d2d2d2;">
+                                                        <span>1、体脂指数（BMI）&lt; 18.5？</span>
+                                                    </td>
+                                                    <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">
+                                                        <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                            <div class="layui-input-block" style="margin-left: 0;">
+                                                                <input type="checkbox" name="ChkInitialScreenA" value="false" lay-skin="switch" lay-text="是|否" lay-filter="ChkInitialScreenA">
+                                                                <div class="layui-unselect layui-form-switch" lay-skin="_switch">
+                                                                    <em>否</em>
+                                                                    <i></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:40%;border:1px solid #d2d2d2;">
+                                                        <span>2、最近三个月内患者体重有丢失吗？</span>
+                                                    </td>
+                                                    <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">
+                                                        <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                            <div class="layui-input-block" style="margin-left: 0;">
+                                                                <input type="checkbox" name="ChkInitialScreenB" value="false" lay-skin="switch" lay-text="是|否" lay-filter="ChkInitialScreenB">
+                                                                <div class="layui-unselect layui-form-switch" lay-skin="_switch">
+                                                                    <em>否</em>
+                                                                    <i></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:40%;border:1px solid #d2d2d2;">
+                                                        <span>3、最近一个星期内患者的膳食摄入有减少吗？</span>
+                                                    </td>
+                                                    <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">
+                                                        <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                            <div class="layui-input-block" style="margin-left: 0;">
+                                                                <input type="checkbox" name="ChkInitialScreenC" value="false" lay-skin="switch" lay-text="是|否" lay-filter="ChkInitialScreenC">
+                                                                <div class="layui-unselect layui-form-switch" lay-skin="_switch">
+                                                                    <em>否</em>
+                                                                    <i></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:40%;border:1px solid #d2d2d2;">
+                                                        <span>4、患者的病情病重吗？</span>
+                                                    </td>
+                                                    <td style="width:60%;border:1px solid #d2d2d2;text-align:left;padding-left:10px;">
+                                                        <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                            <div class="layui-input-block" style="margin-left: 0;">
+                                                                <input type="checkbox" name="ChkInitialScreenD" value="false" lay-skin="switch" lay-text="是|否" lay-filter="ChkInitialScreenD">
+                                                                <div class="layui-unselect layui-form-switch" lay-skin="_switch">
+                                                                    <em>否</em>
+                                                                    <i></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <table class="table">
+                                            <tbody>
+                                                <tr style="width:100%;">
+                                                    <td class="text-l" style="width:100%;border:1px solid #d2d2d2;border-top:0px;border-bottom:0px;" colspan="3">
+                                                        <span style="font-weight:bold;color: #167cbe;">营养复筛</span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="layui-field-box">
+                                        <table class="table-l">
+                                            <tbody>
+                                                <tr style="width: 100%;">
+                                                    <td class="text-l" colspan="2" style="border: 1px solid #d2d2d2; font-weight: bold;" rowspan="4">
+                                                        1、疾病营养需要程度
+                                                        <i class="layui-icon" id="tip1" style="border: 1px solid #65B36E; color: #65B36E; cursor: pointer; display: none;"></i>
+                                                    </td>
+                                                    <td style="border-top: 1px solid #d2d2d2;">
+                                                        <div class="layui-col-xs12">
+                                                            <input type="radio" title="正常" name="ScreeningItemA" value="0" lay-filter="ScreeningItemA">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>正常</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="3" style="border-top: 1px solid #d2d2d2;">0分：正常营养需要量：对营养需求没有过多影响。</td>
+                                                    <td class="text-l msgclass" id="yyyycdTd" style="border: 1px solid #d2d2d2;" rowspan="4">
+                                                        0 分
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="layui-col-xs12">
+                                                            <input type="radio" title="轻度提高" name="ScreeningItemA" value="1" lay-filter="ScreeningItemA">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>轻度提高</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="3">1分：营养需要量轻度提高：如髋部骨折、慢性疾病有急性并发症者（如肝硬化、慢性阻塞性肺疾病）、 长期血液透析、糖尿病、一般恶性肿瘤。</td>
+
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="layui-col-xs12">
+                                                            <input type="radio" title="中度增加" name="ScreeningItemA" value="2" lay-filter="ScreeningItemA">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>中度增加</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="3">2分：营养需要量中度增加：如腹部大手术、脑卒中、重症肺炎、血液恶性肿瘤。</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-bottom: 1px solid #d2d2d2;">
+                                                        <div class="layui-col-xs12">
+                                                            <input type="radio" title="明显增加" name="ScreeningItemA" value="3" lay-filter="ScreeningItemA">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>明显增加</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td colspan="3" style="border-bottom: 1px solid #d2d2d2;">3分：营养需要量明显增加：如重症头部损伤、骨髓移植、急性生理与慢性健康Ⅱ（APACHEⅡ）评分＞10的重症监护患者。</td>
+                                                </tr>
+                                                <!---->
+                                                <tr>
+                                                    <td rowspan="3" colspan="2" style="border-left: 1px solid #d2d2d2; font-weight: bold;">
+                                                        2、营养受损
+                                                        <i class="layui-icon" id="tip2" style="border: 1px solid #65B36E; color: #65B36E; cursor: pointer;"></i>
+                                                        <div style="font-weight: normal;">(三项中取最高分)</div>
+                                                    </td>
+                                                    <td style="border-left: 1px solid #d2d2d2; width: 33%;" colspan="2">
+                                                        <div class="layui-row layui-title">1)患者是否BMI＜18.5且伴一般情况差?</div>
+                                                        <div class="layui-row  layui-span">
+                                                            <span class="layui-col-xs3">身高:</span>
+                                                            <span class="layui-col-xs3">
+                                                                <input type="text" class="layui-input" onchange="clearResult(4, elems);" maxlength="5" lay-verify="float1" name="Height"
+                                                                    value="" autocomplete="off">
+                                                            </span>
+                                                            <span class="layui-col-xs6">&nbsp;cm</span>
+                                                        </div>
+                                                        <div class="layui-row layui-span">
+                                                            <span class="layui-col-xs3">当前体重:</span>
+                                                            <span class="layui-col-xs3">
+                                                                <input type="text" class="layui-input" name="Weight" maxlength="5" lay-verify="float1" onchange="clearResult(3, elems);"
+                                                                    value="" autocomplete="off">
+                                                            </span>
+                                                            <span class="layui-col-xs6">&nbsp;kg</span>
+                                                        </div>
+                                                        <div class="layui-row layui-span">
+                                                            <span class="layui-col-xs3">BMI:</span>
+                                                            <span class="layui-col-xs2" style="text-align: right;">
+                                                                <label id="bmilbl" style="font-weight: bold;">--</label>
+                                                            </span>
+                                                            <span class="layui-col-xs7">&nbsp;kg/m²</span>
+                                                        </div>
+                                                    </td>
+                                                    <td style="border-left: 1px solid #d2d2d2;" id="bmiTd" colspan="2">
+                                                        <div class="layui-col-xs25">
+                                                            <input type="radio" title="是" name="ScreeningItemB" value="3" lay-filter="ScreeningItemB">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>是</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layui-col-xs25">
+                                                            <input type="radio" title="否" name="ScreeningItemB" value="0" lay-filter="ScreeningItemB">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>否</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td rowspan="3" class="text-l msgclass" id="yyssTd" style="border: 1px solid #d2d2d2;">0 分</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-left: 1px solid #d2d2d2; border-top: 1px solid #d2d2d2;" colspan="2">
+                                                        <div class="layui-row layui-title">2)近期(1-3个月)体重有无下降?</div>
+                                                        <div class="layui-row layui-span">
+                                                            <span class="layui-col-xs45">
+                                                                <div class="layui-col-xs0">
+                                                                    <select name="MonthsAgo" lay-filter="MonthsAgo">
+                                                                        <option value="1" selected="">1个月前</option>
+                                                                        <option value="2">2个月前</option>
+                                                                        <option value="3">3个月前</option>
+                                                                    </select>
+                                                                    <div class="layui-unselect layui-form-select">
+                                                                        <div class="layui-select-title">
+                                                                            <input type="text" placeholder="1个月前" value="1个月前" readonly="" class="layui-input layui-unselect">
+                                                                            <i class="layui-edge"></i>
+                                                                        </div>
+                                                                        <dl class="layui-anim layui-anim-upbit">
+                                                                            <dd lay-value="1" class="layui-this">1个月前</dd>
+                                                                            <dd lay-value="2" class="">2个月前</dd>
+                                                                            <dd lay-value="3" class="">3个月前</dd>
+                                                                        </dl>
+                                                                    </div>
+                                                                </div>
+                                                            </span>
+                                                            <span class="layui-col-xs2">体重:</span>
+                                                            <span class="layui-col-xs3">
+                                                                <input type="text" class="layui-input" name="OldWeight" maxlength="5" onchange="clearResult(2, elems);" lay-verify="float1"
+                                                                    value="" autocomplete="off">
+                                                            </span>
+                                                            <span class="layui-col-xs1">&nbsp;kg</span>
+                                                        </div>
+                                                        <div class="layui-row layui-span">
+                                                            <span class="layui-col-xs3">体重变化:</span>
+                                                            <span class="layui-col-xs2" style="text-align: right;">
+                                                                <label id="tzbhlbl" style="font-weight: bold;">--</label>
+                                                            </span>
+                                                            <span class="layui-col-xs7">&nbsp;%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td style="border-left: 1px solid #d2d2d2; border-top: 1px solid #d2d2d2;" colspan="2">
+                                                        <div class="layui-row">
+                                                            <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                                <div class="layui-input-block" style="margin-left: 0;">
+                                                                    <input type="checkbox" name="ScreeningItemD" value="false" lay-skin="switch" lay-text="有|无" lay-filter="ScreeningItemD" class="layui-disabled"
+                                                                        disabled="">
+                                                                    <div class="layui-unselect layui-form-switch layui-checkbox-disbaled layui-disabled" lay-skin="_switch">
+                                                                        <em>无</em>
+                                                                        <i></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layui-col-xs12" id="tzxjTr" style="display: none;">
+                                                            <div class="layui-col-xs12">
+                                                                <input type="radio" title="3个月体重下降＞5%" name="ScreeningItemE" value="1" lay-filter="ScreeningItemE">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>3个月体重下降＞5%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs12">
+                                                                <input type="radio" title="2个月体重下降＞5%" name="ScreeningItemE" value="2" lay-filter="ScreeningItemE">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>2个月体重下降＞5%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs12">
+                                                                <input type="radio" title="1个月体重下降＞5%或3个月体重下降＞15%" name="ScreeningItemE" value="3" lay-filter="ScreeningItemE">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>1个月体重下降＞5%或3个月体重下降＞15%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="border-left: 1px solid #d2d2d2; border-top: 1px solid #d2d2d2;font-weight:bold;" colspan="2">3)一周内进食量有无减少?</td>
+                                                    <td style="border-left: 1px solid #d2d2d2; border-top: 1px solid #d2d2d2;" colspan="2">
+                                                        <div>
+                                                            <div class="layui-form-item" style="padding: 0; margin: 0;">
+                                                                <div class="layui-input-block" style="margin-left: 0;">
+                                                                    <input type="checkbox" name="ScreeningItemF" value="false" lay-skin="switch" lay-text="是|否" lay-filter="ScreeningItemF">
+                                                                    <div class="layui-unselect layui-form-switch" lay-skin="_switch">
+                                                                        <em>否</em>
+                                                                        <i></i>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layui-col-xs12" id="jsljsTr" style="display: none;">
+                                                            <div class="layui-col-xs4">
+                                                                <input type="radio" title="减少25-50%" name="ScreeningItemG" value="1" lay-filter="ScreeningItemG">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>减少25-50%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs4">
+                                                                <input type="radio" title="减少50-75%" name="ScreeningItemG" value="2" lay-filter="ScreeningItemG">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>减少50-75%</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="layui-col-xs4">
+                                                                <input type="radio" title="减少75-100%" name="ScreeningItemG" value="3" lay-filter="ScreeningItemG">
+                                                                <div class="layui-unselect layui-form-radio">
+                                                                    <i class="layui-anim layui-icon"></i>
+                                                                    <span>减少75-100%</span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="border: 1px solid #d2d2d2; font-weight: bold;">3、年龄</td>
+                                                    <td colspan="4" class="text-l" style="border: 1px solid #d2d2d2;">
+                                                        <div class="layui-col-xs3">
+                                                            <input type="radio" title="18岁～69岁" name="ScreeningItemI" value="0" lay-filter="ScreeningItemI" checked="">
+                                                            <div class="layui-unselect layui-form-radio layui-form-radioed">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>18岁～69岁</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="layui-col-xs3">
+                                                            <input type="radio" title="≥70岁" name="ScreeningItemI" value="1" lay-filter="ScreeningItemI">
+                                                            <div class="layui-unselect layui-form-radio">
+                                                                <i class="layui-anim layui-icon"></i>
+                                                                <span>≥70岁</span>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-l msgclass" id="ageTd" style="border: 1px solid #d2d2d2;" 0="" 分="">0 分</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 14%;"></td>
+                                                    <td style="width: 6%;"></td>
+                                                    <td style="width: 15%;"></td>
+                                                    <td style="width: 18%;"></td>
+                                                    <td style="width: 12%;"></td>
+                                                    <td style="width: 30%;"></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <div class="layui-field-box">
+                                    <table class="table-l">
+                                        <tbody>
+                                            <tr id="optionTr">
+                                                <td style="text-align: left;width:90px;" class="">下次复筛提醒</td>
+                                                <td style="width: 60px;" class="">
+                                                    <input type="text" class="layui-input layui-disabled" disabled="" name="FollowDate" id="FollowDate" onfocus="common.win_clearInput(this)"
+                                                        lay-verify="int0" value="7" autocomplete="off">
+                                                </td>
+                                                <td style="text-align: left;width:40px;" class="">天后</td>
+                                                <td style="text-align:left;">
+                                                    <input type="submit" class="layui-btn-small layui-disabled" disabled="" value="保存" lay-filter="SaveNRS2002" lay-submit="">&nbsp;&nbsp;
+                                                    <input type="button" class="layui-btn-small layui-disabled" disabled="" value="报表打印" onclick="WindowsPrint();" id="printBtn">
+                                                    <input type="button" class="layui-btn-small layui-disabled" disabled="" value="HTML打印" onclick="PrintDiv();" id="printBtn">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4">
+                                                    <div class="layui-row">评分结果：
+                                                        <span id="resultTd" style="color: ;">营养需要程度数据不完整，暂无法进行评分!</span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--隐藏元素也占高度位置-->
+                                <div style="display: none;">
+                                    <input type="hidden" name="ScreeningID" id="ScreeningID" value="0">
+                                    <br>
+                                    <input type="hidden" name="PatientCode" id="PatientCode" value="6009883_44">
+                                    <br>
+                                    <input type="hidden" name="Con_ID" id="Con_ID" value="0">
+                                    <br>
+                                    <!--单项分数-->
+                                    <input type="hidden" name="ScreeningScore1" id="ScreeningScore1" value="-1">
+                                    <br>
+                                    <input type="hidden" name="ScreeningScore2" id="ScreeningScore2" value="0">
+                                    <br>
+                                    <input type="hidden" name="ScreeningScore3" id="ScreeningScore3" value="0">
+                                    <br>
+                                    <!---->
+                                    <input type="hidden" name="ScreeningItemK" id="ScreeningItemK" value="0">
+                                    <br>
+                                    <input type="hidden" name="Lossperc" id="Lossperc" value="--">
+                                    <br>
+                                    <input type="hidden" name="BMI" id="BMI" value="0">
+                                    <br>
+                                    <input type="hidden" name="DropWeight" id="DropWeight" value="0">
+                                    <br>
+                                    <input type="hidden" name="ScreeningScore" id="ScreeningScore" value="-1">
+                                    <br>
+                                    <input type="hidden" name="ScreeningApprise" id="ScreeningApprise" value="风险数据不完整，暂无法进行评分!">
+                                    <input type="hidden" id="result" value="false">
+                                    <input type="hidden" id="IsRisk" name="IsRisk" value="False">
+                                    <input type="hidden" name="InitialScreenA" id="InitialScreenA" value="false">
+                                    <input type="hidden" name="InitialScreenB" id="InitialScreenB" value="false">
+                                    <input type="hidden" name="InitialScreenC" id="InitialScreenC" value="false">
+                                    <input type="hidden" name="InitialScreenD" id="InitialScreenD" value="false">
+                                    <input type="hidden" name="NeedSecondaryScreen" id="NeedSecondaryScreen" value="false">
+                                    <input type="hidden" name="isShow" value="f">
+                                    <input type="hidden" id="bno">
+                                    <input type="hidden" name="Color" id="Color" value="">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <script>
+                        var headers = {};
+                        var dialog, common, fm;
+                        var i = 1;
+                        var IsInitialScreen = "0";
+                        var elems = {
+                            col: "Color",
+                            ht: "input[name=Height]", //身高
+                            wt: "input[name=Weight]", //体重
+                            age: '47', //年龄
+                            physiology: '0', //生理状况
+                            yyyycdTd: "#yyyycdTd",        //显示营养需要程度
+                            yyyycdrdo: "ScreeningItemA", //营养需要程度
+                            bmilbl: "#bmilbl", //BMI显示
+                            bmitxt: "#BMI", //BMI保存
+                            bmitd: "#bmiTd", //BMI百分比选择框布局
+                            bmirdo: "ScreeningItemB", //BMI范围
+                            owt: "input[name=OldWeight]", //原体重
+                            wtchk: "ScreeningItemD", //体重下降复选框
+                            wttr: "#tzxjTr", //体重百分比选择框布局
+                            wtlbl: "#tzbhlbl", //体重下降量显示
+                            wttxt: "#tzxjlbl", //体重下降显示
+                            dwtxt: "#DropWeight", //体重下降保存
+                            lossperstxt: "#Lossperc", //体重下降百分比保存
+                            bdb: "ScreeningItemC", //白蛋白
+                            xjrado: "ScreeningItemE", //体重下降百分比
+                            jschk: "ScreeningItemF", //进食量减少复选框
+                            jstr: "#jsljsTr", //进食量减少百分比布局
+                            jsrdo: "ScreeningItemG", //进食量减少百分比
+                            agerdo: "ScreeningItemI", //年龄
+                            yyssTd: "#yyssTd", //营养受损评分结果
+                            //ssssScoretxt: "#ScreeningItemJ",
+                            printBtn: "#printBtn", //打印按钮
+                            screeningScore1: "#ScreeningScore1", //第一项分数
+                            screeningScore2: "#ScreeningScore2", //第二项分数
+                            screeningScore3: "#ScreeningScore3", //第三项分数
+                            screeningScore4: "", //第三项分数
+                            screeningScore5: "", //第三项分数
+                            screeningScore6: "", //第三项分数
+                            screeningScore7: "", //第三项分数
+                            screeningScore8: "", //第三项分数
+                            screeningScore9: "", //第三项分数
+                            fen: 3, //大于等于三有风险
+                            screeningScore: "#ScreeningScore", //总评分保存
+                            result: "#ScreeningApprise", //总结果赋值保存
+                            resultMsg: "#resultTd", //总结果赋值显示
+                            result1Msg: " 分,无明显营养风险。", //无风险结果内容
+                            result2Msg: " 分,患者具有营养风险,应开始制定营养治疗计划(包括治疗膳食,经口营养补充,肠内营养及肠外营养)。", //有风险结果内容
+                            result3Msg: "患者目前没有营养风险，无需进行第二步筛查，请一周后复查。",
+                            actionTr: "#optionTr", //保存操作区
+                            submit: "#result",        //是否可是提交状态
+                            ageTd: "#ageTd",            //显示年龄分数
+                            monthAgo: "select[name=MonthsAgo]", // 几个月前的体重
+                            InitialScreenA: "#InitialScreenA",//初筛1
+                            InitialScreenB: "#InitialScreenB",//初筛2
+                            InitialScreenC: "#InitialScreenC",//初筛3
+                            InitialScreenD: "#InitialScreenD",//初筛4
+                            NeedSecondaryScreen: "#NeedSecondaryScreen"//是否需要复筛
+                        }; //营养受损分数
+                        layui.config({
+                            skin: 'demo-class',
+                            base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+                        }).use(['winDialog', 'winForm', 'winCommon'], function () {
+                            var $ = layui.jquery;
+                            fm = layui.winForm;
+                            dialog = layui.winDialog;
+                            common = layui.winCommon;
+                            //获取防伪标记
+                            var token = $('<input name="__RequestVerificationToken" type="hidden" value="5Tnac60jw-RzM5WJsHGrOti-eSwg5wm4rXagiWi-raMh2NeSYxPdzrfLHe3at4OXca2rCeEMfTNZ8kfLIRFl01OYv9k-FLnEr-FXTzmYmdNqILsqk-H9D-o4BpjLgyyQQcoCFB5ALxu5UGrCRByOjg2" />').val();
+                            headers["__RequestVerificationToken"] = token;
+                            $(document).ready(function () {
+                                if ('6009883_44' != "--" && '6009883_44'.length > 0) {
+                                    $("#screenPanel").show();
+                                    $("#monitorPanel").show();
+                                    if ("f" != "m") $("#patientInfo").show();
+
+                                    if (0 > 0) {
+                                        if ('False' == "True") {
+                                            $("input[type=checkbox][name=" + elems.wtchk + "]").prop("checked", true);
+                                            fm.win_render('checkbox');
+                                        } else {
+                                            if ($("input[type=checkbox][name=" + elems.wtchk + "]").not(":checked")) {
+                                                $("input[type=checkbox][name=" + elems.wtchk + "]").prop("checked", false);
+                                                $("input[type=checkbox][name=" + elems.wtchk + "]").addClass("layui-disabled");
+                                                $("input[type=checkbox][name=" + elems.wtchk + "]").prop('disabled', true);
+                                                fm.win_render('checkbox');
+                                            }
+                                        }
+
+                                        ConfigoptionTr(elems.actionTr, 1);
+                                    } else {
+                                        ////初始化体重变化
+                                        CalculationPerc(elems);
+                                        ////初始化BMI
+                                        configBMI(elems, headers, CalculationScore, 0 > 0 ? 0 : 99);
+                                    }
+
+                                    // 初始加载时间控件
+                                    var startDate;
+                                    var currentDate = '2020-02-20';
+                                    var sd = new Date();
+                                    $.datetimepicker.setLocale('ch'); //新版
+                                    $("#startDate").val(currentDate);
+                                    $("#startDate").datetimepicker({
+                                        format: 'Y-m-d',
+                                        //lang:"ch",旧版
+                                        onShow: function () {
+                                            this.setOptions({
+                                                minDate: '2019/5/22 17:15:38',
+                                                maxDate: sd //当天
+                                            });
+                                        },
+                                        onChangeDateTime: function (dp, $input) {
+                                            startDate = $("#startDate").val();
+                                        },
+                                        onClose: function (current_time, $input) {
+                                            if (startDate != currentDate) {
+                                                if ("f" == "y") {
+                                                    refContent();
+                                                }
+                                            }
+                                        },
+                                        timepicker: false
+                                    });
+                                    //绑定注释
+                                    var tip;
+                                    var t = '0分：正常营养需要量：对营养需求没有过多影响。<br/>' +
+                                        '1分：营养需要量轻度提高：如髋部骨折、慢性疾病有急性并发症者（如肝硬化、慢性阻塞性肺疾病）、<br/>' +
+                                        '　　 长期血液透析、糖尿病、一般恶性肿瘤。<br/>' +
+                                        '2分：营养需要量中度增加：如腹部大手术、脑卒中、重症肺炎、血液恶性肿瘤。<br/>' +
+                                        '3分：营养需要量明显增加：如重症头部损伤、骨髓移植、急性生理与慢性健康Ⅱ（APACHEⅡ）评分＞10的重症监护患者。<br/>';
+                                    $("#tip1").hover(function () {
+                                        tip = dialog.win_tips(this, t);
+                                    }, function () {
+                                        dialog.win_close(tip);
+                                    });
+
+                                    var t2 = '1分：轻度受损；<br/>2分：中度受损；<br/>3分：重度受损；';
+                                    $("#tip2").hover(function () {
+                                        tip = dialog.win_tips(this, t2, 2);
+                                    }, function () {
+                                        dialog.win_close(tip);
+                                    });
+
+                                    fm.win_select('MonthsAgo', function (data) {
+                                        clearResult(2, elems);
+                                        fm.win_render("radio");
+                                    });
+                                    //监控疾病营养需要程度
+                                    fm.win_radio('ScreeningItemA', function (data) {
+                                        clearResult(1, elems);
+                                    });
+                                    //BMI
+                                    fm.win_radio('ScreeningItemB', function (data) {
+                                        clearResult(4, elems);
+                                    });
+                                    var v1, v2;
+                                    fm.win_switch('ScreeningItemD', function () {
+                                        if (v1) {
+                                            $(elems.wttr).find("input[type=radio][value=" + v1 + "]").prop('checked', true);
+                                            fm.win_render('radio');
+                                        }
+                                        $(elems.wttr).show();
+                                    }, function () {
+                                        if ($(elems.wttr).find("input[type=radio]:checked").size() > 0) {
+                                            v1 = $(elems.wttr).find("input[type=radio]:checked").val();
+                                        }
+                                        $(elems.wttr).find("input[type=radio]").prop('checked', false);
+                                        fm.win_render('radio');
+                                        $(elems.wttr).hide();
+                                    });
+                                    //进食量减少监控，是否显示选择进食量减少百分比
+                                    fm.win_switch('ScreeningItemF', function () {
+                                        if (v2) {
+                                            $('#jsljsTr').find("input[type=radio][value=" + v2 + "]").prop('checked', true);
+                                            fm.win_render('radio');
+                                        }
+                                        clearResult(5, elems);
+                                    }, function () {
+                                        if ($('#jsljsTr').find("input[type=radio]:checked").size() > 0) {
+                                            v2 = $('#jsljsTr').find("input[type=radio]:checked").val();
+                                        }
+                                        clearResult(5, elems);
+                                        fm.win_render("radio");
+                                    });
+                                    //白蛋白监控
+                                    fm.win_switch('ScreeningItemC', function () {
+                                        clearResult(6, elems); //直接营养受损
+                                    }, function () {
+                                        clearResult(6, elems); //计算BMI
+                                    });
+                                    //体重下降百分比监控
+                                    fm.win_radio('ScreeningItemE', function () {
+                                        clearResult(7, elems);
+                                    });
+                                    //进食量减少监控
+                                    fm.win_radio('ScreeningItemG', function () {
+                                        clearResult(8, elems);
+                                    });
+                                    fm.win_radio('ScreeningItemI', function (data) {
+                                        if (47 >= 70) {
+                                            $("input[type=radio][name=ScreeningItemI][value=1]").prop("checked", true);
+                                        } else {
+                                            $("input[type=radio][name=ScreeningItemI][value=0]").prop("checked", true);
+                                        }
+                                        fm.win_render('radio');
+                                    });
+                                    //年龄为固定不能托运改变大小
+                                    if (47 >= 70) {
+                                        $("input[type=radio][name=ScreeningItemI][value=1]").prop("checked", true);
+                                        $("#ageTd").text("1 分");
+                                        $("#ScreeningScore3").val(1);
+                                        fm.win_render('radio');
+                                    } else if (47 >= 18) {
+                                        $("input[type=radio][name=ScreeningItemI][value=0]").prop("checked", true);
+                                        $("#ageTd").text("0 分");
+                                        $("#ScreeningScore3").val(0);
+                                        fm.win_render('radio');
+                                    } else {
+                                        $("input[type=radio][name=ScreeningItemI]").prop("checked", false);
+                                        $("input[type=radio][name=ScreeningItemI]").prop("disabled", true);
+                                        $("#ageTd").text("--");
+                                        $("#ScreeningScore3").val(-1);
+                                        fm.win_render('radio');
+                                    }
+
+                                    //监控评分结果
+                                    fm.win_submit('PingFenJieGuo', function () {
+                                        ScreeningScore(elems);
+                                    });
+                                    //监控筛查保存
+                                    fm.win_submit('SaveNRS2002', function () {
+                                        var day = $.trim($("#FollowDate").val());
+                                        if (day.length > 0) {
+                                            ScreeningScore(elems); //再次评分结果
+                                            var sc = $("#ScreeningScore").val();
+                                            var risk = $("#IsRisk").val();
+
+                                            return $("#result").val() == "true";
+                                        } else if ("f" == "y") {
+                                            $("#FollowDate").css({ "border": "1px solid #FF5722" });
+                                            dialog.win_msg("随诊几天后不能为空", 5);
+                                            return false;
+                                        }
+                                    });
+                                    //提示
+                                    if (-1 > 0) {
+                                        if ("f" == "y") {
+                                            var bv = window.parent.document.getElementById("bv").value;
+                                            var patCode = window.parent.document.getElementById("patCode").value;
+                                            var beInNo = window.parent.document.getElementById("beInNo").value;
+                                            if (bv == "99") {
+                                                //parent.setRefVal(99,beInNo);
+                                            } else if (bv == "9") {
+                                                parent.setRefVal(9, patCode);
+                                            } else {
+                                                parent.setRefVal(0);
+                                            }
+                                        } else if ("f" == "m") {
+                                            parent.setRefVal(99);
+                                        }
+                                        dialog.win_msg("保存成功！", 6);
+                                    } else if (-1 == 0) {
+                                        dialog.win_msg("保存失败！", 5);
+                                    }
+
+                                }
+
+                                if ("f" == "y") {
+                                    $("#basicMsg").show();
+                                    fm.win_resize("#fxxc", 240);
+                                    $("td[class=isDisplay]").removeClass("isDisplay");
+                                } else if ("f" == "m") {
+                                    fm.win_resize("#fxxc", 160);
+                                    $("#startDate").attr("readonly", "readonly");
+                                    $("#startDate").datetimepicker({
+                                        timepicker: false,
+                                        datepicker: false
+                                    });
+                                } else if ("f" == "f") {
+                                    $("#patientInfo").show();
+                                    $("td[class=isDisplay]").removeClass("isDisplay");
+                                    fm.win_resize("#fxxc", 343);
+                                } else {
+                                    fm.win_resize("#fxxc", 190);
+                                }
+                            });
+
+                            $("#divInitialScreen input[type=checkbox]").each(function () {
+                                fm.win_switch($(this).attr("name"), function () {
+                                    SetInitialScreenClass(elems, IsInitialScreen);
+                                }, function () {
+                                    SetInitialScreenClass(elems, IsInitialScreen);
+                                });
+                            });
+                            //根据是否为初筛页面样式初始化
+                            InitializePageForIsInitialScreen(elems, IsInitialScreen);
+                        });
+
+                        //住院号后页面跳转
+                        function reloadContent(elem) {
+                            var beInNo = $.trim($(elem).val());
+                            if (beInNo.length > 0) {
+                                exsitBeInNo(beInNo, 1, headers, function (data) {
+                                    if (data.result) {
+                                        if (data.score >= 18) {
+                                            window.document.location.href = parent.screen + "?beInNo=" + beInNo;
+                                            //parent.reloadPritentList(beInNo);
+                                        } else {
+                                            parent.dialog.win_msg('年龄小于十八岁，无法进行NRS2002筛查！', 5);
+                                        }
+                                    } else {
+                                        parent.dialog.win_alert("住院号不存在或该患者不在你的管辖范围内!", "系统提示", 5);
+                                        $("#screenPanel").hide();
+                                        $("#monitorPanel").hide();
+                                        $("#patientInfo").hide();
+                                    }
+                                });
+                            } else {
+                                parent.dialog.win_alert("住院号不能为空!", "系统提示", 5);
+                            }
+                        }
+
+                        function refContent() {
+                            $("input[type=radio][name=ScreeningItemA]").prop("checked", false);
+                            $("input[type=radio][name=ScreeningItemE]").prop("checked", false);
+                            $("input[type=radio][name=ScreeningItemG]").prop("checked", false);
+                            $("input[type=checkbox][name=ScreeningItemD]").prop("checked", false);
+                            $("input[type=checkbox][name=ScreeningItemF]").prop("checked", false);
+                            $("#yyyycdTd").text("0 分");
+                            ScreeningScore(elems);
+                            fm.win_render('radio');
+                            fm.win_render('checkbox');
+                            $("#FollowDate").val("3");
+                            ////初始化体重变化
+                            CalculationPerc(elems);
+                            ////初始化BMI
+                            configBMI(elems, headers);
+
+                        }
+
+                        function WindowsPrint() {
+                            if ("f" == "y") {
+                                parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/0', 'NRS2002');
+                            }
+                            else if ("f" == "m") {
+                                parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/0?mz=1', 'NRS2002');
+                            }
+                            else {
+                                parent.parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/0', 'NRS2002');
+                            }
+                        }
+
+                        function PrintDiv() {
+                            parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NRS2002Print/6009883_44?sid=0&isShow=f', 'NRS2002');
+                            //LoadPrintData();
+                        }
+
+                        function SetClearScreenID() {
+                            var selectedDate = $.trim($("#startDate").val());
+                            if (selectedDate != '2020-02-20' && 0 > 0) {
+                                $("#ScreeningID").val(0);//清空记录
+                            }
+                        }
+
+                        function LoadPrintData() {
+                            $("#dttoexcel").show();
+                            var headstr = "<html><head><title></title></head><body>";
+                            var footstr = "</body>";
+                            var newstr = $("#dttoexcel").html();                   // 获取要打印的div内容
+                            var oldstr = document.body.innerHTML;                // 将过去的body内容存到oldstr
+                            document.body.innerHTML = headstr + newstr + footstr;     // 组合打印内容
+                            window.print();                                  // 弹出打印窗体
+                            document.body.innerHTML = oldstr;               // 还原HTML内容
+                            window.location.reload();
+                            return false;
+                        }
+
+                    </script>
+
+                </div>
+
+
+
+                <div class="xdsoft_datetimepicker xdsoft_noselect xdsoft_">
+                    <div class="xdsoft_datepicker active">
+                        <div class="xdsoft_mounthpicker">
+                            <button type="button" class="xdsoft_prev" style="visibility: visible;"></button>
+                            <button type="button" class="xdsoft_today_button" style="visibility: visible;"></button>
+                            <div class="xdsoft_label xdsoft_month">
+                                <span>二月</span>
+                                <div class="xdsoft_select xdsoft_monthselect xdsoft_scroller_box">
+                                    <div style="margin-top: 0px;">
+                                        <div class="xdsoft_option " data-value="0">一月</div>
+                                        <div class="xdsoft_option xdsoft_current" data-value="1">二月</div>
+                                        <div class="xdsoft_option " data-value="2">三月</div>
+                                        <div class="xdsoft_option " data-value="3">四月</div>
+                                        <div class="xdsoft_option " data-value="4">五月</div>
+                                        <div class="xdsoft_option " data-value="5">六月</div>
+                                        <div class="xdsoft_option " data-value="6">七月</div>
+                                        <div class="xdsoft_option " data-value="7">八月</div>
+                                        <div class="xdsoft_option " data-value="8">九月</div>
+                                        <div class="xdsoft_option " data-value="9">十月</div>
+                                        <div class="xdsoft_option " data-value="10">十一月</div>
+                                        <div class="xdsoft_option " data-value="11">十二月</div>
+                                    </div>
+                                    <div class="xdsoft_scrollbar">
+                                        <div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div>
+                                    </div>
+                                </div>
+                                <i></i>
+                            </div>
+                            <div class="xdsoft_label xdsoft_year">
+                                <span>2020</span>
+                                <div class="xdsoft_select xdsoft_yearselect xdsoft_scroller_box">
+                                    <div style="margin-top: 0px;">
+                                        <div class="xdsoft_option " data-value="1900">1900</div>
+                                        <div class="xdsoft_option " data-value="1901">1901</div>
+                                        <div class="xdsoft_option " data-value="1902">1902</div>
+                                        <div class="xdsoft_option " data-value="1903">1903</div>
+                                        <div class="xdsoft_option " data-value="1904">1904</div>
+                                        <div class="xdsoft_option " data-value="1905">1905</div>
+                                        <div class="xdsoft_option " data-value="1906">1906</div>
+                                        <div class="xdsoft_option " data-value="1907">1907</div>
+                                        <div class="xdsoft_option " data-value="1908">1908</div>
+                                        <div class="xdsoft_option " data-value="1909">1909</div>
+                                        <div class="xdsoft_option " data-value="1910">1910</div>
+                                        <div class="xdsoft_option " data-value="1911">1911</div>
+                                        <div class="xdsoft_option " data-value="1912">1912</div>
+                                        <div class="xdsoft_option " data-value="1913">1913</div>
+                                        <div class="xdsoft_option " data-value="1914">1914</div>
+                                        <div class="xdsoft_option " data-value="1915">1915</div>
+                                        <div class="xdsoft_option " data-value="1916">1916</div>
+                                        <div class="xdsoft_option " data-value="1917">1917</div>
+                                        <div class="xdsoft_option " data-value="1918">1918</div>
+                                        <div class="xdsoft_option " data-value="1919">1919</div>
+                                        <div class="xdsoft_option " data-value="1920">1920</div>
+                                        <div class="xdsoft_option " data-value="1921">1921</div>
+                                        <div class="xdsoft_option " data-value="1922">1922</div>
+                                        <div class="xdsoft_option " data-value="1923">1923</div>
+                                        <div class="xdsoft_option " data-value="1924">1924</div>
+                                        <div class="xdsoft_option " data-value="1925">1925</div>
+                                        <div class="xdsoft_option " data-value="1926">1926</div>
+                                        <div class="xdsoft_option " data-value="1927">1927</div>
+                                        <div class="xdsoft_option " data-value="1928">1928</div>
+                                        <div class="xdsoft_option " data-value="1929">1929</div>
+                                        <div class="xdsoft_option " data-value="1930">1930</div>
+                                        <div class="xdsoft_option " data-value="1931">1931</div>
+                                        <div class="xdsoft_option " data-value="1932">1932</div>
+                                        <div class="xdsoft_option " data-value="1933">1933</div>
+                                        <div class="xdsoft_option " data-value="1934">1934</div>
+                                        <div class="xdsoft_option " data-value="1935">1935</div>
+                                        <div class="xdsoft_option " data-value="1936">1936</div>
+                                        <div class="xdsoft_option " data-value="1937">1937</div>
+                                        <div class="xdsoft_option " data-value="1938">1938</div>
+                                        <div class="xdsoft_option " data-value="1939">1939</div>
+                                        <div class="xdsoft_option " data-value="1940">1940</div>
+                                        <div class="xdsoft_option " data-value="1941">1941</div>
+                                        <div class="xdsoft_option " data-value="1942">1942</div>
+                                        <div class="xdsoft_option " data-value="1943">1943</div>
+                                        <div class="xdsoft_option " data-value="1944">1944</div>
+                                        <div class="xdsoft_option " data-value="1945">1945</div>
+                                        <div class="xdsoft_option " data-value="1946">1946</div>
+                                        <div class="xdsoft_option " data-value="1947">1947</div>
+                                        <div class="xdsoft_option " data-value="1948">1948</div>
+                                        <div class="xdsoft_option " data-value="1949">1949</div>
+                                        <div class="xdsoft_option " data-value="1950">1950</div>
+                                        <div class="xdsoft_option " data-value="1951">1951</div>
+                                        <div class="xdsoft_option " data-value="1952">1952</div>
+                                        <div class="xdsoft_option " data-value="1953">1953</div>
+                                        <div class="xdsoft_option " data-value="1954">1954</div>
+                                        <div class="xdsoft_option " data-value="1955">1955</div>
+                                        <div class="xdsoft_option " data-value="1956">1956</div>
+                                        <div class="xdsoft_option " data-value="1957">1957</div>
+                                        <div class="xdsoft_option " data-value="1958">1958</div>
+                                        <div class="xdsoft_option " data-value="1959">1959</div>
+                                        <div class="xdsoft_option " data-value="1960">1960</div>
+                                        <div class="xdsoft_option " data-value="1961">1961</div>
+                                        <div class="xdsoft_option " data-value="1962">1962</div>
+                                        <div class="xdsoft_option " data-value="1963">1963</div>
+                                        <div class="xdsoft_option " data-value="1964">1964</div>
+                                        <div class="xdsoft_option " data-value="1965">1965</div>
+                                        <div class="xdsoft_option " data-value="1966">1966</div>
+                                        <div class="xdsoft_option " data-value="1967">1967</div>
+                                        <div class="xdsoft_option " data-value="1968">1968</div>
+                                        <div class="xdsoft_option " data-value="1969">1969</div>
+                                        <div class="xdsoft_option " data-value="1970">1970</div>
+                                        <div class="xdsoft_option " data-value="1971">1971</div>
+                                        <div class="xdsoft_option " data-value="1972">1972</div>
+                                        <div class="xdsoft_option " data-value="1973">1973</div>
+                                        <div class="xdsoft_option " data-value="1974">1974</div>
+                                        <div class="xdsoft_option " data-value="1975">1975</div>
+                                        <div class="xdsoft_option " data-value="1976">1976</div>
+                                        <div class="xdsoft_option " data-value="1977">1977</div>
+                                        <div class="xdsoft_option " data-value="1978">1978</div>
+                                        <div class="xdsoft_option " data-value="1979">1979</div>
+                                        <div class="xdsoft_option " data-value="1980">1980</div>
+                                        <div class="xdsoft_option " data-value="1981">1981</div>
+                                        <div class="xdsoft_option " data-value="1982">1982</div>
+                                        <div class="xdsoft_option " data-value="1983">1983</div>
+                                        <div class="xdsoft_option " data-value="1984">1984</div>
+                                        <div class="xdsoft_option " data-value="1985">1985</div>
+                                        <div class="xdsoft_option " data-value="1986">1986</div>
+                                        <div class="xdsoft_option " data-value="1987">1987</div>
+                                        <div class="xdsoft_option " data-value="1988">1988</div>
+                                        <div class="xdsoft_option " data-value="1989">1989</div>
+                                        <div class="xdsoft_option " data-value="1990">1990</div>
+                                        <div class="xdsoft_option " data-value="1991">1991</div>
+                                        <div class="xdsoft_option " data-value="1992">1992</div>
+                                        <div class="xdsoft_option " data-value="1993">1993</div>
+                                        <div class="xdsoft_option " data-value="1994">1994</div>
+                                        <div class="xdsoft_option " data-value="1995">1995</div>
+                                        <div class="xdsoft_option " data-value="1996">1996</div>
+                                        <div class="xdsoft_option " data-value="1997">1997</div>
+                                        <div class="xdsoft_option " data-value="1998">1998</div>
+                                        <div class="xdsoft_option " data-value="1999">1999</div>
+                                        <div class="xdsoft_option " data-value="2000">2000</div>
+                                        <div class="xdsoft_option " data-value="2001">2001</div>
+                                        <div class="xdsoft_option " data-value="2002">2002</div>
+                                        <div class="xdsoft_option " data-value="2003">2003</div>
+                                        <div class="xdsoft_option " data-value="2004">2004</div>
+                                        <div class="xdsoft_option " data-value="2005">2005</div>
+                                        <div class="xdsoft_option " data-value="2006">2006</div>
+                                        <div class="xdsoft_option " data-value="2007">2007</div>
+                                        <div class="xdsoft_option " data-value="2008">2008</div>
+                                        <div class="xdsoft_option " data-value="2009">2009</div>
+                                        <div class="xdsoft_option " data-value="2010">2010</div>
+                                        <div class="xdsoft_option " data-value="2011">2011</div>
+                                        <div class="xdsoft_option " data-value="2012">2012</div>
+                                        <div class="xdsoft_option " data-value="2013">2013</div>
+                                        <div class="xdsoft_option " data-value="2014">2014</div>
+                                        <div class="xdsoft_option " data-value="2015">2015</div>
+                                        <div class="xdsoft_option " data-value="2016">2016</div>
+                                        <div class="xdsoft_option " data-value="2017">2017</div>
+                                        <div class="xdsoft_option " data-value="2018">2018</div>
+                                        <div class="xdsoft_option " data-value="2019">2019</div>
+                                        <div class="xdsoft_option xdsoft_current" data-value="2020">2020</div>
+                                        <div class="xdsoft_option " data-value="2021">2021</div>
+                                        <div class="xdsoft_option " data-value="2022">2022</div>
+                                        <div class="xdsoft_option " data-value="2023">2023</div>
+                                        <div class="xdsoft_option " data-value="2024">2024</div>
+                                        <div class="xdsoft_option " data-value="2025">2025</div>
+                                        <div class="xdsoft_option " data-value="2026">2026</div>
+                                        <div class="xdsoft_option " data-value="2027">2027</div>
+                                        <div class="xdsoft_option " data-value="2028">2028</div>
+                                        <div class="xdsoft_option " data-value="2029">2029</div>
+                                        <div class="xdsoft_option " data-value="2030">2030</div>
+                                        <div class="xdsoft_option " data-value="2031">2031</div>
+                                        <div class="xdsoft_option " data-value="2032">2032</div>
+                                        <div class="xdsoft_option " data-value="2033">2033</div>
+                                        <div class="xdsoft_option " data-value="2034">2034</div>
+                                        <div class="xdsoft_option " data-value="2035">2035</div>
+                                        <div class="xdsoft_option " data-value="2036">2036</div>
+                                        <div class="xdsoft_option " data-value="2037">2037</div>
+                                        <div class="xdsoft_option " data-value="2038">2038</div>
+                                        <div class="xdsoft_option " data-value="2039">2039</div>
+                                        <div class="xdsoft_option " data-value="2040">2040</div>
+                                        <div class="xdsoft_option " data-value="2041">2041</div>
+                                        <div class="xdsoft_option " data-value="2042">2042</div>
+                                        <div class="xdsoft_option " data-value="2043">2043</div>
+                                        <div class="xdsoft_option " data-value="2044">2044</div>
+                                        <div class="xdsoft_option " data-value="2045">2045</div>
+                                        <div class="xdsoft_option " data-value="2046">2046</div>
+                                        <div class="xdsoft_option " data-value="2047">2047</div>
+                                        <div class="xdsoft_option " data-value="2048">2048</div>
+                                        <div class="xdsoft_option " data-value="2049">2049</div>
+                                        <div class="xdsoft_option " data-value="2050">2050</div>
+                                    </div>
+                                    <div class="xdsoft_scrollbar">
+                                        <div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div>
+                                    </div>
+                                </div>
+                                <i></i>
+                            </div>
+                            <button type="button" class="xdsoft_next" style="visibility: visible;"></button>
+                        </div>
+                        <div class="xdsoft_calendar">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>日</th>
+                                        <th>一</th>
+                                        <th>二</th>
+                                        <th>三</th>
+                                        <th>四</th>
+                                        <th>五</th>
+                                        <th>六</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td data-date="26" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_other_month xdsoft_weekend"
+                                            title="">
+                                            <div>26</div>
+                                        </td>
+                                        <td data-date="27" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date xdsoft_other_month"
+                                            title="">
+                                            <div>27</div>
+                                        </td>
+                                        <td data-date="28" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date xdsoft_other_month"
+                                            title="">
+                                            <div>28</div>
+                                        </td>
+                                        <td data-date="29" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date xdsoft_other_month"
+                                            title="">
+                                            <div>29</div>
+                                        </td>
+                                        <td data-date="30" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_other_month"
+                                            title="">
+                                            <div>30</div>
+                                        </td>
+                                        <td data-date="31" data-month="0" data-year="2020" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date xdsoft_other_month"
+                                            title="">
+                                            <div>31</div>
+                                        </td>
+                                        <td data-date="1" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title="">
+                                            <div>1</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-date="2" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title="">
+                                            <div>2</div>
+                                        </td>
+                                        <td data-date="3" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title="">
+                                            <div>3</div>
+                                        </td>
+                                        <td data-date="4" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title="">
+                                            <div>4</div>
+                                        </td>
+                                        <td data-date="5" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title="">
+                                            <div>5</div>
+                                        </td>
+                                        <td data-date="6" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title="">
+                                            <div>6</div>
+                                        </td>
+                                        <td data-date="7" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title="">
+                                            <div>7</div>
+                                        </td>
+                                        <td data-date="8" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title="">
+                                            <div>8</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-date="9" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title="">
+                                            <div>9</div>
+                                        </td>
+                                        <td data-date="10" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title="">
+                                            <div>10</div>
+                                        </td>
+                                        <td data-date="11" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title="">
+                                            <div>11</div>
+                                        </td>
+                                        <td data-date="12" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title="">
+                                            <div>12</div>
+                                        </td>
+                                        <td data-date="13" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title="">
+                                            <div>13</div>
+                                        </td>
+                                        <td data-date="14" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title="">
+                                            <div>14</div>
+                                        </td>
+                                        <td data-date="15" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title="">
+                                            <div>15</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-date="16" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title="">
+                                            <div>16</div>
+                                        </td>
+                                        <td data-date="17" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title="">
+                                            <div>17</div>
+                                        </td>
+                                        <td data-date="18" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title="">
+                                            <div>18</div>
+                                        </td>
+                                        <td data-date="19" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title="">
+                                            <div>19</div>
+                                        </td>
+                                        <td data-date="20" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date xdsoft_current xdsoft_today"
+                                            title="">
+                                            <div>20</div>
+                                        </td>
+                                        <td data-date="21" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title="">
+                                            <div>21</div>
+                                        </td>
+                                        <td data-date="22" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title="">
+                                            <div>22</div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td data-date="23" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week0 xdsoft_date xdsoft_weekend" title="">
+                                            <div>23</div>
+                                        </td>
+                                        <td data-date="24" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week1 xdsoft_date" title="">
+                                            <div>24</div>
+                                        </td>
+                                        <td data-date="25" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week2 xdsoft_date" title="">
+                                            <div>25</div>
+                                        </td>
+                                        <td data-date="26" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week3 xdsoft_date" title="">
+                                            <div>26</div>
+                                        </td>
+                                        <td data-date="27" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week4 xdsoft_date" title="">
+                                            <div>27</div>
+                                        </td>
+                                        <td data-date="28" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week5 xdsoft_date" title="">
+                                            <div>28</div>
+                                        </td>
+                                        <td data-date="29" data-month="1" data-year="2020" class="xdsoft_date xdsoft_day_of_week6 xdsoft_date xdsoft_weekend" title="">
+                                            <div>29</div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="xdsoft_save_selected blue-gradient-button" style="display: none;">Save Selected</button>
+                    </div>
+                    <div class="xdsoft_timepicker">
+                        <button type="button" class="xdsoft_prev"></button>
+                        <div class="xdsoft_time_box xdsoft_scroller_box">
+                            <div class="xdsoft_time_variant" style="margin-top: 0px;">
+                                <div class="xdsoft_time xdsoft_current" data-hour="0" data-minute="0">00:00</div>
+                                <div class="xdsoft_time " data-hour="1" data-minute="0">01:00</div>
+                                <div class="xdsoft_time " data-hour="2" data-minute="0">02:00</div>
+                                <div class="xdsoft_time " data-hour="3" data-minute="0">03:00</div>
+                                <div class="xdsoft_time " data-hour="4" data-minute="0">04:00</div>
+                                <div class="xdsoft_time " data-hour="5" data-minute="0">05:00</div>
+                                <div class="xdsoft_time " data-hour="6" data-minute="0">06:00</div>
+                                <div class="xdsoft_time " data-hour="7" data-minute="0">07:00</div>
+                                <div class="xdsoft_time " data-hour="8" data-minute="0">08:00</div>
+                                <div class="xdsoft_time " data-hour="9" data-minute="0">09:00</div>
+                                <div class="xdsoft_time " data-hour="10" data-minute="0">10:00</div>
+                                <div class="xdsoft_time " data-hour="11" data-minute="0">11:00</div>
+                                <div class="xdsoft_time " data-hour="12" data-minute="0">12:00</div>
+                                <div class="xdsoft_time " data-hour="13" data-minute="0">13:00</div>
+                                <div class="xdsoft_time " data-hour="14" data-minute="0">14:00</div>
+                                <div class="xdsoft_time " data-hour="15" data-minute="0">15:00</div>
+                                <div class="xdsoft_time " data-hour="16" data-minute="0">16:00</div>
+                                <div class="xdsoft_time " data-hour="17" data-minute="0">17:00</div>
+                                <div class="xdsoft_time " data-hour="18" data-minute="0">18:00</div>
+                                <div class="xdsoft_time " data-hour="19" data-minute="0">19:00</div>
+                                <div class="xdsoft_time " data-hour="20" data-minute="0">20:00</div>
+                                <div class="xdsoft_time " data-hour="21" data-minute="0">21:00</div>
+                                <div class="xdsoft_time " data-hour="22" data-minute="0">22:00</div>
+                                <div class="xdsoft_time " data-hour="23" data-minute="0">23:00</div>
+                            </div>
+                            <div class="xdsoft_scrollbar">
+                                <div class="xdsoft_scroller" style="display: block; height: 10px; margin-top: 0px;"></div>
+                            </div>
+                        </div>
+                        <button type="button" class="xdsoft_next"></button>
+                    </div>
+                </div>
+            </body>
+
+            </html>
+        </div>
+        <span class="layui-layer-setwin">
+            <a class="layui-layer-ico layui-layer-close layui-layer-close1" href="javascript:;"></a>
+        </span>
+    </div>
+
+
+
+</body>
+
+</html>

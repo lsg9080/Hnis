@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>1.4cm</Height>
+		<ReportItems>
+			<Table Name="Table5">
+				<DataSetName>DataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>1.000839cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox56">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox39</DataElementName>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox57">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox44</DataElementName>
+											<Value>=Fields!NrName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox59">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox41</DataElementName>
+											<Value>=Fields!NrRatio.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>1.000839cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.802388cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3.136549cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.206569cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.307049cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.079375cm</Top>
+				<Width>8.452555cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>8.452555cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="t">
+			<DataType>Integer</DataType>
+			<Prompt>类别</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="accType">
+			<DataType>Integer</DataType>
+			<Prompt>888，999</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="NrName">
+					<DataField>NrName</DataField>
+				</Field>
+				<Field Name="NrRatio">
+					<DataField>NrRatio</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select NrName,NrRatio
+from dbo.T_AccommodationAnalysis
+ where patientCode = @patientCode AND NrType = @t   AND AccommodationID = 0 AND dy=@accType</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@t">
+						<Value>=Parameters!t.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@accType">
+						<Value>=Parameters!accType.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

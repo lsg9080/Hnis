@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>4.2cm</Height>
+		<ReportItems>
+			<Table Name="Table5">
+				<DataSetName>DataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.754231cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox169</DataElementName>
+											<Value>九城市</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>11pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.754244cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox7">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox8">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox72</DataElementName>
+											<Value>=“目前身长高：” +  Fields!CurrentHeight.Value + "(" +  Fields!PosturesHeight.Value  + ")"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox9">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox98</DataElementName>
+											<Value>=“目前体重：” + Fields!CurrentWeight.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox112</DataElementName>
+											<Value>=“出生体重：” +  Fields!BirthWeight.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox11">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox2</DataElementName>
+											<Value>=“出生身长：” +  Fields!BirthLength.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.747175cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox13">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox14">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox118</DataElementName>
+											<Value>=“头围：” +  Fields!HeadCircumference.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox102</DataElementName>
+											<Value>=“胸围：” +Fields!Circumference.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox17">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox18">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox26">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox27">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>=""</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox28">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>=""</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox29">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>=""</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox31">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<BorderStyle>
+													<Default>None</Default>
+													<Bottom>Dashed</Bottom>
+													<Left>=""</Left>
+													<Right>=""</Right>
+													<Top>=""</Top>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox32">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.4cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox19">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox20">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox22">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox23">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox24">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.747175cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>4</ColSpan>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="caid">
+													<Value>=Fields!CAID.Value</Value>
+												</Parameter>
+												<Parameter Name="catype">
+													<Value>4</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ClinicChildResultReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox30">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>3.802825cm</Height>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>10pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>400</FontWeight>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>0.626017cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.613951cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.29816cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.298144cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3.956462cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>0.607266cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.02cm</Top>
+				<Visibility>
+					<Hidden>=RowNumber()  = 0</Hidden>
+				</Visibility>
+				<Width>18.4cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<Width>18.4cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="patCode">
+			<AllowBlank>true</AllowBlank>
+			<DataType>String</DataType>
+			<Nullable>true</Nullable>
+			<Prompt>patCode</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.84;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="CAID">
+					<DataField>CAID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="Ca_Type">
+					<DataField>Ca_Type</DataField>
+				</Field>
+				<Field Name="CurrentHeight">
+					<DataField>CurrentHeight</DataField>
+				</Field>
+				<Field Name="CurrentWeight">
+					<DataField>CurrentWeight</DataField>
+				</Field>
+				<Field Name="RecentWeight">
+					<DataField>RecentWeight</DataField>
+				</Field>
+				<Field Name="BirthWeight">
+					<DataField>BirthWeight</DataField>
+				</Field>
+				<Field Name="Grip">
+					<DataField>Grip</DataField>
+				</Field>
+				<Field Name="Waistline">
+					<DataField>Waistline</DataField>
+				</Field>
+				<Field Name="Hipline">
+					<DataField>Hipline</DataField>
+				</Field>
+				<Field Name="UpperArm">
+					<DataField>UpperArm</DataField>
+				</Field>
+				<Field Name="Thickness">
+					<DataField>Thickness</DataField>
+				</Field>
+				<Field Name="CalfGirth">
+					<DataField>CalfGirth</DataField>
+				</Field>
+				<Field Name="Circumference">
+					<DataField>Circumference</DataField>
+				</Field>
+				<Field Name="PosturesHeight">
+					<DataField>PosturesHeight</DataField>
+				</Field>
+				<Field Name="MonthPeriod">
+					<DataField>MonthPeriod</DataField>
+				</Field>
+				<Field Name="GripLeftOrRight">
+					<DataField>GripLeftOrRight</DataField>
+				</Field>
+				<Field Name="ThicknessSelect">
+					<DataField>ThicknessSelect</DataField>
+				</Field>
+				<Field Name="CalfGirthSelect">
+					<DataField>CalfGirthSelect</DataField>
+				</Field>
+				<Field Name="WeightChangeRate">
+					<DataField>WeightChangeRate</DataField>
+				</Field>
+				<Field Name="IBW">
+					<DataField>IBW</DataField>
+				</Field>
+				<Field Name="LdealWeightRate">
+					<DataField>LdealWeightRate</DataField>
+				</Field>
+				<Field Name="BMI">
+					<DataField>BMI</DataField>
+				</Field>
+				<Field Name="WHRate">
+					<DataField>WHRate</DataField>
+				</Field>
+				<Field Name="UpperArmMuscle">
+					<DataField>UpperArmMuscle</DataField>
+				</Field>
+				<Field Name="HeadCircumference">
+					<DataField>HeadCircumference</DataField>
+				</Field>
+				<Field Name="MiddleArmCircumference">
+					<DataField>MiddleArmCircumference</DataField>
+				</Field>
+				<Field Name="TricepsSkinThickness">
+					<DataField>TricepsSkinThickness</DataField>
+				</Field>
+				<Field Name="ThicknessSubscapularFold">
+					<DataField>ThicknessSubscapularFold</DataField>
+				</Field>
+				<Field Name="IseDema">
+					<DataField>IseDema</DataField>
+				</Field>
+				<Field Name="EvaluationResults">
+					<DataField>EvaluationResults</DataField>
+				</Field>
+				<Field Name="PreBMI">
+					<DataField>PreBMI</DataField>
+				</Field>
+				<Field Name="PregnancyConclusion">
+					<DataField>PregnancyConclusion</DataField>
+				</Field>
+				<Field Name="FetalNumber">
+					<DataField>FetalNumber</DataField>
+				</Field>
+				<Field Name="PrepregnancyBMI">
+					<DataField>PrepregnancyBMI</DataField>
+				</Field>
+				<Field Name="PrepregnancyWeightStatus">
+					<DataField>PrepregnancyWeightStatus</DataField>
+				</Field>
+				<Field Name="PrepregnancyDynamiting">
+					<DataField>PrepregnancyDynamiting</DataField>
+				</Field>
+				<Field Name="PregnancyDynamiting">
+					<DataField>PregnancyDynamiting</DataField>
+				</Field>
+				<Field Name="RepregnancyGrowthRate">
+					<DataField>RepregnancyGrowthRate</DataField>
+				</Field>
+				<Field Name="GestationalWeek">
+					<DataField>GestationalWeek</DataField>
+				</Field>
+				<Field Name="GestationalWeek2">
+					<DataField>GestationalWeek2</DataField>
+				</Field>
+				<Field Name="GestationalWeek3">
+					<DataField>GestationalWeek3</DataField>
+				</Field>
+				<Field Name="BMIConclusion">
+					<DataField>BMIConclusion</DataField>
+				</Field>
+				<Field Name="BirthLength">
+					<DataField>BirthLength</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select  CAID,tc.PatientCode,tc.Ca_Type,
+case when  CurrentHeight &gt; 0 then LTRIM(cast(CurrentHeight as float)) + ' cm' else '--' end as CurrentHeight,		--当前身高
+case when  CurrentWeight &gt; 0 then LTRIM(cast(CurrentWeight as float)) + ' kg' else '--' end as CurrentWeight,		--目前体重
+case when  RecentWeight &gt; 0 then LTRIM(cast(RecentWeight as float)) + ' kg' else '--' end as RecentWeight ,			--其它体重、孕前体重
+case when  tc.BirthWeight &gt; 0 then LTRIM(cast(tc.BirthWeight as float)) + ' kg' else '--' end as BirthWeight,		--出生体重
+case when  Grip &gt; 0 then LTRIM(cast(Grip as float)) + ' kg ('+isnull(sss.ItemText,'--')+')' else '--' end as Grip,									--握力
+case when  Waistline &gt; 0 then LTRIM(cast(Waistline as float)) + ' cm' else '--' end as Waistline,					--腰围
+case when  Hipline &gt; 0 then LTRIM(cast(Hipline as float)) + ' cm' else '--' end as Hipline,							--臀围
+case when  UpperArm &gt; 0 then LTRIM(cast(UpperArm as float)) + ' cm' else '--' end as UpperArm,						--上臂围
+case when  Thickness &gt; 0 then LTRIM(cast(Thickness as float)) + ' mm('+isnull(ssss.ItemText,'--')+')' else '--' end as Thickness,					--皮褶厚度
+case when  CalfGirth &gt; 0 then LTRIM(cast(CalfGirth as float)) + ' cm('+isnull(sssss.ItemText,'--')+')' else '--' end as CalfGirth,					--小腿围
+case when Circumference &gt; 0 then LTRIM(cast(Circumference as float)) + ' cm' else '--' end as Circumference,--胸围
+isnull(s.ItemText,'--') as PosturesHeight,--站位
+isnull(ss.ItemText,'--') as MonthPeriod,--一，三，六月
+isnull(sss.ItemText,'--') as GripLeftOrRight,--手位
+isnull(ssss.ItemText,'--') as ThicknessSelect,--皮褶
+isnull(sssss.ItemText,'--') as CalfGirthSelect,--腿位
+case when WeightChangeRate &lt;&gt; -1000 then LTRIM(cast(WeightChangeRate as float)) + ' %' else '--' end as WeightChangeRate, --体重变化
+case when CalfGirth &gt; 0 then LTRIM(cast(tc.IBW as float)) + ' kg' else '--' end as IBW ,							--BMI
+case when LdealWeightRate &gt; 0 then LTRIM(cast(LdealWeightRate as float)) + ' %' else '--' end as LdealWeightRate,	--IBW占体重
+case when tc.BMI &gt; 0 then LTRIM(cast(tc.BMI as float)) + ' kg/m²' else '--' end as BMI,
+case when Waistline&gt; 0 and Hipline &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + ltrim(cast(round(Waistline/Hipline,2) as float))  + '  ' + 
+WaistHipConclusion + '&lt;/div&gt;&lt;/body&gt;'  else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as WHRate,	--腰臀比
+case when tc.UpperArmMuscle &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + ltrim(cast(tc.UpperArmMuscle as float)) + ' cm ' + 
+UpperArmMuscleConclusion + '&lt;/div&gt;&lt;/body&gt;' else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as UpperArmMuscle,	--上臂肌围
+case when  HeadCircumference &gt; 0 then LTRIM(cast(HeadCircumference as float)) + ' cm' else '--' end as HeadCircumference,	--头围
+case when  MiddleArmCircumference &gt; 0 then LTRIM(cast(MiddleArmCircumference as float)) + ' cm' else '--' end as MiddleArmCircumference,		--中上臂围
+case when  TricepsSkinThickness &gt; 0 then LTRIM(cast(TricepsSkinThickness as float)) + ' mm' else '--' end as TricepsSkinThickness,		--三头肌皮褶厚度
+case when  ThicknessSubscapularFold &gt; 0 then LTRIM(cast(ThicknessSubscapularFold as float)) + ' mm' else '--' end as ThicknessSubscapularFold,	--肩胛下皮褶厚度
+isnull(ssssss.ItemText,'--') as IseDema,	--有无水肿
+'&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + case when len(EvaluationResults)&gt;0 then EvaluationResults else '--' end + '&lt;/div&gt;&lt;/body&gt;' as EvaluationResults,  --评估结果
+case when tc.BMI &gt; 0 then '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + LTRIM(cast(tc.BMI as float)) + ' kg/m&lt;sup&gt;2&lt;/sup&gt; ' + BMIConclusion + '&lt;/div&gt;&lt;/body&gt;' else '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;--&lt;/div&gt;&lt;/body&gt;' end as PreBMI,--孕妇BMI
+ '&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + PregnancyConclusion + '&lt;/div&gt;&lt;/body&gt;' as PregnancyConclusion,
+  isnull(tpr.FetalNumber,'') as FetalNumber,
+  isnull(tpr.PrepregnancyBMI,'') as PrepregnancyBMI,
+  isnull(tpr.PrepregnancyWeightStatus,'') as PrepregnancyWeightStatus,
+  isnull(tpr.PrepregnancyDynamiting,'') as PrepregnancyDynamiting,
+  isnull(tpr.PregnancyDynamiting,'') as PregnancyDynamiting,
+  isnull(tpr.RepregnancyGrowthRate,'') as RepregnancyGrowthRate,
+  isnull(tpr.GestationalWeek,'') as GestationalWeek,
+  isnull(tpr.GestationalWeek2,'') as GestationalWeek2,
+  isnull(tpr.GestationalWeek3,'') as GestationalWeek3
+,
+('&lt;body&gt;&lt;div style="font-family: 微软雅黑"&gt;' + tc.BMIConclusion + '&lt;/div&gt;&lt;/body&gt;') as BMIConclusion,case when tc.BirthLength&gt;-1 then Convert(varchar(50),Convert(float,tc.BirthLength)) +' cm' else '--' end BirthLength 
+from dbo.T_ClinicAssessment tc
+left join dbo.S_SelectedItem s on tc.PosturesHeight  = s.ItemValue and s.ItemType = 1210
+left join dbo.S_SelectedItem ss on tc.MonthPeriod  = ss.ItemValue and ss.ItemType = 1203
+left join dbo.S_SelectedItem sss on tc.GripLeftOrRight  = sss.ItemValue and sss.ItemType = 1204
+left join dbo.S_SelectedItem ssss on tc.ThicknessSelect  = ssss.ItemValue and ssss .ItemType = 1208
+left join dbo.S_SelectedItem sssss on tc.CalfGirthSelect  = sssss.ItemValue and sssss.ItemType = 1209
+left join dbo.S_SelectedItem ssssss on tc.IseDema  = ssssss.ItemValue and ssssss.ItemType = 1211
+left join dbo.T_Patient tp on tp.PatientCode = tc.PatientCode and PatientType = 2
+left join dbo.T_PregnancyReferenceRange tpr on tpr.RangeCode = tc.PregnancyReferenceRange
+
+ 
+where tp.PatientCode = @patCode  and tc.Ca_Type = 4</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patCode">
+						<Value>=Parameters!patCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

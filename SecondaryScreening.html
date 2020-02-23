@@ -1,0 +1,386 @@
+<!-- 
+    整合时所需操作：
+    修改 css\js 路径 http://demo.wincome.group/Content/ =>/Content/
+        html中display: block;=>display: none;
+    删除 style.css
+ -->
+@using System.Collections
+@using HNTS.Model.ConfigCenter
+@using HUI.Components.Controls
+@using HNTSBusiness.Uility
+@using HUI.Components.Config
+@{
+    Layout = "~/Views/Shared/ActionPageShared.cshtml";
+    IList<ShareSelectItemModel> list = ViewBag.ScreenLevels;
+    IList<ShareSelectItemModel> flist = HNTSEnums.GetEnumsList(typeof(HNTSEnums.ItemStatus));
+    flist.RemoveAt(0);
+}
+<link rel="stylesheet" href="http://demo.wincome.group/Content/Jquery/autocomplete/jquery.autocomplete.css" />
+<script type="text/javascript" src="http://demo.wincome.group/Content/Jquery/autocomplete/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="http://demo.wincome.group/Content/Jquery/autocomplete/jquery.autocomplete.min.js"></script>
+
+<!-- 调试 -->
+<link rel="stylesheet" href="http://demo.wincome.group/Content/css/layui.css" />
+<link rel="stylesheet" href="http://demo.wincome.group/Content/css/style.css" />
+
+<style type="text/css">
+    body {
+        background: #f3f7fd;
+    }
+</style>
+<div class="panel panel-default layui-form" style="margin:0 25px 0 15px;font-family: PingFang SC, Hiragino Sans GB,Microsoft YaHei, WenQuanYi Micro Hei,sans-serif;">
+    <div class="panel-header" style="height:5px;border:none;background:#f3f7fd;">
+        <!-- <label style="background:none;border:none">病人查询</label>-->
+    </div>
+    <div class="panel-body-no-padding-bottom">
+        <table class="table" style="color: #333333;">
+            <tr style="">
+
+                <td style="width: 10%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r"> 日期：</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input time" id="startDate" placeholder="开始日期"></td>
+                <td style="width: 1%;">-</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input time" id="endDate" value="@DateTime.Now.ToString("yyyy-MM-dd")" placeholder="截止日期"></td>
+                <td style="width: 13%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">姓名/住院号：</td>
+                <td style="width: 10%;"><input style="border-radius: 3px; border-color:#bbbbbb; color: #999999;" type="text" class="layui-input" id="nORc" /></td>
+                <td style="width: 15%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">待办事项：</td>
+                <td style="width: 15%;">@Html.Raw(CreatedControl.SelectHtml(list, "scfs", "-1", true, null, 12, false))</td>
+                <td style="text-align: center; padding: 0;" rowspan="2"><input type="button" class="layui-btn" style="font-size: 16px; padding-top: 0; padding-bottom: 0;" value="查询" onclick="InitContentPage('/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList/1');" /></td>
+                <td style="text-align: center; padding: 0;"><input type="button" class="layui-btn  layui-btn-small" style="font-size: 16px; padding-top: 0; padding-bottom: 0;background-color: #E64545;" value="取消待办" onclick="operCancle();" /></td>
+            </tr>
+            <tr>
+
+                <td style="white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">状态：</td>
+                <td colspan="2">@Html.Raw(CreatedControl.SelectHtml(flist, "fszt", "0", true, null, 12, false))</td>
+                <td style="white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">科室：<i class="layui-icon" style="border: 1px solid #d2d2d2; padding: 3px; color: #d2d2d2; cursor: pointer;" onclick="openDeptPanel();">&#xe62a;</i></td>
+
+                <td colspan="2" style="white-space: nowrap; font-size: 16px; font-weight: normal; text-align: left;" id="deptsTd">
+                    <div id="deptsPanel" style="text-align: left;"></div><input type="hidden" id="depts_@ViewBag.CourtyardId"/></td>
+                <td style="width: 8%; white-space: nowrap; font-size: 16px; font-weight: normal;" class="text-r">是否在院：</td>
+                <td class="text-l">@Html.Raw(CreatedControl.CheckboxSwitchHtml("isLeave", "是|否", true))</td>
+
+                <td style="text-align: center; padding: 0;"><input type="button" class="layui-btn  layui-btn-small" style="font-size: 16px; padding-top: 0; padding-bottom: 0; background-color: #297EB7;" value="打印待办" onclick="printSearchDataList();"/></td>
+            </tr>
+
+        </table>
+
+    </div>
+    <div class="panel-header" style="height:3px;border:none;background:#f3f7fd;"></div>
+    <div class="panel-body-no-padding-bottom" style="font-size:15px;font-family: PingFang SC, Hiragino Sans GB,Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei,sans-serif;">
+        <div style="margin:0;padding:0;" id="tablescrollPanel">
+            <table class="table" style="width:100%;margin:0;padding:0;">
+                <thead style="margin:0;padding:0;">
+                    <tr style="height:8px;"></tr>
+                    <tr class="th" style="margin:0;padding:0;">
+                        <th style="width: 4%;text-align: center;white-space:nowrap;cursor:pointer;">@Html.Raw(CreatedControl.CheckboxNoTitleHtml("fs_All", "0", 12, false))</th>
+                        <th style="text-align: center;width: 12%;white-space:nowrap;" onclick="deptLoadContent('BeInDate','#span3','#span2','#span1');">入院时间<span style="cursor: pointer;" id="span1">(||)</span></th>
+                        <th style="width: 12%;white-space:nowrap;cursor:pointer;">科室</th>
+                        <th style="text-align: center;width: 7%;white-space:nowrap;">床号</th>
+                        <th style="text-align: center;width: 7%;white-space:nowrap;" onclick="deptLoadContent('PatientName','#span3','#span1','#span2');">姓名<span style="cursor: pointer;" id="span2">(||)</span></th>
+                        <th style="text-align: center;width: 7%;white-space:nowrap;">住院号</th>
+                        <th style="text-align: center;width: 7%;white-space:nowrap;">最新诊断</th>
+                        <th style="text-align: center;width: 7%;white-space:nowrap;">饮食医嘱</th>
+                        <th style="text-align: center; width: 8%; white-space: nowrap;">待办事项</th>
+                        <th style="text-align: center;width: 12%;white-space:nowrap;" onclick="deptLoadContent('FollowDate','#span2','#span1','#span3');">待办日期<span style="cursor: pointer;" id="span3">(||)</span></th>
+                        <th style="text-align: center;width:7%;white-space:nowrap;">操作<input type="hidden" id="orderBy" /><input type="hidden" id="orderCol" /></th>
+                    </tr>
+                </thead>
+                <tbody id="tablescroll" style="font-size:14px;font-family:Microsoft YaHei, PingFang SC, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei,sans-serif;color:#333333;">
+                    @RenderPage("~/Views/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList.cshtml")
+                </tbody>
+
+            </table>
+        </div>
+        <div style="height:50px;"></div>
+    </div>
+
+</div>
+<script>
+    var fm,dialog, common,pager;
+    var ciid = '@ViewBag.CourtyardId';
+    var headers = {};
+    //获取防伪标记
+    var token = $('@Html.AntiForgeryToken()').val();
+    //防伪标记放入headers
+    //也可以将防伪标记放入data
+    headers["__RequestVerificationToken"] = token;
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winForm', 'winDialog', 'winCommon', 'winPager'], function() {
+        fm = layui.winForm;
+        dialog = layui.winDialog;
+        common = layui.winCommon;
+        pager = layui.winPager;
+        $(document).ready(function() {
+            fm.win_resize("#tablescrollPanel",260);
+            var startDate;
+            var endDate;
+            var sd = new Date();
+            $.datetimepicker.setLocale('ch'); //新版
+            // 初始加载时间控件
+            $("#startDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: '@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")'  //一周
+                    });
+                },
+                onChangeDateTime: function(dp, $input) {
+                    startDate = $("#startDate").val();
+                },
+                onClose: function(current_time, $input) {
+                    if (startDate > endDate) {
+                        $("#startDate").val(endDate);
+                        startDate = endDate;
+                    }
+                },
+                timepicker: false
+            });
+            // 初始加载时间控件
+            $("#endDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: '@DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")'  //一周
+                    });
+                },
+                onClose: function(current_time, $input) {
+                    endDate = $("#endDate").val();
+                    if (startDate > endDate) {
+                        $("#endDate").val(startDate);
+                        endDate = startDate;
+                    }
+                },
+                timepicker: false
+            });
+
+            fm.win_checkbox('fs_All', function() {
+                $("#tablescroll tr").find("input[type=checkbox]").prop("checked", true);
+                fm.win_render("checkbox");
+            }, function() {
+                $("#tablescroll tr").find("input[type=checkbox]").prop("checked", false);
+                fm.win_render("checkbox");
+            });
+        });
+    });
+    function searchDataList(href) {
+        $('#span1').text("(||)");
+        $('#span2').text("(||)");
+        $('#span3').text("(||)");
+        InitContentPage(href);
+    }
+    function printSearchDataList() {
+        var url = '/TreatmentCenter/ScreeningManagement/PrintSecondaryScreeningTableList/';
+        //用户名
+        var startDate= '',endDate='',deptCode='',dept='',nOrc='',scfs='',fazt='',isLeave='',orderBy='',orderCol = '';
+        startDate = $.trim($("#startDate").val());
+        endDate = $.trim($("#endDate").val());
+        deptCode = $("#depts_" + ciid).val();
+        if (deptCode.length == 0) {
+             dept = $.trim($("#deptsPanel").val());
+        }
+        nOrc = $.trim($("#nORc").val());
+        scfs = $("select[name=scfs]").val();
+        fazt = $("select[name=fszt]").val();
+        isLeave = $("input[type=checkbox][name=isLeave]:checked").size();
+        orderBy = $("#orderBy").val();
+        orderCol = $("#orderCol").val();
+        url = url + "?startDate=" + window.escape(startDate);
+        url = url + "&endDate=" + window.escape(endDate);
+        url = url + "&deptCode=" + window.escape(deptCode);
+        url = url + "&nOrc=" + window.escape(nOrc);
+        url = url + "&scfs=" + window.escape(scfs);
+        url = url + "&fazt=" + window.escape(fazt);
+        url = url + "&isLeave=" + window.escape(isLeave);
+        url = url + "&orderBy=" + window.escape(orderBy);
+        url = url + "&orderCol=" + window.escape(orderCol);
+        dialog.win_open(url,'待办事项打印',["85%","90%"]);
+    }
+    function InitContentPage(href) {
+        $("input[type=checkbox][name=fs_All]").prop("checked", false);
+        fm.win_render("checkbox");
+        var url = href;
+        //用户名
+        var pm,val;
+        pm = $.trim($("#startDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "startDate", val);
+        }
+        pm = $.trim($("#endDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "endDate", val);
+        }
+        //pm = $.trim($("#deptCode").val());
+        pm = $("#depts_" + ciid).val();
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "deptCode", val);
+        } else {
+            var dept = $.trim($("#deptsPanel").val());
+            if (dept.length > 0) {
+                val = window.escape(dept);
+                url = common.win_loadParamUrl(url, "dept", val);
+            }
+        }
+        //var depts = $("#depts").val();
+        pm = $.trim($("#nORc").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "nORc", val);
+        }
+        pm = $("select[name=scfs]").val();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "scfs", val);
+
+        pm = $("select[name=fszt]").val();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "fszt", val);
+
+        pm = $("input[type=checkbox][name=isLeave]:checked").size();
+        val = window.escape(pm);
+        url = common.win_loadParamUrl(url, "isLeave", val);
+
+        var orderBy = $("#orderBy").val();
+        var orderCol = $("#orderCol").val();
+        if (orderBy.length > 0 && orderCol.length > 0) {
+            url = common.win_loadParamUrl(url, "ob", orderCol + "_" + orderBy);
+        }
+        pager.win_laypage('#tablescroll', url, headers, function ()
+        {
+            fm.win_checkbox('gz', function(data) {
+                fllow(true,data.value);
+            },function(data) {
+                fllow(false,data.value);
+            });
+            fm.win_render('checkbox');
+        });
+    }
+
+    function deptLoadContent(col,elemm, elem,elm) {
+        $(elemm).text("(||)");
+        $(elem).text("(||)");
+        var order = $("#orderBy").val();
+        var txt = $(elm).text();
+        var ord = '';
+        if (order == "") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+        if (order == "asc") {
+            ord = "desc";
+            txt = "(↓)";
+        }
+        if (order == "desc") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+        $(elm).text(txt);
+        $("#orderBy").val(ord);
+        $("#orderCol").val(col);
+        var url = '/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList/1?ob=' + col + "_" + ord + "_";
+        InitContentPage(url);
+    }
+
+    function operScreen(nid,u,p,t) {
+        var screen = '';
+        if (u == @((int) HNTSEnums.ScreenLevels.NRS2002)) screen = "/TreatmentCenter/ScreeningManagement/NRS2002";
+        if (u == @((int) HNTSEnums.ScreenLevels.MUST)) screen = "/TreatmentCenter/ScreeningManagement/MUST";
+        if (u == @((int) HNTSEnums.ScreenLevels.PG_SGA)) screen = "/TreatmentCenter/ScreeningManagement/PGSGA";
+        if (u == @((int) HNTSEnums.ScreenLevels.SGA)) screen = "/TreatmentCenter/ScreeningManagement/SGA";
+        if (u == @((int) HNTSEnums.ScreenLevels.MNA_SF)) screen = "/TreatmentCenter/ScreeningManagement/MNASF";
+        if (u == @((int) HNTSEnums.ScreenLevels.MNA)) screen = "/TreatmentCenter/ScreeningManagement/MNA";
+        if (u == @((int) HNTSEnums.ScreenLevels.MIS)) screen = "/TreatmentCenter/ScreeningManagement/MIS";
+        if (u == @((int) HNTSEnums.ScreenLevels.KIDNRS)) screen = "/TreatmentCenter/ScreeningManagement/KIDNRS";
+        if (u == @((int) HNTSEnums.ScreenLevels.PNYS)) screen = "/TreatmentCenter/ScreeningManagement/ChildrenPNYS";
+        if (u == @((int) HNTSEnums.ScreenLevels.BCA)) screen = "/TreatmentCenter/ScreeningManagement/BCA";
+        if (u == @((int) HNTSEnums.ScreenLevels.STRONGkids)) screen = "/TreatmentCenter/ScreeningManagement/STRONGkids";
+        if (u == @((int) HNTSEnums.ScreenLevels.Neonatal)) screen = "/TreatmentCenter/ScreeningManagement/Neonatal";
+        if (u == @((int) HNTSEnums.ScreenLevels.STAMP)) screen = "/TreatmentCenter/ScreeningManagement/STAMP";
+        if (u == @((int) HNTSEnums.ScreenLevels.NUTRIC)) screen = "/TreatmentCenter/ScreeningManagement/NUTRIC";
+        if (u == @((int) HNTSEnums.ScreenLevels.YYPG)) screen = "/TreatmentCenter/NutritionalAssessmentManagement/NutritionalAssessment";
+        if (u == @((int) HNTSEnums.ScreenLevels.YYCF)) screen = "/TreatmentCenter/WardRoundManagement/WardRound";
+
+        dialog.win_open(screen + "/"+p+"?isShow=@ViewBag.isShow&nid=" + nid, t, ["83.33333333%", "96%"],function() {
+            reloadlist();
+        });
+        //dialog.win_open(screen + "/"+p+"?isShow=@ViewBag.isShow", t, ["83.33333333%", "96%"]);
+        //$('#layui-layer'+index).css({right: '0', left: 'auto', top: '0'});
+    }
+
+    function reloadlist() {
+        var href = '/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList/1';
+        InitContentPage(href);
+    }
+
+    function operReport(u,id)
+    {
+        var screen = '';
+        if (u == @((int) HNTSEnums.ScreenLevels.NRS2002)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NS2002Report/'+id, 'NRS2002');
+        if (u == @((int) HNTSEnums.ScreenLevels.MUST)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/MUSTReport/'+id, 'MUST');
+        if (u == @((int) HNTSEnums.ScreenLevels.PG_SGA)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/PGSGAReport/'+id, 'PG_SGA');
+        if (u == @((int) HNTSEnums.ScreenLevels.SGA)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/SGAReport/'+id, 'SGA');
+        if (u == @((int) HNTSEnums.ScreenLevels.MNA_SF)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/MNASFReport/'+id, 'MNA_SF');
+        if (u == @((int) HNTSEnums.ScreenLevels.MNA)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/MNAReport/'+id, 'MNA');
+        if (u == @((int) HNTSEnums.ScreenLevels.MIS)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/MISReport/'+id, 'MIS');
+        if (u == @((int) HNTSEnums.ScreenLevels.KIDNRS)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/KIDNRSReport/'+id, 'KIDNRS');
+        if (u == @((int) HNTSEnums.ScreenLevels.PNYS)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/ChildrenPNYSReport/'+id, 'PNYS');
+        if (u == @((int) HNTSEnums.ScreenLevels.BCA)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/BCAReport/'+id, 'BCA');
+        if (u == @((int) HNTSEnums.ScreenLevels.STRONGkids)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/STRONGkidReport/'+id, 'STRONGkids');
+        if (u == @((int) HNTSEnums.ScreenLevels.Neonatal)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NeonatalReport/'+id, '新生儿营养筛查');
+        if (u == @((int) HNTSEnums.ScreenLevels.NUTRIC)) parent.dialog.win_print('/TreatmentCenter/ScreeningManagement/NUTRICReport/'+id, 'NUTRIC');
+        if (u == @((int) HNTSEnums.ScreenLevels.YYCF)) parent.dialog.win_print('/TreatmentCenter/ReportsManagement/WardReportViewer/'+id, '营养查房');
+        if (u == @((int) HNTSEnums.ScreenLevels.YYPG)) parent.dialog.win_print('/TreatmentCenter/ReportsManagement/AssReportViewer/'+id, '营养评估');
+    }
+    //取消复筛
+    function operCancle()
+    {
+        var u = '/TreatmentCenter/ScreeningManagement/CancleSecondaryScreening';
+        var sids='';
+        var rows = $("#tablescroll").find("input[type=checkbox]:checked");
+        $(rows).each(function(i, n) {
+            if (n.name == "0") {
+                sids = sids + '@DefaultValue.DefaultSeperator' + n.lang;
+            }
+        });
+
+        if (sids.length > 0) {
+            var data = { sids: sids.substring(1) };
+
+            parent.dialog.win_confirm('确定取消复筛吗?', '取消复筛', function () {
+                common.win_formAction(u, 'POST', data, headers, function(data) {
+                    if (data.result) {
+                        //$("input[type=checkbox][name=fs_All]").prop("checked", false);
+                        //fm.win_render('checkbox');
+                        var url = '/TreatmentCenter/ScreeningManagement/SecondaryScreeningTableList/1';
+                        InitContentPage(url);
+                    }
+                }, 'JSON');
+            });
+
+
+        } else {
+            dialog.win_alert('没有选择要取消复筛的记录或记录已取消复筛!', '操作提示', 5);
+        }
+    }
+
+    function removeDepts(c) {
+        $("#deptsPanel").find("div[id=" + c + "]").remove();
+        var depts = '';
+        $("#deptsPanel").find("div").each(function(i, n) {
+            depts = depts + '@DefaultValue.DefaultSeperator' + n.id;
+        });
+        if (depts.length > 0) $("#depts_" + ciid).val(depts.substring(1));
+        else {
+            $("#depts_" + ciid).val("");
+        }
+    }
+
+    function openDeptPanel() {
+        var depts = $("#depts_" + ciid).val();
+        dialog.win_open('/PreparatioCenter/ReportManagement/DeptsPanel?depts=' + depts, '@(ViewBag.CourtyardName)科室', ['700px', '690px']);
+    }
+</script>

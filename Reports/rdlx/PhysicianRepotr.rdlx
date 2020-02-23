@@ -1,0 +1,843 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<Body>
+		<Height>13cm</Height>
+		<ReportItems>
+			<Table Name="Table1">
+				<DataSetName>DataSet</DataSetName>
+				<Header>
+					<TableRows>
+						<TableRow>
+							<Height>1.171782cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox13">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontStyle>Normal</FontStyle>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>6</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox32">
+											<CanGrow>true</CanGrow>
+											<Value>=Parameters!hospName.Value  + "医院（制剂自费）"</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>18pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.198527cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>7</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox10">
+											<CanGrow>true</CanGrow>
+											<Value>肠内营养医嘱单</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>18pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Center</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox1">
+											<CanGrow>true</CanGrow>
+											<Value>姓名：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox2">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!PatientName.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox3">
+											<CanGrow>true</CanGrow>
+											<Value>科室：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox24">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!DepartName.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox31">
+											<CanGrow>true</CanGrow>
+											<Value>="   床号："</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox38">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!BedNo.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox36">
+											<CanGrow>true</CanGrow>
+											<Value>性别：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox46">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!Sex.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox47">
+											<CanGrow>true</CanGrow>
+											<Value>年龄：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox49">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!Age.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox4">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox45</DataElementName>
+											<Value>住院号：</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox6">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox52</DataElementName>
+											<Value>=First(Fields!BeInNo.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Left</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox33">
+											<CanGrow>true</CanGrow>
+											<Value>=First(Fields!AdviceType.Value)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox35">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>4</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox12">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox42</DataElementName>
+											<Value>=“下达时间：”+First(Fields!CreatedOn.Value.ToString("yyyy-MM-dd HH:mm:ss"))</Value>
+											<Style>
+												<FontFamily>黑体</FontFamily>
+												<FontSize>10pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>400</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<TextAlign>Right</TextAlign>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Header>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.8cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox5">
+											<CanGrow>true</CanGrow>
+											<Value>=Fields!FullName.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox15">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox17</DataElementName>
+											<Value>=Fields!PI_Quantitiy.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>3</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox16">
+											<CanGrow>true</CanGrow>
+											<DataElementName>TextBox18</DataElementName>
+											<Value>="山东大学第二医院" =iif(Fields!SumIsNutriConfig.Value="0",false,true)</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Default>None</Default>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Footer>
+					<TableRows>
+						<TableRow>
+							<Height>1.1cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>7</ColSpan>
+									<ReportItems>
+										<CustomReportItem Name="FormattedText1">
+											<Type>FormattedText</Type>
+											<CustomProperties>
+												<CustomProperty>
+													<Name>Html</Name>
+													<Value>=Fields!HTML.Value</Value>
+												</CustomProperty>
+											</CustomProperties>
+											<DataElementName>FormattedText1</DataElementName>
+										</CustomReportItem>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ColSpan>6</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox34">
+											<CanGrow>true</CanGrow>
+											<Value>凭医嘱单至门诊一楼营养门诊缴费及领取</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>12pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox40">
+											<CanGrow>true</CanGrow>
+											<Value>=" ￥"  + Fields!Price.Value.ToString()</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<FontSize>14pt</FontSize>
+												<FontStyle>Normal</FontStyle>
+												<FontWeight>700</FontWeight>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+												<BorderStyle>
+													<Bottom>Solid</Bottom>
+												</BorderStyle>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+						<TableRow>
+							<Height>1.2cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox21">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox14">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ReportItems>
+										<Textbox Name="TextBox25">
+											<CanGrow>true</CanGrow>
+											<Value />
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox48">
+											<CanGrow>true</CanGrow>
+											<Value>="医师：" + Fields!CreatedBy.Value</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+								<TableCell>
+									<ColSpan>2</ColSpan>
+									<ReportItems>
+										<Textbox Name="TextBox53">
+											<CanGrow>true</CanGrow>
+											<Value>="打印时间：" + Now.ToString("yyyy-MM-dd HH:mm:ss")</Value>
+											<Style>
+												<FontFamily>微软雅黑</FontFamily>
+												<PaddingBottom>2pt</PaddingBottom>
+												<PaddingLeft>2pt</PaddingLeft>
+												<PaddingRight>2pt</PaddingRight>
+												<PaddingTop>2pt</PaddingTop>
+												<VerticalAlign>Middle</VerticalAlign>
+											</Style>
+										</Textbox>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+						</TableRow>
+					</TableRows>
+				</Footer>
+				<Height>9.07031cm</Height>
+				<Left>0.4cm</Left>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<FontSize>10pt</FontSize>
+					<FontStyle>Normal</FontStyle>
+					<FontWeight>400</FontWeight>
+				</Style>
+				<TableColumns>
+					<TableColumn>
+						<Width>1.7cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>4.2cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>1.6cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>2.6cm</Width>
+					</TableColumn>
+					<TableColumn>
+						<Width>3cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.1cm</Top>
+				<Width>18.1cm</Width>
+			</Table>
+		</ReportItems>
+	</Body>
+	<PageHeight>21cm</PageHeight>
+	<PageWidth>29.7cm</PageWidth>
+	<Width>18.5cm</Width>
+	<ReportParameters>
+		<ReportParameter Name="inId">
+			<DataType>Integer</DataType>
+			<Prompt>主键ID</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="HospName">
+			<DataType>String</DataType>
+			<Prompt>参数1</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="t">
+			<DataType>Integer</DataType>
+			<Prompt>ZYORMZ</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="DataSet">
+			<Fields>
+				<Field Name="In_ID">
+					<DataField>In_ID</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="In_Date">
+					<DataField>In_Date</DataField>
+				</Field>
+				<Field Name="AdviceType">
+					<DataField>AdviceType</DataField>
+				</Field>
+				<Field Name="EN_Mode">
+					<DataField>EN_Mode</DataField>
+				</Field>
+				<Field Name="EN_Remark">
+					<DataField>EN_Remark</DataField>
+				</Field>
+				<Field Name="EN_Use">
+					<DataField>EN_Use</DataField>
+				</Field>
+				<Field Name="CreatedBy">
+					<DataField>CreatedBy</DataField>
+				</Field>
+				<Field Name="Price">
+					<DataField>Price</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="PI_Quantitiy">
+					<DataField>PI_Quantitiy</DataField>
+				</Field>
+				<Field Name="CreatedOn">
+					<DataField>CreatedOn</DataField>
+				</Field>
+				<Field Name="HTML">
+					<DataField>HTML</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>SELECT 
+          DISTINCT ci.In_ID,tp.PatientName,sd.DepartName,tp.BedNo,tp.BeInNo,case tp.Sex when 1 then '男' when 0 then '女' end Sex,dbo.Fun_GetAgeStr(BirthDate,GETDATE(),Age)Age,ci.In_Date, case ci.AdviceType when 0 then '临时医嘱' when 1 then '长期医嘱' end  AdviceType
+          ,isnull(ss.ItemText,'--') as EN_Mode, case ci.EN_Remark when '' then '' else '备注：'+ci.EN_Remark end  EN_Remark,ci.EN_Use,isnull(ci.ActionUserName,'--') as CreatedBy,ci.Price,
+           sp.FullName,
+           case ci.IsFinished when 1 then 
+           CAST( cast(II_FinishedQuantitiy as float )as varchar)+GuiGeName 
+           when 0 then CAST( cast(II_Quantitiy as float )as varchar)+ sp.GuiGeUnit end PI_Quantitiy,ci.CreatedOn,
+           dbo.Fun_CNContentHtml(@t,
+			(case when EN_Amount &gt; 0 then ltrim(cast(EN_Amount as float)) +  'ml/次' else '--' end),	--液量
+			(case when EN_concentration &gt; 0 then ltrim(cast(EN_concentration as float)) +  '%' else '--' end),
+			case when EN_Num &gt; 0 then ltrim(EN_Num) + '次/日'  else '--' end,			--用法
+			EN_Num,																		--天数
+			isnull(ss.ItemText,'--'),													--途径
+			isnull(sss.ItemText,'--'),													--喂养方式
+			(case when EN_Speed &gt; 0 then ltrim(cast(EN_Speed as float)) +  'ml/h' else '--' end),		--速度
+			(case when EN_Temperature &gt; 0 then ltrim(cast(EN_Temperature as float)) +  '℃' else '--' end),--温度
+			(case when len(ltrim(EN_Remark)) = 0 then '--' else EN_Remark end),			--备注
+			case when len(EN_Use) &gt; 0 then EN_Use else '--' end,						--使用时间
+			isnull(sssssss.ItemText,'--'),												--剂型
+			isnull(ssssss.ItemText,'--'),												--配送
+			isnull(sssss.ItemText,'--'),												--配方
+			isnull(ssss.ItemText,'--'),													--保质期
+			(case AdviceType when 0 then '临时医嘱' else '长期医嘱' end),
+			CONVERT(varchar(16),IN_Date,120)
+			) as HTML
+           FROM dbo.T_CNIntervention ci INNER JOIN dbo.T_Intervention_Intestine tii ON ci.In_ID=tii.In_ID and InType='CN00001'
+          INNER JOIN dbo.S_Preparation sp ON sp.PreparationCode=tii.PreparationCode
+          left join T_Patient tp on tp.PatientCode = ci.PatientCode
+          left join S_Department sd on sd.DepartValue = tp.BranchType
+          left join dbo.S_SelectedItem ss on ss.ItemValue = ci.EN_Mode and ss.ItemType = 9
+          left join dbo.S_SelectedItem sss on sss.ItemValue = ci.EN_Way and sss.ItemType = 8
+          left join dbo.S_SelectedItem ssss on ssss.ItemValue = ci.EN_Period and ssss.ItemType = 601--保质期
+          left join dbo.S_SelectedItem sssss on sssss.ItemValue = ci.EN_Formula and sssss.ItemType = 600--配方
+          left join dbo.S_SelectedItem ssssss on ssssss.ItemValue = ci.EN_Delivery and ssssss.ItemType = 201--配送
+          left join dbo.S_SelectedItem sssssss on sssssss.ItemValue = ci.InterventionType and sssssss.ItemType = 99--配送
+          WHERE  ci.In_ID=@inId
+          UNION ALL
+          SELECT DISTINCT ci.In_ID,tp.PatientName,sd.DepartName,tp.BedNo,tp.BeInNo,case tp.Sex when 1 then '男' when 0 then '女' end Sex,dbo.Fun_GetAgeStr(BirthDate,GETDATE(),Age)Age,ci.In_Date, case ci.AdviceType when 0 then '临时医嘱' when 1 then '长期医嘱' end  AdviceType
+          ,isnull(ss.ItemText,'--') as EN_Mode, case ci.EN_Remark when '' then '' else '备注：'+ci.EN_Remark end  EN_Remark,ci.EN_Use,isnull(ci.ActionUserName,'--') as CreatedBy,ci.Price,
+          sp.MSName,
+          CAST(cast(II_FinishedQuantitiy as float )as varchar)+SpecificationsName PI_Quantitiy,ci.CreatedOn,
+           dbo.Fun_CNContentHtml(@t,
+			(case when EN_Amount &gt; 0 then ltrim(cast(EN_Amount as float)) +  'ml/次' else '--' end),	--液量
+			(case when EN_concentration &gt; 0 then ltrim(cast(EN_concentration as float)) +  '%' else '--' end),
+			'none',																		--用法
+			EN_Num,																		--天数
+			isnull(ss.ItemText,'--'),													--途径
+			isnull(sss.ItemText,'--'),													--喂养方式
+			(case when EN_Speed &gt; 0 then ltrim(cast(EN_Speed as float)) +  'ml/h' else '--' end),		--速度
+			(case when EN_Temperature &gt; 0 then ltrim(cast(EN_Temperature as float)) +  '℃' else '--' end),--温度
+			(case when len(ltrim(EN_Remark)) = 0 then '--' else EN_Remark end),			--备注
+			case when len(EN_Use) &gt; 0 then EN_Use else '--' end,						--使用时间
+			isnull(sssssss.ItemText,'--'),												--剂型
+			isnull(ssssss.ItemText,'--'),												--配送
+			isnull(sssss.ItemText,'--'),												--配方
+			isnull(ssss.ItemText,'--'),													--保质期
+			'none',
+			'none'
+			) as HTML
+          From dbo.T_CNIntervention ci INNER JOIN dbo.T_Intervention_Intestine tii ON ci.In_ID=tii.In_ID and InType='CL00000'
+          INNER JOIN dbo.S_PreparationMS sp ON sp.MSCode=tii.PreparationCode
+          left join T_Patient tp on tp.PatientCode = ci.PatientCode
+          left join S_Department sd on sd.DepartValue = tp.BranchType
+          left join dbo.S_SelectedItem ss on ss.ItemValue = ci.EN_Mode and ss.ItemType = 9
+          left join dbo.S_SelectedItem sss on sss.ItemValue = ci.EN_Way and sss.ItemType = 8
+          left join dbo.S_SelectedItem ssss on ssss.ItemValue = ci.EN_Period and ssss.ItemType = 601--保质期
+          left join dbo.S_SelectedItem sssss on sssss.ItemValue = ci.EN_Formula and sssss.ItemType = 600--配方
+          left join dbo.S_SelectedItem ssssss on ssssss.ItemValue = ci.EN_Delivery and ssssss.ItemType = 201--配送
+          left join dbo.S_SelectedItem sssssss on sssssss.ItemValue = ci.InterventionType and sssssss.ItemType = 99--配送
+          WHERE  ci.In_ID=@inId</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@inId">
+						<Value>=Parameters!inId.Value</Value>
+					</QueryParameter>
+					<QueryParameter Name="@t">
+						<Value>=Parameters!t.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+	<CustomProperties>
+		<CustomProperty>
+			<Name>PaperOrientation</Name>
+			<Value>Landscape</Value>
+		</CustomProperty>
+	</CustomProperties>
+</Report>

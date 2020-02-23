@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+	<dd:Name xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">报表1</dd:Name>
+	<PageHeader>
+		<Height>1.6cm</Height>
+		<PrintOnFirstPage>true</PrintOnFirstPage>
+		<PrintOnLastPage>true</PrintOnLastPage>
+		<ReportItems>
+			<Textbox Name="TextBox2">
+				<CanGrow>true</CanGrow>
+				<Height>0.75cm</Height>
+				<Left>0.1cm</Left>
+				<Value>=First(Fields!FullName.Value, "PatientReportDataSet")</Value>
+				<Style>
+					<FontFamily>微软雅黑</FontFamily>
+					<PaddingBottom>2pt</PaddingBottom>
+					<PaddingLeft>2pt</PaddingLeft>
+					<PaddingRight>2pt</PaddingRight>
+					<PaddingTop>2pt</PaddingTop>
+					<TextAlign>Center</TextAlign>
+					<VerticalAlign>Middle</VerticalAlign>
+				</Style>
+				<Visibility>
+					<Hidden>=iif(Globals!PageNumber=1 and Parameters!type.Value=0,true,false)</Hidden>
+				</Visibility>
+				<Width>20.7cm</Width>
+			</Textbox>
+			<Line Name="Line1">
+				<Height>0cm</Height>
+				<Left>0.4cm</Left>
+				<Style>
+					<BorderColor>
+						<Default>Gray</Default>
+					</BorderColor>
+					<BorderStyle>
+						<Default>Solid</Default>
+					</BorderStyle>
+				</Style>
+				<Top>1cm</Top>
+				<Visibility>
+					<Hidden>=iif(Globals!PageNumber=1 and Parameters!type.Value=0,true,false)</Hidden>
+				</Visibility>
+				<Width>20.1cm</Width>
+				<ZIndex>1</ZIndex>
+			</Line>
+		</ReportItems>
+	</PageHeader>
+	<Body>
+		<Height>10.5cm</Height>
+		<ReportItems>
+			<Table Name="Table3">
+				<DataSetName>PatientReportDataSet</DataSetName>
+				<Details>
+					<TableRows>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport1">
+											<Parameters>
+												<Parameter Name="hospName">
+													<Value>=Parameters!hospName.Value</Value>
+												</Parameter>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>NutritionReportHomePage.rdlx</ReportName>
+											<ZIndex>8</ZIndex>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!type.Value=0,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport3">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>PatientDetailReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=iif(Parameters!type.Value=0 or Parameters!type.Value=1,false,true)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport4">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ScreenReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!SP.Value, "PatientReportDataSet")，2 )</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport2">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>AssessmentReport.rdlx</ReportName>
+											<ZIndex>6</ZIndex>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!PG.Value, "PatientReportDataSet") ，3)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport12">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>NutritionRecipesSDReport.rdlx</ReportName>
+											<ZIndex>6</ZIndex>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!SD.Value, "PatientReportDataSet") ，4)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport5">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>NutritionConsultationReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!HZ.Value, "PatientReportDataSet")，5 )</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport6">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>CNListReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!CN.Value, "PatientReportDataSet") ,6)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport13">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>NutritionRecipesPCReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!PC.Value, "PatientReportDataSet") ,7)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport7">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>WardRoundReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!CF.Value, "PatientReportDataSet") ,8)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport8">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>EducationReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!XJ.Value, "PatientReportDataSet"),9 )</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport9">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>ChangeAdviceReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!SHBG.Value, "PatientReportDataSet") ,10 )</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport10">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Parameters!patientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>LaboratoryListReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!SYSSJ.Value, "PatientReportDataSet") ,11)</Hidden>
+							</Visibility>
+						</TableRow>
+						<TableRow>
+							<Height>0.747448cm</Height>
+							<TableCells>
+								<TableCell>
+									<ReportItems>
+										<Subreport Name="Subreport11">
+											<Parameters>
+												<Parameter Name="patientCode">
+													<Value>=Fields!PatientCode.Value</Value>
+												</Parameter>
+											</Parameters>
+											<ReportName>PatientSummaryOfDischargeReport.rdlx</ReportName>
+										</Subreport>
+									</ReportItems>
+								</TableCell>
+							</TableCells>
+							<Visibility>
+								<Hidden>=IsHidden( Parameters!type.Value , First(Fields!CYXJ.Value, "PatientReportDataSet"),12 )</Hidden>
+							</Visibility>
+						</TableRow>
+					</TableRows>
+				</Details>
+				<Height>9.727032cm</Height>
+				<TableColumns>
+					<TableColumn>
+						<Width>20.61104cm</Width>
+					</TableColumn>
+				</TableColumns>
+				<Top>0.3cm</Top>
+				<Width>20.6cm</Width>
+				<ZIndex>9</ZIndex>
+			</Table>
+		</ReportItems>
+		<Style>
+			<BorderWidth>
+				<Default>1pt</Default>
+			</BorderWidth>
+		</Style>
+	</Body>
+	<BottomMargin>1cm</BottomMargin>
+	<Code>Function IsHidden(ByVal t As Integer, ByVal v As Integer, ByVal idx As Integer) As String
+	If(t = 0 ) Then
+		If(v &gt; 0 ) Then
+			Return False '显示
+		Else
+			Return True'隐藏
+		End If
+	Else 
+		If(t = idx) Then
+			Return False '显示
+		Else 't不是当前要显示的项
+			Return True'隐藏
+		End If
+	End If
+End Function</Code>
+	<PageHeight>29.7cm</PageHeight>
+	<PageWidth>21cm</PageWidth>
+	<TopMargin>1cm</TopMargin>
+	<Width>21cm</Width>
+	<ConsumeContainerWhitespace>True</ConsumeContainerWhitespace>
+	<ReportParameters>
+		<ReportParameter Name="hospName">
+			<DataType>String</DataType>
+			<Prompt>hospName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="patientCode">
+			<DataType>String</DataType>
+			<Prompt>patientCode</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="userName">
+			<DataType>String</DataType>
+			<Prompt>userName</Prompt>
+		</ReportParameter>
+		<ReportParameter Name="type">
+			<DataType>Integer</DataType>
+			<Prompt>type</Prompt>
+		</ReportParameter>
+	</ReportParameters>
+	<DataSources>
+		<DataSource Name="HNTS">
+			<ConnectionProperties>
+				<ConnectString>user id=sa;password=qwe123!@#;data source=192.172.2.154;initial catalog=HNTS;persist security info=True;</ConnectString>
+				<DataProvider>SQL</DataProvider>
+			</ConnectionProperties>
+			<DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+			<Transaction>true</Transaction>
+		</DataSource>
+	</DataSources>
+	<DataSets>
+		<DataSet Name="PatientReportDataSet">
+			<Fields>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+				<Field Name="InputDate">
+					<DataField>InputDate</DataField>
+				</Field>
+				<Field Name="BranchType">
+					<DataField>BranchType</DataField>
+				</Field>
+				<Field Name="DepartName">
+					<DataField>DepartName</DataField>
+				</Field>
+				<Field Name="BedNo">
+					<DataField>BedNo</DataField>
+				</Field>
+				<Field Name="PatientName">
+					<DataField>PatientName</DataField>
+				</Field>
+				<Field Name="BeInNo">
+					<DataField>BeInNo</DataField>
+				</Field>
+				<Field Name="IllnessCode">
+					<DataField>IllnessCode</DataField>
+				</Field>
+				<Field Name="DietDoctorAdvice">
+					<DataField>DietDoctorAdvice</DataField>
+				</Field>
+				<Field Name="HDA_Name">
+					<DataField>HDA_Name</DataField>
+				</Field>
+				<Field Name="RiskStatus">
+					<DataField>RiskStatus</DataField>
+				</Field>
+				<Field Name="OperationDate">
+					<DataField>OperationDate</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="IsLeave">
+					<DataField>IsLeave</DataField>
+				</Field>
+				<Field Name="Sex">
+					<DataField>Sex</DataField>
+				</Field>
+				<Field Name="Age">
+					<DataField>Age</DataField>
+				</Field>
+				<Field Name="InputDateStr">
+					<DataField>InputDateStr</DataField>
+				</Field>
+				<Field Name="InputHeight">
+					<DataField>InputHeight</DataField>
+				</Field>
+				<Field Name="InputWeight">
+					<DataField>InputWeight</DataField>
+				</Field>
+				<Field Name="MaternalInfo">
+					<DataField>MaternalInfo</DataField>
+				</Field>
+				<Field Name="Marital">
+					<DataField>Marital</DataField>
+				</Field>
+				<Field Name="Nation">
+					<DataField>Nation</DataField>
+				</Field>
+				<Field Name="Profession">
+					<DataField>Profession</DataField>
+				</Field>
+				<Field Name="ChiefComplaint">
+					<DataField>ChiefComplaint</DataField>
+				</Field>
+				<Field Name="PresentHistory">
+					<DataField>PresentHistory</DataField>
+				</Field>
+				<Field Name="Pasthistory">
+					<DataField>Pasthistory</DataField>
+				</Field>
+				<Field Name="CourtyardAreaID">
+					<DataField>CourtyardAreaID</DataField>
+				</Field>
+				<Field Name="CourtyardName">
+					<DataField>CourtyardName</DataField>
+				</Field>
+				<Field Name="SP">
+					<DataField>SP</DataField>
+				</Field>
+				<Field Name="PG">
+					<DataField>PG</DataField>
+				</Field>
+				<Field Name="SD">
+					<DataField>SD</DataField>
+				</Field>
+				<Field Name="HZ">
+					<DataField>HZ</DataField>
+				</Field>
+				<Field Name="CN">
+					<DataField>CN</DataField>
+				</Field>
+				<Field Name="PC">
+					<DataField>PC</DataField>
+				</Field>
+				<Field Name="CF">
+					<DataField>CF</DataField>
+				</Field>
+				<Field Name="XJ">
+					<DataField>XJ</DataField>
+				</Field>
+				<Field Name="SHBG">
+					<DataField>SHBG</DataField>
+				</Field>
+				<Field Name="SYSSJ">
+					<DataField>SYSSJ</DataField>
+				</Field>
+				<Field Name="CYXJ">
+					<DataField>CYXJ</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText>select * from V_AllPatientInfoList where PatientCode=@patientCode</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+		<DataSet Name="ScreeningDataSet">
+			<Fields>
+				<Field Name="ScreeningID">
+					<DataField>ScreeningID</DataField>
+				</Field>
+				<Field Name="PatientCode">
+					<DataField>PatientCode</DataField>
+				</Field>
+				<Field Name="ScreenDate">
+					<DataField>ScreenDate</DataField>
+				</Field>
+				<Field Name="ScreenLevels">
+					<DataField>ScreenLevels</DataField>
+				</Field>
+				<Field Name="ScreenTypeName">
+					<DataField>ScreenTypeName</DataField>
+				</Field>
+				<Field Name="ScreeningApprise">
+					<DataField>ScreeningApprise</DataField>
+				</Field>
+				<Field Name="FullName">
+					<DataField>FullName</DataField>
+				</Field>
+			</Fields>
+			<Query>
+				<CommandText> select ScreeningID,PatientCode,Convert(varchar(20),ScreenDate,120)ScreenDate,ScreenLevels,ScreenTypeName,ScreeningApprise,FullName from dbo.V_ScreeningList s left join S_UserInfo u on s.CreatedBy=u.UserName   where PatientCode=@patientCode and s.IsDelete = 0  
+</CommandText>
+				<DataSourceName>HNTS</DataSourceName>
+				<QueryParameters>
+					<QueryParameter Name="@patientCode">
+						<Value>=Parameters!patientCode.Value</Value>
+					</QueryParameter>
+				</QueryParameters>
+			</Query>
+		</DataSet>
+	</DataSets>
+</Report>

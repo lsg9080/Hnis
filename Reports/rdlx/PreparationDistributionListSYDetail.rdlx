@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>6cm</Height>
+    <ReportItems>
+      <Line Name="Line1">
+        <Height>0cm</Height>
+        <Style>
+          <BorderColor>
+            <Default>DarkGray</Default>
+          </BorderColor>
+          <BorderStyle>
+            <Default>Dashed</Default>
+          </BorderStyle>
+        </Style>
+        <Top>5.9cm</Top>
+        <Width>28cm</Width>
+        <ZIndex>9</ZIndex>
+      </Line>
+      <Textbox Name="TextBox7">
+        <CanGrow>true</CanGrow>
+        <Height>0.6cm</Height>
+        <Value>=“科室名称：”&amp;Parameters!deptname.Value</Value>
+        <Style>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+        </Style>
+        <Top>0.5cm</Top>
+        <Width>7.2cm</Width>
+        <ZIndex>10</ZIndex>
+      </Textbox>
+      <Table Name="Table2">
+        <DataSetName>DataSet2</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.749978cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox8">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox1</DataElementName>
+                      <Value>="营养品名称"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox9">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox2</DataElementName>
+                      <Value>="数量"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.758148cm</Height>
+              <TableCells>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox26">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox4</DataElementName>
+                      <DataElementStyle>AttributeNormal</DataElementStyle>
+                      <Value>=Fields!FullName.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>6pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox27">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox5</DataElementName>
+                      <Value>=Fields!SYNum.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.5cm</Height>
+        <Left>0.05291666cm</Left>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>5.144369cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.086621cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>3.01625cm</Top>
+        <Width>8.238075cm</Width>
+      </Table>
+      <Textbox Name="TextBox15">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>17cm</Left>
+        <Value>=“打印人：”&amp;Parameters!userName.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>4.8cm</Top>
+        <Width>6.2cm</Width>
+        <ZIndex>5</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox18">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>10cm</Left>
+        <Value>=“打印时间：”+now</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>4.8cm</Top>
+        <Width>6cm</Width>
+        <ZIndex>8</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox21">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>0.05291666cm</Left>
+        <Value>=“收费时间：”+Parameters!StartDate.Value + "~" + Parameters!EndDate.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>4.8cm</Top>
+        <Width>9.8471cm</Width>
+        <ZIndex>6</ZIndex>
+      </Textbox>
+      <Table Name="Table1">
+        <DataSetName>DataSet1</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox1">
+                      <CanGrow>true</CanGrow>
+                      <Value>="科室"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox2">
+                      <CanGrow>true</CanGrow>
+                      <Value>="住院号"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox3">
+                      <CanGrow>true</CanGrow>
+                      <Value>="姓名"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox10">
+                      <CanGrow>true</CanGrow>
+                      <Value>="床号"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox13">
+                      <CanGrow>true</CanGrow>
+                      <Value>="处方内容"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox16">
+                      <CanGrow>true</CanGrow>
+                      <Value>="数量"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox12">
+                      <CanGrow>true</CanGrow>
+                      <Value>="餐次"</Value>
+                      <Style>
+                        <FontFamily>Arial</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox19">
+                      <CanGrow>true</CanGrow>
+                      <Value>="计费状态"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox22">
+                      <CanGrow>true</CanGrow>
+                      <Value>="签收人"</Value>
+                      <Style>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <DataElementStyle>AttributeNormal</DataElementStyle>
+                      <Value>=Fields!DepartName.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>6pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox5">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!BeInNo.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox6">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!PatientName.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox11">
+                      <Value>=Fields!BedNo.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox14">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FullName.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>6pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Left</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox17">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!SYNum.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox24">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!EN_Use.Value</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox20">
+                      <CanGrow>true</CanGrow>
+                      <Value>="成功"</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <dd:AutoMerge xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">True</dd:AutoMerge>
+                  <ReportItems>
+                    <Textbox Name="TextBox23">
+                      <CanGrow>true</CanGrow>
+                      <Value>=" "</Value>
+                      <Style>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>6pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.5cm</Height>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>4.72607cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.835642cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.150663cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.29672cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>7.149563cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.128465cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.128465cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.128465cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.457556cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>1.1cm</Top>
+        <Width>28cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageHeight>21cm</PageHeight>
+  <PageWidth>29cm</PageWidth>
+  <Width>28.7cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="startDate">
+      <DataType>String</DataType>
+      <Prompt>收费开始时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>String</DataType>
+      <Prompt>结束时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="dept">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>科室组</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjlx">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂类型</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="zjlb">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>制剂类别</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sysj">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>使用时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="type">
+      <DataType>String</DataType>
+      <Prompt>类型</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="deptname">
+      <DataType>String</DataType>
+      <Prompt>科室名称</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="DataSource1">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DataSet1">
+      <Fields>
+        <Field Name="PID">
+          <DataField>PID</DataField>
+        </Field>
+        <Field Name="BranchType">
+          <DataField>BranchType</DataField>
+        </Field>
+        <Field Name="DepartName">
+          <DataField>DepartName</DataField>
+        </Field>
+        <Field Name="BeInNo">
+          <DataField>BeInNo</DataField>
+        </Field>
+        <Field Name="PatientName">
+          <DataField>PatientName</DataField>
+        </Field>
+        <Field Name="BedNo">
+          <DataField>BedNo</DataField>
+        </Field>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="zjlx">
+          <DataField>zjlx</DataField>
+        </Field>
+        <Field Name="ParentCode">
+          <DataField>ParentCode</DataField>
+        </Field>
+        <Field Name="PreparationCode">
+          <DataField>PreparationCode</DataField>
+        </Field>
+        <Field Name="PreparationTypeName">
+          <DataField>PreparationTypeName</DataField>
+        </Field>
+        <Field Name="TFNum">
+          <DataField>TFNum</DataField>
+        </Field>
+        <Field Name="SYNum">
+          <DataField>SYNum</DataField>
+        </Field>
+        <Field Name="UseDate">
+          <DataField>UseDate</DataField>
+        </Field>
+        <Field Name="EN_Use">
+          <DataField>EN_Use</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_DistributionList]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@dept">
+            <Value>=Parameters!dept.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlx">
+            <Value>=Parameters!zjlx.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlb">
+            <Value>=Parameters!zjlb.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sysj">
+            <Value>=Parameters!sysj.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@type">
+            <Value>0</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="DataSet2">
+      <Fields>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="zjlx">
+          <DataField>zjlx</DataField>
+        </Field>
+        <Field Name="SYNum">
+          <DataField>SYNum</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>[pro_DistributionList]</CommandText>
+        <DataSourceName>DataSource1</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@dept">
+            <Value>=Parameters!dept.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlx">
+            <Value>=Parameters!zjlx.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@zjlb">
+            <Value>=Parameters!zjlb.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sysj">
+            <Value>=Parameters!sysj.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@type">
+            <Value>1</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+  <CustomProperties>
+    <CustomProperty>
+      <Name>PaperOrientation</Name>
+      <Value>Landscape</Value>
+    </CustomProperty>
+  </CustomProperties>
+</Report>

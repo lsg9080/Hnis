@@ -1,0 +1,454 @@
+@using System.Collections
+@using HNTS.Model.ConfigCenter
+@using HUI.Components.Controls
+@using HNTSBusiness.Uility
+@using HUI.Components.Config
+@{
+    Layout = "~/Views/Shared/ActionPageShared.cshtml";
+    IList<ShareSelectItemModel> list = new List<ShareSelectItemModel>()
+    {
+        new ShareSelectItemModel() { ItemText = "重点关注", ItemValue="gz"},
+        new ShareSelectItemModel() { ItemText = "出院", ItemValue="outleave"}
+    };
+
+    var sexList = new List<ShareSelectItemModel>()
+    {
+        new ShareSelectItemModel() { ItemText = "男", ItemValue="1"},
+        new ShareSelectItemModel() { ItemText = "女", ItemValue="0"}
+    };
+}
+<link rel="stylesheet" href="/Content/Jquery/autocomplete/jquery.autocomplete.css" />
+<script type="text/javascript" src="/Content/Jquery/autocomplete/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="/Content/Jquery/autocomplete/jquery.autocomplete.min.js"></script>
+<script type="text/javascript" src="~/Content/Js/globalVariableFunction.js"></script><style type="text/css">
+    body {
+        overflow-y: hidden;
+        background: #f3f7fd;
+    }
+
+    #divConsultationList::-webkit-scrollbar-track {
+        -webkit-box-shadow: #FFFFFF;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+    }
+
+    #divConsultationList::-webkit-scrollbar {
+        width: 7px;
+        background-color: #FFFFFF;
+    }
+
+    #divConsultationList::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: #4478a9;
+    }
+</style>
+<div class="panel panel-default layui-form" id="DIVMain" style="margin:0 25px 0 15px;font-family: PingFang SC, Hiragino Sans GB,Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei;">
+    <div class="panel-header" style="height:5px;border:none;background:#f3f7fd;">
+        <!--<label>病人查询</label>-->
+    </div>
+    <div class="panel-body-no-padding-bottom" id="divTitle" style="border:5px;">
+        <table class="table" style="color:#333333;">
+            <tr style="">
+                <td style="width: 8%;white-space:nowrap;font-size:16px;font-weight:normal;" class="text-r">所属科室：</td>
+                <td style="width: 16%;">
+                    <input onclick="doubleClick()" style="border-radius:3px;border-color:#bbbbbb;color:#999999;" type="text" class="layui-input" id="dept" onchange="common.win_clearhidden(this, '#deptCode');" onkeydown="if(event.keyCode==46){return false;}" placeholder="双击选择或输入搜索" />
+                    <input type="hidden" id="deptCode" />
+                </td>
+                <td style="width: 10%;white-space:nowrap;font-size:16px;font-weight:normal;" class="text-r">入院日期：</td>
+                <td style="width: 10%;text-align:right;"><input style="border-color:#bbbbbb;color:#999999;border-radius:3px;" type="text" class="layui-input time" id="inputStartDate" value="" placeholder="单击选择"></td>
+                <td style="width: 1%;text-align:center;">-</td>
+                <td style="width: 10%;text-align:left;"><input style="border-color:#bbbbbb;color:#999999;border-radius:3px" type="text" class="layui-input time" id="inputEndDate" value="" placeholder="单击选择"></td>
+                <td style="width: 8%;white-space:nowrap;font-size:16px;font-weight:normal;" class="text-r">饮食医嘱：</td>
+                <td style="width: 16%;">
+                    <input onclick="doubleClickDiet()" style="border-radius:3px;border-color:#bbbbbb;color:#999999;" type="text" class="layui-input" id="advice" onchange="common.win_clearhidden(this, '#adviceCode');" onkeydown="if(event.keyCode==46){return false;}" placeholder="双击选择或输入搜索">
+                    <input type="hidden" id="adviceCode" />
+                </td>
+                <td rowspan="2" style="text-align: center;"><input type="button" class="layui-btn" style="width: 120px; font-size: 16px;" value="查询" onclick="InitContentPage('/TreatmentCenter/NutritionReportManagement/NutritionReportPatientTableList/1');" /></td>
+            </tr>
+            <tr>
+                <td style="width: 10%;white-space:nowrap;font-size:16px;font-weight:normal;" class="text-r">姓名/住院号：</td>
+                <td style="width: 10%;"><input style="border-radius:3px;border-color:#bbbbbb;color:#999999;" type="text" class="layui-input" style="width: 120px;" id="nORc" /></td>
+                <td style="white-space: nowrap; font-size: 16px; font-weight: normal;">性别：</td>
+                <td style="white-space: nowrap; font-size: 16px; font-weight: normal;">@Html.Raw(CreatedControl.SelectHtml(sexList, "sexList", "-1", true, "==全部==", 80, true))</td>
+                <td colspan="5" style="text-align: center; padding-left: 45px; font-size: 16px; font-weight: normal; border-color: #bbbbbb; color: #999999;">@Html.Raw(CreatedControl.CheckboxHtml(list, "whereChk", null, 2))</td>
+                
+            </tr>
+        </table>
+    </div>
+    <div class="panel-header" style="height:5px;border:none;background:#f3f7fd;">
+        <!--<label>病人列表</label>-->
+    </div>
+    <div class="panel-body-no-padding-bottom" style="">
+        <div style="" id="tablescrollPanel">
+            <table class="table" style="width:100%;font-size:15px;" id="divContentHead">
+                <thead>
+                    <tr style="height:8px;"></tr>
+                    <tr class="th">
+                        <th style="text-align:center;width: 10%;white-space:nowrap;cursor:pointer;" onclick="deptLoadContent('PatientName','#span_name','#span_depart','#span_date');">姓名<span style="cursor: pointer;" id="span_name">(||)</span></th>
+                        <th style="text-align:center;width: 15%;white-space:nowrap;cursor:pointer;" onclick="deptLoadContent('DepartName','#span_depart','#span_name','#span_date');">科室<span style="cursor: pointer;" id="span_depart">(||)</span></th>
+                        <th style="text-align:center;width: 7%;white-space:nowrap;">床号</th>
+                        <th style="text-align:center;width: 10%;white-space:nowrap;">住院号</th>
+                        <th style="text-align:center;width: 16%;white-space:nowrap;">饮食医嘱</th>
+                        <th style="text-align:center;width: 12%;white-space:nowrap;cursor:pointer;" onclick="deptLoadContent('InputDate','#span_date','#span_depart','#span_name');">入院日期<span style="cursor: pointer;" id="span_date">(||)</span></th>
+                        <th style="text-align:center;white-space:nowrap;">最新诊断</th>
+                        <th style="text-align:center;width: 7%;white-space:nowrap;">重点关注</th>
+                        <th style="text-align:center;width: 6%">操作<input type="hidden" id="orderBy" /><input type="hidden" id="orderCol" /></th>
+                    </tr>
+                </thead>
+                <tbody id="tablescroll" style="white-space:nowrap;font-size:14px;font-family:Microsoft YaHei, PingFang SC, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei,sans-serif;color:#333333;">
+                    @RenderPage("~/Views/TreatmentCenter/NutritionReportManagement/NutritionReportPatientTableList.cshtml")
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div style="font-size:12px;position:fixed;bottom:0;line-height: 45px; height: 45px;background:none;margin-left:19%;font-family: PingFang SC, Hiragino Sans GB,Microsoft YaHei, Heiti SC, WenQuanYi Micro Hei,sans-serif;color:#333333;"><span>(||):可排序；&nbsp;&nbsp;&nbsp;(↓):降序；&nbsp;&nbsp;&nbsp;(↑):升序；</span></div>
+<script>
+    var fm,dialog, common,pager;
+    var headers = {};
+    //获取防伪标记
+    var token = $('@Html.AntiForgeryToken()').val();
+    //防伪标记放入headers
+    //也可以将防伪标记放入data
+    headers["__RequestVerificationToken"] = token;
+    layui.config({
+        skin: 'demo-class',
+        base: '/Content/BeginnerAdmin/plugins/layui/lay/modules/' //你的模块目录04.
+    }).use(['winForm', 'winDialog', 'winCommon', 'winPager'], function() {
+        fm = layui.winForm;
+        dialog = layui.winDialog;
+        common = layui.winCommon;
+        pager = layui.winPager;
+        $(document).ready(function() {
+            fm.win_resize("#tablescrollPanel",230);
+            if (@ViewBag.back > 0) {
+                getSearchToCookie();
+            }
+            var startDate;
+            var endDate;
+            var sd = new Date();
+            $.datetimepicker.setLocale('ch'); //新版
+            // 初始加载时间控件
+            $("#inputStartDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: sd //当天
+                    });
+                },
+                onClose: function(current_time, $input) {
+                    if (startDate > endDate) {
+                        $("#inputEndDate").val(endDate);
+                        startDate = endDate;
+                    }
+                },
+                timepicker: false
+            });
+            // 初始加载时间控件
+            $("#inputEndDate").datetimepicker({
+                format: 'Y-m-d',
+                //lang:"ch",旧版
+                onShow: function() {
+                    this.setOptions({
+                        maxDate: sd //当天
+                    });
+                },
+                onClose: function(current_time, $input) {
+                    endDate = $("#inputEndDate").val();
+                    if (startDate > endDate) {
+                        $("#inputStartDate").val(startDate);
+                        endDate = startDate;
+                    }
+                },
+                timepicker: false
+            });
+
+            var deptData = @Html.Raw(ViewBag.deptData);
+            $("#dept").autocomplete(deptData, {
+                minChars: 0,
+                width: 240,
+                matchContains: true,
+                autoFill: false,
+                formatItem: function(row, i, max) {
+                    return row.name;
+                },
+                formatMatch: function(row, i, max) {
+                    return row.name + "" + row.code;
+                },
+                formatResult: function(row) {
+                    return row.name;
+                }
+            }).result(function(event, row, formatted) {
+                $("#deptCode").val(row.key);
+                fm.win_render("checkbox");
+            });
+            var adviceData = @Html.Raw(ViewBag.adviceData);
+            $("#advice").autocomplete(adviceData, {
+                minChars: 0,
+                width: 240,
+                matchContains: true,
+                autoFill: false,
+                formatItem: function(row, i, max) {
+                    return row.name;
+                },
+                formatMatch: function(row, i, max) {
+                    return row.name + "" + row.code;
+                },
+                formatResult: function(row) {
+                    return row.name;
+                }
+            }).result(function(event, row, formatted) {
+                $("#adviceCode").val(row.key);
+            });
+            fm.win_checkbox('gz', function(data) {
+                fllow(true,data.value);
+            },function(data) {
+                fllow(false,data.value);
+            });
+        });
+    });
+    function fllow(val,patCode) {
+        common.win_formAction('/TreatmentCenter/PatientManagement/ChanagePatientFollow','POST',{patCode:patCode,isFllow:val},headers,function(json) {
+            if(!json.result){
+                parent.dialog.win_alert('重点关注失败!','操作提示',  5);
+            }
+        },'JSON');
+    }
+    function InitContentPage(href) {
+        var url = href;
+        //用户名
+        var pm,val;
+        pm = $.trim($("#inputStartDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "startDate", val);
+        }
+        pm = $.trim($("#inputEndDate").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "endDate", val);
+        }
+        pm = $.trim($("#deptCode").val());
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "deptCode", val);
+        } else {
+            var dept = $.trim($("#dept").val());
+            if (dept.length > 0) {
+                val = window.escape(dept);
+                url = common.win_loadParamUrl(url, "dept", val);
+            }
+        }
+        pm = $.trim($("#adviceCode").val());
+        if (pm.length > 0) {
+            val = window.escape(pm);
+            url = common.win_loadParamUrl(url, "adviceCode", val);
+        } else {
+            var advice = $.trim($("#advice").val());
+            if (advice.length > 0) {
+                val = window.escape(advice);
+                url = common.win_loadParamUrl(url, "advice", val);
+            }
+        }
+        pm = $.trim($("#nORc").val());
+        if (pm.length > 0) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "nORc", val);
+        }
+        var chks = $("input[type=checkbox][name=whereChk]:checked");
+        if (chks.size() > 0) {
+            url = common.win_loadParamUrl(url, "gz", '0');
+            url = common.win_loadParamUrl(url, "isleave", '0');
+            $(chks).each(function(i, n) {
+                if (n.value == "gz") {
+                    url = common.win_loadParamUrl(url, "gz", '1');
+                }
+                if (n.value == "outleave") {
+                    url = common.win_loadParamUrl(url, "isleave", '1');
+                }
+            });
+        } else {
+            url = common.win_loadParamUrl(url, "gz", '0');
+            url = common.win_loadParamUrl(url, "isleave", '0');
+        }
+
+        pm = $.trim($("select[name=sexList]").val());
+        if (pm.length > -1) {
+            val =  window.escape(pm);
+            url = common.win_loadParamUrl(url, "sex", val);
+        }
+
+        var orderBy = $("#orderBy").val();
+        var orderCol = $("#orderCol").val();
+        if (orderBy.length > 0 && orderCol.length > 0) {
+            url = common.win_loadParamUrl(url, "ob", orderCol + "_" + orderBy);
+        }
+         pager.win_laypage('#tablescroll', url, headers, function () 
+         {
+             fm.win_checkbox('gz', function(data) {
+                 fllow(true,data.value);
+             },function(data) {
+                 fllow(false,data.value);
+             });
+             fm.win_render('checkbox');
+        });
+    }
+    
+    function deptLoadContent(col, elem, elm, elm2) {
+        $(elm).text("(||)");
+        $(elm2).text("(||)");
+        var order = $("#orderBy").val();
+        var txt = $(elem).text();
+        var ord = '';
+        if (order == "") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+        if (order == "asc") {
+            ord = "desc";
+            txt = "(↓)";
+        }
+        if (order == "desc") {
+            ord = "asc";
+            txt = "(↑)";
+        }
+       $(elem).text(txt);
+       $("#orderBy").val(ord);
+       $("#orderCol").val(col);
+       var url = '/TreatmentCenter/NutritionReportManagement/NutritionReportPatientTableList/1?ob=' + col + "_" + ord + "_";
+       InitContentPage(url);
+    }
+
+    function GetReportContent(code,beinNo){
+        window.document.location.href ="/TreatmentCenter/NutritionReportManagement/NutritionReportContent?id=" + code +"&beinNo=" + beinNo;
+    }
+
+    function setSearchToCookie() {
+        var pm;
+        pm = $.trim($("#inputStartDate").val());
+        if (pm.length > 0) {
+            cook.win_setCookie("inputStartDate", pm);
+        }
+        pm = $.trim($("#inputEndDate").val());
+        if (pm.length > 0) {
+            cook.win_setCookie("inputEndDate", pm);
+        }
+        pm = $.trim($("#deptCode").val());
+        if (pm.length > 0) {
+            cook.win_setCookie("rp_deptCode", pm);
+        } else {
+            var dept = $.trim($("#dept").val());
+            if (dept.length > 0) {
+                cook.win_setCookie("rp_dept", pm);
+            }
+        }
+        pm = $.trim($("#adviceCode").val());
+        if (pm.length > 0) {
+            cook.win_setCookie("rp_adviceCode", pm);
+        } else {
+            var advice = $.trim($("#advice").val());
+            if (advice.length > 0) {
+                cook.win_setCookie("rp_advice", pm);
+            }
+        }
+        pm = $.trim($("#nORc").val());
+        if (pm.length > 0) {
+            cook.win_setCookie("rp_nOrc", pm);
+        }
+        var chks = $("input[type=checkbox][name=whereChk]:checked");
+        if (chks.size() > 0) {
+            $(chks).each(function(i, n) {
+                if (n.value == "gz") {
+                    cook.win_setCookie("rp_gz", "1");
+                }
+                if (n.value == "outleave") {
+                    cook.win_setCookie("rp_isleave", "1");
+                }
+            });
+        }
+
+        pm = $.trim($("select[name=sexList]").val());
+        if (pm.length > -1) {
+            cook.win_setCookie("rp_sex", pm);
+        }
+
+        var orderBy = $("#orderBy").val();
+        var orderCol = $("#orderCol").val();
+        if (orderBy.length > 0 && orderCol.length > 0) {
+            cook.win_setCookie("rp_orderBy", orderBy == "asc" ? "desc" : "asc");
+            cook.win_setCookie("rp_orderCol", orderCol);
+        }
+    }
+
+    function getSearchToCookie() {
+        var inputStartDate = cook.win_getCookie("inputStartDate");
+        var inputEndDate = cook.win_getCookie("inputEndDate");
+        var deptCode = cook.win_getCookie("rp_deptCode");
+        var dept = cook.win_getCookie("rp_dept");
+        var nOrc = cook.win_getCookie("rp_nOrc");
+        var adviceCode = cook.win_getCookie("rp_adviceCode");
+        var advice = cook.win_getCookie("rp_advice");
+        var sex = cook.win_getCookie("rp_sex");
+        var gz = cook.win_getCookie("rp_gz");
+        var isleave = cook.win_getCookie("rp_isleave");
+        var orderBy = cook.win_getCookie("rp_orderBy");
+        var orderCol = cook.win_getCookie("rp_orderCol");
+        if(inputStartDate) $("#inputStartDate").val(inputStartDate);
+        if(inputEndDate) $("#inputEndDate").val(inputEndDate);
+        if(deptCode) $("#deptCode").val(deptCode);
+        if(dept) $("#dept").val(dept);
+        if(nOrc) $("#nORc").val(nOrc);
+        if(adviceCode) $("#adviceCode").val(adviceCode);
+        if(advice) $("#advice").val(advice);
+        if(sex) $("select[name=sexList]").val(sex);
+        if(gz) $("input[type=checkbox][name=whereChk]").each(function(i, n) {
+            if (n.value == "gz") {
+                n.checked = true;
+            }
+        });
+        if(isleave)$("input[type=checkbox][name=whereChk]").each(function(i, n) {
+            if (n.value == "outleave") {
+                n.checked = true;
+            }
+        });
+        if(orderBy != null && orderCol != null){
+            if(orderBy)$("#orderBy").val(orderBy);
+            if(orderCol)$("#orderCol").val(orderCol);
+            if(orderCol == "PatientName"){
+                deptLoadContent('PatientName','#span_name','#span_depart','#span_date');
+            }else if(orderCol == "DepartName"){
+                deptLoadContent('DepartName','#span_depart','#span_name','#span_date');
+            }else if(orderCol == "InputDate"){
+                deptLoadContent('InputDate','#span_date','#span_depart','#span_name');
+            }
+        }
+        
+        fm.win_render('select');
+        fm.win_render("checkbox");
+        delSearchToCookie(); 
+        InitContentPage('/TreatmentCenter/NutritionReportManagement/NutritionReportPatientTableList/1');
+    }
+    function delSearchToCookie() {
+        cook.win_delCookie("inputStartDate");
+        cook.win_delCookie("inputEndDate");
+        cook.win_delCookie("rp_deptCode");
+        cook.win_delCookie("rp_dept");
+        cook.win_delCookie("rp_nOrc");
+        cook.win_delCookie("rp_adviceCode");
+        cook.win_delCookie("rp_advice");
+        cook.win_delCookie("rp_sex");
+        cook.win_delCookie("rp_gz");
+        cook.win_delCookie("rp_isleave");
+        cook.win_delCookie("rp_orderBy");
+        cook.win_delCookie("rp_orderCol");
+    }
+
+    var ind;
+    function summaryOfDischarge(patCode) {
+        ind = dialog.win_open("/TreatmentCenter/NutritionReportManagement/SummaryOfDischarge/"+ patCode,'出院记录');
+    }
+    function Closeing() {
+        if (ind) dialog.win_close(ind);
+    }
+</script>

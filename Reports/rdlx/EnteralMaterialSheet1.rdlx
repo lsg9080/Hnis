@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition">
+  <Body>
+    <Height>4cm</Height>
+    <ReportItems>
+      <Table Name="Table2">
+        <DataSetName>EnteralMaterialSheet2</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox13">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox1</DataElementName>
+                      <Value>常规处方</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox14">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox2</DataElementName>
+                      <Value>规格</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox15">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox10</DataElementName>
+                      <Value>份数</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.75cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox16">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FullName.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>General</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox17">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!GuiGe.Value.ToString() +   Fields!GuiGeUnit.Value .ToString() +"/" +  Fields!GuiGeName.Value.ToString()</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox18">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SetFen( Fields!PI_Quantitiy.Value ,Fields!PI_FinishedQuantitiy.Value, Fields!GuiGe.Value , Fields!GuiGeUnit.Value , Fields!GuiGeName.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.5cm</Height>
+        <Left>10.73333cm</Left>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>5.2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.4cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.666667cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>1.6cm</Top>
+        <Width>9.266667cm</Width>
+        <ZIndex>1</ZIndex>
+      </Table>
+      <Textbox Name="TextBox22">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Value>=Parameters!hospName.Value.ToString() + "肠内物料单"</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Width>20cm</Width>
+        <ZIndex>2</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox21">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Left>0.05291666cm</Left>
+        <Value>使用时间：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>0.8cm</Top>
+        <Width>2.1471cm</Width>
+        <ZIndex>3</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox23">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox21</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>2.2cm</Left>
+        <Value>=Parameters!mealTimes.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>0.8cm</Top>
+        <Width>16.8cm</Width>
+        <ZIndex>3</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox20">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>17.45292cm</Left>
+        <Value>=Parameters!userName.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>2.4cm</Width>
+        <ZIndex>4</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox19">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>15.25292cm</Left>
+        <Value>打印人：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Right</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>2cm</Width>
+        <ZIndex>5</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox12">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>11.45292cm</Left>
+        <Value>=Now</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>3.8cm</Width>
+        <ZIndex>6</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox9">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>9.4cm</Left>
+        <Value>打印时间：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Right</TextAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>1.9316cm</Width>
+        <ZIndex>7</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox7">
+        <CanGrow>true</CanGrow>
+        <DataElementName>TextBox5</DataElementName>
+        <Height>0.75cm</Height>
+        <Left>2.000017cm</Left>
+        <Value>=Parameters!showStartDate.Value + "~" +  Parameters!showEndDate.Value</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>400</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Left</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>7.2cm</Width>
+        <ZIndex>8</ZIndex>
+      </Textbox>
+      <Textbox Name="TextBox5">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Left>0.052917cm</Left>
+        <Value>收费时间：</Value>
+        <Style>
+          <FontFamily>微软雅黑</FontFamily>
+          <FontSize>10pt</FontSize>
+          <FontStyle>Normal</FontStyle>
+          <FontWeight>700</FontWeight>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>General</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Top>3.2cm</Top>
+        <Width>1.9471cm</Width>
+        <ZIndex>9</ZIndex>
+      </Textbox>
+      <Table Name="Table1">
+        <DataSetName>EnteralMaterialSheet</DataSetName>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <Height>0.754041cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox1">
+                      <CanGrow>true</CanGrow>
+                      <Value>非常规处方制剂</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox2">
+                      <CanGrow>true</CanGrow>
+                      <Value>规格</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox6">
+                      <CanGrow>true</CanGrow>
+                      <Value>用量</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox10">
+                      <CanGrow>true</CanGrow>
+                      <Value>份数</Value>
+                      <Style>
+                        <BackgroundColor>WhiteSmoke</BackgroundColor>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>700</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <Height>0.745959cm</Height>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox3">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!FullName.Value</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox4">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!GuiGe.Value.ToString() +   Fields!GuiGeUnit.Value .ToString() +"/" +  Fields!GuiGeName.Value.ToString()</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox8">
+                      <CanGrow>true</CanGrow>
+                      <Value>=Code.SetAllQuantitiy(Fields!PI_Quantitiy.Value,Fields!PI_FinishedQuantitiy.Value,Fields!GuiGeUnit.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TextBox11">
+                      <CanGrow>true</CanGrow>
+                      <DataElementName>TextBox18</DataElementName>
+                      <Value>=Code.SetFen( Fields!PI_Quantitiy.Value ,Fields!PI_FinishedQuantitiy.Value, Fields!GuiGe.Value , Fields!GuiGeUnit.Value , Fields!GuiGeName.Value)</Value>
+                      <Style>
+                        <FontFamily>微软雅黑</FontFamily>
+                        <FontSize>10pt</FontSize>
+                        <FontStyle>Normal</FontStyle>
+                        <FontWeight>400</FontWeight>
+                        <PaddingBottom>2pt</PaddingBottom>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <TextAlign>Center</TextAlign>
+                        <VerticalAlign>Middle</VerticalAlign>
+                        <BorderStyle>
+                          <Default>Solid</Default>
+                        </BorderStyle>
+                      </Style>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Height>1.5cm</Height>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <TableColumns>
+          <TableColumn>
+            <Width>3.741726cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.071741cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.2cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.6cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Top>1.6cm</Top>
+        <Width>10.61347cm</Width>
+      </Table>
+    </ReportItems>
+    <Style />
+  </Body>
+  <PageFooter>
+    <Height>0.8cm</Height>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <PrintOnLastPage>true</PrintOnLastPage>
+    <ReportItems>
+      <Textbox Name="TextBox24">
+        <CanGrow>true</CanGrow>
+        <Height>0.75cm</Height>
+        <Left>14.6cm</Left>
+        <Value>="第 " &amp; Globals!PageNumber &amp; " 页、共 " &amp; Globals!TotalPages &amp; " 页"</Value>
+        <Style>
+          <PaddingBottom>2pt</PaddingBottom>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <TextAlign>Center</TextAlign>
+          <VerticalAlign>Middle</VerticalAlign>
+        </Style>
+        <Width>4.3cm</Width>
+      </Textbox>
+    </ReportItems>
+    <Style />
+  </PageFooter>
+  <BottomMargin>0.5cm</BottomMargin>
+  <Code>&#xD;
+Function SetFen(ByVal q As Double, ByVal f As Double, ByVal u As Double, ByVal ut As String, ByVal um As String) As String&#xD;
+	Dim v As Double&#xD;
+	v = q + f&#xD;
+	If (v &gt; u)&#xD;
+		Dim d As Integer&#xD;
+		Dim di As Double&#xD;
+		d = Fix(v / u)&#xD;
+		di = v - (d * u)&#xD;
+		If(di &gt; 0)&#xD;
+			Return Str(d) &amp; um &amp; Str(di) &amp; ut&#xD;
+		Else&#xD;
+			Return Str(d) &amp; um&#xD;
+		End If&#xD;
+	Else&#xD;
+		If(v &gt; 0)&#xD;
+			Return Str(1) &amp; um&#xD;
+		End If&#xD;
+	End If&#xD;
+End Function&#xD;
+&#xD;
+Function SetAllQuantitiy(ByVal q As Double, ByVal f As Double, ByVal um As String)&#xD;
+	Return Str(q + f) &amp; um&#xD;
+End Function</Code>
+  <LeftMargin>0.5cm</LeftMargin>
+  <PageHeight>29.7cm</PageHeight>
+  <PageWidth>21cm</PageWidth>
+  <RightMargin>0.5cm</RightMargin>
+  <TopMargin>0.5cm</TopMargin>
+  <Width>20cm</Width>
+  <ReportParameters>
+    <ReportParameter Name="hospName">
+      <DataType>String</DataType>
+      <Prompt>医嘱名称</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="startDate">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>收费开始时间</Prompt>
+      <dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+    </ReportParameter>
+    <ReportParameter Name="endDate">
+      <DataType>DateTime</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>收费截止时间</Prompt>
+      <dd:DateOnly xmlns:dd="http://schemas.datadynamics.com/reporting/2005/02/reportdefinition">false</dd:DateOnly>
+    </ReportParameter>
+    <ReportParameter Name="use">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>使用餐次时间</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="userName">
+      <DataType>String</DataType>
+      <Prompt>打印人</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="mealTimes">
+      <DataType>String</DataType>
+      <Nullable>true</Nullable>
+      <Prompt>页面显示的餐次</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="showStartDate">
+      <DataType>String</DataType>
+      <Prompt>showStartDate</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="showEndDate">
+      <DataType>String</DataType>
+      <Prompt>showEndDate</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <DataSources>
+    <DataSource Name="HNTS">
+      <DataSourceReference>..\..\RDSX\hnts.rdsx</DataSourceReference>
+      <Transaction>true</Transaction>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="EnteralMaterialSheet">
+      <Fields>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="GuiGe">
+          <DataField>GuiGe</DataField>
+        </Field>
+        <Field Name="GuiGeName">
+          <DataField>GuiGeName</DataField>
+        </Field>
+        <Field Name="GuiGeUnit">
+          <DataField>GuiGeUnit</DataField>
+        </Field>
+        <Field Name="PI_Quantitiy">
+          <DataField>PI_Quantitiy</DataField>
+        </Field>
+        <Field Name="PI_FinishedQuantitiy">
+          <DataField>PI_FinishedQuantitiy</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>pro_EnteralMaterialSheet </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@use">
+            <Value>=Parameters!use.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@isFinished">
+            <Value>0</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+    <DataSet Name="EnteralMaterialSheet2">
+      <Fields>
+        <Field Name="FullName">
+          <DataField>FullName</DataField>
+        </Field>
+        <Field Name="GuiGe">
+          <DataField>GuiGe</DataField>
+        </Field>
+        <Field Name="GuiGeName">
+          <DataField>GuiGeName</DataField>
+        </Field>
+        <Field Name="GuiGeUnit">
+          <DataField>GuiGeUnit</DataField>
+        </Field>
+        <Field Name="PI_Quantitiy">
+          <DataField>PI_Quantitiy</DataField>
+        </Field>
+        <Field Name="PI_FinishedQuantitiy">
+          <DataField>PI_FinishedQuantitiy</DataField>
+        </Field>
+      </Fields>
+      <Query>
+        <CommandText>pro_EnteralMaterialSheet </CommandText>
+        <DataSourceName>HNTS</DataSourceName>
+        <CommandType>StoredProcedure</CommandType>
+        <QueryParameters>
+          <QueryParameter Name="@startDate">
+            <Value>=Parameters!startDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@endDate">
+            <Value>=Parameters!endDate.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@use">
+            <Value>=Parameters!use.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@isFinished">
+            <Value>1</Value>
+          </QueryParameter>
+        </QueryParameters>
+      </Query>
+    </DataSet>
+  </DataSets>
+</Report>
